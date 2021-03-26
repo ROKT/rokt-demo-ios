@@ -1,0 +1,16 @@
+PODS:
+  - Rokt-Widget (3.5.0)
+
+DEPENDENCIES:
+  - Rokt-Widget
+
+SPEC REPOS:
+  trunk:
+    - Rokt-Widget
+
+SPEC CHECKSUMS:
+  Rokt-Widget: 543aaffe09439ee50601ff731b56d5e12d5b1201
+
+PODFILE CHECKSUM: 3cf80ef5546cd84f697d19e8635101abe1725951
+
+COCOAPODS: 1.10.1
