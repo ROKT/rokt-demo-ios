@@ -22,6 +22,8 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan
+    scan(
+      devices: ["iPhone 12"]
+      )
   end
 end
