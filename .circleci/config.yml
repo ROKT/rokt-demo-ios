@@ -1,0 +1,65 @@
+# For a detailed guide to building and testing on iOS, read the docs:
+# https://circleci.com/docs/2.0/testing-ios/
+
+version: 2.1
+#------------------------------------------------------------
+# executors
+#------------------------------------------------------------
+executors:
+  rokt_xcode:
+    macos:
+      xcode: 12.4.0
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: output
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+    shell: /bin/bash --login -o pipefail
+
+#------------------------------------------------------------
+# commands
+#------------------------------------------------------------
+commands:
+  rokt_sync_bundler_and_fastlane:
+    steps:
+      - checkout
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: pre-start simulator
+          command: xcrun instruments -w "iPhone 12 (14.4) [" || true
+      - run: 
+          name: Fetch CocoaPod specs
+          command:
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      - run: 
+          name: Install CocoaPods
+          command:
+            pod install --verbose
+
+#------------------------------------------------------------
+# jobs
+#------------------------------------------------------------
+jobs:
+  build-run-unit-test:
+    executor:
+      name: rokt_xcode
+    steps:
+      - rokt_sync_bundler_and_fastlane
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane test
+
+#------------------------------------------------------------
+# workflows
+#------------------------------------------------------------
+workflows:
+  version: 2  
+  building:
+    jobs:
+      - build-run-unit-test
