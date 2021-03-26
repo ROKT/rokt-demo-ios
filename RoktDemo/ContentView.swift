@@ -15,8 +15,45 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            VStack {
+                Spacer()
+                Image("RoktLogo")
+                Text("Powering the Transaction Moment™")
+                    .font(.custom("Soleil", size: 18))
+                    .multilineTextAlignment(.center)
+                    .padding()
+                Spacer()
+                VStack {
+                    Button(action: {}, label: {
+                        Text("Demo Library")
+                            .padding()
+                            .font(.custom("Soleil-Bold", size: 18))
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color.accentColor)
+                    })
+                    Button(action: {}, label: {
+                        Text("About Rokt")
+                            .font(.custom("Soleil-Bold", size: 18))
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .border(Color.accentColor, width: 2)
+                    })
+                    Button(action: {}, label: {
+                        Text("Contact Us")
+                            .font(.custom("Soleil-Bold", size: 18))
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .border(Color.accentColor, width: 2)
+                    })
+                    Text("® Rokt 2021 — All rights reserved App Version 1.0.0")
+                        .font(.custom("Soleil-Bold", size: 12))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.gray)
+                }.padding()
+            }
+        }
     }
 }
 

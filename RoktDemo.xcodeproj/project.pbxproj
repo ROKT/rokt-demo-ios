@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		17E6B740C63A1CB615166AEB /* Pods_RoktDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */; };
+		25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D87260D94B60044EF14 /* SoleilBook.otf */; };
+		25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D88260D94B60044EF14 /* SoleilLight.otf */; };
+		25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D89260D94B60044EF14 /* SoleilRegular.otf */; };
+		25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D8A260D94B60044EF14 /* SoleilBold.otf */; };
 		25F84767260C34880067B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84766260C34880067B515 /* AppDelegate.swift */; };
 		25F84769260C34880067B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84768260C34880067B515 /* SceneDelegate.swift */; };
 		25F8476B260C34880067B515 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8476A260C34880067B515 /* ContentView.swift */; };
@@ -41,6 +45,10 @@
 		10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20098664A1E8183EDD086EA3 /* Pods-RoktDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.release.xcconfig"; sourceTree = "<group>"; };
 		256673A02D436BE09A2A2212 /* Pods-RoktDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		25BA8D87260D94B60044EF14 /* SoleilBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBook.otf; sourceTree = "<group>"; };
+		25BA8D88260D94B60044EF14 /* SoleilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilLight.otf; sourceTree = "<group>"; };
+		25BA8D89260D94B60044EF14 /* SoleilRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilRegular.otf; sourceTree = "<group>"; };
+		25BA8D8A260D94B60044EF14 /* SoleilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBold.otf; sourceTree = "<group>"; };
 		25F84763260C34880067B515 /* RoktDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoktDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F84766260C34880067B515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F84768260C34880067B515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		25BA8D85260D94560044EF14 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				25BA8D86260D945F0044EF14 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		25BA8D86260D945F0044EF14 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				25BA8D8A260D94B60044EF14 /* SoleilBold.otf */,
+				25BA8D87260D94B60044EF14 /* SoleilBook.otf */,
+				25BA8D88260D94B60044EF14 /* SoleilLight.otf */,
+				25BA8D89260D94B60044EF14 /* SoleilRegular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		25F8475A260C34880067B515 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +156,7 @@
 		25F84765260C34880067B515 /* RoktDemo */ = {
 			isa = PBXGroup;
 			children = (
+				25BA8D85260D94560044EF14 /* Resources */,
 				25F84766260C34880067B515 /* AppDelegate.swift */,
 				25F84768260C34880067B515 /* SceneDelegate.swift */,
 				25F8476A260C34880067B515 /* ContentView.swift */,
@@ -286,8 +314,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */,
 				25F84773260C348A0067B515 /* LaunchScreen.storyboard in Resources */,
+				25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */,
+				25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */,
 				25F84770260C348A0067B515 /* Preview Assets.xcassets in Resources */,
+				25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */,
 				25F8476D260C348A0067B515 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
