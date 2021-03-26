@@ -41,9 +41,6 @@ commands:
           name: Install CocoaPods
           command:
             pod install --verbose
-      - run:
-          name: Fastlane Setup
-          command: bundle exec fastlane setup
 
 #------------------------------------------------------------
 # jobs
@@ -66,4 +63,3 @@ workflows:
   building:
     jobs:
       - build-run-unit-test
-      
