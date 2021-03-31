@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		17E6B740C63A1CB615166AEB /* Pods_RoktDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */; };
+		25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D87260D94B60044EF14 /* SoleilBook.otf */; };
+		25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D88260D94B60044EF14 /* SoleilLight.otf */; };
+		25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D89260D94B60044EF14 /* SoleilRegular.otf */; };
+		25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D8A260D94B60044EF14 /* SoleilBold.otf */; };
 		25F84767260C34880067B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84766260C34880067B515 /* AppDelegate.swift */; };
 		25F84769260C34880067B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84768260C34880067B515 /* SceneDelegate.swift */; };
-		25F8476B260C34880067B515 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8476A260C34880067B515 /* ContentView.swift */; };
+		25F8476B260C34880067B515 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8476A260C34880067B515 /* HomePageView.swift */; };
 		25F8476D260C348A0067B515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F8476C260C348A0067B515 /* Assets.xcassets */; };
 		25F84770260C348A0067B515 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F8476F260C348A0067B515 /* Preview Assets.xcassets */; };
 		25F84773260C348A0067B515 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F84771260C348A0067B515 /* LaunchScreen.storyboard */; };
@@ -18,6 +22,9 @@
 		25F84789260C348A0067B515 /* RoktDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84788260C348A0067B515 /* RoktDemoUITests.swift */; };
 		3BB5EF721DEA0AA91B0B4D3C /* Pods_RoktDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C17D62CF39286A850B684C4 /* Pods_RoktDemoTests.framework */; };
 		520B6AB07C6D41F22221D515 /* Pods_RoktDemo_RoktDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */; };
+		5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226A2613F63800A58DA3 /* Font+Extensions.swift */; };
+		589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226F2613F67A00A58DA3 /* ButtonDefault.swift */; };
+		589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +48,14 @@
 		10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20098664A1E8183EDD086EA3 /* Pods-RoktDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.release.xcconfig"; sourceTree = "<group>"; };
 		256673A02D436BE09A2A2212 /* Pods-RoktDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		25BA8D87260D94B60044EF14 /* SoleilBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBook.otf; sourceTree = "<group>"; };
+		25BA8D88260D94B60044EF14 /* SoleilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilLight.otf; sourceTree = "<group>"; };
+		25BA8D89260D94B60044EF14 /* SoleilRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilRegular.otf; sourceTree = "<group>"; };
+		25BA8D8A260D94B60044EF14 /* SoleilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBold.otf; sourceTree = "<group>"; };
 		25F84763260C34880067B515 /* RoktDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoktDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F84766260C34880067B515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F84768260C34880067B515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		25F8476A260C34880067B515 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		25F8476A260C34880067B515 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		25F8476C260C348A0067B515 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25F8476F260C348A0067B515 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		25F84772260C348A0067B515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +68,9 @@
 		25F8478A260C348A0067B515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C17D62CF39286A850B684C4 /* Pods_RoktDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		566ECCCA4121A5A9797680AC /* Pods-RoktDemo-RoktDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5899226A2613F63800A58DA3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		5899226F2613F67A00A58DA3 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
+		589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultOutlined.swift; sourceTree = "<group>"; };
 		C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +118,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		25BA8D85260D94560044EF14 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				25BA8D86260D945F0044EF14 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		25BA8D86260D945F0044EF14 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				25BA8D8A260D94B60044EF14 /* SoleilBold.otf */,
+				25BA8D87260D94B60044EF14 /* SoleilBook.otf */,
+				25BA8D88260D94B60044EF14 /* SoleilLight.otf */,
+				25BA8D89260D94B60044EF14 /* SoleilRegular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		25F8475A260C34880067B515 = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +162,12 @@
 		25F84765260C34880067B515 /* RoktDemo */ = {
 			isa = PBXGroup;
 			children = (
+				589922662613DA8500A58DA3 /* Extensions */,
+				589873FC2612C38F00C904E8 /* Utils */,
+				589873F82612BF1100C904E8 /* Views */,
+				25BA8D85260D94560044EF14 /* Resources */,
 				25F84766260C34880067B515 /* AppDelegate.swift */,
 				25F84768260C34880067B515 /* SceneDelegate.swift */,
-				25F8476A260C34880067B515 /* ContentView.swift */,
 				25F8476C260C348A0067B515 /* Assets.xcassets */,
 				25F84771260C348A0067B515 /* LaunchScreen.storyboard */,
 				25F84774260C348A0067B515 /* Info.plist */,
@@ -164,6 +200,39 @@
 				25F8478A260C348A0067B515 /* Info.plist */,
 			);
 			path = RoktDemoUITests;
+			sourceTree = "<group>";
+		};
+		589873F82612BF1100C904E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				589922742613F72E00A58DA3 /* Buttons */,
+				25F8476A260C34880067B515 /* HomePageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		589873FC2612C38F00C904E8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		589922662613DA8500A58DA3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5899226A2613F63800A58DA3 /* Font+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		589922742613F72E00A58DA3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5899226F2613F67A00A58DA3 /* ButtonDefault.swift */,
+				589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		A5C3ED60C4B18FDC5C202F0B /* Frameworks */ = {
@@ -286,8 +355,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */,
 				25F84773260C348A0067B515 /* LaunchScreen.storyboard in Resources */,
+				25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */,
+				25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */,
 				25F84770260C348A0067B515 /* Preview Assets.xcassets in Resources */,
+				25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */,
 				25F8476D260C348A0067B515 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,9 +523,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
 				25F84767260C34880067B515 /* AppDelegate.swift in Sources */,
 				25F84769260C34880067B515 /* SceneDelegate.swift in Sources */,
-				25F8476B260C34880067B515 /* ContentView.swift in Sources */,
+				5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */,
+				25F8476B260C34880067B515 /* HomePageView.swift in Sources */,
+				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
