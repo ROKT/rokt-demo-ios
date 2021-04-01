@@ -25,6 +25,14 @@
 		5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226A2613F63800A58DA3 /* Font+Extensions.swift */; };
 		589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226F2613F67A00A58DA3 /* ButtonDefault.swift */; };
 		589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */; };
+		5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899228326141EF900A58DA3 /* AboutRoktView.swift */; };
+		5899228A26141F3500A58DA3 /* AboutRoktModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899228926141F3500A58DA3 /* AboutRoktModel.swift */; };
+		5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899229126141F9100A58DA3 /* AboutRoktContentModel.swift */; };
+		589922972614201100A58DA3 /* AboutRoktLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922962614201100A58DA3 /* AboutRoktLinkModel.swift */; };
+		5899229D2614214500A58DA3 /* AboutRoktService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899229C2614214500A58DA3 /* AboutRoktService.swift */; };
+		589922A92615445D00A58DA3 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922A82615445D00A58DA3 /* SafariView.swift */; };
+		589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B126154BA500A58DA3 /* AboutRoktContentView.swift */; };
+		589922BA2615560800A58DA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B92615560800A58DA3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +79,14 @@
 		5899226A2613F63800A58DA3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		5899226F2613F67A00A58DA3 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultOutlined.swift; sourceTree = "<group>"; };
+		5899228326141EF900A58DA3 /* AboutRoktView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktView.swift; sourceTree = "<group>"; };
+		5899228926141F3500A58DA3 /* AboutRoktModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktModel.swift; sourceTree = "<group>"; };
+		5899229126141F9100A58DA3 /* AboutRoktContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktContentModel.swift; sourceTree = "<group>"; };
+		589922962614201100A58DA3 /* AboutRoktLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktLinkModel.swift; sourceTree = "<group>"; };
+		5899229C2614214500A58DA3 /* AboutRoktService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktService.swift; sourceTree = "<group>"; };
+		589922A82615445D00A58DA3 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		589922B126154BA500A58DA3 /* AboutRoktContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktContentView.swift; sourceTree = "<group>"; };
+		589922B92615560800A58DA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +178,8 @@
 		25F84765260C34880067B515 /* RoktDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5899229B261420B500A58DA3 /* Service */,
+				5899228826141F2100A58DA3 /* Model */,
 				589922662613DA8500A58DA3 /* Extensions */,
 				589873FC2612C38F00C904E8 /* Utils */,
 				589873F82612BF1100C904E8 /* Views */,
@@ -205,8 +223,11 @@
 		589873F82612BF1100C904E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				589922B026154B0A00A58DA3 /* SubViews */,
+				589922A72615442C00A58DA3 /* Utils */,
 				589922742613F72E00A58DA3 /* Buttons */,
 				25F8476A260C34880067B515 /* HomePageView.swift */,
+				5899228326141EF900A58DA3 /* AboutRoktView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +235,7 @@
 		589873FC2612C38F00C904E8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				589922B92615560800A58DA3 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -233,6 +255,40 @@
 				589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		5899228826141F2100A58DA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5899228926141F3500A58DA3 /* AboutRoktModel.swift */,
+				5899229126141F9100A58DA3 /* AboutRoktContentModel.swift */,
+				589922962614201100A58DA3 /* AboutRoktLinkModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5899229B261420B500A58DA3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5899229C2614214500A58DA3 /* AboutRoktService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		589922A72615442C00A58DA3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				589922A82615445D00A58DA3 /* SafariView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		589922B026154B0A00A58DA3 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				589922B126154BA500A58DA3 /* AboutRoktContentView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		A5C3ED60C4B18FDC5C202F0B /* Frameworks */ = {
@@ -526,9 +582,17 @@
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
 				25F84767260C34880067B515 /* AppDelegate.swift in Sources */,
 				25F84769260C34880067B515 /* SceneDelegate.swift in Sources */,
+				5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */,
+				589922A92615445D00A58DA3 /* SafariView.swift in Sources */,
+				5899229D2614214500A58DA3 /* AboutRoktService.swift in Sources */,
+				5899228A26141F3500A58DA3 /* AboutRoktModel.swift in Sources */,
 				5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */,
 				25F8476B260C34880067B515 /* HomePageView.swift in Sources */,
+				589922972614201100A58DA3 /* AboutRoktLinkModel.swift in Sources */,
+				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
+				589922BA2615560800A58DA3 /* Constants.swift in Sources */,
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
+				5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -728,6 +793,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

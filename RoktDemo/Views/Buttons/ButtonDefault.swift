@@ -13,24 +13,14 @@
 
 import SwiftUI
 
-struct ButtonDefault: View {
-    let text: String
-    let action: () -> Void
-    var body: some View {
-        Button(action: action, label: {
-            Text(text)
-                .font(.defaultButtonFont())
-                .padding()
-                .frame(maxWidth: .infinity)
-                .border(Color.accentColor, width: 2)
-        })
-    }
-}
-
-struct ButtonDefault_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonDefault(text: "Demo Library") {
-            
-        }
+struct ButtonDefault: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration
+            .label
+            .padding()
+            .font(.defaultButtonFont())
+            .frame(maxWidth: .infinity)
+            .foregroundColor(Color.accentColor)
+            .border(Color.accentColor, width: 2)
     }
 }
