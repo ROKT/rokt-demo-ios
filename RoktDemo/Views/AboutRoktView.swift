@@ -14,40 +14,37 @@
 import SwiftUI
 
 struct AboutRoktView: View {
+    init() {
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor = Color.accentColor.uiColor()
+    }
     let model = AboutRoktService.getAboutRokt()
-    
-    @State var showSafari = false
     
     var body: some View {
         ScrollView {
             VStack {
-                ZStack {
-                    Image("AboutBackground")
-                        .resizable()
-                    Text("About Rokt")
-                        .foregroundColor(.white)
-                        .font(.defaultBoldFont(size: 36))
-                }
+                StickyHeader {
+                    ZStack {
+                        Image("AboutBackground")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                        Text("About Rokt")
+                            .foregroundColor(.white)
+                            .font(.defaultHeadingFont(.header2))
+                    }
+                }.padding(.bottom)
                 
                 ForEach(model.contents, id: \.self) { content in
                     AboutRoktContentView(content: content)
                 }
                 
                 ForEach(model.links, id: \.self) { link in
-                    Button(action: {
-                        self.showSafari = true
-                    }) {
-                        Text(link.text)
-                    }
-                    .buttonStyle(ButtonDefault())
-                    .sheet(isPresented: $showSafari) {
-                        SafariView(url:URL(string: link.url)!)
-                    }.padding()
-                    
+                    AboutRoktLinkView(link: link)
                 }
-                Spacer()
+                
             }
         }
+        .edgesIgnoringSafeArea([.top])
     }
 }
 

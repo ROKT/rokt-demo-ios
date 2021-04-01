@@ -15,8 +15,10 @@ import SwiftUI
 
 extension Font {
     public enum FontSize: CGFloat {
+        case header1 = 32
+        case header2 = 28
+        case header3 = 18
         case title = 22
-        case header = 18
         case text = 16
         case subtitle = 12
     }
@@ -29,11 +31,19 @@ extension Font {
         return defaultBoldFont(size: 18)
     }
     
+    static func defaultHeadingFont(_ fontSize: FontSize) -> Font {
+        return defaultHeadingFont(size: fontSize.rawValue)
+    }
+    
     static func defaultFont(size: CGFloat) -> Font {
         return .custom("Soleil", size: size)
     }
     
     static func defaultBoldFont(size: CGFloat) -> Font {
         return .custom("Soleil-Bold", size: size)
+    }
+    
+    static func defaultHeadingFont(size: CGFloat) -> Font {
+        return .custom("balto-bold", size: size)
     }
 }

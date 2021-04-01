@@ -26,14 +26,13 @@ struct HomePageView: View {
                     VStack {
                         Image("RoktLogo")
                         Text("Powering the Transaction Moment™")
-                            .font(.defaultFont(.header))
+                            .font(.defaultFont(.header3))
                             .multilineTextAlignment(.center)
                             .padding()
                     }
                 }
                 Spacer()
                 VStack(spacing: 15) {
-                    
                     Button(action: {}, label: {
                         Text("Demo Library")
                     })
@@ -45,6 +44,8 @@ struct HomePageView: View {
                             Text("About Rokt")
                         })
                         .buttonStyle(ButtonDefault())
+                        .navigationBarHidden(true)
+                        .navigationBarTitle(Text("Home"))
                     
                     Button(action: {
                         self.showSafari = true

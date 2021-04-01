@@ -21,7 +21,7 @@ struct AboutRoktContentView: View {
                 Image(content.imageUrl).resizable()
             }
             Text(content.title)
-                .font(.defaultBoldFont(size: 30))
+                .font(.defaultHeadingFont(.header1))
             Rectangle().foregroundColor(Color.accentColor).frame(width: 34, height: 6, alignment: .center)
             Text(content.content)
                 .font(.defaultFont(.text))

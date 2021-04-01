@@ -33,6 +33,10 @@
 		589922A92615445D00A58DA3 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922A82615445D00A58DA3 /* SafariView.swift */; };
 		589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B126154BA500A58DA3 /* AboutRoktContentView.swift */; };
 		589922BA2615560800A58DA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B92615560800A58DA3 /* Constants.swift */; };
+		589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */; };
+		589922C72615683700A58DA3 /* balto-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 589922C62615683700A58DA3 /* balto-bold.otf */; };
+		589922CC261587A700A58DA3 /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922CB261587A700A58DA3 /* StickyHeader.swift */; };
+		589922D126158AFD00A58DA3 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922D026158AFD00A58DA3 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		589922A82615445D00A58DA3 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		589922B126154BA500A58DA3 /* AboutRoktContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktContentView.swift; sourceTree = "<group>"; };
 		589922B92615560800A58DA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktLinkView.swift; sourceTree = "<group>"; };
+		589922C62615683700A58DA3 /* balto-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "balto-bold.otf"; sourceTree = "<group>"; };
+		589922CB261587A700A58DA3 /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
+		589922D026158AFD00A58DA3 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +145,10 @@
 		25BA8D85260D94560044EF14 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				25F84766260C34880067B515 /* AppDelegate.swift */,
+				25F84768260C34880067B515 /* SceneDelegate.swift */,
+				25F8476C260C348A0067B515 /* Assets.xcassets */,
+				25F84771260C348A0067B515 /* LaunchScreen.storyboard */,
 				25BA8D86260D945F0044EF14 /* Fonts */,
 			);
 			path = Resources;
@@ -149,6 +161,7 @@
 				25BA8D87260D94B60044EF14 /* SoleilBook.otf */,
 				25BA8D88260D94B60044EF14 /* SoleilLight.otf */,
 				25BA8D89260D94B60044EF14 /* SoleilRegular.otf */,
+				589922C62615683700A58DA3 /* balto-bold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -184,10 +197,6 @@
 				589873FC2612C38F00C904E8 /* Utils */,
 				589873F82612BF1100C904E8 /* Views */,
 				25BA8D85260D94560044EF14 /* Resources */,
-				25F84766260C34880067B515 /* AppDelegate.swift */,
-				25F84768260C34880067B515 /* SceneDelegate.swift */,
-				25F8476C260C348A0067B515 /* Assets.xcassets */,
-				25F84771260C348A0067B515 /* LaunchScreen.storyboard */,
 				25F84774260C348A0067B515 /* Info.plist */,
 				25F8476E260C348A0067B515 /* Preview Content */,
 			);
@@ -244,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				5899226A2613F63800A58DA3 /* Font+Extensions.swift */,
+				589922D026158AFD00A58DA3 /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -279,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				589922A82615445D00A58DA3 /* SafariView.swift */,
+				589922CB261587A700A58DA3 /* StickyHeader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -287,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				589922B126154BA500A58DA3 /* AboutRoktContentView.swift */,
+				589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -416,6 +428,7 @@
 				25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */,
 				25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */,
 				25F84770260C348A0067B515 /* Preview Assets.xcassets in Resources */,
+				589922C72615683700A58DA3 /* balto-bold.otf in Resources */,
 				25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */,
 				25F8476D260C348A0067B515 /* Assets.xcassets in Resources */,
 			);
@@ -580,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
+				589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */,
 				25F84767260C34880067B515 /* AppDelegate.swift in Sources */,
 				25F84769260C34880067B515 /* SceneDelegate.swift in Sources */,
 				5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */,
@@ -591,6 +605,8 @@
 				589922972614201100A58DA3 /* AboutRoktLinkModel.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
 				589922BA2615560800A58DA3 /* Constants.swift in Sources */,
+				589922CC261587A700A58DA3 /* StickyHeader.swift in Sources */,
+				589922D126158AFD00A58DA3 /* Color+Extension.swift in Sources */,
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
 				5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */,
 			);

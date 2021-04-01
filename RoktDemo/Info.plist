@@ -28,6 +28,7 @@
 		<string>SoleilBook.otf</string>
 		<string>SoleilLight.otf</string>
 		<string>SoleilRegular.otf</string>
+		<string>balto-bold.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
