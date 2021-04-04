@@ -16,7 +16,7 @@ import SwiftUI
 struct AboutRoktView: View {
     init() {
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = Color.accentColor.uiColor()
+        UINavigationBar.appearance().barTintColor = UIColor(named: "AccentColor")
     }
     let model = AboutRoktService.getAboutRokt()
     

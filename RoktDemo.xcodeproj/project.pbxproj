@@ -36,7 +36,6 @@
 		589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */; };
 		589922C72615683700A58DA3 /* balto-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 589922C62615683700A58DA3 /* balto-bold.otf */; };
 		589922CC261587A700A58DA3 /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922CB261587A700A58DA3 /* StickyHeader.swift */; };
-		589922D126158AFD00A58DA3 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922D026158AFD00A58DA3 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +93,6 @@
 		589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktLinkView.swift; sourceTree = "<group>"; };
 		589922C62615683700A58DA3 /* balto-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "balto-bold.otf"; sourceTree = "<group>"; };
 		589922CB261587A700A58DA3 /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
-		589922D026158AFD00A58DA3 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				5899226A2613F63800A58DA3 /* Font+Extensions.swift */,
-				589922D026158AFD00A58DA3 /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -606,7 +603,6 @@
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
 				589922BA2615560800A58DA3 /* Constants.swift in Sources */,
 				589922CC261587A700A58DA3 /* StickyHeader.swift in Sources */,
-				589922D126158AFD00A58DA3 /* Color+Extension.swift in Sources */,
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
 				5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */,
 			);
