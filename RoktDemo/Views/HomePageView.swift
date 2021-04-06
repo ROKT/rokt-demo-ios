@@ -14,32 +14,56 @@
 import SwiftUI
 
 struct HomePageView: View {
+    @State var showSafari = false
+    
     var body: some View {
-        VStack {
-            Spacer()
-            ZStack {
-                Image("RoktBackgroundLogo")
-                    .resizable()
-                VStack {
-                    Image("RoktLogo")
-                    Text("Powering the Transaction Moment™")
-                        .font(.defaultFont(.header))
-                        .multilineTextAlignment(.center)
-                        .padding()
+        NavigationView {
+            VStack {
+                Spacer()
+                ZStack {
+                    Image("RoktBackgroundLogo")
+                        .resizable()
+                    VStack {
+                        Image("RoktLogo")
+                        Text("Powering the Transaction Moment™")
+                            .font(.defaultFont(.header3))
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    }
                 }
+                Spacer()
+                VStack(spacing: 15) {
+                    Button(action: {}, label: {
+                        Text("Demo Library")
+                    })
+                    .buttonStyle(ButtonDefaultOutlined())
+                    
+                    NavigationLink(
+                        destination: AboutRoktView(),
+                        label: {
+                            Text("About Rokt")
+                        })
+                        .buttonStyle(ButtonDefault())
+                        .navigationBarHidden(true)
+                        .navigationBarTitle(Text("Home"))
+                    
+                    Button(action: {
+                        self.showSafari = true
+                    }) {
+                        Text("Contact Us")
+                    }
+                    .buttonStyle(ButtonDefault())
+                    .sheet(isPresented: $showSafari) {
+                        SafariView(url:URL(string: Constants.Urls.ContactUS)!)
+                    }
+                    
+                    Text("® Rokt 2021 — All rights reserved App Version 1.0.0")
+                        .font(.defaultFont(.subtitle))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.gray)
+                }.padding()
             }
-            Spacer()
-            VStack(spacing: 15) {
-                ButtonDefaultOutlined(text: "Demo Library") {}
-                ButtonDefault(text: "About Rokt") {}
-                ButtonDefault(text: "Contact Us") {}
-                Text("® Rokt 2021 — All rights reserved App Version 1.0.0")
-                    .font(.defaultFont(.subtitle))
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.gray)
-            }.padding()
         }
-        
     }
 }
 

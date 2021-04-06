@@ -13,25 +13,15 @@
 
 import SwiftUI
 
-struct ButtonDefaultOutlined: View {
-    let text: String
-    let action: () -> Void
-    var body: some View {
-        Button(action: action, label: {
-            Text(text)
-                .padding()
-                .font(.defaultButtonFont())
-                .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
-                .background(Color.accentColor)
-        })
-    }
-}
-
-struct ButtonDefaultOutlined_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonDefaultOutlined(text: "About Rokt") {
-            
-        }
+struct ButtonDefaultOutlined: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration
+            .label
+            .foregroundColor(.white)
+            .padding()
+            .font(.defaultButtonFont())
+            .frame(maxWidth: .infinity)
+            .foregroundColor(.white)
+            .background(Color.accentColor)
     }
 }
