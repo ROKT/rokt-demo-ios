@@ -11,8 +11,8 @@
 //
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
-
 import Foundation
+
 struct AboutRoktService {
     static func getAboutRokt() -> AboutRoktModel {
         let contents: [AboutRoktContentModel] = [

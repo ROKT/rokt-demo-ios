@@ -16,13 +16,11 @@ import SwiftUI
 struct AboutRoktContentView: View {
     let content: AboutRoktContentModel
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 20) {
             if content.imageUrl != "" {
                 Image(content.imageUrl).resizable()
             }
-            Text(content.title)
-                .font(.defaultHeadingFont(.header1))
-            Rectangle().foregroundColor(Color.accentColor).frame(width: 34, height: 6, alignment: .center)
+            HeaderView(title: content.title)
             Text(content.content)
                 .font(.defaultFont(.text))
         }.padding()

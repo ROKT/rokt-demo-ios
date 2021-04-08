@@ -15,24 +15,27 @@ import SwiftUI
 
 struct AboutRoktView: View {
     init() {
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor(named: "AccentColor")
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().barTintColor = UIColor(named: "AccentColor")
+        UINavigationBar.appearance().backgroundColor = .clear
     }
     let model = AboutRoktService.getAboutRokt()
     
     var body: some View {
         ScrollView {
             VStack {
-                StickyHeader {
-                    ZStack {
-                        Image("AboutBackground")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                        Text("About Rokt")
-                            .foregroundColor(.white)
-                            .font(.defaultHeadingFont(.header2))
-                    }
-                }.padding(.bottom)
+                ExtendableHeader {
+                    ExtendableHeader {
+                        ZStack {
+                            Image("AboutBackground")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                            Text("About Rokt")
+                                .foregroundColor(.white)
+                                .font(.defaultHeadingFont(.header2))
+                        }
+                    }.padding(.bottom)
+                }
                 
                 ForEach(model.contents, id: \.self) { content in
                     AboutRoktContentView(content: content)
@@ -45,6 +48,7 @@ struct AboutRoktView: View {
             }
         }
         .edgesIgnoringSafeArea([.top])
+        .modifier(NavigationBarTransparent(title: ""))
     }
 }
 
