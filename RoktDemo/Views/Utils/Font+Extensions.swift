@@ -35,6 +35,10 @@ extension Font {
         return defaultHeadingFont(size: fontSize.rawValue)
     }
     
+    static func defaultBoldFont(_ fontSize: FontSize) -> Font {
+        return defaultBoldFont(size: fontSize.rawValue)
+    }
+    
     static func defaultFont(size: CGFloat) -> Font {
         return .custom("Soleil", size: size)
     }

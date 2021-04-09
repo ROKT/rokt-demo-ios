@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_gumtree_logo.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

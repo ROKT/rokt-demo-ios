@@ -4,8 +4,9 @@
 target 'RoktDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Rokt-Widget'
   # Pods for RoktDemo
+  pod 'Rokt-Widget'
+  pod 'Kingfisher', '~> 6.2.1'
 
   target 'RoktDemoTests' do
     inherit! :search_paths

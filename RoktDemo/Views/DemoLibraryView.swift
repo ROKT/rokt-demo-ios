@@ -13,11 +13,21 @@ struct DemoLibraryView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20){
+            VStack(alignment: .leading, spacing: 20) {
                 HeaderView(title: demo.demoTitle)
                 
                 Text(demo.demoDescription)
                     .font(.defaultFont(.text))
+                
+                DemoItemView(demoItemModel: demo.defaultPlacementsExamples)
+                
+                DemoItemView(demoItemModel: demo.customConfigurationPage)
+                
+                DemoItemView(demoItemModel: demo.preDefinedScreen1)
+                
+                DemoItemView(demoItemModel: demo.preDefinedScreen2)
+                
+                DemoItemView(demoItemModel: demo.preDefinedScreen3)
             }.padding()
         }.background(Color.gray3)
         .modifier(NavigationBarGray(title: ""))

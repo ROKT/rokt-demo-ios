@@ -25,27 +25,26 @@ struct AboutRoktView: View {
         ScrollView {
             VStack {
                 ExtendableHeader {
-                    ExtendableHeader {
-                        ZStack {
-                            Image("AboutBackground")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                            Text("About Rokt")
-                                .foregroundColor(.white)
-                                .font(.defaultHeadingFont(.header2))
-                        }
-                    }.padding(.bottom)
-                }
-                
-                ForEach(model.contents, id: \.self) { content in
-                    AboutRoktContentView(content: content)
-                }
-                
-                ForEach(model.links, id: \.self) { link in
-                    AboutRoktLinkView(link: link)
-                }
-                
+                    ZStack {
+                        Image("AboutBackground")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                        Text("About Rokt")
+                            .foregroundColor(.white)
+                            .font(.defaultHeadingFont(.header2))
+                    }
+                }.padding(.bottom)
             }
+            
+            ForEach(model.contents, id: \.self) { content in
+                AboutRoktContentView(content: content)
+            }
+            
+            ForEach(model.links, id: \.self) { link in
+                AboutRoktLinkView(link: link)
+            }
+            
+            
         }
         .edgesIgnoringSafeArea([.top])
         .modifier(NavigationBarTransparent(title: ""))

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_feature_walkthrough.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

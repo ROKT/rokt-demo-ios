@@ -30,23 +30,28 @@ struct DemoLibraryService {
 
                                 This includes overlay and embedded placements as well as email, traffic, phone, and app install offers.
 
-                                """, iconURL: ""),
+                                """,
+                                                              iconURL: "FeatureWalkthrough"),
                              customConfigurationPage:
                                 CustomConfigurationPageModel(title: "Custom Checkout Flow",
                                                              shortDescription: "View a specific placement or combination of placements on an unbranded confirmation page via a custom checkout flow with configurable options.",
-                                                             longDescription: "", iconURL: ""),
+                                                             longDescription: "",
+                                                             iconURL: "CustomerCheckout"),
                              preDefinedScreen1:
                                 PreDefinedScreen1Model(title: "Confirmation Page",
                                                        shortDescription: "View a demonstration of how Groupon has integrated in-app Rokt technology into their post-purchase confirmation page. ",
-                                                       longDescription: "", iconURL: ""),
+                                                       longDescription: "",
+                                                       iconURL: "GrouponLogo"),
                              preDefinedScreen2:
                                 PreDefinedScreen2Model(title: "Confirmation Page",
                                                        shortDescription: "View a demonstration of how Stubhub has integrated in-app Rokt technology into their post-purchase confirmation page.",
-                                                       longDescription: "", iconURL: ""),
+                                                       longDescription: "",
+                                                       iconURL: "StubhubLogo"),
                              preDefinedScreen3:
                                 PreDefinedScreen3Model(title: "Confirmation Page",
                                                        shortDescription: "View a demonstration of how Gumtree has integrated in-app Rokt technology into their post-listing confirmation page.",
-                                                       longDescription: "", iconURL: ""))
+                                                       longDescription: "",
+                                                       iconURL: "GumtreeLogo"))
         
     }
 }

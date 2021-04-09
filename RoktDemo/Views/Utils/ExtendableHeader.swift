@@ -18,7 +18,7 @@ struct ExtendableHeader<Content: View>: View {
     var content: Content
     var minHeight: CGFloat
     
-    init(minHeight: CGFloat = 250, @ViewBuilder content: () -> Content) {
+    init(minHeight: CGFloat = 180, @ViewBuilder content: () -> Content) {
         self.minHeight = minHeight
         self.content = content()
     }

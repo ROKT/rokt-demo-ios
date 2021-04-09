@@ -12,13 +12,16 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import SwiftUI
+import Kingfisher
 
 struct AboutRoktContentView: View {
     let content: AboutRoktContentModel
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             if content.imageUrl != "" {
-                Image(content.imageUrl).resizable()
+                KFImage.url(URL(string: content.imageUrl))
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
             }
             HeaderView(title: content.title)
             Text(content.content)
