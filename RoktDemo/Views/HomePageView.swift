@@ -34,15 +34,15 @@ struct HomePageView: View {
                 Spacer()
                 VStack(spacing: 15) {
                     NavigationLink(
-                        destination: DemoLibraryView(),
+                        destination: DemoLibraryView(viewModel: DemoLibraryViewModel()),
                         label: {
                             Text("Demo Library")
                         })
                         .buttonStyle(ButtonDefaultOutlined())
                         .navigationBarTitle(Text(""))
-
+                    
                     NavigationLink(
-                        destination: AboutRoktView(),
+                        destination: AboutRoktView(viewModel: AboutRoktViewModel()),
                         label: {
                             Text("About Rokt")
                         })

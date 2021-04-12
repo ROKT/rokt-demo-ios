@@ -23,6 +23,6 @@ struct NavigationBarBlack: ViewModifier {
             .navigationBarHidden(false)
             .background(NavigationBarAccessor { navigationBar in
                 navigationBar.tintColor = .white
-           })
+            })
     }
 }

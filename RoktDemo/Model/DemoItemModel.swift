@@ -13,7 +13,7 @@
 
 import Foundation
 
-class DemoItemModel: Codable {
+class DemoItemModel: Codable, Hashable {
     var title: String
     var shortDescription: String
     var longDescription: String
@@ -28,4 +28,19 @@ class DemoItemModel: Codable {
         self.longDescription = longDescription
         self.iconURL = iconURL
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+        hasher.combine(shortDescription)
+        hasher.combine(longDescription)
+        hasher.combine(iconURL)
+    }
+    
+    static func == (lhs: DemoItemModel, rhs: DemoItemModel) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.shortDescription == rhs.shortDescription &&
+            lhs.longDescription == rhs.longDescription &&
+            lhs.iconURL == rhs.iconURL
+    }
+    
 }

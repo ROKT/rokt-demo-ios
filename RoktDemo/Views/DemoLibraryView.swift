@@ -2,40 +2,45 @@
 //  DemoLibraryView.swift
 //  RoktDemo
 //
-//  Created by Danial Motahari on 6/4/21.
+//  Copyright 2020 Rokt Pte Ltd
 //
+//  Licensed under the Rokt Software Development Kit (SDK) Terms of Use
+//  Version 2.0 (the "License");
+//
+//  You may not use this file except in compliance with the License.
+//
+//  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import SwiftUI
 
 struct DemoLibraryView: View {
     
-    let demo = DemoLibraryService.getDemoLibrary()
+    @ObservedObject var viewModel: DemoLibraryViewModel
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                HeaderView(title: demo.demoTitle)
+                HeaderView(title: viewModel.demoTitle)
                 
-                Text(demo.demoDescription)
+                Text(viewModel.demoDescription)
                     .font(.defaultFont(.text))
                 
-                DemoItemView(demoItemModel: demo.defaultPlacementsExamples)
-                
-                DemoItemView(demoItemModel: demo.customConfigurationPage)
-                
-                DemoItemView(demoItemModel: demo.preDefinedScreen1)
-                
-                DemoItemView(demoItemModel: demo.preDefinedScreen2)
-                
-                DemoItemView(demoItemModel: demo.preDefinedScreen3)
+                ForEach(viewModel.demoItems, id: \.self) { item in
+                    DemoItemView(demoItemModel: item)
+                }
             }.padding()
-        }.background(Color.gray3)
+        }
+        .onAppear {
+            viewModel.loadDemoItems()
+        }
+        .background(Color.gray3)
+        .edgesIgnoringSafeArea([.bottom])
         .modifier(NavigationBarGray(title: ""))
     }
 }
 
 struct DemoLibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        DemoLibraryView()
+        DemoLibraryView(viewModel: DemoLibraryViewModel())
     }
 }
