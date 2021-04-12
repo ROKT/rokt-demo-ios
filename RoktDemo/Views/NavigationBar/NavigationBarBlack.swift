@@ -15,6 +15,8 @@ import SwiftUI
 
 struct NavigationBarBlack: ViewModifier {
     var title: String
+    var trailingButtonTitle: String
+    var trailingButtonAction: () -> Void
     
     func body(content: Content) -> some View {
         content
@@ -24,5 +26,8 @@ struct NavigationBarBlack: ViewModifier {
             .background(NavigationBarAccessor { navigationBar in
                 navigationBar.tintColor = .white
             })
+            .navigationBarItems(trailing: Button(action: trailingButtonAction, label: {
+                Text(trailingButtonTitle)
+            }))
     }
 }
