@@ -11,8 +11,8 @@
 //
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
-
 import Foundation
+
 struct AboutRoktService {
     static func getAboutRokt() -> AboutRoktModel {
         let contents: [AboutRoktContentModel] = [
@@ -25,7 +25,7 @@ struct AboutRoktService {
 
                 These examples are used to show Rokt’s capabilities, are for demonstration purposes only, and may not be true reflections of the partners applications. This app does not collect personal or device identifiers.
                 """),
-            AboutRoktContentModel(imageUrl: "",
+            AboutRoktContentModel(imageUrl: "https://apps.rokt.com/store/mobile/img/aboutrokt1.png",
                                   title: "Who we are",
                                   content: """
                 Rokt is the global leader in e-commerce technology, powering the Transaction Moment™ of best-in-class companies including Live Nation, Groupon, Staples, Lands' End, Fanatics, GoDaddy, Vistaprint, and HelloFresh. Rokt's mission: To make e-commerce smarter, faster, and better.

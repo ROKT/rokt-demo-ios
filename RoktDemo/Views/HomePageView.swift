@@ -33,19 +33,21 @@ struct HomePageView: View {
                 }
                 Spacer()
                 VStack(spacing: 15) {
-                    Button(action: {}, label: {
-                        Text("Demo Library")
-                    })
-                    .buttonStyle(ButtonDefaultOutlined())
+                    NavigationLink(
+                        destination: DemoLibraryView(viewModel: DemoLibraryViewModel()),
+                        label: {
+                            Text("Demo Library")
+                        })
+                        .buttonStyle(ButtonDefaultOutlined())
+                        .navigationBarTitle(Text(""))
                     
                     NavigationLink(
-                        destination: AboutRoktView(),
+                        destination: AboutRoktView(viewModel: AboutRoktViewModel()),
                         label: {
                             Text("About Rokt")
                         })
                         .buttonStyle(ButtonDefault())
-                        .navigationBarHidden(true)
-                        .navigationBarTitle(Text("Home"))
+                        .navigationBarTitle(Text(""))
                     
                     Button(action: {
                         self.showSafari = true
@@ -63,7 +65,8 @@ struct HomePageView: View {
                         .foregroundColor(.gray)
                 }.padding()
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
+        .modifier(NavigationBarTransparent(title: ""))
     }
 }
 

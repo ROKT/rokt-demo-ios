@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		17E6B740C63A1CB615166AEB /* Pods_RoktDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */; };
+		25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25583903261FE5D600AF7FAE /* DemoItemView.swift */; };
+		255839092620072700AF7FAE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255839082620072700AF7FAE /* String+Extension.swift */; };
+		256E3D3E2623DFE000639FE0 /* DemoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */; };
+		256E3D502623FB8D00639FE0 /* AboutRoktViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */; };
+		256EB75B261C0EFE00B959EF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB75A261C0EFE00B959EF /* HeaderView.swift */; };
+		256EB760261C0F7F00B959EF /* DemoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */; };
+		256EB765261C0FD900B959EF /* DemoLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB764261C0FD900B959EF /* DemoLibraryModel.swift */; };
+		256EB76A261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB769261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift */; };
+		256EB76F261C1CB700B959EF /* DemoItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB76E261C1CB700B959EF /* DemoItemModel.swift */; };
+		256EB774261C1FFB00B959EF /* CustomConfigurationPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB773261C1FFB00B959EF /* CustomConfigurationPageModel.swift */; };
+		256EB779261C206A00B959EF /* PreDefinedScreen1Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB778261C206A00B959EF /* PreDefinedScreen1Model.swift */; };
+		256EB77E261C208500B959EF /* PreDefinedScreen2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB77D261C208500B959EF /* PreDefinedScreen2Model.swift */; };
+		256EB783261C209200B959EF /* PreDefinedScreen3Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB782261C209200B959EF /* PreDefinedScreen3Model.swift */; };
+		256EB788261C26FA00B959EF /* DemoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB787261C26FA00B959EF /* DemoLibraryService.swift */; };
+		25747150261E7EB100B8C0C7 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */; };
+		2574715B261EB40B00B8C0C7 /* NavigationBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */; };
+		25747164261EB5B200B8C0C7 /* NavigationBarGray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */; };
+		2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */; };
+		25747171261EB5D200B8C0C7 /* NavigationBarBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */; };
+		2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576572A261D4CBF003F3D26 /* Color+Extensions.swift */; };
 		25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D87260D94B60044EF14 /* SoleilBook.otf */; };
 		25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D88260D94B60044EF14 /* SoleilLight.otf */; };
 		25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D89260D94B60044EF14 /* SoleilRegular.otf */; };
@@ -35,7 +55,7 @@
 		589922BA2615560800A58DA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B92615560800A58DA3 /* Constants.swift */; };
 		589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */; };
 		589922C72615683700A58DA3 /* balto-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 589922C62615683700A58DA3 /* balto-bold.otf */; };
-		589922CC261587A700A58DA3 /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922CB261587A700A58DA3 /* StickyHeader.swift */; };
+		589922CC261587A700A58DA3 /* ExtendableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922CB261587A700A58DA3 /* ExtendableHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +78,27 @@
 /* Begin PBXFileReference section */
 		10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20098664A1E8183EDD086EA3 /* Pods-RoktDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.release.xcconfig"; sourceTree = "<group>"; };
+		25583903261FE5D600AF7FAE /* DemoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemView.swift; sourceTree = "<group>"; };
+		255839082620072700AF7FAE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		256673A02D436BE09A2A2212 /* Pods-RoktDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLibraryViewModel.swift; sourceTree = "<group>"; };
+		256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktViewModel.swift; sourceTree = "<group>"; };
+		256EB75A261C0EFE00B959EF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLibraryView.swift; sourceTree = "<group>"; };
+		256EB764261C0FD900B959EF /* DemoLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLibraryModel.swift; sourceTree = "<group>"; };
+		256EB769261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlacementExamplesModel.swift; sourceTree = "<group>"; };
+		256EB76E261C1CB700B959EF /* DemoItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemModel.swift; sourceTree = "<group>"; };
+		256EB773261C1FFB00B959EF /* CustomConfigurationPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfigurationPageModel.swift; sourceTree = "<group>"; };
+		256EB778261C206A00B959EF /* PreDefinedScreen1Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreDefinedScreen1Model.swift; sourceTree = "<group>"; };
+		256EB77D261C208500B959EF /* PreDefinedScreen2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreDefinedScreen2Model.swift; sourceTree = "<group>"; };
+		256EB782261C209200B959EF /* PreDefinedScreen3Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreDefinedScreen3Model.swift; sourceTree = "<group>"; };
+		256EB787261C26FA00B959EF /* DemoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLibraryService.swift; sourceTree = "<group>"; };
+		2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarAccessor.swift; sourceTree = "<group>"; };
+		25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarGray.swift; sourceTree = "<group>"; };
+		2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparent.swift; sourceTree = "<group>"; };
+		25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBlack.swift; sourceTree = "<group>"; };
+		2576572A261D4CBF003F3D26 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		25BA8D87260D94B60044EF14 /* SoleilBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBook.otf; sourceTree = "<group>"; };
 		25BA8D88260D94B60044EF14 /* SoleilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilLight.otf; sourceTree = "<group>"; };
 		25BA8D89260D94B60044EF14 /* SoleilRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilRegular.otf; sourceTree = "<group>"; };
@@ -92,7 +132,7 @@
 		589922B92615560800A58DA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktLinkView.swift; sourceTree = "<group>"; };
 		589922C62615683700A58DA3 /* balto-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "balto-bold.otf"; sourceTree = "<group>"; };
-		589922CB261587A700A58DA3 /* StickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
+		589922CB261587A700A58DA3 /* ExtendableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendableHeader.swift; sourceTree = "<group>"; };
 		C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +178,25 @@
 				F8CC10E03DF2BF60BAEACEE2 /* Pods-RoktDemoTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		256E3D3C2623DDE600639FE0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */,
+				256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		25747162261EB53F00B8C0C7 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */,
+				2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */,
+				25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		25BA8D85260D94560044EF14 /* Resources */ = {
@@ -194,6 +253,7 @@
 				589922662613DA8500A58DA3 /* Extensions */,
 				589873FC2612C38F00C904E8 /* Utils */,
 				589873F82612BF1100C904E8 /* Views */,
+				256E3D3C2623DDE600639FE0 /* ViewModels */,
 				25BA8D85260D94560044EF14 /* Resources */,
 				25F84774260C348A0067B515 /* Info.plist */,
 				25F8476E260C348A0067B515 /* Preview Content */,
@@ -230,11 +290,13 @@
 		589873F82612BF1100C904E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				25747162261EB53F00B8C0C7 /* NavigationBar */,
 				589922B026154B0A00A58DA3 /* SubViews */,
 				589922A72615442C00A58DA3 /* Utils */,
 				589922742613F72E00A58DA3 /* Buttons */,
 				25F8476A260C34880067B515 /* HomePageView.swift */,
 				5899228326141EF900A58DA3 /* AboutRoktView.swift */,
+				256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				589922B92615560800A58DA3 /* Constants.swift */,
+				255839082620072700AF7FAE /* String+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -250,7 +313,6 @@
 		589922662613DA8500A58DA3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5899226A2613F63800A58DA3 /* Font+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +332,13 @@
 				5899228926141F3500A58DA3 /* AboutRoktModel.swift */,
 				5899229126141F9100A58DA3 /* AboutRoktContentModel.swift */,
 				589922962614201100A58DA3 /* AboutRoktLinkModel.swift */,
+				256EB764261C0FD900B959EF /* DemoLibraryModel.swift */,
+				256EB76E261C1CB700B959EF /* DemoItemModel.swift */,
+				256EB769261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift */,
+				256EB773261C1FFB00B959EF /* CustomConfigurationPageModel.swift */,
+				256EB778261C206A00B959EF /* PreDefinedScreen1Model.swift */,
+				256EB77D261C208500B959EF /* PreDefinedScreen2Model.swift */,
+				256EB782261C209200B959EF /* PreDefinedScreen3Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				5899229C2614214500A58DA3 /* AboutRoktService.swift */,
+				256EB787261C26FA00B959EF /* DemoLibraryService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -285,8 +355,11 @@
 		589922A72615442C00A58DA3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				589922A82615445D00A58DA3 /* SafariView.swift */,
-				589922CB261587A700A58DA3 /* StickyHeader.swift */,
+				5899226A2613F63800A58DA3 /* Font+Extensions.swift */,
+				589922CB261587A700A58DA3 /* ExtendableHeader.swift */,
+				2576572A261D4CBF003F3D26 /* Color+Extensions.swift */,
+				2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */,
+				2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -296,6 +369,9 @@
 			children = (
 				589922B126154BA500A58DA3 /* AboutRoktContentView.swift */,
 				589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */,
+				256EB75A261C0EFE00B959EF /* HeaderView.swift */,
+				589922A82615445D00A58DA3 /* SafariView.swift */,
+				25583903261FE5D600AF7FAE /* DemoItemView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -589,20 +665,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256EB77E261C208500B959EF /* PreDefinedScreen2Model.swift in Sources */,
+				256EB779261C206A00B959EF /* PreDefinedScreen1Model.swift in Sources */,
+				2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */,
+				256EB76A261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift in Sources */,
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
+				256EB774261C1FFB00B959EF /* CustomConfigurationPageModel.swift in Sources */,
+				256EB765261C0FD900B959EF /* DemoLibraryModel.swift in Sources */,
 				589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */,
+				255839092620072700AF7FAE /* String+Extension.swift in Sources */,
 				25F84767260C34880067B515 /* AppDelegate.swift in Sources */,
+				256E3D502623FB8D00639FE0 /* AboutRoktViewModel.swift in Sources */,
+				256EB760261C0F7F00B959EF /* DemoLibraryView.swift in Sources */,
+				2574715B261EB40B00B8C0C7 /* NavigationBarAccessor.swift in Sources */,
+				256EB788261C26FA00B959EF /* DemoLibraryService.swift in Sources */,
 				25F84769260C34880067B515 /* SceneDelegate.swift in Sources */,
+				2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */,
 				5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */,
 				589922A92615445D00A58DA3 /* SafariView.swift in Sources */,
+				256EB75B261C0EFE00B959EF /* HeaderView.swift in Sources */,
 				5899229D2614214500A58DA3 /* AboutRoktService.swift in Sources */,
 				5899228A26141F3500A58DA3 /* AboutRoktModel.swift in Sources */,
 				5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */,
 				25F8476B260C34880067B515 /* HomePageView.swift in Sources */,
+				25747171261EB5D200B8C0C7 /* NavigationBarBlack.swift in Sources */,
 				589922972614201100A58DA3 /* AboutRoktLinkModel.swift in Sources */,
+				256EB76F261C1CB700B959EF /* DemoItemModel.swift in Sources */,
+				25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */,
+				256EB783261C209200B959EF /* PreDefinedScreen3Model.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
+				25747164261EB5B200B8C0C7 /* NavigationBarGray.swift in Sources */,
+				25747150261E7EB100B8C0C7 /* NavigationBarModifier.swift in Sources */,
+				256E3D3E2623DFE000639FE0 /* DemoLibraryViewModel.swift in Sources */,
 				589922BA2615560800A58DA3 /* Constants.swift in Sources */,
-				589922CC261587A700A58DA3 /* StickyHeader.swift in Sources */,
+				589922CC261587A700A58DA3 /* ExtendableHeader.swift in Sources */,
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
 				5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */,
 			);

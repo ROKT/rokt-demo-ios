@@ -1,16 +1,20 @@
 PODS:
+  - Kingfisher (6.2.1)
   - Rokt-Widget (3.5.0)
 
 DEPENDENCIES:
+  - Kingfisher (~> 6.2.1)
   - Rokt-Widget
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - Rokt-Widget
 
 SPEC CHECKSUMS:
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   Rokt-Widget: 543aaffe09439ee50601ff731b56d5e12d5b1201
 
-PODFILE CHECKSUM: 3cf80ef5546cd84f697d19e8635101abe1725951
+PODFILE CHECKSUM: b011797794bfb906fc82848295d8badb7c1d2a85
 
 COCOAPODS: 1.10.1

@@ -22,6 +22,6 @@ struct ButtonDefaultOutlined: ButtonStyle {
             .font(.defaultButtonFont())
             .frame(maxWidth: .infinity)
             .foregroundColor(.white)
-            .background(Color.accentColor)
+            .background(Color.appColor)
     }
 }

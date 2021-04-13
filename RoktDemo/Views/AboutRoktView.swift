@@ -14,16 +14,13 @@
 import SwiftUI
 
 struct AboutRoktView: View {
-    init() {
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = UIColor(named: "AccentColor")
-    }
-    let model = AboutRoktService.getAboutRokt()
+    
+    @ObservedObject var viewModel: AboutRoktViewModel
     
     var body: some View {
         ScrollView {
             VStack {
-                StickyHeader {
+                ExtendableHeader {
                     ZStack {
                         Image("AboutBackground")
                             .resizable()
@@ -33,23 +30,27 @@ struct AboutRoktView: View {
                             .font(.defaultHeadingFont(.header2))
                     }
                 }.padding(.bottom)
-                
-                ForEach(model.contents, id: \.self) { content in
-                    AboutRoktContentView(content: content)
-                }
-                
-                ForEach(model.links, id: \.self) { link in
-                    AboutRoktLinkView(link: link)
-                }
-                
             }
+            
+            ForEach(viewModel.aboutModel.contents, id: \.self) { content in
+                AboutRoktContentView(content: content)
+            }
+            
+            ForEach(viewModel.aboutModel.links, id: \.self) { link in
+                AboutRoktLinkView(link: link)
+            }
+            
+        }
+        .onAppear {
+            viewModel.loadAboutRokt()
         }
         .edgesIgnoringSafeArea([.top])
+        .modifier(NavigationBarTransparent(title: ""))
     }
 }
 
 struct AboutRoktView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutRoktView()
+        AboutRoktView(viewModel: AboutRoktViewModel())
     }
 }

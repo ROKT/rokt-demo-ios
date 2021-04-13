@@ -1,5 +1,5 @@
 //
-//  StickyHeader.swift
+//  ExtendableHeader.swift
 //  RoktDemo
 //
 //  Copyright 2020 Rokt Pte Ltd
@@ -13,12 +13,12 @@
 
 import SwiftUI
 
-struct StickyHeader<Content: View>: View {
+struct ExtendableHeader<Content: View>: View {
 
-    var minHeight: CGFloat
     var content: Content
+    var minHeight: CGFloat
     
-    init(minHeight: CGFloat = 200, @ViewBuilder content: () -> Content) {
+    init(minHeight: CGFloat = 50, @ViewBuilder content: () -> Content) {
         self.minHeight = minHeight
         self.content = content()
     }
@@ -27,11 +27,14 @@ struct StickyHeader<Content: View>: View {
         GeometryReader { geo in
             if(geo.frame(in: .global).minY <= 0) {
                 content
-                    .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                    .frame(width: geo.size.width,
+                           height: geo.size.height,
+                           alignment: .center)
             } else {
                 content
                     .offset(y: -geo.frame(in: .global).minY)
-                    .frame(width: geo.size.width, height: geo.size.height + geo.frame(in: .global).minY)
+                    .frame(width: geo.size.width,
+                           height: geo.size.height + geo.frame(in: .global).minY)
             }
         }.frame(minHeight: minHeight)
     }

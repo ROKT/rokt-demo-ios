@@ -20,7 +20,7 @@ struct ButtonDefault: ButtonStyle {
             .padding()
             .font(.defaultButtonFont())
             .frame(maxWidth: .infinity)
-            .foregroundColor(Color.accentColor)
-            .border(Color.accentColor, width: 2)
+            .foregroundColor(Color.appColor)
+            .border(Color.appColor, width: 2)
     }
 }
