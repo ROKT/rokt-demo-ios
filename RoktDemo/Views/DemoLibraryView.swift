@@ -26,7 +26,12 @@ struct DemoLibraryView: View {
                     .font(.defaultFont(.text))
                 
                 ForEach(viewModel.demoItems, id: \.self) { item in
-                    DemoItemView(demoItemModel: item)
+                    NavigationLink(
+                        destination: getDemoItemDestination(item),
+                        label: {
+                            DemoItemView(demoItemModel: item)
+                        })
+                    
                 }
             }.padding()
         }
@@ -36,6 +41,15 @@ struct DemoLibraryView: View {
         .background(Color.gray3)
         .edgesIgnoringSafeArea([.bottom])
         .modifier(NavigationBarGray(title: ""))
+    }
+    
+    @ViewBuilder func getDemoItemDestination(_ item: DemoItemModel) -> some View {
+        
+        if item is DefaultPlacementExamplesModel {
+            FeatureWalkthroughView(model: item as! DefaultPlacementExamplesModel )
+        } else {
+            EmptyView()
+        }
     }
 }
 

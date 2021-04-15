@@ -60,7 +60,7 @@ struct HomePageView: View {
                     }
                     
                     Text("® Rokt 2021 — All rights reserved App Version 1.0.0")
-                        .font(.defaultFont(.subtitle))
+                        .font(.defaultFont(.subtitle2))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.gray)
                 }.padding()
