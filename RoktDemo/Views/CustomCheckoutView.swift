@@ -1,5 +1,5 @@
 //
-//  FeatureWalkthroughView.swift
+//  CustomCheckoutView.swift
 //  RoktDemo
 //
 //  Licensed under the Rokt Software Development Kit (SDK) Terms of Use
@@ -11,11 +11,10 @@
 
 import SwiftUI
 
-struct FeatureWalkthroughView: View {
-    
+struct CustomCheckoutView: View {
     @State var isDisclaimerShown = false
     
-    let model: DefaultPlacementExamplesModel
+    let model: CustomConfigurationPageModel
     var body: some View {
         ZStack {
             
@@ -60,9 +59,9 @@ struct FeatureWalkthroughView: View {
                 
             }.opacity(isDisclaimerShown ? 0 : 1)
             .padding(.bottom, 20)
-            
+
             if isDisclaimerShown {
-                AlertView(shown: $isDisclaimerShown, message: AlertView.template2) {
+                AlertView(shown: $isDisclaimerShown, message: AlertView.template1) {
                     
                 }
             }
@@ -74,17 +73,18 @@ struct FeatureWalkthroughView: View {
     }
 }
 
-struct FeatureWalkthroughView_Previews: PreviewProvider {
+struct CustomCheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureWalkthroughView(model:
-                                DefaultPlacementExamplesModel(title: "Feature Walkthrough",
-                                                              shortDescription: "",
-                                                              longDescription: """
-The in-app feature walkthrough highlights the various placement and offer types that are available to native app integrations.
-\n\nThis includes overlay and embedded placements as well as email, traffic, phone, and app install offers.
-""",
-                                                              iconURL: "FeatureWalkthrough"))
+        CustomCheckoutView(model:
+                            CustomConfigurationPageModel(title: "Custom Checkout Flow",
+                                                         shortDescription: "",
+                                                         longDescription: """
+   The Custom Checkout Flow allows you to preview a specific placement from a specific account in an unbranded confirmation page.
+   This allows you to preview the specific UI of this placement and experience the in-app behaviour of the Rokt placement.
+   \n\nNote: In order to preview a specific placement, you will require details about your Rokt account and placement configuration.
+   If you do not have these, please reach out to your Rokt Account Manager.
+
+   """,
+                                                         iconURL: "CustomerCheckout"))
     }
 }
-
-

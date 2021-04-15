@@ -29,13 +29,18 @@ struct DemoLibraryService {
                                 The in-app feature walkthrough highlights the various placement and offer types that are available to native app integrations.
 
                                 This includes overlay and embedded placements as well as email, traffic, phone, and app install offers.
-
                                 """,
                                                               iconURL: "FeatureWalkthrough"),
                              customConfigurationPage:
                                 CustomConfigurationPageModel(title: "Custom Checkout Flow",
                                                              shortDescription: "View a specific placement or combination of placements on an unbranded confirmation page via a custom checkout flow with configurable options.",
-                                                             longDescription: "",
+                                                             longDescription: """
+The Custom Checkout Flow allows you to preview a specific placement from a specific account in an unbranded confirmation page.
+This allows you to preview the specific UI of this placement and experience the in-app behaviour of the Rokt placement.
+
+\n\nNote: In order to preview a specific placement, you will require details about your Rokt account and placement configuration.
+If you do not have these, please reach out to your Rokt Account Manager.
+""",
                                                              iconURL: "CustomerCheckout"),
                              preDefinedScreen1:
                                 PreDefinedScreen1Model(title: "Confirmation Page",

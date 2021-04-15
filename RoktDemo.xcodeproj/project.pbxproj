@@ -35,6 +35,7 @@
 		25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D89260D94B60044EF14 /* SoleilRegular.otf */; };
 		25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D8A260D94B60044EF14 /* SoleilBold.otf */; };
 		25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2A72627F51A00D8AB79 /* AlertView.swift */; };
+		25CBB2AD2628044800D8AB79 /* CustomCheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2AC2628044800D8AB79 /* CustomCheckoutView.swift */; };
 		25F84767260C34880067B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84766260C34880067B515 /* AppDelegate.swift */; };
 		25F84769260C34880067B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84768260C34880067B515 /* SceneDelegate.swift */; };
 		25F8476B260C34880067B515 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8476A260C34880067B515 /* HomePageView.swift */; };
@@ -109,6 +110,7 @@
 		25BA8D89260D94B60044EF14 /* SoleilRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilRegular.otf; sourceTree = "<group>"; };
 		25BA8D8A260D94B60044EF14 /* SoleilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBold.otf; sourceTree = "<group>"; };
 		25CBB2A72627F51A00D8AB79 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		25CBB2AC2628044800D8AB79 /* CustomCheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckoutView.swift; sourceTree = "<group>"; };
 		25F84763260C34880067B515 /* RoktDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoktDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F84766260C34880067B515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F84768260C34880067B515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				5899228326141EF900A58DA3 /* AboutRoktView.swift */,
 				256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */,
 				256E27A82626B79000EC7D31 /* FeatureWalkthroughView.swift */,
+				25CBB2AC2628044800D8AB79 /* CustomCheckoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				256EB76A261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift in Sources */,
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
 				256EB774261C1FFB00B959EF /* CustomConfigurationPageModel.swift in Sources */,
+				25CBB2AD2628044800D8AB79 /* CustomCheckoutView.swift in Sources */,
 				256EB765261C0FD900B959EF /* DemoLibraryModel.swift in Sources */,
 				25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */,
 				589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */,

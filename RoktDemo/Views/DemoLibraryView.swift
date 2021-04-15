@@ -45,8 +45,10 @@ struct DemoLibraryView: View {
     
     @ViewBuilder func getDemoItemDestination(_ item: DemoItemModel) -> some View {
         
-        if item is DefaultPlacementExamplesModel {
-            FeatureWalkthroughView(model: item as! DefaultPlacementExamplesModel )
+        if let model = item as? DefaultPlacementExamplesModel {
+            FeatureWalkthroughView(model: model)
+        } else if let model = item as? CustomConfigurationPageModel {
+            CustomCheckoutView(model: model)
         } else {
             EmptyView()
         }
