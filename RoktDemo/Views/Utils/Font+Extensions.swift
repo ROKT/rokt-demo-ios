@@ -20,7 +20,8 @@ extension Font {
         case header3 = 18
         case title = 22
         case text = 16
-        case subtitle = 12
+        case subtitle1 = 14
+        case subtitle2 = 12
     }
     
     static func defaultFont(_ fontSize: FontSize) -> Font {
