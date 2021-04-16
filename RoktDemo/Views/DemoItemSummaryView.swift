@@ -11,21 +11,21 @@
 
 import SwiftUI
 
-struct CustomCheckoutView: View {
+struct DemoItemSummaryView: View {
     @State var isDisclaimerShown = false
     
-    let model: CustomConfigurationPageModel
+    let viewModel: DemoItemSummaryViewModel
     var body: some View {
         ZStack {
             
             VStack {
                 VStack(alignment: .center){
-                    Image(model.iconURL)
+                    Image(viewModel.model.iconURL)
                         .background(Color.black)
                         .foregroundColor(Color.white)
                         .padding()
                     
-                    Text(model.title)
+                    Text(viewModel.model.title)
                         .foregroundColor(.white)
                         .font(.defaultHeadingFont(.header1))
                 }
@@ -42,7 +42,7 @@ struct CustomCheckoutView: View {
                 Spacer()
                 ScrollView{
                     VStack {
-                        Text(model.longDescription)
+                        Text(viewModel.model.longDescription)
                             .lineLimit(.none)
                             .font(.defaultFont(.text))
                             .padding()
@@ -61,7 +61,7 @@ struct CustomCheckoutView: View {
             .padding(.bottom, 20)
 
             if isDisclaimerShown {
-                AlertView(shown: $isDisclaimerShown, message: AlertView.template1) {
+                AlertView(shown: $isDisclaimerShown, message: viewModel.model.disclaimerMessage) {
                     
                 }
             }
@@ -75,16 +75,18 @@ struct CustomCheckoutView: View {
 
 struct CustomCheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomCheckoutView(model:
-                            CustomConfigurationPageModel(title: "Custom Checkout Flow",
-                                                         shortDescription: "",
-                                                         longDescription: """
+        DemoItemSummaryView(viewModel:
+                                DemoItemSummaryViewModel(
+                                    CustomConfigurationPageModel(title: "Custom Checkout Flow",
+                                                                 shortDescription: "",
+                                                                 longDescription: """
    The Custom Checkout Flow allows you to preview a specific placement from a specific account in an unbranded confirmation page.
    This allows you to preview the specific UI of this placement and experience the in-app behaviour of the Rokt placement.
    \n\nNote: In order to preview a specific placement, you will require details about your Rokt account and placement configuration.
    If you do not have these, please reach out to your Rokt Account Manager.
 
    """,
-                                                         iconURL: "CustomerCheckout"))
+                                                                 iconURL: "CustomerCheckout"))
+        )
     }
 }
