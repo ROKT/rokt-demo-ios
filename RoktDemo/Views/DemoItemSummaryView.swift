@@ -20,12 +20,12 @@ struct DemoItemSummaryView: View {
             
             VStack {
                 VStack(alignment: .center){
-                    Image(viewModel.model.iconURL)
+                    Image(viewModel.summaryModel.iconURL)
                         .background(Color.black)
                         .foregroundColor(Color.white)
                         .padding()
                     
-                    Text(viewModel.model.title)
+                    Text(viewModel.summaryModel.title)
                         .foregroundColor(.white)
                         .font(.defaultHeadingFont(.header1))
                 }
@@ -42,7 +42,7 @@ struct DemoItemSummaryView: View {
                 Spacer()
                 ScrollView{
                     VStack {
-                        Text(viewModel.model.longDescription)
+                        Text(viewModel.summaryModel.longDescription)
                             .lineLimit(.none)
                             .font(.defaultFont(.text))
                             .padding()
@@ -61,10 +61,12 @@ struct DemoItemSummaryView: View {
             .padding(.bottom, 20)
 
             if isDisclaimerShown {
-                AlertView(shown: $isDisclaimerShown, message: viewModel.model.disclaimerMessage) {
-                    
+                AlertView(shown: $isDisclaimerShown, message: viewModel.summaryModel.disclaimerMessage) {
                 }
             }
+        }
+        .onAppear {
+            viewModel.initializeRokt()
         }
         .background(isDisclaimerShown ? Color.black : Color.white)
         .edgesIgnoringSafeArea([.bottom])

@@ -30,7 +30,15 @@ struct DemoLibraryService {
 
                                 This includes overlay and embedded placements as well as email, traffic, phone, and app install offers.
                                 """,
-                                                              iconURL: "FeatureWalkthrough"),
+                                                              iconURL: "FeatureWalkthrough",
+                                                              tagID: "2754655826098840951",
+                                                              screens: [
+                                                              ScreenModel(title: "Embedded Placement (1)", description: """
+The below preview shows an embedded placement without brand logos displayed. You can progress through the offers by clicking “Yes Please” or “No Thanks”.
+\n\n
+The placement UI can be customised to match your app, and create a native experience. This includes changing fonts, colours and multiple configurable options to alter the look and feel of the placement.
+
+""", viewName: "testiOS", placeholderName: "Location1", type: "embedded", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"])]),
                              customConfigurationPage:
                                 CustomConfigurationPageModel(title: "Custom Checkout Flow",
                                                              shortDescription: "View a specific placement or combination of placements on an unbranded confirmation page via a custom checkout flow with configurable options.",
