@@ -43,13 +43,8 @@ struct DemoLibraryView: View {
         .modifier(NavigationBarGray(title: ""))
     }
     
-    @ViewBuilder func getDemoItemDestination(_ item: DemoItemModel) -> some View {
-        
-        if item is DefaultPlacementExamplesModel {
-            FeatureWalkthroughView(model: item as! DefaultPlacementExamplesModel )
-        } else {
-            EmptyView()
-        }
+    @ViewBuilder func getDemoItemDestination(_ model: DemoItemModel) -> some View {
+        DemoItemSummaryView(viewModel: DemoItemSummaryViewModel(model))
     }
 }
 

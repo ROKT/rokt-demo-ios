@@ -1,5 +1,5 @@
 //
-//  FeatureWalkthroughView.swift
+//  CustomCheckoutView.swift
 //  RoktDemo
 //
 //  Licensed under the Rokt Software Development Kit (SDK) Terms of Use
@@ -10,27 +10,22 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import SwiftUI
-import UIKit
-import Rokt_Widget
 
-struct FeatureWalkthroughView: View {
-    
+struct DemoItemSummaryView: View {
     @State var isDisclaimerShown = false
-    @State var message = ""
-
     
-    let model: DefaultPlacementExamplesModel
+    let viewModel: DemoItemSummaryViewModel
     var body: some View {
         ZStack {
             
             VStack {
                 VStack(alignment: .center){
-                    Image(model.iconURL)
+                    Image(viewModel.model.iconURL)
                         .background(Color.black)
                         .foregroundColor(Color.white)
                         .padding()
                     
-                    Text(model.title)
+                    Text(viewModel.model.title)
                         .foregroundColor(.white)
                         .font(.defaultHeadingFont(.header1))
                 }
@@ -47,7 +42,7 @@ struct FeatureWalkthroughView: View {
                 Spacer()
                 ScrollView{
                     VStack {
-                        Text(model.longDescription)
+                        Text(viewModel.model.longDescription)
                             .lineLimit(.none)
                             .font(.defaultFont(.text))
                             .padding()
@@ -55,7 +50,6 @@ struct FeatureWalkthroughView: View {
                 }
                 Spacer()
                 Button(action: {
-                    message = AlertView.template2
                     isDisclaimerShown.toggle()
                 }, label: {
                     Text("Let's begin")
@@ -66,12 +60,8 @@ struct FeatureWalkthroughView: View {
             }.opacity(isDisclaimerShown ? 0 : 1)
             .padding(.bottom, 20)
 
-            EmptyView()
-                .background(Color.black)
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            
             if isDisclaimerShown {
-                AlertView(shown: $isDisclaimerShown, message: message) {
+                AlertView(shown: $isDisclaimerShown, message: viewModel.model.disclaimerMessage) {
                     
                 }
             }
@@ -83,10 +73,20 @@ struct FeatureWalkthroughView: View {
     }
 }
 
-struct FeatureWalkthroughView_Previews: PreviewProvider {
+struct CustomCheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureWalkthroughView(model: DefaultPlacementExamplesModel(title: "Feature Walkthrough", shortDescription: "", longDescription: "The in-app feature walkthrough highlights the various placement and offer types that are available to native app integrations. \n\nThis includes overlay and embedded placements as well as email, traffic, phone, and app install offers.", iconURL: "FeatureWalkthrough"))
+        DemoItemSummaryView(viewModel:
+                                DemoItemSummaryViewModel(
+                                    CustomConfigurationPageModel(title: "Custom Checkout Flow",
+                                                                 shortDescription: "",
+                                                                 longDescription: """
+   The Custom Checkout Flow allows you to preview a specific placement from a specific account in an unbranded confirmation page.
+   This allows you to preview the specific UI of this placement and experience the in-app behaviour of the Rokt placement.
+   \n\nNote: In order to preview a specific placement, you will require details about your Rokt account and placement configuration.
+   If you do not have these, please reach out to your Rokt Account Manager.
+
+   """,
+                                                                 iconURL: "CustomerCheckout"))
+        )
     }
 }
-
-
