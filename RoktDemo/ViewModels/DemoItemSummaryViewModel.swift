@@ -16,7 +16,7 @@ import Rokt_Widget
 
 class DemoItemSummaryViewModel: ObservableObject {
     @Published var summaryModel: DemoItemSummaryModel
-    private var model: DemoItemModel
+    var model: DemoItemModel
     init(_ model: DemoItemModel) {
         self.summaryModel = DemoItemSummaryModel(title: model.title,
                                           longDescription: model.longDescription,

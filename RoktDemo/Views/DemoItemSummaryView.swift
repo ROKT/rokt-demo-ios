@@ -13,6 +13,7 @@ import SwiftUI
 
 struct DemoItemSummaryView: View {
     @State var isDisclaimerShown = false
+    @State var pushActive = false
     
     let viewModel: DemoItemSummaryViewModel
     var body: some View {
@@ -59,11 +60,14 @@ struct DemoItemSummaryView: View {
                 
             }.opacity(isDisclaimerShown ? 0 : 1)
             .padding(.bottom, 20)
+            
 
             if isDisclaimerShown {
                 AlertView(shown: $isDisclaimerShown, message: viewModel.summaryModel.disclaimerMessage) {
+                    
                 }
             }
+//            NavigationLink(destination: getDestination, isActive: self.$pushActive) { Text("") }.hidden()
         }
         .onAppear {
             viewModel.initializeRokt()
@@ -73,6 +77,7 @@ struct DemoItemSummaryView: View {
         .modifier(NavigationBarBlack(title: ""))
         
     }
+
 }
 
 struct CustomCheckoutView_Previews: PreviewProvider {

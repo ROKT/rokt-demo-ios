@@ -12,6 +12,8 @@
 		255839092620072700AF7FAE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255839082620072700AF7FAE /* String+Extension.swift */; };
 		255D7AC326290F5F0041D81C /* DemoItemSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */; };
 		255D7ACB262959CE0041D81C /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D7ACA262959CE0041D81C /* ScreenModel.swift */; };
+		256A2841262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */; };
+		256A288D262D4904000CF3D4 /* FeatureWalkthroughScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A288C262D4904000CF3D4 /* FeatureWalkthroughScreen.swift */; };
 		256E3D3E2623DFE000639FE0 /* DemoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */; };
 		256E3D502623FB8D00639FE0 /* AboutRoktViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */; };
 		256EB75B261C0EFE00B959EF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB75A261C0EFE00B959EF /* HeaderView.swift */; };
@@ -88,6 +90,8 @@
 		255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		255D7ACA262959CE0041D81C /* ScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenModel.swift; sourceTree = "<group>"; };
 		256673A02D436BE09A2A2212 /* Pods-RoktDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoktEmbeddedSwiftUIView.swift; sourceTree = "<group>"; };
+		256A288C262D4904000CF3D4 /* FeatureWalkthroughScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughScreen.swift; sourceTree = "<group>"; };
 		256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLibraryViewModel.swift; sourceTree = "<group>"; };
 		256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktViewModel.swift; sourceTree = "<group>"; };
 		256EB75A261C0EFE00B959EF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				5899228326141EF900A58DA3 /* AboutRoktView.swift */,
 				256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */,
 				25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */,
+				256A288C262D4904000CF3D4 /* FeatureWalkthroughScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				256EB75A261C0EFE00B959EF /* HeaderView.swift */,
 				589922A82615445D00A58DA3 /* SafariView.swift */,
 				25583903261FE5D600AF7FAE /* DemoItemView.swift */,
+				256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -688,6 +694,7 @@
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
 				256EB774261C1FFB00B959EF /* CustomConfigurationPageModel.swift in Sources */,
 				25CBB2AD2628044800D8AB79 /* DemoItemSummaryView.swift in Sources */,
+				256A2841262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift in Sources */,
 				256EB765261C0FD900B959EF /* DemoLibraryModel.swift in Sources */,
 				25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */,
 				589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */,
@@ -713,6 +720,7 @@
 				25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */,
 				256EB783261C209200B959EF /* PreDefinedScreen3Model.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
+				256A288D262D4904000CF3D4 /* FeatureWalkthroughScreen.swift in Sources */,
 				25747164261EB5B200B8C0C7 /* NavigationBarGray.swift in Sources */,
 				255D7ACB262959CE0041D81C /* ScreenModel.swift in Sources */,
 				25747150261E7EB100B8C0C7 /* NavigationBarModifier.swift in Sources */,
