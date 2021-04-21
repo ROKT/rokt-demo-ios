@@ -30,8 +30,4 @@ class DefaultPlacementExamplesModel: DemoItemModel {
                    longDescription: longDescription,
                    iconURL: iconURL)
     }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-    }
 }
