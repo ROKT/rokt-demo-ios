@@ -13,6 +13,7 @@ import SwiftUI
 
 struct DemoItemSummaryView: View {
     @State var isDisclaimerShown = false
+    @State var pushActive = false
     
     let viewModel: DemoItemSummaryViewModel
     var body: some View {
@@ -20,12 +21,12 @@ struct DemoItemSummaryView: View {
             
             VStack {
                 VStack(alignment: .center){
-                    Image(viewModel.model.iconURL)
+                    Image(viewModel.summaryModel.iconURL)
                         .background(Color.black)
                         .foregroundColor(Color.white)
                         .padding()
                     
-                    Text(viewModel.model.title)
+                    Text(viewModel.summaryModel.title)
                         .foregroundColor(.white)
                         .font(.defaultHeadingFont(.header1))
                 }
@@ -42,7 +43,7 @@ struct DemoItemSummaryView: View {
                 Spacer()
                 ScrollView{
                     VStack {
-                        Text(viewModel.model.longDescription)
+                        Text(viewModel.summaryModel.longDescription)
                             .lineLimit(.none)
                             .font(.defaultFont(.text))
                             .padding()
@@ -59,18 +60,33 @@ struct DemoItemSummaryView: View {
                 
             }.opacity(isDisclaimerShown ? 0 : 1)
             .padding(.bottom, 20)
+            
 
             if isDisclaimerShown {
-                AlertView(shown: $isDisclaimerShown, message: viewModel.model.disclaimerMessage) {
-                    
+                AlertView(shown: $isDisclaimerShown, message: viewModel.summaryModel.disclaimerMessage) {
+                    pushActive = true
                 }
             }
+            NavigationLink(destination: getDestination(), isActive: self.$pushActive) { Text("") }.hidden()
+        }
+        .onAppear {
+            viewModel.initializeRokt()
         }
         .background(isDisclaimerShown ? Color.black : Color.white)
         .edgesIgnoringSafeArea([.bottom])
         .modifier(NavigationBarBlack(title: ""))
         
     }
+    
+    func getDestination() -> some View {
+        if let model = viewModel.model as? DefaultPlacementExamplesModel  {
+            return AnyView(FeatureWalkthroughView(viewModel:
+                                                    FeatureWalkthroughViewModel(model: model, selectedScreen: 0)
+                                                  ,popToRootView: $pushActive))
+        }
+        return AnyView(EmptyView())
+    }
+
 }
 
 struct CustomCheckoutView_Previews: PreviewProvider {

@@ -15,13 +15,27 @@ import Foundation
 import Rokt_Widget
 
 class DemoItemSummaryViewModel: ObservableObject {
-    @Published var model: DemoItemSummaryModel
-    
+    @Published var summaryModel: DemoItemSummaryModel
+    var model: DemoItemModel
     init(_ model: DemoItemModel) {
-        self.model = DemoItemSummaryModel(title: model.title,
+        self.summaryModel = DemoItemSummaryModel(title: model.title,
                                           longDescription: model.longDescription,
                                           iconURL: model.iconURL,
                                           disclaimerMessage: DemoItemSummaryViewModel.getDisclaimerMessage(model))
+        self.model = model
+    }
+    
+    func initializeRokt() {
+        if let tagID = getTagId() {
+            Rokt.initWith(roktTagId: tagID)
+        }
+    }
+    
+    func getTagId() -> String? {
+        if let model = model as? DefaultPlacementExamplesModel {
+            return model.tagID
+        }
+        return nil
     }
     
     class func getDisclaimerMessage (_ model: DemoItemModel) -> String {
@@ -30,8 +44,6 @@ class DemoItemSummaryViewModel: ObservableObject {
         }
         return AlertView.template1
     }
-    
-    
 }
 
 struct DemoItemSummaryModel {

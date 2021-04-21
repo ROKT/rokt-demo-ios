@@ -13,7 +13,7 @@
 
 import Foundation
 
-class DemoItemModel: Codable, Hashable {
+class DemoItemModel: Hashable {
     var title: String
     var shortDescription: String
     var longDescription: String

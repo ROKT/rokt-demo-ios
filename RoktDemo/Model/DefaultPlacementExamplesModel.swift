@@ -14,5 +14,20 @@
 import Foundation
 
 class DefaultPlacementExamplesModel: DemoItemModel {
+    var tagID: String
+    var screens: [ScreenModel]
     
+    required init(title: String,
+         shortDescription: String,
+         longDescription: String,
+         iconURL: String,
+         tagID: String,
+         screens: [ScreenModel]) {
+        self.tagID = tagID
+        self.screens = screens
+        super.init(title: title,
+                   shortDescription: shortDescription,
+                   longDescription: longDescription,
+                   iconURL: iconURL)
+    }
 }
