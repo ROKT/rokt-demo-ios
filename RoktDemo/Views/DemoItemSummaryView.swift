@@ -64,10 +64,10 @@ struct DemoItemSummaryView: View {
 
             if isDisclaimerShown {
                 AlertView(shown: $isDisclaimerShown, message: viewModel.summaryModel.disclaimerMessage) {
-                    
+                    pushActive = true
                 }
             }
-//            NavigationLink(destination: getDestination, isActive: self.$pushActive) { Text("") }.hidden()
+            NavigationLink(destination: getDestination(), isActive: self.$pushActive) { Text("") }.hidden()
         }
         .onAppear {
             viewModel.initializeRokt()
@@ -76,6 +76,15 @@ struct DemoItemSummaryView: View {
         .edgesIgnoringSafeArea([.bottom])
         .modifier(NavigationBarBlack(title: ""))
         
+    }
+    
+    func getDestination() -> some View {
+        if let model = viewModel.model as? DefaultPlacementExamplesModel  {
+            return AnyView(FeatureWalkthroughView(viewModel:
+                                                    FeatureWalkthroughViewModel(model: model, selectedScreen: 0)
+                                                  ,popToRootView: $pushActive))
+        }
+        return AnyView(EmptyView())
     }
 
 }

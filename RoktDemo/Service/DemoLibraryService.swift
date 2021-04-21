@@ -38,7 +38,13 @@ The below preview shows an embedded placement without brand logos displayed. You
 \n\n
 The placement UI can be customised to match your app, and create a native experience. This includes changing fonts, colours and multiple configurable options to alter the look and feel of the placement.
 
-""", viewName: "testiOS", placeholderName: "Location1", type: "embedded", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"])]),
+""", viewName: "testiOS", placeholderName: "Location1", type: "embedded", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"]),
+                                                                ScreenModel(title: "Embedded Placement (2)", description: """
+  The below preview shows an embedded placement without brand logos displayed. You can progress through the offers by clicking “Yes Please” or “No Thanks”.
+  \n\n
+  The placement UI can be customised to match your app, and create a native experience. This includes changing fonts, colours and multiple configurable options to alter the look and feel of the placement.
+
+  """, viewName: "testiOS", placeholderName: "Location1", type: "embedded", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"])]),
                              customConfigurationPage:
                                 CustomConfigurationPageModel(title: "Custom Checkout Flow",
                                                              shortDescription: "View a specific placement or combination of placements on an unbranded confirmation page via a custom checkout flow with configurable options.",
