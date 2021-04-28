@@ -49,7 +49,10 @@ struct FeatureWalkthroughView: View {
                     showPlacement()
                 },
                 label: {
-                    Text("View Example")
+                    HStack {
+                        Text("View Example")
+                        Image("eye")
+                    }
                 }).buttonStyle(ButtonDefaultOutlined())
                 .padding()
             }
