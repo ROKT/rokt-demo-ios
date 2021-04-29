@@ -19,4 +19,8 @@ struct ScreenModel {
     let placeholderName: String
     let type: String
     let attributes: [String:String]
+    
+    func isOverlay() -> Bool {
+        return type == "overlay"
+    }
 }

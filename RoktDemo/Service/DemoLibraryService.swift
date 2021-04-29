@@ -35,16 +35,24 @@ struct DemoLibraryService {
                                                               screens: [
                                                               ScreenModel(title: "Embedded Placement (1)", description: """
 The below preview shows an embedded placement without brand logos displayed. You can progress through the offers by clicking “Yes Please” or “No Thanks”.
-\n\n
+\n
 The placement UI can be customised to match your app, and create a native experience. This includes changing fonts, colours and multiple configurable options to alter the look and feel of the placement.
 
 """, viewName: "testiOS", placeholderName: "Location1", type: "embedded", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"]),
                                                                 ScreenModel(title: "Embedded Placement (2)", description: """
   The below preview shows an embedded placement without brand logos displayed. You can progress through the offers by clicking “Yes Please” or “No Thanks”.
-  \n\n
+  \n
   The placement UI can be customised to match your app, and create a native experience. This includes changing fonts, colours and multiple configurable options to alter the look and feel of the placement.
 
-  """, viewName: "testiOS", placeholderName: "Location1", type: "embedded", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"])]),
+  """, viewName: "testiOS", placeholderName: "Location1", type: "embedded", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"]),
+                                                                ScreenModel(title: "Overlay Placement", description: """
+  Click “View Example” to preview a Rokt overlay placement. You can progress through the offers by clicking “Yes Please” or “No Thanks”.\n
+
+  On iOS devices, the overlay placement follows Apple’s best practice automatic presentation style for overlays.\n
+
+  On Android devices, the overlay placements can be configured as a “full-screen overlay” or a “lightbox overlay” with a transparent background.
+
+  """, viewName: "tesLightboxiOS", placeholderName: "Location1", type: "overlay", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"])]),
                              customConfigurationPage:
                                 CustomConfigurationPageModel(title: "Custom Checkout Flow",
                                                              shortDescription: "View a specific placement or combination of placements on an unbranded confirmation page via a custom checkout flow with configurable options.",
