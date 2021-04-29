@@ -20,7 +20,7 @@ struct NavigationBarBlackWithButton: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .navigationBarColor(.black)
+            .navigationBarColor(.titleColor)
             .navigationBarTitle(Text(title), displayMode: .inline)
             .navigationBarHidden(false)
             .background(NavigationBarAccessor { navigationBar in

@@ -13,6 +13,7 @@ struct HeaderView: View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.defaultHeadingFont(.header1))
+                .foregroundColor(.titleColor)
             Rectangle().foregroundColor(Color.appColor).frame(width: 34, height: 6, alignment: .center)
         }
     }

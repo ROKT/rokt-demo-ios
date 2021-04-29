@@ -23,11 +23,11 @@ struct AlertView: View {
                 
                 Text("Disclaimer")
                     .font(.defaultBoldFont(.title))
-                    .foregroundColor(.black)
+                    .foregroundColor(.titleColor)
                     .padding()
                 
                 Text(message)
-                    .foregroundColor(.black)
+                    .foregroundColor(.textColor)
                     .multilineTextAlignment(.leading)
                     .font(.defaultFont(.subtitle1))
                     .padding()
@@ -42,7 +42,11 @@ struct AlertView: View {
                     Button("No thanks") {
                         shown.toggle()
                     }
-                    .buttonStyle(ButtonDefault())
+                    .padding()
+                    .font(.defaultButtonFont())
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(.titleColor)
+                    .background(Color.gray4)
                 }.padding()
                 
             }.background(Color.white)
@@ -73,6 +77,6 @@ struct AlertView_Previews: PreviewProvider {
         AlertView(shown: .constant(true), message: AlertView.template2) {
             print("Clicked yes")
         }
-            .background(Color.black)
+            .background(Color.titleColor)
     }
 }

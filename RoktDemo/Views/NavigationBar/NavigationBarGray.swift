@@ -22,7 +22,7 @@ struct NavigationBarGray: ViewModifier {
             .navigationBarTitle(Text(title), displayMode: .inline)
             .navigationBarHidden(false)
             .background(NavigationBarAccessor { navigationBar in
-                navigationBar.tintColor = .black
+                navigationBar.tintColor = .titleColor
             })
     }
 }

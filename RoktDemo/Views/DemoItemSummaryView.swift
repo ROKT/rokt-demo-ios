@@ -22,7 +22,7 @@ struct DemoItemSummaryView: View {
             VStack {
                 VStack(alignment: .center){
                     Image(viewModel.summaryModel.iconURL)
-                        .background(Color.black)
+                        .background(Color.titleColor)
                         .foregroundColor(Color.white)
                         .padding()
                     
@@ -38,7 +38,7 @@ struct DemoItemSummaryView: View {
                        maxHeight: 200,
                        alignment: .center)
                 .padding()
-                .background(Color.black)
+                .background(Color.titleColor)
                 
                 Spacer()
                 ScrollView{
@@ -46,6 +46,7 @@ struct DemoItemSummaryView: View {
                         Text(viewModel.summaryModel.longDescription)
                             .lineLimit(.none)
                             .font(.defaultFont(.text))
+                            .foregroundColor(.textColor)
                             .padding()
                     }
                 }
@@ -72,7 +73,7 @@ struct DemoItemSummaryView: View {
         .onAppear {
             viewModel.initializeRokt()
         }
-        .background(isDisclaimerShown ? Color.black : Color.white)
+        .background(isDisclaimerShown ? Color.titleColor : Color.white)
         .edgesIgnoringSafeArea([.bottom])
         .modifier(NavigationBarBlack(title: ""))
         

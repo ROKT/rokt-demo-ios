@@ -28,12 +28,15 @@ struct FeatureWalkthroughView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(viewModel.screen.title)
                         .font(.defaultBoldFont(.header2))
+                        .foregroundColor(.titleColor)
                     Text(viewModel.screen.description)
                         .font(.defaultFont(.text))
+                        .foregroundColor(.textColor)
                     
                     if !viewModel.screen.isOverlay() {
                         Text("Preview")
                             .font(.defaultBoldFont(.header3))
+                            .foregroundColor(.titleColor)
                     }
                     roktEmbedded
                         .background(Color.white)
