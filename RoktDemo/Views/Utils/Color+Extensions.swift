@@ -13,8 +13,14 @@ import SwiftUI
 extension Color {
     static let appColor = Color("AccentColor")
     static let gray3 = Color("Gray3")
+    static let gray4 = Color("Gray4")
+    static let titleColor = Color("Gray12")
+    static let subtitleColor = Color("Gray7")
+    static let textColor = Color("Gray9")
+    static let borderColor = Color("Border")
 }
 
 extension UIColor {
     static let gray3 = UIColor(named: "Gray3")
+    static let titleColor = UIColor(named: "Gray12")
 }

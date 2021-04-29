@@ -33,7 +33,7 @@ struct DemoItemView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 60, alignment: .leading)
-                        .foregroundColor(.black)
+                        .foregroundColor(.titleColor)
                 }
                 Spacer()
                 Image(systemName: "arrow.right")
@@ -44,13 +44,14 @@ struct DemoItemView: View {
             
             Text(demoItemModel.title)
                 .font(.defaultBoldFont(.title))
-                .foregroundColor(.black)
+                .foregroundColor(.titleColor)
             Text(demoItemModel.shortDescription).font(.defaultFont(.text))
                 .lineLimit(nil)
-                .foregroundColor(.black)
+                .foregroundColor(.textColor)
         }
         .padding([.top, .bottom, .leading], 15)
         .background(Color.white)
+        .border(Color.borderColor, width: 1)
     }
 }
 

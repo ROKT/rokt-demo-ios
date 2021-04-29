@@ -26,6 +26,7 @@ struct AboutRoktContentView: View {
             HeaderView(title: content.title)
             Text(content.content)
                 .font(.defaultFont(.text))
+                .foregroundColor(.textColor)
         }.padding()
     }
 }

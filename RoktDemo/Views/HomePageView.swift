@@ -27,6 +27,7 @@ struct HomePageView: View {
                         Image("RoktLogo")
                         Text("Powering the Transaction Moment™")
                             .font(.defaultFont(.header3))
+                            .foregroundColor(.titleColor)
                             .multilineTextAlignment(.center)
                             .padding()
                     }
@@ -62,7 +63,7 @@ struct HomePageView: View {
                     Text("® Rokt 2021 — All rights reserved App Version 1.0.0")
                         .font(.defaultFont(.subtitle2))
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.textColor)
                 }.padding()
             }
         }.navigationViewStyle(StackNavigationViewStyle())

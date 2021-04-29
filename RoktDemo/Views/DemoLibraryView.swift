@@ -24,6 +24,7 @@ struct DemoLibraryView: View {
                 
                 Text(viewModel.demoDescription)
                     .font(.defaultFont(.text))
+                    .foregroundColor(.textColor)
                 
                 ForEach(viewModel.demoItems, id: \.self) { item in
                     NavigationLink(
