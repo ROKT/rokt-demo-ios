@@ -51,6 +51,7 @@ struct DemoItemView: View {
         }
         .padding([.top, .bottom, .leading], 15)
         .background(Color.white)
+        .border(Color.borderColor, width: 1)
     }
 }
 
