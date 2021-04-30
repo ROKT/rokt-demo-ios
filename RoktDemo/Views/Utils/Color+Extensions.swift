@@ -18,6 +18,7 @@ extension Color {
     static let subtitleColor = Color("Gray7")
     static let textColor = Color("Gray9")
     static let borderColor = Color("Border")
+    static let errorColor = Color("Volcano")
 }
 
 extension UIColor {

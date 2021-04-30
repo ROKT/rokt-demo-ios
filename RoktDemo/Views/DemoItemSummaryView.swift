@@ -84,6 +84,8 @@ struct DemoItemSummaryView: View {
             return AnyView(FeatureWalkthroughView(viewModel:
                                                     FeatureWalkthroughViewModel(model: model, selectedScreen: 0)
                                                   ,popToRootView: $pushActive))
+        } else if let model = viewModel.model as? CustomConfigurationPageModel {
+            return AnyView(AccountDetailsView(viewModel: AccountDetailsViewModel(), popToRootView: $pushActive))
         }
         return AnyView(EmptyView())
     }
