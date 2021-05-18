@@ -36,6 +36,9 @@
 		2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */; };
 		25747171261EB5D200B8C0C7 /* NavigationBarBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */; };
 		257564B7263A6A9E0096889A /* AccountDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257564B6263A6A9E0096889A /* AccountDetailsView.swift */; };
+		2575CCB72653594E005226C5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB62653594E005226C5 /* ValidationService.swift */; };
+		2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB926536A84005226C5 /* ValidationServiceTests.swift */; };
+		2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB62653594E005226C5 /* ValidationService.swift */; };
 		2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576572A261D4CBF003F3D26 /* Color+Extensions.swift */; };
 		25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D87260D94B60044EF14 /* SoleilBook.otf */; };
 		25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D88260D94B60044EF14 /* SoleilLight.otf */; };
@@ -118,6 +121,8 @@
 		2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparent.swift; sourceTree = "<group>"; };
 		25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBlack.swift; sourceTree = "<group>"; };
 		257564B6263A6A9E0096889A /* AccountDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsView.swift; sourceTree = "<group>"; };
+		2575CCB62653594E005226C5 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		2575CCB926536A84005226C5 /* ValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTests.swift; sourceTree = "<group>"; };
 		2576572A261D4CBF003F3D26 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		25BA8D87260D94B60044EF14 /* SoleilBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBook.otf; sourceTree = "<group>"; };
 		25BA8D88260D94B60044EF14 /* SoleilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilLight.otf; sourceTree = "<group>"; };
@@ -225,6 +230,14 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		2575CCB826536A61005226C5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2575CCB926536A84005226C5 /* ValidationServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		25BA8D85260D94560044EF14 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +311,7 @@
 		25F8477C260C348A0067B515 /* RoktDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				2575CCB826536A61005226C5 /* Service */,
 				25F8477D260C348A0067B515 /* RoktDemoTests.swift */,
 				25F8477F260C348A0067B515 /* Info.plist */,
 			);
@@ -378,6 +392,7 @@
 			children = (
 				5899229C2614214500A58DA3 /* AboutRoktService.swift */,
 				256EB787261C26FA00B959EF /* DemoLibraryService.swift */,
+				2575CCB62653594E005226C5 /* ValidationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -712,6 +727,7 @@
 				589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */,
 				255839092620072700AF7FAE /* String+Extension.swift in Sources */,
 				25F84767260C34880067B515 /* AppDelegate.swift in Sources */,
+				2575CCB72653594E005226C5 /* ValidationService.swift in Sources */,
 				256E3D502623FB8D00639FE0 /* AboutRoktViewModel.swift in Sources */,
 				256EB760261C0F7F00B959EF /* DemoLibraryView.swift in Sources */,
 				2574715B261EB40B00B8C0C7 /* NavigationBarAccessor.swift in Sources */,
@@ -752,7 +768,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */,
 				25F8477E260C348A0067B515 /* RoktDemoTests.swift in Sources */,
+				2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,19 +34,17 @@ struct AccountDetailsView: View {
                     
                     DetailTextFieldView(title: "Account ID",
                                         textHolder: $viewModel.accountId,
+                                        errorMessage: $viewModel.accountIdError,
                                         hasError: $viewModel.accountIdHasError)
                     
                     DetailTextFieldView(title: "View Name",
-                                        textHolder: $viewModel.viewName,
-                                        hasError: $viewModel.viewNameHasError)
+                                        textHolder: $viewModel.viewName)
                     
                     DetailTextFieldView(title: "Placement Location 1",
-                                        textHolder: $viewModel.placementLocation1,
-                                        hasError: $viewModel.placementLocation1HasError)
+                                        textHolder: $viewModel.placementLocation1)
                     
                     DetailTextFieldView(title: "Placement Location 2",
-                                        textHolder: $viewModel.placementLocation2,
-                                        hasError: $viewModel.placementLocation2HasError)
+                                        textHolder: $viewModel.placementLocation2)
                     
                 }.padding()
             }

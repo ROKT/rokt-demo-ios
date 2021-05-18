@@ -14,8 +14,18 @@ import SwiftUI
 struct DetailTextFieldView: View {
     let title: String
     @Binding var textHolder: String
-    var errorMessage: String = "Validation error"
+    @Binding var errorMessage: String
     @Binding var hasError: Bool
+    
+    init(title: String,
+         textHolder: Binding<String>,
+         errorMessage: Binding<String> = .constant("Validation error"),
+         hasError: Binding<Bool> = .constant(false)) {
+        self.title = title
+        _textHolder = textHolder
+        _errorMessage = errorMessage
+        _hasError = hasError
+    }
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {

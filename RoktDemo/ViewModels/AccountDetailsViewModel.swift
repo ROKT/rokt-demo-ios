@@ -14,17 +14,17 @@ import Foundation
 class AccountDetailsViewModel: ObservableObject {
     @Published var accountId: String = ""
     @Published var accountIdHasError: Bool = false
-    
+    @Published var accountIdError: String = "Accound ID can't be empty!"
     @Published var viewName: String = ""
-    @Published var viewNameHasError: Bool = false
-    
     @Published var placementLocation1: String = ""
-    @Published var placementLocation1HasError: Bool = false
-    
     @Published var placementLocation2: String = ""
-    @Published var placementLocation2HasError: Bool = false
     
     func continueAction() {
-        accountIdHasError = true
+        accountIdHasError = ValidationService.isEmpty(accountId)
+        if accountIdHasError {
+            // don't navigate if there is validation error
+            return
+        }
+       
     }
 }
