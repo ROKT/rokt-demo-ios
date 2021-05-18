@@ -68,6 +68,15 @@ struct AccountDetailsView: View {
 
 struct AccountDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountDetailsView(viewModel: AccountDetailsViewModel(), popToRootView: .constant(true))
+        AccountDetailsView(viewModel: AccountDetailsViewModel(
+                            CustomConfigurationPageModel(title: "",
+                                                         shortDescription: "",
+                                                         longDescription: "",
+                                                         iconURL: "",
+                                                         customerDetails:
+                                                            CustomerDetailsModel(accountID: "123",
+                                                                                 viewName: "",
+                                                                                 placementLocation1: "",
+                                                                                 placementLocation2: ""))), popToRootView: .constant(true))
     }
 }

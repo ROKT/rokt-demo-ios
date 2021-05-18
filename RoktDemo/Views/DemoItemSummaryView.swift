@@ -85,7 +85,7 @@ struct DemoItemSummaryView: View {
                                                     FeatureWalkthroughViewModel(model: model, selectedScreen: 0)
                                                   ,popToRootView: $pushActive))
         } else if let model = viewModel.model as? CustomConfigurationPageModel {
-            return AnyView(AccountDetailsView(viewModel: AccountDetailsViewModel(), popToRootView: $pushActive))
+            return AnyView(AccountDetailsView(viewModel: AccountDetailsViewModel(model), popToRootView: $pushActive))
         }
         return AnyView(EmptyView())
     }
@@ -105,7 +105,9 @@ struct CustomCheckoutView_Previews: PreviewProvider {
    If you do not have these, please reach out to your Rokt Account Manager.
 
    """,
-                                                                 iconURL: "CustomerCheckout"))
+                                                                 iconURL: "CustomerCheckout",
+                                                                 customerDetails:
+                                                                    CustomerDetailsModel(accountID: "", viewName: "", placementLocation1: "", placementLocation2: "")))
         )
     }
 }
