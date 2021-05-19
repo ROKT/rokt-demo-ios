@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17E6B740C63A1CB615166AEB /* Pods_RoktDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */; };
+		252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842CF263BB82E0010114A /* DetailTextFieldView.swift */; };
+		252842D2263BB9300010114A /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842D1263BB9300010114A /* AccountDetailsViewModel.swift */; };
 		25570523262FA34D00635121 /* FeatureWalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */; };
 		25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25583903261FE5D600AF7FAE /* DemoItemView.swift */; };
 		255839092620072700AF7FAE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255839082620072700AF7FAE /* String+Extension.swift */; };
@@ -33,6 +35,11 @@
 		25747164261EB5B200B8C0C7 /* NavigationBarGray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */; };
 		2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */; };
 		25747171261EB5D200B8C0C7 /* NavigationBarBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */; };
+		257564B7263A6A9E0096889A /* AccountDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257564B6263A6A9E0096889A /* AccountDetailsView.swift */; };
+		2575CCB72653594E005226C5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB62653594E005226C5 /* ValidationService.swift */; };
+		2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB926536A84005226C5 /* ValidationServiceTests.swift */; };
+		2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB62653594E005226C5 /* ValidationService.swift */; };
+		2575CCBD26538AF8005226C5 /* CustomerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCBC26538AF8005226C5 /* CustomerDetailsModel.swift */; };
 		2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576572A261D4CBF003F3D26 /* Color+Extensions.swift */; };
 		25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D87260D94B60044EF14 /* SoleilBook.otf */; };
 		25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D88260D94B60044EF14 /* SoleilLight.otf */; };
@@ -64,6 +71,14 @@
 		589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */; };
 		589922C72615683700A58DA3 /* balto-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 589922C62615683700A58DA3 /* balto-bold.otf */; };
 		589922CC261587A700A58DA3 /* ExtendableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922CB261587A700A58DA3 /* ExtendableHeader.swift */; };
+		58A97A6F2654CF850092B598 /* AccountDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A97A6E2654CF850092B598 /* AccountDetailsViewModelTests.swift */; };
+		58A97A702654D1480092B598 /* FeatureWalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */; };
+		58A97A712654D2F20092B598 /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842D1263BB9300010114A /* AccountDetailsViewModel.swift */; };
+		58A97A722654D3F10092B598 /* CustomConfigurationPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB773261C1FFB00B959EF /* CustomConfigurationPageModel.swift */; };
+		58A97A732654D3FC0092B598 /* CustomerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCBC26538AF8005226C5 /* CustomerDetailsModel.swift */; };
+		58A97A742654DCB00092B598 /* DemoItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB76E261C1CB700B959EF /* DemoItemModel.swift */; };
+		58A97A752654DD4E0092B598 /* DefaultPlacementExamplesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB769261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift */; };
+		58A97A762654DD550092B598 /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D7ACA262959CE0041D81C /* ScreenModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +101,8 @@
 /* Begin PBXFileReference section */
 		10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20098664A1E8183EDD086EA3 /* Pods-RoktDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.release.xcconfig"; sourceTree = "<group>"; };
+		252842CF263BB82E0010114A /* DetailTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextFieldView.swift; sourceTree = "<group>"; };
+		252842D1263BB9300010114A /* AccountDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModel.swift; sourceTree = "<group>"; };
 		25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughViewModel.swift; sourceTree = "<group>"; };
 		25583903261FE5D600AF7FAE /* DemoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemView.swift; sourceTree = "<group>"; };
 		255839082620072700AF7FAE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -112,6 +129,10 @@
 		25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarGray.swift; sourceTree = "<group>"; };
 		2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparent.swift; sourceTree = "<group>"; };
 		25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBlack.swift; sourceTree = "<group>"; };
+		257564B6263A6A9E0096889A /* AccountDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsView.swift; sourceTree = "<group>"; };
+		2575CCB62653594E005226C5 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		2575CCB926536A84005226C5 /* ValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTests.swift; sourceTree = "<group>"; };
+		2575CCBC26538AF8005226C5 /* CustomerDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsModel.swift; sourceTree = "<group>"; };
 		2576572A261D4CBF003F3D26 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		25BA8D87260D94B60044EF14 /* SoleilBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBook.otf; sourceTree = "<group>"; };
 		25BA8D88260D94B60044EF14 /* SoleilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilLight.otf; sourceTree = "<group>"; };
@@ -149,6 +170,7 @@
 		589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktLinkView.swift; sourceTree = "<group>"; };
 		589922C62615683700A58DA3 /* balto-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "balto-bold.otf"; sourceTree = "<group>"; };
 		589922CB261587A700A58DA3 /* ExtendableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendableHeader.swift; sourceTree = "<group>"; };
+		58A97A6E2654CF850092B598 /* AccountDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +225,7 @@
 				256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */,
 				255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */,
 				25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */,
+				252842D1263BB9300010114A /* AccountDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -216,6 +239,14 @@
 				2570F33B2627B38400B5B52E /* NavigationBarBlackWithButton.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		2575CCB826536A61005226C5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2575CCB926536A84005226C5 /* ValidationServiceTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		25BA8D85260D94560044EF14 /* Resources */ = {
@@ -291,6 +322,8 @@
 		25F8477C260C348A0067B515 /* RoktDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				58A97A6D2654CF5C0092B598 /* ViewModels */,
+				2575CCB826536A61005226C5 /* Service */,
 				25F8477D260C348A0067B515 /* RoktDemoTests.swift */,
 				25F8477F260C348A0067B515 /* Info.plist */,
 			);
@@ -318,6 +351,7 @@
 				256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */,
 				25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */,
 				256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */,
+				257564B6263A6A9E0096889A /* AccountDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +395,7 @@
 				256EB77D261C208500B959EF /* PreDefinedScreen2Model.swift */,
 				256EB782261C209200B959EF /* PreDefinedScreen3Model.swift */,
 				255D7ACA262959CE0041D81C /* ScreenModel.swift */,
+				2575CCBC26538AF8005226C5 /* CustomerDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +405,7 @@
 			children = (
 				5899229C2614214500A58DA3 /* AboutRoktService.swift */,
 				256EB787261C26FA00B959EF /* DemoLibraryService.swift */,
+				2575CCB62653594E005226C5 /* ValidationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -382,7 +418,6 @@
 				2576572A261D4CBF003F3D26 /* Color+Extensions.swift */,
 				2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */,
 				2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */,
-				25CBB2A72627F51A00D8AB79 /* AlertView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -396,8 +431,18 @@
 				589922A82615445D00A58DA3 /* SafariView.swift */,
 				25583903261FE5D600AF7FAE /* DemoItemView.swift */,
 				256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */,
+				252842CF263BB82E0010114A /* DetailTextFieldView.swift */,
+				25CBB2A72627F51A00D8AB79 /* AlertView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		58A97A6D2654CF5C0092B598 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				58A97A6E2654CF850092B598 /* AccountDetailsViewModelTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A5C3ED60C4B18FDC5C202F0B /* Frameworks */ = {
@@ -697,12 +742,14 @@
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
 				256EB774261C1FFB00B959EF /* CustomConfigurationPageModel.swift in Sources */,
 				25CBB2AD2628044800D8AB79 /* DemoItemSummaryView.swift in Sources */,
+				2575CCBD26538AF8005226C5 /* CustomerDetailsModel.swift in Sources */,
 				256A2841262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift in Sources */,
 				256EB765261C0FD900B959EF /* DemoLibraryModel.swift in Sources */,
 				25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */,
 				589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */,
 				255839092620072700AF7FAE /* String+Extension.swift in Sources */,
 				25F84767260C34880067B515 /* AppDelegate.swift in Sources */,
+				2575CCB72653594E005226C5 /* ValidationService.swift in Sources */,
 				256E3D502623FB8D00639FE0 /* AboutRoktViewModel.swift in Sources */,
 				256EB760261C0F7F00B959EF /* DemoLibraryView.swift in Sources */,
 				2574715B261EB40B00B8C0C7 /* NavigationBarAccessor.swift in Sources */,
@@ -719,14 +766,17 @@
 				25F8476B260C34880067B515 /* HomePageView.swift in Sources */,
 				25747171261EB5D200B8C0C7 /* NavigationBarBlack.swift in Sources */,
 				589922972614201100A58DA3 /* AboutRoktLinkModel.swift in Sources */,
+				252842D2263BB9300010114A /* AccountDetailsViewModel.swift in Sources */,
 				256EB76F261C1CB700B959EF /* DemoItemModel.swift in Sources */,
 				25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */,
 				256EB783261C209200B959EF /* PreDefinedScreen3Model.swift in Sources */,
+				252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
 				256A288D262D4904000CF3D4 /* FeatureWalkthroughView.swift in Sources */,
 				25747164261EB5B200B8C0C7 /* NavigationBarGray.swift in Sources */,
 				255D7ACB262959CE0041D81C /* ScreenModel.swift in Sources */,
 				25747150261E7EB100B8C0C7 /* NavigationBarModifier.swift in Sources */,
+				257564B7263A6A9E0096889A /* AccountDetailsView.swift in Sources */,
 				256E3D3E2623DFE000639FE0 /* DemoLibraryViewModel.swift in Sources */,
 				589922BA2615560800A58DA3 /* Constants.swift in Sources */,
 				25570523262FA34D00635121 /* FeatureWalkthroughViewModel.swift in Sources */,
@@ -740,7 +790,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A97A752654DD4E0092B598 /* DefaultPlacementExamplesModel.swift in Sources */,
+				58A97A762654DD550092B598 /* ScreenModel.swift in Sources */,
+				58A97A742654DCB00092B598 /* DemoItemModel.swift in Sources */,
+				58A97A702654D1480092B598 /* FeatureWalkthroughViewModel.swift in Sources */,
+				58A97A722654D3F10092B598 /* CustomConfigurationPageModel.swift in Sources */,
+				58A97A6F2654CF850092B598 /* AccountDetailsViewModelTests.swift in Sources */,
+				2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */,
+				58A97A712654D2F20092B598 /* AccountDetailsViewModel.swift in Sources */,
 				25F8477E260C348A0067B515 /* RoktDemoTests.swift in Sources */,
+				58A97A732654D3FC0092B598 /* CustomerDetailsModel.swift in Sources */,
+				2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

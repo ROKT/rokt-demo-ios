@@ -14,5 +14,16 @@
 import Foundation
 
 class CustomConfigurationPageModel: DemoItemModel {
-    
+    var customerDetails: CustomerDetailsModel
+    required init(title: String,
+         shortDescription: String,
+         longDescription: String,
+         iconURL: String,
+         customerDetails: CustomerDetailsModel) {
+        self.customerDetails = customerDetails
+        super.init(title: title,
+                   shortDescription: shortDescription,
+                   longDescription: longDescription,
+                   iconURL: iconURL)
+    }
 }
