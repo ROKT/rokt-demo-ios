@@ -15,29 +15,27 @@ import XCTest
 
 class ValidationServiceTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testIsEmptyReturnFalse() throws {
+        // arrange and act
         let isValid = ValidationService.isEmpty("something")
         
+        // assert
         XCTAssertFalse(isValid)
     }
     
     func testIsEmptyValid() throws {
+        // arrange and act
         let isValid = ValidationService.isEmpty("")
         
+        // assert
         XCTAssertTrue(isValid)
     }
     
     func testIsEmptyNil() throws {
+        // arrange and act
         let isValid = ValidationService.isEmpty(nil)
         
+        // assert
         XCTAssertTrue(isValid)
     }
 
