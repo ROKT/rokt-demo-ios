@@ -14,6 +14,7 @@ import SwiftUI
 struct AccountDetailsView: View {
     @ObservedObject var viewModel: AccountDetailsViewModel
     
+    @State var moveToNextView = false
     @Binding var popToRootView : Bool
     
     var body: some View {
@@ -24,7 +25,7 @@ struct AccountDetailsView: View {
                         .font(.defaultFont(.text))
                         .foregroundColor(.subtitleColor)
                     
-                    Text("Account Details")
+                    Text("Account details")
                         .font(.defaultBoldFont(.header2))
                     
                     Text("Please enter your Rokt Account ID and the ViewName and Placement Location Name of the placement you’d like to preview. If you do not know these details, please contact your Rokt Account Manager.")
@@ -45,7 +46,7 @@ struct AccountDetailsView: View {
                     
                     DetailTextFieldView(title: "Placement Location 2",
                                         textHolder: $viewModel.placementLocation2)
-                    
+                    NavigationLink(destination: CustomerDetailsView(popToRootView: $popToRootView), isActive: self.$moveToNextView) { Text("") }.hidden()
                 }.padding()
             }
             .modifier(NavigationBarBlackWithButton(title: "",
@@ -55,6 +56,7 @@ struct AccountDetailsView: View {
                                                    }))
             Button("Continue") {
                 viewModel.continueAction()
+                moveToNextView = true
             }.buttonStyle(ButtonDefault())
             .background(Color.white)
             .padding(EdgeInsets(top: 10, leading: 10, bottom: 30, trailing: 10))
