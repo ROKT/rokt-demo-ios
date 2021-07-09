@@ -12,9 +12,11 @@
 import SwiftUI
 
 struct CustomerDetailsView: View {
-    @ObservedObject var viewModel = CustomerDetailsViewModel()
+    @ObservedObject var viewModel: CustomerDetailsViewModel
     
     @Binding var popToRootView : Bool
+    
+    @State var isAdvancedDetailsShown = false
     
     var body: some View {
         VStack {
@@ -38,6 +40,26 @@ struct CustomerDetailsView: View {
                     DetailTextFieldView(title: "Postcode",
                                         textHolder: $viewModel.postcode)
                     
+                    DetailPickerView(title: "Country",
+                                     items: $viewModel.countries,
+                                     selectedItem: $viewModel.selectedCountry)
+                    
+                    Button(action: {
+                        isAdvancedDetailsShown.toggle()
+                    }, label: {
+                        HStack {
+                            Spacer()
+                            Text("Advanced options").foregroundColor(.black)
+                            Image("downIcon")
+                                .rotationEffect(.degrees(self.isAdvancedDetailsShown ? 180.0 : 0.0))
+                                .animation(Animation.linear(duration: 0.2))
+                            Spacer()
+                        }
+                    })
+                    
+                    if isAdvancedDetailsShown {
+                        AdvancedDetails(advancedDetails: $viewModel.advancedDetailsKV)
+                    }
                     
                 }.padding()
             }.modifier(NavigationBarBlackWithButton(title: "",
@@ -46,8 +68,7 @@ struct CustomerDetailsView: View {
                                                         popToRootView = false
                                                     }))
             Button("Continue") {
-                //            viewModel.continueAction()
-                //            moveToNextView = true
+                
             }.buttonStyle(ButtonDefault())
             .background(Color.white)
             .padding(EdgeInsets(top: 10, leading: 10, bottom: 30, trailing: 10))
@@ -56,10 +77,59 @@ struct CustomerDetailsView: View {
         .background(Color.gray3)
         .edgesIgnoringSafeArea([.bottom])
     }
+    
+ 
+}
+
+private struct AdvancedDetails: View {
+    @Binding var advancedDetails: [KeyValue]
+    
+    var body: some View {
+        VStack {
+            Text("Brief sentence explaining this step lorem ipsum the quick brown fox jumps over the lazy dog.")
+                .font(.defaultFont(.subtitle2))
+                .foregroundColor(.textColor)
+            
+            ForEach(advancedDetails.indices, id: \.self) { index in
+                KeyValueView(model: Binding(
+                                get: {
+                                    return advancedDetails[index]
+                                },
+                                set: { (newValue) in
+                                    advancedDetails[index] = newValue
+                                }))
+            }
+            
+        }
+    }
+}
+
+private struct KeyValueView: View {
+    @Binding var model: KeyValue
+    var body: some View {
+        HStack() {
+            DetailTextFieldView(title: "AttributeName",
+                                textHolder: $model.key)
+            DetailTextFieldView(title: "Value",
+                                textHolder: $model.value)
+        }
+    }
 }
 
 struct CustomerDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomerDetailsView(popToRootView: .constant(true))
+        CustomerDetailsView(viewModel: CustomerDetailsViewModel(
+                                customerDetails:
+                                    CustomerDetailsModel(state: "NSW",
+                                                         postcode: "2112",
+                                                         country: ["US", "AU"]),
+                                advancedDetails: ["name": "firstname"],
+                                
+                                accountDetail:
+                                    AccountDetailViewData(accountId: "",
+                                                          viewName: "",
+                                                          placementLocation1: "",
+                                                          placementLocation2: "")),
+                            popToRootView: .constant(true))
     }
 }

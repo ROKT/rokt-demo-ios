@@ -64,11 +64,11 @@ This allows you to preview the specific UI of this placement and experience the 
 If you do not have these, please reach out to your Rokt Account Manager.
 """,
                                                              iconURL: "CustomerCheckout",
-                                                             customerDetails:
-                                                                CustomerDetailsModel(accountID: "2754655826098840951",
+                                                             accountDetails:
+                                                                AccountDetailsModel(accountID: "2754655826098840951",
                                                                                      viewName: "tesLightboxiOS",
                                                                                      placementLocation1: "",
-                                                                                     placementLocation2: "")),
+                                                                                     placementLocation2: ""),customerDetails: CustomerDetailsModel(state: "NSW", postcode: "2000", country: ["US","AU","UK","SG"]), advancedDetails: ["experience":"true","majorCat":"true"]),
                              preDefinedScreen1:
                                 PreDefinedScreen1Model(title: "Confirmation Page",
                                                        shortDescription: "View a demonstration of how Groupon has integrated in-app Rokt technology into their post-purchase confirmation page. ",

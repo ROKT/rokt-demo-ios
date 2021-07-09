@@ -11,6 +11,56 @@
 
 import Foundation
 class CustomerDetailsViewModel: ObservableObject {
+    let customerDetails: CustomerDetailsModel
+    let accountDetail: AccountDetailViewData
+    
     @Published var state: String = ""
     @Published var postcode: String = ""
+    @Published var countries: [String] = []
+    @Published var selectedCountry: String = ""
+    @Published var advancedDetailsKV: [KeyValue] = []
+    
+    internal init(customerDetails: CustomerDetailsModel,
+                  advancedDetails: [String: String],
+                  accountDetail: AccountDetailViewData) {
+        self.customerDetails = customerDetails
+        self.accountDetail = accountDetail
+        
+        state = customerDetails.state
+        postcode = customerDetails.postcode
+        countries = customerDetails.country
+        selectedCountry = countries.first ?? ""
+        
+        advancedDetailsKV = []
+        for (key, value) in advancedDetails {
+            advancedDetailsKV.append(KeyValue(key: key, value: value))
+        }
+        // add empty key value at the end
+        advancedDetailsKV.append(KeyValue(key: "", value: ""))
+    }
+    
+    func getAttributes() -> [String: String] {
+        var attributes : [String: String] = [:]
+        if !state.isEmpty {
+            attributes["state"] = state
+        }
+        if !postcode.isEmpty {
+            attributes["postcode"] = postcode
+        }
+        if !selectedCountry.isEmpty {
+            attributes["country"] = selectedCountry
+        }
+        for advancedDetail in advancedDetailsKV {
+            if !advancedDetail.key.isEmpty && !advancedDetail.value.isEmpty {
+                attributes[advancedDetail.key] = advancedDetail.value
+            }
+        }
+
+        return attributes
+    }
+}
+
+struct KeyValue: Hashable {
+    var key: String
+    var value: String
 }

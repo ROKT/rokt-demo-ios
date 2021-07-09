@@ -46,7 +46,11 @@ struct AccountDetailsView: View {
                     
                     DetailTextFieldView(title: "Placement Location 2",
                                         textHolder: $viewModel.placementLocation2)
-                    NavigationLink(destination: CustomerDetailsView(popToRootView: $popToRootView), isActive: self.$moveToNextView) { Text("") }.hidden()
+                    NavigationLink(destination:
+                                    CustomerDetailsView(viewModel: viewModel.getCustomerDetailsViewModel(),
+                                                        popToRootView: $popToRootView),
+                                   isActive: self.$moveToNextView) {
+                        Text("") }.hidden()
                 }.padding()
             }
             .modifier(NavigationBarBlackWithButton(title: "",
@@ -55,8 +59,9 @@ struct AccountDetailsView: View {
                                                     popToRootView = false
                                                    }))
             Button("Continue") {
-                viewModel.continueAction()
-                moveToNextView = true
+                if viewModel.isValidToContinue() {
+                    moveToNextView = true
+                }
             }.buttonStyle(ButtonDefault())
             .background(Color.white)
             .padding(EdgeInsets(top: 10, leading: 10, bottom: 30, trailing: 10))
@@ -75,10 +80,10 @@ struct AccountDetailsView_Previews: PreviewProvider {
                                                          shortDescription: "",
                                                          longDescription: "",
                                                          iconURL: "",
-                                                         customerDetails:
-                                                            CustomerDetailsModel(accountID: "123",
+                                                         accountDetails:
+                                                            AccountDetailsModel(accountID: "123",
                                                                                  viewName: "",
                                                                                  placementLocation1: "",
-                                                                                 placementLocation2: ""))), popToRootView: .constant(true))
+                                                                                 placementLocation2: "") ,customerDetails: CustomerDetailsModel(state: "", postcode: "", country: []), advancedDetails: [:])), popToRootView: .constant(true))
     }
 }

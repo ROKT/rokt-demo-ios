@@ -20,36 +20,11 @@ struct DemoItemSummaryView: View {
         ZStack {
             
             VStack {
-                VStack(alignment: .center){
-                    Image(viewModel.summaryModel.iconURL)
-                        .background(Color.titleColor)
-                        .foregroundColor(Color.white)
-                        .padding()
-                    
-                    Text(viewModel.summaryModel.title)
-                        .foregroundColor(.white)
-                        .font(.defaultHeadingFont(.header1))
-                }
-                .frame(minWidth: 0,
-                       idealWidth: .infinity,
-                       maxWidth: .infinity,
-                       minHeight: 0,
-                       idealHeight: 200,
-                       maxHeight: 200,
-                       alignment: .center)
-                .padding()
-                .background(Color.titleColor)
+                DemoHeaderView(image: viewModel.summaryModel.iconURL,
+                               title: viewModel.summaryModel.title)
                 
                 Spacer()
-                ScrollView{
-                    VStack {
-                        Text(viewModel.summaryModel.longDescription)
-                            .lineLimit(.none)
-                            .font(.defaultFont(.text))
-                            .foregroundColor(.textColor)
-                            .padding()
-                    }
-                }
+                DemoContentView(longDescription: viewModel.summaryModel.longDescription)
                 Spacer()
                 Button(action: {
                     isDisclaimerShown.toggle()
@@ -92,6 +67,47 @@ struct DemoItemSummaryView: View {
 
 }
 
+private struct DemoHeaderView: View {
+    let image: String
+    let title: String
+    var body: some View {
+        VStack(alignment: .center){
+            Image(image)
+                .background(Color.titleColor)
+                .foregroundColor(Color.white)
+                .padding()
+            
+            Text(title)
+                .foregroundColor(.white)
+                .font(.defaultHeadingFont(.header1))
+        }
+        .frame(minWidth: 0,
+               idealWidth: .infinity,
+               maxWidth: .infinity,
+               minHeight: 0,
+               idealHeight: 200,
+               maxHeight: 200,
+               alignment: .center)
+        .padding()
+        .background(Color.titleColor)
+    }
+}
+
+struct DemoContentView: View {
+    let longDescription: String
+    var body: some View {
+        ScrollView{
+            VStack {
+                Text(longDescription)
+                    .lineLimit(.none)
+                    .font(.defaultFont(.text))
+                    .foregroundColor(.textColor)
+                    .padding()
+            }
+        }
+    }
+}
+
 struct CustomCheckoutView_Previews: PreviewProvider {
     static var previews: some View {
         DemoItemSummaryView(viewModel:
@@ -106,8 +122,8 @@ struct CustomCheckoutView_Previews: PreviewProvider {
 
    """,
                                                                  iconURL: "CustomerCheckout",
-                                                                 customerDetails:
-                                                                    CustomerDetailsModel(accountID: "", viewName: "", placementLocation1: "", placementLocation2: "")))
+                                                                 accountDetails:
+                                                                    AccountDetailsModel(accountID: "", viewName: "", placementLocation1: "", placementLocation2: ""),customerDetails: CustomerDetailsModel(state: "NSW", postcode: "200", country: ["US","AU","UK","SG"]), advancedDetails: ["experience":"true","majorCat":"true"]))
         )
     }
 }
