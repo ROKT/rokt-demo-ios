@@ -123,7 +123,19 @@ struct CustomCheckoutView_Previews: PreviewProvider {
    """,
                                                                  iconURL: "CustomerCheckout",
                                                                  accountDetails:
-                                                                    AccountDetailsModel(accountID: "", viewName: "", placementLocation1: "", placementLocation2: ""),customerDetails: CustomerDetailsModel(state: "NSW", postcode: "200", country: ["US","AU","UK","SG"]), advancedDetails: ["experience":"true","majorCat":"true"]))
+                                                                    
+                                                                    AccountDetailsModel(accountID: "",
+                                                                                        viewName: "",
+                                                                                        placementLocation1: "",
+                                                                                        placementLocation2: ""),
+                                                                 customerDetails:
+                                                                    CustomerDetailsModel(state: "NSW",
+                                                                                                       postcode: "200",
+                                                                                                       country:
+                                                                                                        ["US","AU","UK","SG"]),
+                                                                 advancedDetails:
+                                                                                                            ["experience":"true"
+                                                                                                             ,"majorCat":"true"]))
         )
     }
 }

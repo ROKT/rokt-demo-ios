@@ -84,6 +84,13 @@ struct AccountDetailsView_Previews: PreviewProvider {
                                                             AccountDetailsModel(accountID: "123",
                                                                                  viewName: "",
                                                                                  placementLocation1: "",
-                                                                                 placementLocation2: "") ,customerDetails: CustomerDetailsModel(state: "", postcode: "", country: []), advancedDetails: [:])), popToRootView: .constant(true))
+                                                                                 
+                                                                                 placementLocation2: "")
+                                                         ,customerDetails:
+                                                            CustomerDetailsModel(state: "",
+                                                                                 postcode: "",
+                                                                                 country: []),
+                                                         advancedDetails: [:]))
+                           , popToRootView: .constant(true))
     }
 }
