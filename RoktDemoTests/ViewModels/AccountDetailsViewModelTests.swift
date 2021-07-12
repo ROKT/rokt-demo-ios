@@ -17,15 +17,22 @@ class AccountDetailsViewModelTests: XCTestCase {
 
     func testAccountDetailsViewModelInitiation() {
         // arrange and act
-        let viewModel = AccountDetailsViewModel(CustomConfigurationPageModel(title: "title",
-                                                                             shortDescription: "",
-                                                                             longDescription: "",
-                                                                             iconURL: "",
-                                                                             customerDetails:
-                                                                                CustomerDetailsModel(accountID: "123",
-                                                                                                     viewName: "viewName",
-                                                                                                     placementLocation1: "placementLocation1",
-                                                                                                     placementLocation2: "placementLocation2")))
+        let viewModel = AccountDetailsViewModel(
+            CustomConfigurationPageModel(title: "title",
+                                         shortDescription: "",
+                                         longDescription: "",
+                                         iconURL: "",
+                                         accountDetails:
+                                            AccountDetailsModel(accountID: "123",
+                                                                viewName: "viewName",
+                                                                placementLocation1: "placementLocation1",
+                                                                placementLocation2: "placementLocation2"),
+                                         customerDetails:
+                                            CustomerDetailsModel(state: "",
+                                                                 postcode: "",
+                                                                 country: ["AU", "US"]),
+                                         advancedDetails: ["":""]
+                                         ))
         
         // assert
         XCTAssertEqual(viewModel.accountId, "123", "AccountId need to be adjusted")
@@ -36,17 +43,24 @@ class AccountDetailsViewModelTests: XCTestCase {
     
     func testAccountDetailsContinueActionValidationFail() {
         // arrange
-        let viewModel = AccountDetailsViewModel(CustomConfigurationPageModel(title: "title",
-                                                                             shortDescription: "",
-                                                                             longDescription: "",
-                                                                             iconURL: "",
-                                                                             customerDetails:
-                                                                                CustomerDetailsModel(accountID: "",
-                                                                                                     viewName: "viewName",
-                                                                                                     placementLocation1: "placementLocation1",
-                                                                                                     placementLocation2: "placementLocation2")))
+        let viewModel = AccountDetailsViewModel(
+            CustomConfigurationPageModel(title: "title",
+                                         shortDescription: "",
+                                         longDescription: "",
+                                         iconURL: "",
+                                         accountDetails:
+                                            AccountDetailsModel(accountID: "",
+                                                                viewName: "",
+                                                                placementLocation1: "",
+                                                                placementLocation2: ""),
+                                         customerDetails:
+                                            CustomerDetailsModel(state: "",
+                                                                 postcode: "",
+                                                                 country: ["AU", "US"]),
+                                         advancedDetails: ["":""]
+                                         ))
         // act
-        viewModel.continueAction()
+        XCTAssertFalse(viewModel.isValidToContinue())
         
         // assert
         XCTAssertTrue(viewModel.accountIdHasError)
@@ -55,17 +69,24 @@ class AccountDetailsViewModelTests: XCTestCase {
     
     func testAccountDetailsContinueActionValidationPass() {
         // arrange
-        let viewModel = AccountDetailsViewModel(CustomConfigurationPageModel(title: "title",
-                                                                             shortDescription: "",
-                                                                             longDescription: "",
-                                                                             iconURL: "",
-                                                                             customerDetails:
-                                                                                CustomerDetailsModel(accountID: "123",
-                                                                                                     viewName: "viewName",
-                                                                                                     placementLocation1: "placementLocation1",
-                                                                                                     placementLocation2: "placementLocation2")))
+        let viewModel = AccountDetailsViewModel(
+            CustomConfigurationPageModel(title: "title",
+                                         shortDescription: "",
+                                         longDescription: "",
+                                         iconURL: "",
+                                         accountDetails:
+                                            AccountDetailsModel(accountID: "123",
+                                                                viewName: "viewName",
+                                                                placementLocation1: "placementLocation1",
+                                                                placementLocation2: "placementLocation2"),
+                                         customerDetails:
+                                            CustomerDetailsModel(state: "",
+                                                                 postcode: "",
+                                                                 country: ["AU", "US"]),
+                                         advancedDetails: ["":""]
+                                         ))
         // act
-        viewModel.continueAction()
+        XCTAssertTrue(viewModel.isValidToContinue())
         
         // assert
         XCTAssertFalse(viewModel.accountIdHasError)
