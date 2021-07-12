@@ -99,11 +99,29 @@ struct FeatureWalkthroughView: View {
 
 struct FeatureWalkthroughScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureWalkthroughView(viewModel: FeatureWalkthroughViewModel(model: DefaultPlacementExamplesModel(title: "", shortDescription: "", longDescription: "", iconURL: "", tagID: "", screens: [ScreenModel(title: "Embedded Placement (1)", description: """
+        FeatureWalkthroughView(viewModel:
+                                FeatureWalkthroughViewModel(
+                                    model:
+                                        DefaultPlacementExamplesModel(title: "",
+                                                                      shortDescription: "",
+                                                                      longDescription: "",
+                                                                      iconURL: "",
+                                                                      tagID: "",
+                                                                      screens:
+                                                                        [ScreenModel(title:
+                                                                                        "Embedded Placement (1)",
+                                                                                     description:
+"""
 The below preview shows an embedded placement without brand logos displayed. You can progress through the offers by clicking “Yes Please” or “No Thanks”.
 \n
 The placement UI can be customised to match your app, and create a native experience. This includes changing fonts, colours and multiple configurable options to alter the look and feel of the placement.
 
-""", viewName: "testiOS", placeholderName: "Location1", type: "overlay", attributes: ["firstname":"danial", "lastname":"m",  "email":"something@example.com", "sandbox":"true", "country":"AU"])]),selectedScreen: 0), popToRootView: .constant(true))
+""",
+                                                                                     viewName: "testiOS", placeholderName: "Location1", type: "overlay",
+                                                                                     attributes: ["firstname":"name",
+                                                                                                  "lastname":"family",
+                                                                                                  "email":"something@example.com",
+                                                                                                  "sandbox":"true", "country":"AU"])]
+                                        ),selectedScreen: 0), popToRootView: .constant(true))
     }
 }

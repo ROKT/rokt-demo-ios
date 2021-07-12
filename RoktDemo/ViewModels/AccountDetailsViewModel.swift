@@ -22,27 +22,29 @@ class AccountDetailsViewModel: ObservableObject {
     
     init(_ model: CustomConfigurationPageModel) {
         self.model = model
-        accountId = model.customerDetails.accountID
-        viewName = model.customerDetails.viewName
-        placementLocation1 = model.customerDetails.placementLocation1
-        placementLocation2 = model.customerDetails.placementLocation2
+        accountId = model.accountDetails.accountID
+        viewName = model.accountDetails.viewName
+        placementLocation1 = model.accountDetails.placementLocation1
+        placementLocation2 = model.accountDetails.placementLocation2
     }
     
-    func continueAction() {
+    func isValidToContinue() -> Bool {
         accountIdHasError = ValidationService.isEmpty(accountId)
-        if accountIdHasError {
-            // don't navigate if there is validation error
-            return
-        }
-        let accountDetail = AccountDetailModel(accountId: accountId,
-                                               viewName: viewName,
-                                               placementLocation1: placementLocation1,
-                                               placementLocation2: placementLocation2)
-       
+        return !accountIdHasError
+    }
+    
+    func getCustomerDetailsViewModel() -> CustomerDetailsViewModel {
+        return CustomerDetailsViewModel(customerDetails: model.customerDetails,
+                                        advancedDetails: model.advancedDetails, 
+                                        accountDetail:
+                                            AccountDetailViewData(accountId: accountId,
+                                                                  viewName: viewName,
+                                                                  placementLocation1: placementLocation1,
+                                                                  placementLocation2: placementLocation2))
     }
 }
 
-struct AccountDetailModel {
+struct AccountDetailViewData {
     var accountId: String
     var viewName: String
     var placementLocation1: String

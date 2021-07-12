@@ -14,13 +14,19 @@
 import Foundation
 
 class CustomConfigurationPageModel: DemoItemModel {
+    var accountDetails: AccountDetailsModel
     var customerDetails: CustomerDetailsModel
+    var advancedDetails: [String: String]
     required init(title: String,
          shortDescription: String,
          longDescription: String,
          iconURL: String,
-         customerDetails: CustomerDetailsModel) {
+         accountDetails: AccountDetailsModel,
+         customerDetails: CustomerDetailsModel,
+         advancedDetails: [String: String]) {
+        self.accountDetails = accountDetails
         self.customerDetails = customerDetails
+        self.advancedDetails = advancedDetails
         super.init(title: title,
                    shortDescription: shortDescription,
                    longDescription: longDescription,

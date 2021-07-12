@@ -12,8 +12,9 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
-struct CustomerDetailsModel {
-    let state: String
-    let postcode: String
-    let country: [String]
+struct AccountDetailsModel {
+    var accountID: String
+    var viewName: String
+    var placementLocation1: String
+    var placementLocation2: String
 }
