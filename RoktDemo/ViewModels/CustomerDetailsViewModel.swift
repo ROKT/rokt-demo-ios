@@ -58,10 +58,13 @@ class CustomerDetailsViewModel: ObservableObject {
 
         return attributes
     }
+<<<<<<< HEAD
     
     func getConfirmationViewModel() -> ConfirmationViewModel {
         return ConfirmationViewModel(accountDetail: accountDetail, attributes: getAttributes())
     }
+=======
+>>>>>>> 80a65ff17c5f2ef463c09fc2ccd6665fe46bd15f
 }
 
 struct KeyValue: Hashable {
