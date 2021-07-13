@@ -73,10 +73,11 @@ If you do not have these, please reach out to your Rokt Account Manager.
                                                                 CustomerDetailsModel(state: "NSW",
                                                                                      postcode: "2000",
                                                                                      country:
-                                                                                        ["US","AU","UK","SG"]),
+                                                                                        ["AU","US","UK","SG"]),
                                                              advancedDetails:
                                                                 ["experience":"true",
-                                                                 "majorCat":"true"]),
+                                                                 "majorCat":"true",
+                                                                 "sandbox":"true"]),
                              preDefinedScreen1:
                                 PreDefinedScreen1Model(title: "Confirmation Page",
                                                        shortDescription: "View a demonstration of how Groupon has integrated in-app Rokt technology into their post-purchase confirmation page. ",

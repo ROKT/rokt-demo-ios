@@ -16,6 +16,7 @@ struct CustomerDetailsView: View {
     
     @Binding var popToRootView : Bool
     
+    @State var moveToNextView = false
     @State var isAdvancedDetailsShown = false
     
     var body: some View {
@@ -61,6 +62,12 @@ struct CustomerDetailsView: View {
                         AdvancedDetails(advancedDetails: $viewModel.advancedDetailsKV)
                     }
                     
+                    NavigationLink(destination:
+                                    ConfirmationView(viewModel: viewModel.getConfirmationViewModel(),
+                                                        popToRootView: $popToRootView),
+                                   isActive: self.$moveToNextView) {
+                        Text("") }.hidden()
+                    
                 }.padding()
             }.modifier(NavigationBarBlackWithButton(title: "",
                                                     trailingButtonTitle: "QUIT DEMO",
@@ -68,7 +75,7 @@ struct CustomerDetailsView: View {
                                                         popToRootView = false
                                                     }))
             Button("Continue") {
-                
+                moveToNextView = true
             }.buttonStyle(ButtonDefault())
             .background(Color.white)
             .padding(EdgeInsets(top: 10, leading: 10, bottom: 30, trailing: 10))

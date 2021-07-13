@@ -39,7 +39,7 @@ class CustomerDetailsViewModel: ObservableObject {
         advancedDetailsKV.append(KeyValue(key: "", value: ""))
     }
     
-    func getAttributes() -> [String: String] {
+    private func getAttributes() -> [String: String] {
         var attributes : [String: String] = [:]
         if !state.isEmpty {
             attributes["state"] = state
@@ -57,6 +57,10 @@ class CustomerDetailsViewModel: ObservableObject {
         }
 
         return attributes
+    }
+    
+    func getConfirmationViewModel() -> ConfirmationViewModel {
+        return ConfirmationViewModel(accountDetail: accountDetail, attributes: getAttributes())
     }
 }
 

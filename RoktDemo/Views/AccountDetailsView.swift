@@ -10,6 +10,7 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import SwiftUI
+import Rokt_Widget
 
 struct AccountDetailsView: View {
     @ObservedObject var viewModel: AccountDetailsViewModel
@@ -60,6 +61,7 @@ struct AccountDetailsView: View {
                                                    }))
             Button("Continue") {
                 if viewModel.isValidToContinue() {
+                    Rokt.initWith(roktTagId: viewModel.accountId)
                     moveToNextView = true
                 }
             }.buttonStyle(ButtonDefault())

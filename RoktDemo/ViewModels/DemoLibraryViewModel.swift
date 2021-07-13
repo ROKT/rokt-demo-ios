@@ -25,8 +25,8 @@ class DemoLibraryViewModel: ObservableObject {
         demoDescription = demo.demoDescription
         demoItems.append(demo.defaultPlacementsExamples)
         demoItems.append(demo.customConfigurationPage)
-        demoItems.append(demo.preDefinedScreen1)
-        demoItems.append(demo.preDefinedScreen2)
-        demoItems.append(demo.preDefinedScreen3)
+//        demoItems.append(demo.preDefinedScreen1)
+//        demoItems.append(demo.preDefinedScreen2)
+//        demoItems.append(demo.preDefinedScreen3)
     }
 }
