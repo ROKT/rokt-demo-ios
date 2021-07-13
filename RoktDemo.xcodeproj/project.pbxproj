@@ -48,6 +48,9 @@
 		25A5624A269BB981003E64B0 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */; };
 		25A5624F269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5624E269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift */; };
 		25A56254269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A56253269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift */; };
+		25A56259269BE2EC003E64B0 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A56258269BE2EC003E64B0 /* ConfirmationView.swift */; };
+		25A5625E269BFF69003E64B0 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */; };
+		25A56262269D551F003E64B0 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */; };
 		25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D87260D94B60044EF14 /* SoleilBook.otf */; };
 		25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D88260D94B60044EF14 /* SoleilLight.otf */; };
 		25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D89260D94B60044EF14 /* SoleilRegular.otf */; };
@@ -148,6 +151,8 @@
 		2576572A261D4CBF003F3D26 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		25A5624E269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		25A56253269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughViewModelTests.swift; sourceTree = "<group>"; };
+		25A56258269BE2EC003E64B0 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
 		25BA8D87260D94B60044EF14 /* SoleilBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBook.otf; sourceTree = "<group>"; };
 		25BA8D88260D94B60044EF14 /* SoleilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilLight.otf; sourceTree = "<group>"; };
 		25BA8D89260D94B60044EF14 /* SoleilRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilRegular.otf; sourceTree = "<group>"; };
@@ -243,6 +248,7 @@
 				25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */,
 				252842D1263BB9300010114A /* AccountDetailsViewModel.swift */,
 				58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */,
+				25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 				256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */,
 				257564B6263A6A9E0096889A /* AccountDetailsView.swift */,
 				58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */,
+				25A56258269BE2EC003E64B0 /* ConfirmationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -749,6 +756,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A56259269BE2EC003E64B0 /* ConfirmationView.swift in Sources */,
 				256EB77E261C208500B959EF /* PreDefinedScreen2Model.swift in Sources */,
 				2570F33C2627B38400B5B52E /* NavigationBarBlackWithButton.swift in Sources */,
 				256EB779261C206A00B959EF /* PreDefinedScreen1Model.swift in Sources */,
@@ -791,6 +799,7 @@
 				252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */,
 				2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
+				25A5625E269BFF69003E64B0 /* ConfirmationViewModel.swift in Sources */,
 				256A288D262D4904000CF3D4 /* FeatureWalkthroughView.swift in Sources */,
 				25747164261EB5B200B8C0C7 /* NavigationBarGray.swift in Sources */,
 				255D7ACB262959CE0041D81C /* ScreenModel.swift in Sources */,
@@ -821,6 +830,7 @@
 				58A97A6F2654CF850092B598 /* AccountDetailsViewModelTests.swift in Sources */,
 				2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */,
 				58A97A712654D2F20092B598 /* AccountDetailsViewModel.swift in Sources */,
+				25A56262269D551F003E64B0 /* ConfirmationViewModel.swift in Sources */,
 				25F8477E260C348A0067B515 /* RoktDemoTests.swift in Sources */,
 				58A97A732654D3FC0092B598 /* AccountDetailsModel.swift in Sources */,
 				25A56246269BB953003E64B0 /* CustomerDetailsModel.swift in Sources */,

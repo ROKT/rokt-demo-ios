@@ -28,13 +28,13 @@ class CustomerDetailsViewModelTests: XCTestCase {
                                                                                   placementLocation1: "",
                                                                                   placementLocation2: ""))
         // act
-        let attributes = customerDetailSVM.getAttributes()
+        let confirmationViewModel = customerDetailSVM.getConfirmationViewModel()
         // assert
         let expectedAttributes = ["state":"NSW",
                                   "postcode":"2000",
                                   "country":"AU",
                                   "test":"true"]
-        XCTAssertEqual(attributes, expectedAttributes)
+        XCTAssertEqual(confirmationViewModel.attributes, expectedAttributes)
     }
 
 
