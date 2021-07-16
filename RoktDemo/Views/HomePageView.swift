@@ -57,7 +57,7 @@ struct HomePageView: View {
                     }
                     .buttonStyle(ButtonDefault())
                     .sheet(isPresented: $showSafari) {
-                        SafariView(url:URL(string: Constants.Urls.ContactUS)!)
+                        SafariView(url:URL(string: Constants.Urls.contactUs)!)
                     }
                     
                     Text("® Rokt 2021 — All rights reserved App Version 1.0.0")

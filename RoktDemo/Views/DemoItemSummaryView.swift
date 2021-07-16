@@ -24,7 +24,10 @@ struct DemoItemSummaryView: View {
                                title: viewModel.summaryModel.title)
                 
                 Spacer()
-                DemoContentView(longDescription: viewModel.summaryModel.longDescription)
+                if let longDescription = viewModel.summaryModel.longDescription
+                {
+                    DemoContentView(longDescription: longDescription)
+                }
                 Spacer()
                 Button(action: {
                     isDisclaimerShown.toggle()

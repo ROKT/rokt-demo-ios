@@ -18,23 +18,36 @@ struct DemoLibraryView: View {
     @ObservedObject var viewModel: DemoLibraryViewModel
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                HeaderView(title: viewModel.demoTitle)
+        ZStack {
+            
+            switch viewModel.uiState {
+            case .loading:
+                ActivityIndicator()
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .background(Color.white)
                 
-                Text(viewModel.demoDescription)
-                    .font(.defaultFont(.text))
-                    .foregroundColor(.textColor)
-                
-                ForEach(viewModel.demoItems, id: \.self) { item in
-                    NavigationLink(
-                        destination: getDemoItemDestination(item),
-                        label: {
-                            DemoItemView(demoItemModel: item)
-                        })
-                    
+            case .error(let errorMessage):
+                Text("Error happened, Details: \(errorMessage)")
+            default:
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        HeaderView(title: viewModel.demoTitle)
+                        
+                        Text(viewModel.demoDescription)
+                            .font(.defaultFont(.text))
+                            .foregroundColor(.textColor)
+                        
+                        ForEach(viewModel.demoItems, id: \.self) { item in
+                            NavigationLink(
+                                destination: getDemoItemDestination(item),
+                                label: {
+                                    DemoItemView(demoItemModel: item)
+                                })
+                            
+                        }
+                    }.padding()
                 }
-            }.padding()
+            }
         }
         .onAppear {
             viewModel.loadDemoItems()

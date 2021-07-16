@@ -12,12 +12,28 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
+import Combine
 
 class AboutRoktViewModel: ObservableObject {
     @Published private(set) var aboutModel: AboutRoktModel = AboutRoktModel(contents: [], links: [])
     
+    @Published private(set) var uiState = UIState.loading
+//    @Published private(set) var isLoading = true
+    private var cancellable: AnyCancellable?
     func loadAboutRokt() {
-        aboutModel = AboutRoktService.getAboutRokt()
+        
+        cancellable = AboutRoktService.getData().sink(receiveCompletion: { complition in
+            switch complition {
+            case .failure(let error):
+                print(error)
+                self.uiState = .error(error: error.localizedDescription)
+            case .finished:
+                self.uiState = .hasData
+            }
+            
+        }, receiveValue: { value in
+            self.aboutModel = value
+        })
     }
     
 }

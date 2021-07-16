@@ -12,7 +12,7 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
-struct ScreenModel {
+struct ScreenModel: Codable {
     let title: String
     let description: String
     let viewName: String
@@ -21,6 +21,6 @@ struct ScreenModel {
     let attributes: [String:String]
     
     func isOverlay() -> Bool {
-        return type == "overlay"
+        return type.lowercased() == "overlay"
     }
 }

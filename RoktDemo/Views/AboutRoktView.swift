@@ -18,26 +18,39 @@ struct AboutRoktView: View {
     @ObservedObject var viewModel: AboutRoktViewModel
     
     var body: some View {
-        ScrollView {
-            VStack {
-                ExtendableHeader {
-                    ZStack {
-                        Image("AboutBackground")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                        Text("About Rokt")
-                            .foregroundColor(.white)
-                            .font(.defaultHeadingFont(.header2))
+        ZStack {
+            switch viewModel.uiState {
+            case .loading:
+                ActivityIndicator()
+                    .frame(width: 100, height: 100, alignment: .center)
+            case .error(let errorMessage):
+                Text("Error happened, Details: \(errorMessage)")
+            default:
+                
+                ScrollView {
+                    
+                    VStack {
+                        ExtendableHeader {
+                            ZStack {
+                                Image("AboutBackground")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                Text("About Rokt")
+                                    .foregroundColor(.white)
+                                    .font(.defaultHeadingFont(.header2))
+                            }
+                        }.padding(.bottom)
                     }
-                }.padding(.bottom)
-            }
-            
-            ForEach(viewModel.aboutModel.contents, id: \.self) { content in
-                AboutRoktContentView(content: content)
-            }
-            
-            ForEach(viewModel.aboutModel.links, id: \.self) { link in
-                AboutRoktLinkView(link: link)
+                    
+                    ForEach(viewModel.aboutModel.contents, id: \.self) { content in
+                        AboutRoktContentView(content: content)
+                    }
+                    
+                    ForEach(viewModel.aboutModel.links, id: \.self) { link in
+                        AboutRoktLinkView(link: link)
+                    }
+                    
+                }
             }
             
         }

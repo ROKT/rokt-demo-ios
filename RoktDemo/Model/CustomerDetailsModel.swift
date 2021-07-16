@@ -12,7 +12,7 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
-struct CustomerDetailsModel {
+struct CustomerDetailsModel: Codable {
     let state: String
     let postcode: String
     let country: [String]

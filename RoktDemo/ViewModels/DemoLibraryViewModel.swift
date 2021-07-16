@@ -12,14 +12,35 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
+import Combine
 
 class DemoLibraryViewModel: ObservableObject {
     @Published private(set) var demoItems: [DemoItemModel] = []
     @Published private(set) var demoTitle: String = ""
     @Published private(set) var demoDescription: String = ""
     
+    
+    @Published private(set) var uiState = UIState.loading
+    private var cancellable: AnyCancellable?
+    
     func loadDemoItems() {
-        let demo = DemoLibraryService.getDemoLibrary()
+        cancellable = DemoLibraryService.getData().sink(receiveCompletion: { complition in
+            
+            switch complition {
+            case .failure(let error):
+                print(error)
+                self.uiState = .error(error: error.localizedDescription)
+            case .finished:
+                self.uiState = .hasData
+            }
+            
+        }, receiveValue: { value in
+            self.loadData(demo: value)
+        })
+        
+    }
+    
+    private func loadData(demo: DemoLibraryModel) {
         demoTitle = demo.demoTitle
         demoItems = []
         demoDescription = demo.demoDescription

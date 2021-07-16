@@ -12,9 +12,19 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
+import Alamofire
+import Combine
 
 struct DemoLibraryService {
-    static func getDemoLibrary() -> DemoLibraryModel {
+    static func getData() -> Future<DemoLibraryModel, Error> {
+        let url = Constants.Urls.base + Constants.Urls.library
+        return NetworkService.request(
+            url: url,
+            method: HTTPMethod.post
+        )
+    }
+    
+    static func getMockDemoLibrary() -> DemoLibraryModel {
         return
             DemoLibraryModel(demoTitle: "Demo Library",
                              demoDescription: """

@@ -19,7 +19,7 @@ class CustomConfigurationPageModel: DemoItemModel {
     var advancedDetails: [String: String]
     required init(title: String,
          shortDescription: String,
-         longDescription: String,
+         longDescription: String?,
          iconURL: String,
          accountDetails: AccountDetailsModel,
          customerDetails: CustomerDetailsModel,
@@ -31,5 +31,27 @@ class CustomConfigurationPageModel: DemoItemModel {
                    shortDescription: shortDescription,
                    longDescription: longDescription,
                    iconURL: iconURL)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        accountDetails = try values.decode(AccountDetailsModel.self, forKey: .accountDetails)
+        customerDetails = try values.decode(CustomerDetailsModel.self, forKey: .customerDetails)
+        advancedDetails = try values.decode([String: String].self, forKey: .advancedDetails)
+        
+        let title = try values.decode(String.self, forKey: .title)
+        let shortDescription = try values.decode(String.self, forKey: .shortDescription)
+        let longDescription = try values.decode(String.self, forKey: .longDescription)
+        let iconURL = try values.decode(String.self, forKey: .iconURL)
+        
+        super.init(title: title,
+                   shortDescription: shortDescription,
+                   longDescription: longDescription,
+                   iconURL: iconURL)
+    }
+    
+    enum CodingKeys: CodingKey {
+      case title, shortDescription, longDescription, iconURL, accountDetails, customerDetails, advancedDetails
     }
 }

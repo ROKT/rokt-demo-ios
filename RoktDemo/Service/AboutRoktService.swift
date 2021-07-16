@@ -12,9 +12,28 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
+import Combine
+import Alamofire
 
 struct AboutRoktService {
-    static func getAboutRokt() -> AboutRoktModel {
+    static func getData() -> Future<AboutRoktModel, Error> {
+        let url = Constants.Urls.base + Constants.Urls.about
+        return NetworkService.request(
+            url: url,
+            method: HTTPMethod.get
+        )
+    }
+    
+    static func getData2() -> Future<AboutRoktContentModel?, Error> {
+        let url = Constants.Urls.base + "library"
+        return NetworkService.request(
+                    url: url,
+                    method: HTTPMethod.post
+                )
+            }
+    
+    
+    static func getDemoAboutRokt() -> AboutRoktModel {
         let contents: [AboutRoktContentModel] = [
             AboutRoktContentModel(imageUrl: "",
                                   title: "What is the Rokt Demo app?",
