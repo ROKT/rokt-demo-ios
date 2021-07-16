@@ -48,7 +48,7 @@ class DemoItemSummaryViewModel: ObservableObject {
 
 struct DemoItemSummaryModel {
     let title: String
-    let longDescription: String
+    let longDescription: String?
     let iconURL: String
     let disclaimerMessage: String
 }

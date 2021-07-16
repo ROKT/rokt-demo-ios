@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (5.4.3)
   - Kingfisher (6.2.1)
   - Rokt-Widget (3.5.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.4)
   - Kingfisher (~> 6.2.1)
   - Rokt-Widget (~> 3.5.1)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Kingfisher
     - Rokt-Widget
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   Rokt-Widget: 66252cd7b032710e2667731caa1d18a91d2581c0
 
-PODFILE CHECKSUM: 318568e8ff8809d1480653a1c50e8059ebb0e74e
+PODFILE CHECKSUM: dcf2672536f81b86bcaf5bf368c59705224284a3
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0

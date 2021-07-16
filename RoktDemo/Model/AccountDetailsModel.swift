@@ -12,7 +12,7 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
-struct AccountDetailsModel {
+struct AccountDetailsModel: Codable {
     var accountID: String
     var viewName: String
     var placementLocation1: String

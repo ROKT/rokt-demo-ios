@@ -19,7 +19,7 @@ class DefaultPlacementExamplesModel: DemoItemModel {
     
     required init(title: String,
          shortDescription: String,
-         longDescription: String,
+         longDescription: String?,
          iconURL: String,
          tagID: String,
          screens: [ScreenModel]) {
@@ -29,5 +29,27 @@ class DefaultPlacementExamplesModel: DemoItemModel {
                    shortDescription: shortDescription,
                    longDescription: longDescription,
                    iconURL: iconURL)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        tagID = try values.decode(String.self, forKey: .tagID)
+        screens = try values.decode([ScreenModel].self, forKey: .screens)
+        
+        let title = try values.decode(String.self, forKey: .title)
+        let shortDescription = try values.decode(String.self, forKey: .shortDescription)
+        let longDescription = try values.decode(String.self, forKey: .longDescription)
+        let iconURL = try values.decode(String.self, forKey: .iconURL)
+        
+        super.init(title: title,
+                   shortDescription: shortDescription,
+                   longDescription: longDescription,
+                   iconURL: iconURL)
+        
+    }
+    
+    enum CodingKeys: CodingKey {
+      case title, shortDescription, longDescription, iconURL, tagID, screens
     }
 }

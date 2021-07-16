@@ -16,6 +16,9 @@ import Foundation
 struct Constants {
     
     struct Urls {
-        static let ContactUS = "https://rokt.com/contact-us/"
+        static let base = "https://rokt-demo-app-server.rokt.com/"
+        static let about = "about"
+        static let library = "library"
+        static let contactUs = "https://rokt.com/contact-us/"
     }
 }

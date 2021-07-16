@@ -13,15 +13,15 @@
 
 import Foundation
 
-class DemoItemModel: Hashable {
+class DemoItemModel: Codable, Hashable {
     var title: String
     var shortDescription: String
-    var longDescription: String
+    var longDescription: String?
     var iconURL: String
     
     init(title: String,
          shortDescription: String,
-         longDescription: String,
+         longDescription: String?,
          iconURL: String) {
         self.title = title
         self.shortDescription = shortDescription

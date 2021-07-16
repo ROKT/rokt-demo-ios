@@ -13,7 +13,7 @@
 
 import Foundation
 
-struct DemoLibraryModel {
+struct DemoLibraryModel: Codable {
     let demoTitle: String
     let demoDescription: String
     let defaultPlacementsExamples: DefaultPlacementExamplesModel
