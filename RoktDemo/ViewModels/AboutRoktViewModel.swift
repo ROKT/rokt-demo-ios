@@ -18,7 +18,7 @@ class AboutRoktViewModel: ObservableObject {
     @Published private(set) var aboutModel: AboutRoktModel = AboutRoktModel(contents: [], links: [])
     
     @Published private(set) var uiState = UIState.loading
-//    @Published private(set) var isLoading = true
+
     private var cancellable: AnyCancellable?
     func loadAboutRokt() {
         
