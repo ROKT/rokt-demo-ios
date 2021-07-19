@@ -23,8 +23,8 @@ struct AboutRoktView: View {
             case .loading:
                 ActivityIndicator()
                     .frame(width: 100, height: 100, alignment: .center)
-            case .error(let errorMessage):
-                Text("Error happened, Details: \(errorMessage)")
+            case .error(let error):
+                ErrorView(viewModel: ErrorViewModel(error: error)).modifier(NavigationBarGray(title: ""))
             default:
                 
                 ScrollView {
@@ -50,7 +50,7 @@ struct AboutRoktView: View {
                         AboutRoktLinkView(link: link)
                     }
                     
-                }
+                }.modifier(NavigationBarTransparent(title: ""))
             }
             
         }

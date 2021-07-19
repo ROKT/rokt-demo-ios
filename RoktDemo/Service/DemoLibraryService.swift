@@ -16,7 +16,7 @@ import Alamofire
 import Combine
 
 struct DemoLibraryService {
-    static func getData() -> Future<DemoLibraryModel, Error> {
+    static func getData() -> Future<DemoLibraryModel, AFError> {
         let url = Constants.Urls.base + Constants.Urls.library
         return NetworkService.request(
             url: url,

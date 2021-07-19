@@ -46,6 +46,9 @@
 		2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB62653594E005226C5 /* ValidationService.swift */; };
 		2575CCBD26538AF8005226C5 /* AccountDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCBC26538AF8005226C5 /* AccountDetailsModel.swift */; };
 		2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576572A261D4CBF003F3D26 /* Color+Extensions.swift */; };
+		25A0266126A5000D0005CFED /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A0266026A5000D0005CFED /* ErrorView.swift */; };
+		25A0266626A51B860005CFED /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A0266526A51B860005CFED /* ErrorViewModel.swift */; };
+		25A0266726A51B860005CFED /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A0266526A51B860005CFED /* ErrorViewModel.swift */; };
 		25A56246269BB953003E64B0 /* CustomerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9B226955CDC0091E01A /* CustomerDetailsModel.swift */; };
 		25A5624A269BB981003E64B0 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */; };
 		25A5624F269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5624E269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift */; };
@@ -154,6 +157,8 @@
 		2575CCB926536A84005226C5 /* ValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTests.swift; sourceTree = "<group>"; };
 		2575CCBC26538AF8005226C5 /* AccountDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsModel.swift; sourceTree = "<group>"; };
 		2576572A261D4CBF003F3D26 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		25A0266026A5000D0005CFED /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		25A0266526A51B860005CFED /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		25A5624E269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		25A56253269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughViewModelTests.swift; sourceTree = "<group>"; };
 		25A56258269BE2EC003E64B0 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
@@ -263,6 +268,7 @@
 				252842D1263BB9300010114A /* AccountDetailsViewModel.swift */,
 				58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */,
 				25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */,
+				25A0266526A51B860005CFED /* ErrorViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				257564B6263A6A9E0096889A /* AccountDetailsView.swift */,
 				58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */,
 				25A56258269BE2EC003E64B0 /* ConfirmationView.swift */,
+				25A0266026A5000D0005CFED /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -777,6 +784,7 @@
 				256EB77E261C208500B959EF /* PreDefinedScreen2Model.swift in Sources */,
 				2570F33C2627B38400B5B52E /* NavigationBarBlackWithButton.swift in Sources */,
 				256EB779261C206A00B959EF /* PreDefinedScreen1Model.swift in Sources */,
+				25A0266626A51B860005CFED /* ErrorViewModel.swift in Sources */,
 				2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */,
 				256EB76A261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift in Sources */,
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
@@ -828,6 +836,7 @@
 				256E3D3E2623DFE000639FE0 /* DemoLibraryViewModel.swift in Sources */,
 				2524C9B326955CDC0091E01A /* CustomerDetailsModel.swift in Sources */,
 				589922BA2615560800A58DA3 /* Constants.swift in Sources */,
+				25A0266126A5000D0005CFED /* ErrorView.swift in Sources */,
 				25570523262FA34D00635121 /* FeatureWalkthroughViewModel.swift in Sources */,
 				589922CC261587A700A58DA3 /* ExtendableHeader.swift in Sources */,
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
@@ -848,6 +857,7 @@
 				25A5624F269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift in Sources */,
 				58A97A722654D3F10092B598 /* CustomConfigurationPageModel.swift in Sources */,
 				58A97A6F2654CF850092B598 /* AccountDetailsViewModelTests.swift in Sources */,
+				25A0266726A51B860005CFED /* ErrorViewModel.swift in Sources */,
 				2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */,
 				58A97A712654D2F20092B598 /* AccountDetailsViewModel.swift in Sources */,
 				25A56262269D551F003E64B0 /* ConfirmationViewModel.swift in Sources */,

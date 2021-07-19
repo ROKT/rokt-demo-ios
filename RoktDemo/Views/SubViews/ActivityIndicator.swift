@@ -12,7 +12,6 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 import SwiftUI
 
-
 struct ActivityIndicator: View {
 
   @State private var isAnimating: Bool = false

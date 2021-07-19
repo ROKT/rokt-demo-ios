@@ -16,7 +16,7 @@ import Combine
 import Alamofire
 
 struct AboutRoktService {
-    static func getData() -> Future<AboutRoktModel, Error> {
+    static func getData() -> Future<AboutRoktModel, AFError> {
         let url = Constants.Urls.base + Constants.Urls.about
         return NetworkService.request(
             url: url,

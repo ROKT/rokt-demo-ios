@@ -26,13 +26,9 @@ struct NetworkService {
                 debugPrint(response)
                 switch response.result {
                 case .success(let value):
-                    print("result \(value)")
                     promise(.success(value))
                 case .failure(let error):
-                    promise(.failure(
-                        NSError(domain: error.destinationURL?.absoluteString ?? "", code: error.responseCode ?? 0, userInfo: ["error": error.localizedDescription]) as! E
-                    )
-                    )
+                    promise(.failure(error as! E))
                 }
             })
         })

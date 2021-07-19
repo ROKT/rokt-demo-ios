@@ -26,8 +26,8 @@ struct DemoLibraryView: View {
                     .frame(width: 100, height: 100, alignment: .center)
                     .background(Color.white)
                 
-            case .error(let errorMessage):
-                Text("Error happened, Details: \(errorMessage)")
+            case .error(let error):
+                ErrorView(viewModel: ErrorViewModel(error: error))
             default:
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
