@@ -26,7 +26,7 @@ class AboutRoktViewModel: ObservableObject {
             switch complition {
             case .failure(let error):
                 print(error)
-                self.uiState = .error(error: error.localizedDescription)
+                self.uiState = .error(error: error)
             case .finished:
                 self.uiState = .hasData
             }
