@@ -21,10 +21,13 @@ struct ErrorViewModel {
     let error: AFError?
     
     func getErrorMessageType() -> ErrorMessageType {
-        if error != nil && error!.isResponseSerializationError {
-            return.general
+        if let error = error {
+            if error.isResponseSerializationError {
+                return .general
+            }
+            return .network
         }
-        return .network
+        return .general
     }
 }
 
