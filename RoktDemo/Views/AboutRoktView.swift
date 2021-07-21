@@ -22,9 +22,10 @@ struct AboutRoktView: View {
             switch viewModel.uiState {
             case .loading:
                 ActivityIndicator()
-                    .frame(width: 100, height: 100, alignment: .center)
+                    .frame(width: 100, height: 100, alignment: .center).background(Color.white)
+                    .modifier(NavigationBarGray(title: "")).background(Color.white)
             case .error(let error):
-                ErrorView(viewModel: ErrorViewModel(error: error)).modifier(NavigationBarGray(title: ""))
+                ErrorView(viewModel: ErrorViewModel(error: error)).modifier(NavigationBarGray(title: "")).background(Color.white)
             default:
                 
                 ScrollView {
@@ -53,7 +54,7 @@ struct AboutRoktView: View {
                 }.modifier(NavigationBarTransparent(title: ""))
             }
             
-        }
+        }.background(Color.white)
         .onAppear {
             viewModel.loadAboutRokt()
         }
@@ -64,6 +65,6 @@ struct AboutRoktView: View {
 
 struct AboutRoktView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutRoktView(viewModel: AboutRoktViewModel())
+        AboutRoktView(viewModel: AboutRoktViewModel()).preferredColorScheme(.dark)
     }
 }

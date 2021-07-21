@@ -65,9 +65,10 @@ struct HomePageView: View {
                         .multilineTextAlignment(.center)
                         .foregroundColor(.textColor)
                 }.padding()
-            }
-        }.navigationViewStyle(StackNavigationViewStyle())
+            }.background(Color.white)
+        }.background(Color.white).navigationViewStyle(StackNavigationViewStyle())
         .modifier(NavigationBarTransparent(title: ""))
+        .preferredColorScheme(.light)
     }
 }
 

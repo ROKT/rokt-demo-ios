@@ -28,6 +28,7 @@ struct AccountDetailsView: View {
                     
                     Text("Account details")
                         .font(.defaultBoldFont(.header2))
+                        .foregroundColor(.textColor)
                     
                     Text("Please enter your Rokt Account ID and the ViewName and Placement Location Name of the placement you’d like to preview. If you do not know these details, please contact your Rokt Account Manager.")
                         .font(.defaultFont(.subtitle1))

@@ -25,9 +25,10 @@ struct DemoLibraryView: View {
                 ActivityIndicator()
                     .frame(width: 100, height: 100, alignment: .center)
                     .background(Color.white)
+                    .modifier(NavigationBarGray(title: "")).background(Color.white)
                 
             case .error(let error):
-                ErrorView(viewModel: ErrorViewModel(error: error))
+                ErrorView(viewModel: ErrorViewModel(error: error)).modifier(NavigationBarGray(title: "")).background(Color.white)
             default:
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {

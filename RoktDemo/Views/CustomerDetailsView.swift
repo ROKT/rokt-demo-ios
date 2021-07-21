@@ -30,6 +30,7 @@ struct CustomerDetailsView: View {
                     
                     Text("Customer details")
                         .font(.defaultBoldFont(.header2))
+                        .foregroundColor(.textColor)
                     
                     Text("Please enter your customer details to be used in the offer selection process. ")
                         .font(.defaultFont(.subtitle1))
