@@ -31,16 +31,13 @@ struct AboutRoktView: View {
                 ScrollView {
                     
                     VStack {
-                        ExtendableHeader {
-                            ZStack {
-                                Image("AboutBackground")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                Text("About Rokt")
-                                    .foregroundColor(.white)
-                                    .font(.defaultHeadingFont(.header2))
-                            }
-                        }.padding(.bottom)
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            AboutHedearView()
+                        } else {
+                            ExtendableHeader {
+                                AboutHedearView()
+                            }.padding(.bottom)
+                        }
                     }
                     
                     ForEach(viewModel.aboutModel.contents, id: \.self) { content in
@@ -66,5 +63,20 @@ struct AboutRoktView: View {
 struct AboutRoktView_Previews: PreviewProvider {
     static var previews: some View {
         AboutRoktView(viewModel: AboutRoktViewModel()).preferredColorScheme(.dark)
+    }
+}
+
+struct AboutHedearView: View {
+    var body: some View {
+        ZStack {
+            Image("AboutBackground")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .clipped()
+            
+            Text("About Rokt")
+                .foregroundColor(.white)
+                .font(.defaultHeadingFont(.header2))
+        }
     }
 }
