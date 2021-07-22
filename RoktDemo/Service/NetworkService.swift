@@ -23,7 +23,6 @@ struct NetworkService {
                 parameters: parameters,
                 headers: headers
             ).responseDecodable(decoder: decoder, completionHandler: { (response: DataResponse<T, AFError>) in
-                debugPrint(response)
                 switch response.result {
                 case .success(let value):
                     promise(.success(value))

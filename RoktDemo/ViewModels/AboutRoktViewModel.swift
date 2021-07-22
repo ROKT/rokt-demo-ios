@@ -25,7 +25,6 @@ class AboutRoktViewModel: ObservableObject {
         cancellable = AboutRoktService.getData().sink(receiveCompletion: { complition in
             switch complition {
             case .failure(let error):
-                print(error)
                 self.uiState = .error(error: error)
             case .finished:
                 self.uiState = .hasData
