@@ -47,6 +47,7 @@ struct DemoItemView: View {
                 .foregroundColor(.titleColor)
             Text(demoItemModel.shortDescription).font(.defaultFont(.text))
                 .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
                 .foregroundColor(.textColor)
         }
         .padding([.top, .bottom, .leading], 15)

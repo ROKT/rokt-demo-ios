@@ -27,7 +27,7 @@ struct FeatureWalkthroughView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(viewModel.screen.title)
-                        .font(.defaultBoldFont(.header2))
+                        .font(.defaultHeadingFont(.header2))
                         .foregroundColor(.titleColor)
                     Text(viewModel.screen.description)
                         .font(.defaultFont(.text))
@@ -37,10 +37,12 @@ struct FeatureWalkthroughView: View {
                         Text("Preview")
                             .font(.defaultBoldFont(.header3))
                             .foregroundColor(.titleColor)
+                            .padding([.top, .bottom])
                     }
                     roktEmbedded
                         .background(Color.white)
                         .frame(height: self.embeddedSize, alignment: .center)
+                        .border(Color.borderColor, width: 1)
                     
                     NavigationLink(destination: FeatureWalkthroughView(viewModel: FeatureWalkthroughViewModel(model: viewModel.model, selectedScreen: viewModel.selectedScreen + 1), popToRootView: $popToRootView), isActive: self.$moveToNextView) { Text("") }.hidden()
                     
@@ -59,7 +61,7 @@ struct FeatureWalkthroughView: View {
                 }).buttonStyle(ButtonDefaultOutlined())
                 .padding()
             }
-        }.background(Color.white)
+        }.background(Color.gray3)
         .modifier(NavigationBarBlackWithButton(title: viewModel.getNavigationTitle(),
                                                trailingButtonTitle: viewModel.getNavigationButtonText(),
                                                trailingButtonAction: {navigationButtonAction()}))
