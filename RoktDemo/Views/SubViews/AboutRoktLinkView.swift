@@ -31,6 +31,8 @@ struct AboutRoktLinkView: View {
 
 struct AboutRoktLinkView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutRoktLinkView(link: AboutRoktLinkModel(text: "Learn More", url: "https://www.rokt.com"))
+        AboutRoktLinkView(link:
+                            AboutRoktLinkModel(text: "Learn More",
+                                               url: "https://www.rokt.com"))
     }
 }
