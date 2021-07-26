@@ -58,6 +58,10 @@ struct DemoItemView: View {
 
 struct DemoItemView_Previews: PreviewProvider {
     static var previews: some View {
-        DemoItemView(demoItemModel: DemoItemModel(title: "title", shortDescription: "short description", longDescription: "", iconURL: "FeatureWalkthrough"))
+        DemoItemView(demoItemModel:
+                        DemoItemModel(title: "title",
+                                      shortDescription: "short description",
+                                      longDescription: "",
+                                      iconURL: "FeatureWalkthrough"))
     }
 }
