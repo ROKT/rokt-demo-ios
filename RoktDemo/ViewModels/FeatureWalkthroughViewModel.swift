@@ -53,7 +53,6 @@ struct FeatureWalkthroughViewModel {
     
     func getFormattedDate(_ date: Date = Date()) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "YYYYMMDDHHmmSSS"
         
         return dateFormatter.string(from: date)
