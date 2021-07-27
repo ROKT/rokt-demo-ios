@@ -47,6 +47,7 @@ struct DemoItemView: View {
                 .foregroundColor(.titleColor)
             Text(demoItemModel.shortDescription).font(.defaultFont(.text))
                 .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
                 .foregroundColor(.textColor)
         }
         .padding([.top, .bottom, .leading], 15)
@@ -57,6 +58,10 @@ struct DemoItemView: View {
 
 struct DemoItemView_Previews: PreviewProvider {
     static var previews: some View {
-        DemoItemView(demoItemModel: DemoItemModel(title: "title", shortDescription: "short description", longDescription: "", iconURL: "FeatureWalkthrough"))
+        DemoItemView(demoItemModel:
+                        DemoItemModel(title: "title",
+                                      shortDescription: "short description",
+                                      longDescription: "",
+                                      iconURL: "FeatureWalkthrough"))
     }
 }

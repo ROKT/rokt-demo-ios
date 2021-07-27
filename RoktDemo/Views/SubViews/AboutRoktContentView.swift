@@ -27,6 +27,7 @@ struct AboutRoktContentView: View {
             Text(content.content)
                 .font(.defaultFont(.text))
                 .foregroundColor(.textColor)
+                .fixedSize(horizontal: false, vertical: true)
         }.padding()
     }
 }

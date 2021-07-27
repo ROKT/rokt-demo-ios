@@ -20,17 +20,19 @@ struct HomePageView: View {
         NavigationView {
             VStack {
                 Spacer()
-                ZStack {
-                    Image("RoktBackgroundLogo")
-                        .resizable()
-                    VStack {
+                VStack {
+                    HStack {
+                        Image("RokLaunchLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 76, height: 64, alignment: .center)
                         Image("RoktLogo")
-                        Text("Powering the Transaction Moment™")
-                            .font(.defaultFont(.header3))
-                            .foregroundColor(.titleColor)
-                            .multilineTextAlignment(.center)
-                            .padding()
                     }
+                    Text("Powering the Transaction Moment™")
+                        .font(.defaultFont(.header3))
+                        .foregroundColor(.titleColor)
+                        .multilineTextAlignment(.center)
+                        .padding()
                 }
                 Spacer()
                 VStack(spacing: 15) {
