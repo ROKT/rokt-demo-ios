@@ -75,7 +75,7 @@ class FeatureWalkthroughViewModelTests: XCTestCase {
         // act
         let date = Date(timeIntervalSince1970: 0)
         // assert
-        XCTAssertEqual(viewModel.getFormattedDate(date), "19700101100000")
+        XCTAssertEqual(viewModel.getFormattedDate(date), "197001011000000")
     }
     
     func testRandomEmail() {

@@ -53,7 +53,7 @@ struct FeatureWalkthroughViewModel {
     
     func getFormattedDate(_ date: Date = Date()) -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYYMMDDHHmmSS"
+        dateFormatter.dateFormat = "YYYYMMDDHHmmSSS"
         
         return dateFormatter.string(from: date)
     }
