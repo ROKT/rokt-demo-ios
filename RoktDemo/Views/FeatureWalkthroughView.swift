@@ -55,7 +55,7 @@ struct FeatureWalkthroughView: View {
                 },
                 label: {
                     HStack {
-                        Text("View Example")
+                        Text("View example")
                         Image("eye")
                     }
                 }).buttonStyle(ButtonDefaultOutlined())
@@ -81,7 +81,8 @@ struct FeatureWalkthroughView: View {
     }
     
     func showPlacement() {
-        Rokt.execute(viewName: viewModel.screen.viewName, attributes: viewModel.screen.attributes,
+        Rokt.execute(viewName: viewModel.screen.viewName,
+                     attributes: viewModel.getAttributes(),
                      placements: [viewModel.screen.placeholderName: roktEmbedded.embedded], onLoad: {
                         self.placementDisplayed = true
                         // Optional callback for when the Rokt placement loads

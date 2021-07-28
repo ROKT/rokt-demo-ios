@@ -69,6 +69,15 @@ class FeatureWalkthroughViewModelTests: XCTestCase {
         XCTAssertTrue(isLast)
     }
     
+    func testRandomEmail() {
+        // arrange
+        let viewModel = getViewModel(selectedScreen: 1)
+        // act
+        let randomisedEmail = viewModel.getAttributes()["email"]
+        // assert
+        XCTAssertNotEqual(randomisedEmail, "something@example.com")
+    }
+    
     private func getViewModel(selectedScreen: Int) -> FeatureWalkthroughViewModel {
         let screen = ScreenModel(title:
                                     "Embedded Placement (1)",

@@ -31,13 +31,7 @@ struct AboutRoktView: View {
                 ScrollView {
                     
                     VStack {
-                        if UIDevice.current.userInterfaceIdiom == .pad {
-                            AboutHedearView()
-                        } else {
-                            ExtendableHeader {
-                                AboutHedearView()
-                            }.padding(.bottom)
-                        }
+                        AboutHedearView()
                     }
                     
                     ForEach(viewModel.aboutModel.contents, id: \.self) { content in

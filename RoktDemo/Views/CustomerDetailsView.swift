@@ -94,7 +94,7 @@ private struct AdvancedDetails: View {
     
     var body: some View {
         VStack {
-            Text("Brief sentence explaining this step lorem ipsum the quick brown fox jumps over the lazy dog.")
+            Text("Add in your required custom attributes to show placements for your account. Attributes not already set up by your account manager will not be used.")
                 .font(.defaultFont(.subtitle2))
                 .foregroundColor(.textColor)
             
