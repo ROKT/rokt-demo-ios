@@ -188,7 +188,7 @@ private struct CustomerDetails: View {
             
             Devidedr()
             
-            CustomerDetailsItem(title: "Email", text: "demo@rokt.com")
+            CustomerDetailsItem(title: "Email", text: "john.smith@example.com")
             
             CustomerDetailsItem(title: "Shipping address",
                                 text: "Rokt\n175 Varick Street\nNew York NY 10014\nUnited States\n(646) 693-7411")
