@@ -21,6 +21,7 @@ struct ButtonDefault: ButtonStyle {
             .font(.defaultButtonFont())
             .frame(maxWidth: .infinity)
             .foregroundColor(Color.appColor)
+            .background(Color.white)
             .border(Color.appColor, width: 2)
     }
 }
