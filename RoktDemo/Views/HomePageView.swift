@@ -47,7 +47,7 @@ struct HomePageView: View {
                     NavigationLink(
                         destination: AboutRoktView(viewModel: AboutRoktViewModel()),
                         label: {
-                            Text("About Rokt")
+                            Text("About Rokt Demo App")
                         })
                         .buttonStyle(ButtonDefault())
                         .navigationBarTitle(Text(""))
@@ -62,7 +62,7 @@ struct HomePageView: View {
                         SafariView(url:URL(string: Constants.Urls.contactUs)!)
                     }
                     
-                    Text("® Rokt 2021 — All rights reserved App Version 1.0.0")
+                    Text("® Rokt 2021 — All rights reserved App Version \(UIApplication.appVersion ?? "")")
                         .font(.defaultFont(.subtitle2))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.textColor)
