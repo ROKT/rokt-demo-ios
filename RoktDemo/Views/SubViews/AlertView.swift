@@ -27,28 +27,19 @@ struct AlertView: View {
                     .padding()
                 
                 Text(message)
+                    .frame(width: nil,
+                           alignment: .leading)
                     .foregroundColor(.textColor)
                     .multilineTextAlignment(.leading)
                     .font(.defaultFont(.subtitle1))
                     .padding()
                 
-                HStack {
-                    Button("Yes please") {
-                        positiveAction()
-                        shown.toggle()
-                    }
-                    .buttonStyle(ButtonDefaultOutlined())
-                    
-                    Button("No thanks") {
-                        shown.toggle()
-                    }
-                    .padding()
-                    .font(.defaultButtonFont())
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.titleColor)
-                    .background(Color.gray4)
-                }.padding()
-                
+                Button("Start Demo") {
+                    positiveAction()
+                    shown.toggle()
+                }
+                .buttonStyle(ButtonDefaultOutlined())
+                .padding()
             }.background(Color.white)
             .padding()
             .clipped()
