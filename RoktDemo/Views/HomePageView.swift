@@ -47,7 +47,7 @@ struct HomePageView: View {
                     NavigationLink(
                         destination: AboutRoktView(viewModel: AboutRoktViewModel()),
                         label: {
-                            Text("About Rokt Demo App")
+                            Text("About This App")
                         })
                         .buttonStyle(ButtonDefault())
                         .navigationBarTitle(Text(""))

@@ -68,7 +68,7 @@ struct AboutHedearView: View {
                 .aspectRatio(contentMode: .fill)
                 .clipped()
             
-            Text("About Rokt \nDemo App")
+            Text("About This App")
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .font(.defaultHeadingFont(.header2))
