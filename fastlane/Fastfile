@@ -26,4 +26,89 @@ platform :ios do
       devices: ["iPhone 12"]
       )
   end
+
+  # ----------------------------
+  desc "Create temporary keychain"
+  private_lane :create_temporary_keychain do
+    keychain_name = "temporary_keychain"
+    ENV["KEYCHAIN_NAME"] = keychain_name
+    ENV["KEYCHAIN_PASSWORD"] = keychain_name
+    ENV["MATCH_KEYCHAIN_NAME"] = keychain_name 
+    ENV["MATCH_KEYCHAIN_PASSWORD"] = keychain_name
+
+    create_keychain(
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
+  end
+  # ----------------------------
+
+  # ----------------------------
+  desc "Installs the certificates and profiles locally"
+  lane :certificates do |options|
+    if options[:use_temporary_keychain]
+      create_temporary_keychain
+    end
+
+    readonly = (options[:refresh_certificates] ? false : true)
+    force_for_new_devices = !readonly
+
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APPSTORE_KEY_ID"],
+      issuer_id: ENV["APPSTORE_ISSUER_ID"],
+      key_content: ENV["APPSTORE_KEY_CONTENT_B64"],
+      is_key_content_base64: true,
+      duration: 1200, # optional
+      in_house: false # optional but may be required if using match/sigh
+    )
+
+    match(
+      git_url: ENV["MATCH_GIT_URL"],
+      git_branch: ENV["MATCH_GIT_BRANCH"],
+      username: ENV["MATCH_USERNAME"],
+      git_user_email: ENV["MATCH_GIT_USER_EMAIL"],
+      api_key: api_key,
+      type: "appstore",
+      readonly: readonly
+    )
+
+    if options[:use_temporary_keychain]
+      sh "security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k #{ENV["KEYCHAIN_NAME"]} #{ENV["KEYCHAIN_PASSWORD"]}"
+    end
+  end
+  # ----------------------------
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do |options|
+    certificates(
+      use_temporary_keychain: options[:use_temporary_keychain],
+      refresh_certificates: options[:refresh_certificates]
+    )
+
+    increment_build_number(
+        build_number: ENV["CIRCLE_BUILD_NUM"]
+    )
+
+    settings_to_override = {
+    }
+
+    gym(
+        verbose: true,
+        workspace: "RoktDemo.xcodeproj",
+        configuration: "Release",
+        scheme: "RoktDemo",
+        xcargs: settings_to_override,
+        clean: true,
+        export_method: "app-store"
+    )  
+
+    build_app(workspace: "RoktDemo.xcodeproj", scheme: "RoktSDKDemo")
+    testflight(
+      skip_submission: true,
+      skip_waiting_for_build_processing: true
+    )
+  end
+
 end

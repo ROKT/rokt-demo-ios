@@ -22,6 +22,9 @@ executors:
 commands:
   rokt_sync_bundler_and_fastlane:
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - ${REPOSITORY_FINGERPRINT}
       - checkout
       - restore_cache:
           key: 1-gems-{{ checksum "Gemfile.lock" }}
@@ -53,7 +56,8 @@ jobs:
       - rokt_sync_bundler_and_fastlane
       - run:
           name: Fastlane
-          command: bundle exec fastlane test
+          command: bundle exec fastlane beta refresh_certificates:true use_temporary_keychain:false
+          # command: bundle exec fastlane test
 
 #------------------------------------------------------------
 # workflows
