@@ -56,7 +56,7 @@ jobs:
       - rokt_sync_bundler_and_fastlane
       - run:
           name: Fastlane
-          command: bundle exec fastlane beta refresh_certificates:true use_temporary_keychain:false
+          command: bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
           # command: bundle exec fastlane test
 
 #------------------------------------------------------------
