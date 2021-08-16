@@ -56,8 +56,15 @@ jobs:
       - rokt_sync_bundler_and_fastlane
       - run:
           name: Fastlane
+          command: bundle exec fastlane test
+  publish:
+    executor:
+      name: rokt_xcode
+    steps:
+      - rokt_sync_bundler_and_fastlane
+      - run:
+          name: Fastlane
           command: bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
-          # command: bundle exec fastlane test
 
 #------------------------------------------------------------
 # workflows
@@ -67,3 +74,18 @@ workflows:
   building:
     jobs:
       - build-run-unit-test
+      - hold:
+          type: approval
+          requires:
+            - build-run-unit-test
+          filters:
+            branches:
+              only: 
+                - /release-(.*)/
+      - publish:
+          requires:
+            - hold
+          filters:
+            branches:
+              only: 
+                - /release-(.*)/ 
