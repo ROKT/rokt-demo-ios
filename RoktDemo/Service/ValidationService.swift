@@ -13,9 +13,6 @@ struct ValidationService {
     }
     
     static func isPasswordMatched(input: String?, password: String?) -> Bool {
-        if input == password {
-            return true
-        }
-        return false
+        return input == password
     }
 }
