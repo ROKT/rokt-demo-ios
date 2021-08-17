@@ -130,7 +130,8 @@ struct CustomCheckoutView_Previews: PreviewProvider {
                                                                     AccountDetailsModel(accountID: "",
                                                                                         viewName: "",
                                                                                         placementLocation1: "",
-                                                                                        placementLocation2: ""),
+                                                                                        placementLocation2: "",
+                                                                                        password: ""),
                                                                  customerDetails:
                                                                     CustomerDetailsModel(state: "NSW",
                                                                                                        postcode: "200",
