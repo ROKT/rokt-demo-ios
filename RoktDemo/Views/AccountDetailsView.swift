@@ -51,7 +51,8 @@ struct AccountDetailsView: View {
                     DetailTextFieldView(title: "Password",
                                         textHolder: $viewModel.password,
                                         errorMessage: $viewModel.passwordError,
-                                        hasError: $viewModel.passwordHasError)
+                                        hasError: $viewModel.passwordHasError,
+                                        isPassword: true)
                     NavigationLink(destination:
                                     CustomerDetailsView(viewModel: viewModel.getCustomerDetailsViewModel(),
                                                         popToRootView: $popToRootView),
