@@ -16,15 +16,18 @@ struct DetailTextFieldView: View {
     @Binding var textHolder: String
     @Binding var errorMessage: String
     @Binding var hasError: Bool
+    let isPassword: Bool
     
     init(title: String,
          textHolder: Binding<String>,
          errorMessage: Binding<String> = .constant("Validation error"),
-         hasError: Binding<Bool> = .constant(false)) {
+         hasError: Binding<Bool> = .constant(false),
+         isPassword: Bool = false) {
         self.title = title
         _textHolder = textHolder
         _errorMessage = errorMessage
         _hasError = hasError
+        self.isPassword = isPassword
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -32,9 +35,15 @@ struct DetailTextFieldView: View {
                 Text (title)
                     .font(.defaultFont(.subtitle2))
                     .foregroundColor(.subtitleColor)
-                TextField("", text: $textHolder)
-                    .font(.defaultFont(.text))
-                    .foregroundColor(.titleColor)
+                if isPassword {
+                    SecureField("", text: $textHolder)
+                        .font(.defaultFont(.text))
+                        .foregroundColor(.titleColor)
+                } else {
+                    TextField("", text: $textHolder)
+                        .font(.defaultFont(.text))
+                        .foregroundColor(.titleColor)
+                }
             }
             .padding()
             .border(hasError ? Color.errorColor : Color.borderColor,

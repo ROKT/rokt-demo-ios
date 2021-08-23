@@ -26,7 +26,8 @@ class AccountDetailsViewModelTests: XCTestCase {
                                             AccountDetailsModel(accountID: "123",
                                                                 viewName: "viewName",
                                                                 placementLocation1: "placementLocation1",
-                                                                placementLocation2: "placementLocation2"),
+                                                                placementLocation2: "placementLocation2",
+                                                                password: ""),
                                          customerDetails:
                                             CustomerDetailsModel(state: "",
                                                                  postcode: "",
@@ -52,7 +53,8 @@ class AccountDetailsViewModelTests: XCTestCase {
                                             AccountDetailsModel(accountID: "",
                                                                 viewName: "",
                                                                 placementLocation1: "",
-                                                                placementLocation2: ""),
+                                                                placementLocation2: "",
+                                                                password: ""),
                                          customerDetails:
                                             CustomerDetailsModel(state: "",
                                                                  postcode: "",
@@ -67,7 +69,7 @@ class AccountDetailsViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.accountIdError, "Accound ID can't be empty!", "accountID empty validation")
     }
     
-    func testAccountDetailsContinueActionValidationPass() {
+    func testAccountDetailsContinueActionValidationFailPassword() {
         // arrange
         let viewModel = AccountDetailsViewModel(
             CustomConfigurationPageModel(title: "title",
@@ -76,9 +78,10 @@ class AccountDetailsViewModelTests: XCTestCase {
                                          iconURL: "",
                                          accountDetails:
                                             AccountDetailsModel(accountID: "123",
-                                                                viewName: "viewName",
-                                                                placementLocation1: "placementLocation1",
-                                                                placementLocation2: "placementLocation2"),
+                                                                viewName: "",
+                                                                placementLocation1: "",
+                                                                placementLocation2: "",
+                                                                password: ""),
                                          customerDetails:
                                             CustomerDetailsModel(state: "",
                                                                  postcode: "",
@@ -86,10 +89,11 @@ class AccountDetailsViewModelTests: XCTestCase {
                                          advancedDetails: ["":""]
                                          ))
         // act
-        XCTAssertTrue(viewModel.isValidToContinue())
+        XCTAssertFalse(viewModel.isValidToContinue())
         
         // assert
-        XCTAssertFalse(viewModel.accountIdHasError)
+        XCTAssertTrue(viewModel.passwordHasError)
+        XCTAssertEqual(viewModel.passwordError, "Password can't be empty!", "password empty validation")
     }
     
 }

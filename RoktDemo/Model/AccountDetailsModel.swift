@@ -17,4 +17,5 @@ struct AccountDetailsModel: Codable {
     var viewName: String
     var placementLocation1: String
     var placementLocation2: String
+    var password: String
 }

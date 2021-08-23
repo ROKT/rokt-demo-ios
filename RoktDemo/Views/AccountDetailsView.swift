@@ -48,6 +48,11 @@ struct AccountDetailsView: View {
                     
                     DetailTextFieldView(title: "Placement Location 2",
                                         textHolder: $viewModel.placementLocation2)
+                    DetailTextFieldView(title: "Password",
+                                        textHolder: $viewModel.password,
+                                        errorMessage: $viewModel.passwordError,
+                                        hasError: $viewModel.passwordHasError,
+                                        isPassword: true)
                     NavigationLink(destination:
                                     CustomerDetailsView(viewModel: viewModel.getCustomerDetailsViewModel(),
                                                         popToRootView: $popToRootView),
@@ -88,7 +93,8 @@ struct AccountDetailsView_Previews: PreviewProvider {
                                                                                  viewName: "",
                                                                                  placementLocation1: "",
                                                                                  
-                                                                                 placementLocation2: "")
+                                                                                 placementLocation2: "",
+                                                                                 password: "")
                                                          ,customerDetails:
                                                             CustomerDetailsModel(state: "",
                                                                                  postcode: "",
