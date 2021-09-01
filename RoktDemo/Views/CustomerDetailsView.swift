@@ -32,7 +32,7 @@ struct CustomerDetailsView: View {
                         .font(.defaultBoldFont(.header2))
                         .foregroundColor(.textColor)
                     
-                    Text("Please enter your customer details to be used in the offer selection process. ")
+                    Text("The offer selection process changes based on available contextual and demographic data. To personalize offers, enter customer details below.\nAdvanced options: Populate any custom attributes that are required for this placement. You can only enter attributes that are already set up by your account manager.")
                         .font(.defaultFont(.subtitle1))
                         .foregroundColor(.textColor)
                     

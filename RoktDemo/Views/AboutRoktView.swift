@@ -68,7 +68,7 @@ struct AboutHedearView: View {
                 .aspectRatio(contentMode: .fill)
                 .clipped()
             
-            Text("About This App")
+            Text("About this app")
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .font(.defaultHeadingFont(.header2))

@@ -50,15 +50,12 @@ struct AlertView: View {
 
 extension AlertView {
     static let template1 = """
-This is a Rokt demo used to show Rokt’s in-app capabilities.
-This demo does not capture or store any personal or device data.
-\n\nAs you progress, try interacting with the Rokt placements by clicking “Yes please” or \"No thanks\".
+As you progress, try interacting with the Rokt placements by tapping "Yes please" or "No thanks".
+\n\nNo personal and device data will be captured or stored.
 """
     static let template2 = """
-This is a Rokt demo used to show Rokt’s in-app capabilities.
-This demo does not capture or store any personal or device data.
-\n\nAs you progress, try interacting with the Rokt placements by clicking “Yes please” or \"No thanks\".
-\n\n Click ‘NEXT’ to progress through different placement types.
+As you progress, try interacting with the Rokt placements by tapping "Yes please" or "No thanks". To progress to the next placement type, tap "NEXT" at the top right hand corner of the screen.
+\n\nNo personal and device data will be captured or stored.
 """
 }
 
