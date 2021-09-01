@@ -39,7 +39,7 @@ struct HomePageView: View {
                     NavigationLink(
                         destination: DemoLibraryView(viewModel: DemoLibraryViewModel()),
                         label: {
-                            Text("Demo Library")
+                            Text("Demo library")
                         })
                         .buttonStyle(ButtonDefaultOutlined())
                         .navigationBarTitle(Text(""))
@@ -47,7 +47,7 @@ struct HomePageView: View {
                     NavigationLink(
                         destination: AboutRoktView(viewModel: AboutRoktViewModel()),
                         label: {
-                            Text("About This App")
+                            Text("About this app")
                         })
                         .buttonStyle(ButtonDefault())
                         .navigationBarTitle(Text(""))
@@ -55,7 +55,7 @@ struct HomePageView: View {
                     Button(action: {
                         self.showSafari = true
                     }) {
-                        Text("Contact Us")
+                        Text("Contact us")
                     }
                     .buttonStyle(ButtonDefault())
                     .sheet(isPresented: $showSafari) {
