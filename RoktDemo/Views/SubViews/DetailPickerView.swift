@@ -32,13 +32,17 @@ struct DetailPickerView: View {
                         TextField(title, text: $selectedItem)
                             .font(.defaultFont(.text))
                             .foregroundColor(.titleColor)
+                            .disabled(true)
                     }
                     .padding()
                     .border(Color.borderColor,
                             width: 1)
                     .background(Color.white)
                     
-                    Image("downIcon").padding()
+                    Image("downIcon")
+                        .padding()
+                        .rotationEffect(.degrees(self.isCountryPickerShown ? 180.0 : 0.0))
+                        .animation(Animation.linear(duration: 0.2))
                 })
             })
             

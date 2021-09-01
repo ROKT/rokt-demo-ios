@@ -63,6 +63,7 @@
 		25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D8A260D94B60044EF14 /* SoleilBold.otf */; };
 		25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2A72627F51A00D8AB79 /* AlertView.swift */; };
 		25CBB2AD2628044800D8AB79 /* DemoItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */; };
+		25D1D72226DF5E7B0045D579 /* KeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */; };
 		25D9F8D026B904AC008F2BBE /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9F8CF26B904AC008F2BBE /* UIApplication+Extensions.swift */; };
 		25F84767260C34880067B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84766260C34880067B515 /* AppDelegate.swift */; };
 		25F84769260C34880067B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84768260C34880067B515 /* SceneDelegate.swift */; };
@@ -171,6 +172,7 @@
 		25BA8D8A260D94B60044EF14 /* SoleilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBold.otf; sourceTree = "<group>"; };
 		25CBB2A72627F51A00D8AB79 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemSummaryView.swift; sourceTree = "<group>"; };
+		25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModifier.swift; sourceTree = "<group>"; };
 		25D9F8CF26B904AC008F2BBE /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		25F84763260C34880067B515 /* RoktDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoktDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F84766260C34880067B515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */,
 				2524C9E52697C23E0091E01A /* Binding+Extensions.swift */,
 				25D9F8CF26B904AC008F2BBE /* UIApplication+Extensions.swift */,
+				25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				589922CC261587A700A58DA3 /* ExtendableHeader.swift in Sources */,
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
 				5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */,
+				25D1D72226DF5E7B0045D579 /* KeyboardModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
