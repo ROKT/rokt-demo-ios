@@ -22,7 +22,7 @@ struct FeatureWalkthroughViewModel {
     
     func getNavigationButtonText() -> String {
         if isLastScreen() {
-            return "QUIT DEMO"
+            return Constants.Strings.exitDemo
         }
         return "NEXT"
     }

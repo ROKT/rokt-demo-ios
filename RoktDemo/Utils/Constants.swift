@@ -21,4 +21,9 @@ struct Constants {
         static let library = "library"
         static let contactUs = "https://rokt.com/contact-us/"
     }
+    
+    struct Strings {
+        static let exitDemo = "EXIT DEMO"
+        static let continueDemo = "Continue"
+    }
 }

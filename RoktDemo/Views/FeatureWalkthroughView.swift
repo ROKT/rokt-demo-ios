@@ -61,7 +61,9 @@ struct FeatureWalkthroughView: View {
                 }).buttonStyle(ButtonDefaultOutlined())
                 .padding()
             }
-        }.background(Color.gray3)
+        }.padding(.bottom, 20)
+        .background(Color.gray3)
+        .edgesIgnoringSafeArea([.bottom])
         .modifier(NavigationBarBlackWithButton(title: viewModel.getNavigationTitle(),
                                                trailingButtonTitle: viewModel.getNavigationButtonText(),
                                                trailingButtonAction: {navigationButtonAction()}))

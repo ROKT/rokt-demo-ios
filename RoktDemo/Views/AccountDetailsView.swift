@@ -61,11 +61,11 @@ struct AccountDetailsView: View {
                 }.padding()
             }
             .modifier(NavigationBarBlackWithButton(title: "",
-                                                   trailingButtonTitle: "QUIT DEMO",
+                                                   trailingButtonTitle: Constants.Strings.exitDemo,
                                                    trailingButtonAction: {
                                                     popToRootView = false
                                                    }))
-            Button("Continue") {
+            Button(Constants.Strings.continueDemo) {
                 if viewModel.isValidToContinue() {
                     Rokt.initWith(roktTagId: viewModel.accountId)
                     moveToNextView = true

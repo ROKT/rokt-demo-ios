@@ -32,7 +32,7 @@ struct CustomerDetailsView: View {
                         .font(.defaultBoldFont(.header2))
                         .foregroundColor(.textColor)
                     
-                    Text("The offer selection process changes based on available contextual and demographic data. To personalize offers, enter customer details below.\nAdvanced options: Populate any custom attributes that are required for this placement. You can only enter attributes that are already set up by your account manager.")
+                    Text("The offer selection process changes based on available contextual and demographic data. To personalize offers, enter customer details below.\n\nAdvanced options: Populate any custom attributes that are required for this placement. You can only enter attributes that are already set up by your account manager.")
                         .font(.defaultFont(.subtitle1))
                         .foregroundColor(.textColor)
                     
@@ -71,11 +71,11 @@ struct CustomerDetailsView: View {
                     
                 }.padding()
             }.modifier(NavigationBarBlackWithButton(title: "",
-                                                    trailingButtonTitle: "QUIT DEMO",
+                                                    trailingButtonTitle: Constants.Strings.exitDemo,
                                                     trailingButtonAction: {
                                                         popToRootView = false
                                                     }))
-            Button("Continue") {
+            Button(Constants.Strings.continueDemo) {
                 moveToNextView = true
             }.buttonStyle(ButtonDefault())
             .background(Color.white)

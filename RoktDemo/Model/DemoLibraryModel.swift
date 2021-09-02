@@ -18,7 +18,7 @@ struct DemoLibraryModel: Codable {
     let demoDescription: String
     let defaultPlacementsExamples: DefaultPlacementExamplesModel
     let customConfigurationPage: CustomConfigurationPageModel
-    let preDefinedScreen1: PreDefinedScreen1Model
-    let preDefinedScreen2: PreDefinedScreen2Model
-    let preDefinedScreen3: PreDefinedScreen3Model
+//    let preDefinedScreen1: PreDefinedScreen1Model
+//    let preDefinedScreen2: PreDefinedScreen2Model
+//    let preDefinedScreen3: PreDefinedScreen3Model
 }
