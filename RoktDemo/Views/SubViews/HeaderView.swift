@@ -14,6 +14,8 @@ struct HeaderView: View {
             Text(title)
                 .font(.defaultHeadingFont(.header1))
                 .foregroundColor(.titleColor)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
             Rectangle().foregroundColor(Color.appColor).frame(width: 34, height: 6, alignment: .center)
         }
     }
@@ -21,6 +23,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(title: "Demo Library")
+        HeaderView(title: "Demo library")
     }
 }

@@ -64,6 +64,8 @@
 		25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2A72627F51A00D8AB79 /* AlertView.swift */; };
 		25CBB2AD2628044800D8AB79 /* DemoItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */; };
 		25D1D72226DF5E7B0045D579 /* KeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */; };
+		25D7363826E0799000495FFF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B92615560800A58DA3 /* Constants.swift */; };
+		25D7363F26E0799500495FFF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B92615560800A58DA3 /* Constants.swift */; };
 		25D9F8D026B904AC008F2BBE /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9F8CF26B904AC008F2BBE /* UIApplication+Extensions.swift */; };
 		25F84767260C34880067B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84766260C34880067B515 /* AppDelegate.swift */; };
 		25F84769260C34880067B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84768260C34880067B515 /* SceneDelegate.swift */; };
@@ -873,6 +875,7 @@
 				58A97A732654D3FC0092B598 /* AccountDetailsModel.swift in Sources */,
 				25A56246269BB953003E64B0 /* CustomerDetailsModel.swift in Sources */,
 				2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */,
+				25D7363F26E0799500495FFF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,6 +884,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25F84789260C348A0067B515 /* RoktDemoUITests.swift in Sources */,
+				25D7363826E0799000495FFF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

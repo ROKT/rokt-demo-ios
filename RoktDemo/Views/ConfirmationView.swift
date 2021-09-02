@@ -62,7 +62,7 @@ struct ConfirmationView: View {
         .padding()
         .background(Color.gray4)
         .modifier(NavigationBarBlackWithButton(title: "",
-                                                trailingButtonTitle: "QUIT DEMO",
+                                               trailingButtonTitle: Constants.Strings.exitDemo,
                                                 trailingButtonAction: {
                                                     popToRootView = false
                                                 }))
