@@ -24,10 +24,7 @@ struct AboutRoktContentView: View {
                     .aspectRatio(contentMode: .fill)
             }
             HeaderView(title: content.title)
-            Text(content.content)
-                .font(.defaultFont(.text))
-                .foregroundColor(.textColor)
-                .fixedSize(horizontal: false, vertical: true)
+            DetailText(text: content.content)
         }.padding()
     }
 }

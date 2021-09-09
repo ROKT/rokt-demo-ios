@@ -101,10 +101,7 @@ struct DemoContentView: View {
     var body: some View {
         ScrollView{
             VStack {
-                Text(longDescription)
-                    .lineLimit(.none)
-                    .font(.defaultFont(.text))
-                    .foregroundColor(.textColor)
+                DetailText(text: longDescription)
                     .padding()
             }
         }

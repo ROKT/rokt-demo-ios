@@ -34,9 +34,7 @@ struct DemoLibraryView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         HeaderView(title: viewModel.demoTitle)
                         
-                        Text(viewModel.demoDescription)
-                            .font(.defaultFont(.text))
-                            .foregroundColor(.textColor)
+                        DetailText(text: viewModel.demoDescription)
                         
                         ForEach(viewModel.demoItems, id: \.self) { item in
                             NavigationLink(

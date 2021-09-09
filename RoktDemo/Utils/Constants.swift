@@ -12,7 +12,8 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 
-import Foundation
+import SwiftUI
+
 struct Constants {
     
     struct Urls {
@@ -26,4 +27,6 @@ struct Constants {
         static let exitDemo = "EXIT DEMO"
         static let continueDemo = "Continue"
     }
+    
+    static let lineHeight: CGFloat = 5.0
 }
