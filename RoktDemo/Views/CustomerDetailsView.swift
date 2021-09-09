@@ -32,9 +32,9 @@ struct CustomerDetailsView: View {
                         .font(.defaultBoldFont(.header2))
                         .foregroundColor(.textColor)
                     
-                    Text("The offer selection process changes based on available contextual and demographic data. To personalize offers, enter customer details below.\n\nAdvanced options: Populate any custom attributes that are required for this placement. You can only enter attributes that are already set up by your account manager.")
-                        .font(.defaultFont(.subtitle1))
-                        .foregroundColor(.textColor)
+                    DetailText(
+                        text: "The offer selection process changes based on available contextual and demographic data. To personalize offers, enter customer details below.\n\nAdvanced options: Populate any custom attributes that are required for this placement. You can only enter attributes that are already set up by your account manager.",
+                        font: .defaultFont(.subtitle1))
                     
                     DetailTextFieldView(title: "State",
                                         textHolder: $viewModel.state)
@@ -96,9 +96,9 @@ private struct AdvancedDetails: View {
     
     var body: some View {
         VStack {
-            Text("Add in your required custom attributes to show placements for your account. Attributes not already set up by your account manager will not be used.")
-                .font(.defaultFont(.subtitle2))
-                .foregroundColor(.textColor)
+            DetailText(
+                text: "Add in your required custom attributes to show placements for your account. Attributes not already set up by your account manager will not be used.",
+                font: .defaultFont(.subtitle2))
             
             ForEach(advancedDetails.indices, id: \.self) { index in
                 KeyValueView(model: Binding(

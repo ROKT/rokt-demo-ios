@@ -31,10 +31,11 @@ struct AlertView: View {
                            alignment: .leading)
                     .foregroundColor(.textColor)
                     .multilineTextAlignment(.leading)
+                    .lineSpacing(Constants.lineHeight)
                     .font(.defaultFont(.subtitle1))
                     .padding()
                 
-                Button("Start Demo") {
+                Button("Start demo") {
                     positiveAction()
                     shown.toggle()
                 }
@@ -51,7 +52,7 @@ struct AlertView: View {
 extension AlertView {
     static let template1 = """
 As you progress, try interacting with the Rokt placements by tapping "Yes please" or "No thanks".
-\n\nNo personal and device data will be captured or stored.
+\n\nNo personal, account, or device data will be captured or stored.
 """
     static let template2 = """
 As you progress, try interacting with the Rokt placements by tapping "Yes please" or "No thanks". To progress to the next placement type, tap "NEXT" at the top right hand corner of the screen.
