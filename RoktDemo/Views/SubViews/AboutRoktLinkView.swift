@@ -14,18 +14,17 @@
 import SwiftUI
 
 struct AboutRoktLinkView: View {
-    @State var showSafari = false
     let link : AboutRoktLinkModel
     var body: some View {
         Button(action: {
-            self.showSafari = true
+            if let url = URL(string: link.url) {
+                UIApplication.shared.open(url)
+            }
         }) {
             Text(link.text)
         }
         .buttonStyle(ButtonDefault())
-        .sheet(isPresented: $showSafari) {
-            SafariView(url:URL(string: link.url)!)
-        }.padding()
+        .padding()
     }
 }
 
