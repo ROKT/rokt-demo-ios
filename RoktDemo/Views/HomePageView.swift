@@ -14,7 +14,6 @@
 import SwiftUI
 
 struct HomePageView: View {
-    @State var showSafari = false
     
     var body: some View {
         NavigationView {
@@ -53,14 +52,13 @@ struct HomePageView: View {
                         .navigationBarTitle(Text(""))
                     
                     Button(action: {
-                        self.showSafari = true
+                        if let url = URL(string: Constants.Urls.contactUs) {
+                            UIApplication.shared.open(url)
+                        }
                     }) {
                         Text("Contact us")
                     }
                     .buttonStyle(ButtonDefault())
-                    .sheet(isPresented: $showSafari) {
-                        SafariView(url:URL(string: Constants.Urls.contactUs)!)
-                    }
                     
                     Text("® Rokt 2021 — All rights reserved App Version \(UIApplication.appVersion ?? "")")
                         .font(.defaultFont(.subtitle2))

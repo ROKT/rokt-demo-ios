@@ -86,7 +86,6 @@
 		5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899229126141F9100A58DA3 /* AboutRoktContentModel.swift */; };
 		589922972614201100A58DA3 /* AboutRoktLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922962614201100A58DA3 /* AboutRoktLinkModel.swift */; };
 		5899229D2614214500A58DA3 /* AboutRoktService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899229C2614214500A58DA3 /* AboutRoktService.swift */; };
-		589922A92615445D00A58DA3 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922A82615445D00A58DA3 /* SafariView.swift */; };
 		589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B126154BA500A58DA3 /* AboutRoktContentView.swift */; };
 		589922BA2615560800A58DA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B92615560800A58DA3 /* Constants.swift */; };
 		589922C226155FA700A58DA3 /* AboutRoktLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */; };
@@ -202,7 +201,6 @@
 		5899229126141F9100A58DA3 /* AboutRoktContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktContentModel.swift; sourceTree = "<group>"; };
 		589922962614201100A58DA3 /* AboutRoktLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktLinkModel.swift; sourceTree = "<group>"; };
 		5899229C2614214500A58DA3 /* AboutRoktService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktService.swift; sourceTree = "<group>"; };
-		589922A82615445D00A58DA3 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		589922B126154BA500A58DA3 /* AboutRoktContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktContentView.swift; sourceTree = "<group>"; };
 		589922B92615560800A58DA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktLinkView.swift; sourceTree = "<group>"; };
@@ -480,7 +478,6 @@
 				589922B126154BA500A58DA3 /* AboutRoktContentView.swift */,
 				589922C126155FA700A58DA3 /* AboutRoktLinkView.swift */,
 				256EB75A261C0EFE00B959EF /* HeaderView.swift */,
-				589922A82615445D00A58DA3 /* SafariView.swift */,
 				25583903261FE5D600AF7FAE /* DemoItemView.swift */,
 				256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */,
 				252842CF263BB82E0010114A /* DetailTextFieldView.swift */,
@@ -820,7 +817,6 @@
 				2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */,
 				25628DE8269FFBCA00B12963 /* ActivityIndicator.swift in Sources */,
 				5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */,
-				589922A92615445D00A58DA3 /* SafariView.swift in Sources */,
 				256EB75B261C0EFE00B959EF /* HeaderView.swift in Sources */,
 				5899229D2614214500A58DA3 /* AboutRoktService.swift in Sources */,
 				5899228A26141F3500A58DA3 /* AboutRoktModel.swift in Sources */,
@@ -1043,9 +1039,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = EX8W57PJ9C;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"RoktDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = EX8W57PJ9C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RoktDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1070,9 +1066,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = EX8W57PJ9C;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"RoktDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = EX8W57PJ9C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RoktDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
