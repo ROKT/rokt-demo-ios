@@ -24,7 +24,7 @@ struct Constants {
     }
     
     struct Strings {
-        static let exitDemo = "EXIT DEMO"
+        static let exitDemo = "EXIT"
         static let continueDemo = "Continue"
     }
     
