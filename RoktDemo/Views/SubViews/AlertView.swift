@@ -35,7 +35,7 @@ struct AlertView: View {
                     .font(.defaultFont(.subtitle1))
                     .padding()
                 
-                Button("Start demo") {
+                Button("Continue") {
                     positiveAction()
                     shown.toggle()
                 }

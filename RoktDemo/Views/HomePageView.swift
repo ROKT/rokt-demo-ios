@@ -38,7 +38,7 @@ struct HomePageView: View {
                     NavigationLink(
                         destination: DemoLibraryView(viewModel: DemoLibraryViewModel()),
                         label: {
-                            Text("Demo library")
+                            Text("Placement library")
                         })
                         .buttonStyle(ButtonDefaultOutlined())
                         .navigationBarTitle(Text(""))
