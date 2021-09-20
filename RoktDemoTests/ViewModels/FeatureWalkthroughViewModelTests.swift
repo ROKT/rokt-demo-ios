@@ -57,7 +57,7 @@ class FeatureWalkthroughViewModelTests: XCTestCase {
         // act
         let buttonText = viewModel.getNavigationButtonText()
         // assert
-        XCTAssertEqual(buttonText, "EXIT DEMO")
+        XCTAssertEqual(buttonText, "EXIT")
     }
     
     func testLastScreen() throws {
