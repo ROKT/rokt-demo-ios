@@ -6,7 +6,7 @@ target 'RoktDemo' do
   use_frameworks!
   # Pods for RoktDemo
   pod 'Rokt-Widget', '~> 3.6.0'
-  pod 'Kingfisher', '~> 6.2.1'
+  pod 'Kingfisher', '~> 7.0.0'
   pod 'Alamofire', '~> 5.4.4'
 
   target 'RoktDemoTests' do
