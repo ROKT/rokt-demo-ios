@@ -15,7 +15,7 @@ import Foundation
 import Combine
 
 class AboutRoktViewModel: ObservableObject {
-    @Published private(set) var aboutModel: AboutRoktModel = AboutRoktModel(contents: [], links: [])
+    @Published private(set) var aboutModel: AboutRoktModel = AboutRoktModel(contents: [])
     
     @Published private(set) var uiState = UIState.loading
 
