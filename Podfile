@@ -7,7 +7,7 @@ target 'RoktDemo' do
   # Pods for RoktDemo
   pod 'Rokt-Widget', '~> 3.6.0'
   pod 'Kingfisher', '~> 6.2.1'
-  pod 'Alamofire', '~> 5.4'
+  pod 'Alamofire', '~> 5.4.4'
 
   target 'RoktDemoTests' do
     inherit! :search_paths
