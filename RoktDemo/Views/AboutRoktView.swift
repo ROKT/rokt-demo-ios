@@ -38,10 +38,6 @@ struct AboutRoktView: View {
                         AboutRoktContentView(content: content)
                     }
                     
-                    ForEach(viewModel.aboutModel.links, id: \.self) { link in
-                        AboutRoktLinkView(link: link)
-                    }
-                    
                 }.modifier(NavigationBarTransparent(title: ""))
             }
             

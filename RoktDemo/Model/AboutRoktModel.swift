@@ -15,5 +15,4 @@ import Foundation
 
 struct AboutRoktModel: Codable {
     let contents: [AboutRoktContentModel]
-    let links: [AboutRoktLinkModel]
 }
