@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17E6B740C63A1CB615166AEB /* Pods_RoktDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */; };
+		058B3C0B9436B5AA8BC7E8A3 /* Pods_RoktDemo_RoktDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1A34F70B73A493FB1AD18B /* Pods_RoktDemo_RoktDemoUITests.framework */; };
 		2524C9B326955CDC0091E01A /* CustomerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9B226955CDC0091E01A /* CustomerDetailsModel.swift */; };
 		2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9E52697C23E0091E01A /* Binding+Extensions.swift */; };
 		2524C9EE2697D4BD0091E01A /* DetailPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */; };
@@ -22,6 +22,7 @@
 		256A2841262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */; };
 		256A288D262D4904000CF3D4 /* FeatureWalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */; };
 		256C958226A1455400F0961B /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C958126A1455400F0961B /* UIState.swift */; };
+		256D417E26FD4D0B008D7879 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D417D26FD4D0B008D7879 /* EmailView.swift */; };
 		256E3D3E2623DFE000639FE0 /* DemoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */; };
 		256E3D502623FB8D00639FE0 /* AboutRoktViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */; };
 		256EB75B261C0EFE00B959EF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB75A261C0EFE00B959EF /* HeaderView.swift */; };
@@ -76,8 +77,6 @@
 		25F84773260C348A0067B515 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F84771260C348A0067B515 /* LaunchScreen.storyboard */; };
 		25F8477E260C348A0067B515 /* RoktDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8477D260C348A0067B515 /* RoktDemoTests.swift */; };
 		25F84789260C348A0067B515 /* RoktDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84788260C348A0067B515 /* RoktDemoUITests.swift */; };
-		3BB5EF721DEA0AA91B0B4D3C /* Pods_RoktDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C17D62CF39286A850B684C4 /* Pods_RoktDemoTests.framework */; };
-		520B6AB07C6D41F22221D515 /* Pods_RoktDemo_RoktDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */; };
 		5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226A2613F63800A58DA3 /* Font+Extensions.swift */; };
 		589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226F2613F67A00A58DA3 /* ButtonDefault.swift */; };
 		589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */; };
@@ -101,6 +100,8 @@
 		58A97A762654DD550092B598 /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D7ACA262959CE0041D81C /* ScreenModel.swift */; };
 		58CF380E2664A72C00DCE317 /* CustomerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */; };
 		58CF38102664C0AC00DCE317 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */; };
+		ABC79BA1039BB0AC9060CC43 /* Pods_RoktDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06A0AE31D4A34014BE2D414 /* Pods_RoktDemoTests.framework */; };
+		DB70CD45073AD6A73DFB235A /* Pods_RoktDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D86E1E9A5D28BCA8E4752D /* Pods_RoktDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +122,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20098664A1E8183EDD086EA3 /* Pods-RoktDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.release.xcconfig"; sourceTree = "<group>"; };
+		07432F11B44C1779C2A25756 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2524C9B226955CDC0091E01A /* CustomerDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsModel.swift; sourceTree = "<group>"; };
 		2524C9E52697C23E0091E01A /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPickerView.swift; sourceTree = "<group>"; };
@@ -134,10 +134,10 @@
 		255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		255D7ACA262959CE0041D81C /* ScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenModel.swift; sourceTree = "<group>"; };
 		25628DE7269FFBCA00B12963 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		256673A02D436BE09A2A2212 /* Pods-RoktDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoktEmbeddedSwiftUIView.swift; sourceTree = "<group>"; };
 		256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughView.swift; sourceTree = "<group>"; };
 		256C958126A1455400F0961B /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
+		256D417D26FD4D0B008D7879 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLibraryViewModel.swift; sourceTree = "<group>"; };
 		256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktViewModel.swift; sourceTree = "<group>"; };
 		256EB75A261C0EFE00B959EF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -191,8 +191,7 @@
 		25F84784260C348A0067B515 /* RoktDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoktDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F84788260C348A0067B515 /* RoktDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoktDemoUITests.swift; sourceTree = "<group>"; };
 		25F8478A260C348A0067B515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C17D62CF39286A850B684C4 /* Pods_RoktDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		566ECCCA4121A5A9797680AC /* Pods-RoktDemo-RoktDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		50856F03DA806E9C18AC8759 /* Pods-RoktDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		5899226A2613F63800A58DA3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		5899226F2613F67A00A58DA3 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultOutlined.swift; sourceTree = "<group>"; };
@@ -209,10 +208,13 @@
 		58A97A6E2654CF850092B598 /* AccountDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsView.swift; sourceTree = "<group>"; };
 		58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewModel.swift; sourceTree = "<group>"; };
-		C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F8CC10E03DF2BF60BAEACEE2 /* Pods-RoktDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		820B123D21038BB20FDD62B9 /* Pods-RoktDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.release.xcconfig"; sourceTree = "<group>"; };
+		88D86E1E9A5D28BCA8E4752D /* Pods_RoktDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95969C3EB2A9DB64958619F8 /* Pods-RoktDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C1A34F70B73A493FB1AD18B /* Pods_RoktDemo_RoktDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemo_RoktDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06A0AE31D4A34014BE2D414 /* Pods_RoktDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F323ADE513DFAFE6AE8BB37A /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8BE742F61ED6BC38C71F2BB /* Pods-RoktDemo-RoktDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo-RoktDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17E6B740C63A1CB615166AEB /* Pods_RoktDemo.framework in Frameworks */,
+				DB70CD45073AD6A73DFB235A /* Pods_RoktDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BB5EF721DEA0AA91B0B4D3C /* Pods_RoktDemoTests.framework in Frameworks */,
+				ABC79BA1039BB0AC9060CC43 /* Pods_RoktDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520B6AB07C6D41F22221D515 /* Pods_RoktDemo_RoktDemoUITests.framework in Frameworks */,
+				058B3C0B9436B5AA8BC7E8A3 /* Pods_RoktDemo_RoktDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,12 +248,12 @@
 		10323298D47D5FF12D5D2570 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */,
-				20098664A1E8183EDD086EA3 /* Pods-RoktDemo.release.xcconfig */,
-				D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */,
-				566ECCCA4121A5A9797680AC /* Pods-RoktDemo-RoktDemoUITests.release.xcconfig */,
-				256673A02D436BE09A2A2212 /* Pods-RoktDemoTests.debug.xcconfig */,
-				F8CC10E03DF2BF60BAEACEE2 /* Pods-RoktDemoTests.release.xcconfig */,
+				07432F11B44C1779C2A25756 /* Pods-RoktDemo.debug.xcconfig */,
+				820B123D21038BB20FDD62B9 /* Pods-RoktDemo.release.xcconfig */,
+				F323ADE513DFAFE6AE8BB37A /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */,
+				F8BE742F61ED6BC38C71F2BB /* Pods-RoktDemo-RoktDemoUITests.release.xcconfig */,
+				95969C3EB2A9DB64958619F8 /* Pods-RoktDemoTests.debug.xcconfig */,
+				50856F03DA806E9C18AC8759 /* Pods-RoktDemoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -330,7 +332,7 @@
 				25F84787260C348A0067B515 /* RoktDemoUITests */,
 				25F84764260C34880067B515 /* Products */,
 				10323298D47D5FF12D5D2570 /* Pods */,
-				A5C3ED60C4B18FDC5C202F0B /* Frameworks */,
+				CBCF9607484D94999D2EBED1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -468,6 +470,7 @@
 				2524C9E52697C23E0091E01A /* Binding+Extensions.swift */,
 				25D9F8CF26B904AC008F2BBE /* UIApplication+Extensions.swift */,
 				25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */,
+				256D417D26FD4D0B008D7879 /* EmailView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -499,12 +502,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		A5C3ED60C4B18FDC5C202F0B /* Frameworks */ = {
+		CBCF9607484D94999D2EBED1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				10ED9192FFA9C96CCB3E713B /* Pods_RoktDemo.framework */,
-				D57D63D807CB9ADBB044A6CC /* Pods_RoktDemo_RoktDemoUITests.framework */,
-				4C17D62CF39286A850B684C4 /* Pods_RoktDemoTests.framework */,
+				88D86E1E9A5D28BCA8E4752D /* Pods_RoktDemo.framework */,
+				9C1A34F70B73A493FB1AD18B /* Pods_RoktDemo_RoktDemoUITests.framework */,
+				A06A0AE31D4A34014BE2D414 /* Pods_RoktDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -516,12 +519,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25F8478D260C348A0067B515 /* Build configuration list for PBXNativeTarget "RoktDemo" */;
 			buildPhases = (
-				4AE908BBCA7B04E133FFBC67 /* [CP] Check Pods Manifest.lock */,
+				18F77201804D3565A713B7B2 /* [CP] Check Pods Manifest.lock */,
 				25F8475F260C34880067B515 /* Sources */,
 				25F84760260C34880067B515 /* Frameworks */,
 				25F84761260C34880067B515 /* Resources */,
-				8F84F8B17BBB9B52E202C2B6 /* [CP] Embed Pods Frameworks */,
-				9F9D0606EFE73A60EB82B948 /* [CP] Copy Pods Resources */,
+				8364E3904A1D027D1241EAA9 /* [CP] Embed Pods Frameworks */,
+				18104CEA1759006385F03049 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -536,7 +539,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25F84790260C348A0067B515 /* Build configuration list for PBXNativeTarget "RoktDemoTests" */;
 			buildPhases = (
-				6191FA9987CEC41B73569004 /* [CP] Check Pods Manifest.lock */,
+				6F612D5B39CBE35FDEEAAEA5 /* [CP] Check Pods Manifest.lock */,
 				25F84775260C348A0067B515 /* Sources */,
 				25F84776260C348A0067B515 /* Frameworks */,
 				25F84777260C348A0067B515 /* Resources */,
@@ -555,12 +558,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25F84793260C348A0067B515 /* Build configuration list for PBXNativeTarget "RoktDemoUITests" */;
 			buildPhases = (
-				65A381303020086D54934342 /* [CP] Check Pods Manifest.lock */,
+				C6E8C36E13F22CD405917598 /* [CP] Check Pods Manifest.lock */,
 				25F84780260C348A0067B515 /* Sources */,
 				25F84781260C348A0067B515 /* Frameworks */,
 				25F84782260C348A0067B515 /* Resources */,
-				D64BB0BD1AE9312069C24845 /* [CP] Embed Pods Frameworks */,
-				66004F5644FC13BACDB0550F /* [CP] Copy Pods Resources */,
+				389F9DDC816E9A7A0A88E31E /* [CP] Embed Pods Frameworks */,
+				32FE6F125491AB5AEA309312 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -647,7 +650,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4AE908BBCA7B04E133FFBC67 /* [CP] Check Pods Manifest.lock */ = {
+		18104CEA1759006385F03049 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18F77201804D3565A713B7B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -669,7 +689,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6191FA9987CEC41B73569004 /* [CP] Check Pods Manifest.lock */ = {
+		32FE6F125491AB5AEA309312 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		389F9DDC816E9A7A0A88E31E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F612D5B39CBE35FDEEAAEA5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -691,7 +745,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		65A381303020086D54934342 /* [CP] Check Pods Manifest.lock */ = {
+		8364E3904A1D027D1241EAA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6E8C36E13F22CD405917598 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -711,74 +782,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66004F5644FC13BACDB0550F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8F84F8B17BBB9B52E202C2B6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F9D0606EFE73A60EB82B948 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D64BB0BD1AE9312069C24845 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -833,6 +836,7 @@
 				256EB783261C209200B959EF /* PreDefinedScreen3Model.swift in Sources */,
 				252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */,
 				2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */,
+				256D417E26FD4D0B008D7879 /* EmailView.swift in Sources */,
 				25C7098026E9D4F30006C18C /* DetailText.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
 				25A5625E269BFF69003E64B0 /* ConfirmationViewModel.swift in Sources */,
@@ -1033,7 +1037,7 @@
 		};
 		25F8478E260C348A0067B515 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C221050D0B69B2C21ACF8205 /* Pods-RoktDemo.debug.xcconfig */;
+			baseConfigurationReference = 07432F11B44C1779C2A25756 /* Pods-RoktDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1060,7 +1064,7 @@
 		};
 		25F8478F260C348A0067B515 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20098664A1E8183EDD086EA3 /* Pods-RoktDemo.release.xcconfig */;
+			baseConfigurationReference = 820B123D21038BB20FDD62B9 /* Pods-RoktDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1087,7 +1091,7 @@
 		};
 		25F84791260C348A0067B515 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 256673A02D436BE09A2A2212 /* Pods-RoktDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 95969C3EB2A9DB64958619F8 /* Pods-RoktDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1109,7 +1113,7 @@
 		};
 		25F84792260C348A0067B515 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8CC10E03DF2BF60BAEACEE2 /* Pods-RoktDemoTests.release.xcconfig */;
+			baseConfigurationReference = 50856F03DA806E9C18AC8759 /* Pods-RoktDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1131,7 +1135,7 @@
 		};
 		25F84794260C348A0067B515 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D846721728CAB7BAD5D74BB6 /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */;
+			baseConfigurationReference = F323ADE513DFAFE6AE8BB37A /* Pods-RoktDemo-RoktDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1152,7 +1156,7 @@
 		};
 		25F84795260C348A0067B515 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 566ECCCA4121A5A9797680AC /* Pods-RoktDemo-RoktDemoUITests.release.xcconfig */;
+			baseConfigurationReference = F8BE742F61ED6BC38C71F2BB /* Pods-RoktDemo-RoktDemoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

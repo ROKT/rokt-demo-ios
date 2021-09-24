@@ -32,6 +32,7 @@ struct DetailPickerView: View {
                         TextField(title, text: $selectedItem)
                             .font(.defaultFont(.text))
                             .foregroundColor(.titleColor)
+                            .multilineTextAlignment(.leading)
                             .disabled(true)
                     }
                     .padding()

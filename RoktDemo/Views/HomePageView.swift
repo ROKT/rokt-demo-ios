@@ -12,8 +12,13 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import SwiftUI
+import MessageUI
 
 struct HomePageView: View {
+    
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isEmailShown = false
+    @State var isEmailAlertShown = false
     
     var body: some View {
         NavigationView {
@@ -52,13 +57,22 @@ struct HomePageView: View {
                         .navigationBarTitle(Text(""))
                     
                     Button(action: {
-                        if let url = URL(string: Constants.Urls.contactUs) {
-                            UIApplication.shared.open(url)
+                        if MFMailComposeViewController.canSendMail() {
+                            self.isEmailShown.toggle()
+                        } else {
+                            self.isEmailAlertShown.toggle()
                         }
                     }) {
                         Text("Contact us")
                     }
                     .buttonStyle(ButtonDefault())
+                    .sheet(isPresented: $isEmailShown) {
+                        EmailView(result: self.$result)
+                    }.alert(isPresented: $isEmailAlertShown) {
+                        Alert(title: Text("Mail Services"),
+                              message: Text("Mail services are not available. Please send us an email instead via support@rokt.com if you have any questions."),
+                              dismissButton: .default(Text("OK")))
+                    }
                     
                     Text("® Rokt 2021 — All rights reserved App Version \(UIApplication.appVersion ?? "")")
                         .font(.defaultFont(.subtitle2))
