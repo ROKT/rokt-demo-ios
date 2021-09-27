@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		2524C9EE2697D4BD0091E01A /* DetailPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */; };
 		252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842CF263BB82E0010114A /* DetailTextFieldView.swift */; };
 		252842D2263BB9300010114A /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842D1263BB9300010114A /* AccountDetailsViewModel.swift */; };
+		254935582701510200A9DF5C /* Rokt-Widget in Frameworks */ = {isa = PBXBuildFile; productRef = 254935572701510200A9DF5C /* Rokt-Widget */; };
 		25570523262FA34D00635121 /* FeatureWalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */; };
 		25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25583903261FE5D600AF7FAE /* DemoItemView.swift */; };
 		255839092620072700AF7FAE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255839082620072700AF7FAE /* String+Extension.swift */; };
@@ -218,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				254935582701510200A9DF5C /* Rokt-Widget in Frameworks */,
 				DB70CD45073AD6A73DFB235A /* Pods_RoktDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,13 +520,15 @@
 				25F84760260C34880067B515 /* Frameworks */,
 				25F84761260C34880067B515 /* Resources */,
 				8364E3904A1D027D1241EAA9 /* [CP] Embed Pods Frameworks */,
-				18104CEA1759006385F03049 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RoktDemo;
+			packageProductDependencies = (
+				254935572701510200A9DF5C /* Rokt-Widget */,
+			);
 			productName = RoktDemo;
 			productReference = 25F84763260C34880067B515 /* RoktDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -557,7 +561,6 @@
 				25F84781260C348A0067B515 /* Frameworks */,
 				25F84782260C348A0067B515 /* Resources */,
 				389F9DDC816E9A7A0A88E31E /* [CP] Embed Pods Frameworks */,
-				32FE6F125491AB5AEA309312 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -600,6 +603,9 @@
 				Base,
 			);
 			mainGroup = 25F8475A260C34880067B515;
+			packageReferences = (
+				254935562701510200A9DF5C /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */,
+			);
 			productRefGroup = 25F84764260C34880067B515 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -644,23 +650,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18104CEA1759006385F03049 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		18F77201804D3565A713B7B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -681,23 +670,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		32FE6F125491AB5AEA309312 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		389F9DDC816E9A7A0A88E31E /* [CP] Embed Pods Frameworks */ = {
@@ -1207,6 +1179,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		254935562701510200A9DF5C /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ROKT/rokt-sdk-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		254935572701510200A9DF5C /* Rokt-Widget */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 254935562701510200A9DF5C /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */;
+			productName = "Rokt-Widget";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 25F8475B260C34880067B515 /* Project object */;
 }

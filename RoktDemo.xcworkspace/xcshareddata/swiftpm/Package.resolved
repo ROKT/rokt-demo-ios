@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Rokt-Widget",
+        "repositoryURL": "https://github.com/ROKT/rokt-sdk-ios",
+        "state": {
+          "branch": "master",
+          "revision": "8d0ed3d4722a2e19f227e68ce9b990037450c08f",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
