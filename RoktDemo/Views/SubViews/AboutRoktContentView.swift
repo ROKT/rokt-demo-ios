@@ -12,14 +12,14 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import SwiftUI
-import Kingfisher
+import SDWebImageSwiftUI
 
 struct AboutRoktContentView: View {
     let content: AboutRoktContentModel
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             if content.imageUrl != "" {
-                KFImage.url(URL(string: content.imageUrl))
+                WebImage(url: URL(string: content.imageUrl))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             }

@@ -7,6 +7,7 @@ target 'RoktDemo' do
   # Pods for RoktDemo
   pod 'Rokt-Widget', '~> 3.6.0'
   pod 'Alamofire', '~> 5.4.4'
+  pod 'SDWebImageSwiftUI', '~> 2.0.2'
 
   target 'RoktDemoTests' do
     inherit! :search_paths
