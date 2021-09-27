@@ -13,7 +13,7 @@
 
 
 import SwiftUI
-import Kingfisher
+import SDWebImageSwiftUI
 
 struct DemoItemView: View {
     let demoItemModel: DemoItemModel
@@ -22,7 +22,7 @@ struct DemoItemView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack{
                 if demoItemModel.iconURL.isUrl() {
-                    KFImage.url(
+                    WebImage(url:
                         URL(string: demoItemModel.iconURL)
                     )
                     .resizable()
