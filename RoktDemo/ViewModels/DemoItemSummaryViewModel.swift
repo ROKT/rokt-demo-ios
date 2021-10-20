@@ -18,10 +18,12 @@ class DemoItemSummaryViewModel: ObservableObject {
     @Published var summaryModel: DemoItemSummaryModel
     var model: DemoItemModel
     init(_ model: DemoItemModel) {
-        self.summaryModel = DemoItemSummaryModel(title: model.title,
-                                          longDescription: model.longDescription,
-                                          iconURL: model.iconURL,
-                                          disclaimerMessage: DemoItemSummaryViewModel.getDisclaimerMessage(model))
+        self.summaryModel =
+        DemoItemSummaryModel(title: model.title,
+                             longDescription: model.longDescription,
+                             iconURL: model.iconURL,
+                             disclaimerMessage: DemoItemSummaryViewModel.getDisclaimerMessage(model),
+                             descriptions: DemoItemSummaryViewModel.getDescriptions(model))
         self.model = model
     }
     
@@ -44,6 +46,13 @@ class DemoItemSummaryViewModel: ObservableObject {
         }
         return AlertView.template1
     }
+    
+    class func getDescriptions(_ model: DemoItemModel) -> [DescriptionItem] {
+        if let preDefinedScreen = model as? PreDefinedScreenModel {
+            return preDefinedScreen.descriptions
+        }
+        return []
+    }
 }
 
 struct DemoItemSummaryModel {
@@ -51,4 +60,5 @@ struct DemoItemSummaryModel {
     let longDescription: String?
     let iconURL: String
     let disclaimerMessage: String
+    let descriptions: [DescriptionItem]
 }

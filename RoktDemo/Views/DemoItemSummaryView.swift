@@ -24,15 +24,16 @@ struct DemoItemSummaryView: View {
                                title: viewModel.summaryModel.title)
                 
                 Spacer()
-                if let longDescription = viewModel.summaryModel.longDescription
-                {
-                    DemoContentView(longDescription: longDescription)
-                }
+                DemoContentView(longDescription: viewModel.summaryModel.longDescription,
+                                descriptions: viewModel.summaryModel.descriptions)
+                
                 Spacer()
                 Button(action: {
                     isDisclaimerShown.toggle()
                 }, label: {
                     Text("Let's begin")
+                        .font(.defaultButtonFont())
+                    
                 })
                 .padding()
                 .buttonStyle(ButtonDefaultOutlined())
@@ -97,14 +98,43 @@ private struct DemoHeaderView: View {
 }
 
 struct DemoContentView: View {
-    let longDescription: String
+    let longDescription: String?
+    let descriptions: [DescriptionItem]
     var body: some View {
         ScrollView{
-            VStack {
-                DetailText(text: longDescription)
-                    .padding()
+            VStack(alignment: .leading) {
+                if let longDescription = longDescription, !longDescription.isEmpty {
+                    DetailText(text: longDescription)
+                        .padding()
+                }
+                ForEach(descriptions, id: \.self) { description in
+                    DemoDescriptionItem(description: description)
+                }
             }
         }
+    }
+}
+
+struct DemoDescriptionItem: View {
+    let description: DescriptionItem
+    var body: some View {
+        HStack {
+            Image(description.iconURL)
+                .padding()
+            VStack(alignment: .leading, spacing: 4) {
+                Text(description.title)
+                    .font(.defaultBoldFont(.subtitle1))
+                    .multilineTextAlignment(.leading)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                Text(description.text)
+                    .font(.defaultFont(.text))
+                    .foregroundColor(.gray9)
+                    .multilineTextAlignment(.leading)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .padding([.leading, .trailing, .top])
+        
     }
 }
 
