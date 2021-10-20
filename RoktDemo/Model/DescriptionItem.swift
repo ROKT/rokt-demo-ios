@@ -1,5 +1,5 @@
 //
-//  PreDefinedScreen2Model.swift
+//  DescriptionItem.swift
 //  RoktDemo
 //
 //  Copyright 2020 Rokt Pte Ltd
@@ -12,7 +12,8 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
-
-class PreDefinedScreen2Model: DemoItemModel {
-    
+struct DescriptionItem: Codable, Hashable {
+    let title: String
+    let text: String
+    let iconURL: String
 }

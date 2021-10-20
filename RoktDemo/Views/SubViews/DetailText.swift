@@ -20,6 +20,7 @@ struct DetailText: View {
             .foregroundColor(.textColor)
             .lineSpacing(Constants.lineHeight)
             .lineLimit(nil)
+            .multilineTextAlignment(.leading)
             .fixedSize(horizontal: false, vertical: true)
     }
 }

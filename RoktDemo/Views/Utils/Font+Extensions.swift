@@ -19,6 +19,7 @@ extension Font {
         case header2 = 28
         case header3 = 18
         case title = 22
+        case button = 20
         case text = 16
         case subtitle1 = 14
         case subtitle2 = 12
