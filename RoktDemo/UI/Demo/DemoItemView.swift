@@ -45,7 +45,7 @@ struct DemoItemView: View {
             Text(demoItemModel.title)
                 .font(.defaultBoldFont(.title))
                 .foregroundColor(.titleColor)
-            DetailText(text: demoItemModel.shortDescription)
+            DetailTextView(text: demoItemModel.shortDescription)
         }
         .padding([.top, .bottom, .leading], 15)
         .background(Color.white)

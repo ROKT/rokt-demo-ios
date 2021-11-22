@@ -21,7 +21,7 @@ struct AboutRoktView: View {
         ZStack {
             switch viewModel.uiState {
             case .loading:
-                ActivityIndicator()
+                ActivityIndicatorView()
                     .frame(width: 100, height: 100, alignment: .center).background(Color.white)
                     .modifier(NavigationBarGray(title: "")).background(Color.white)
             case .error(let error):

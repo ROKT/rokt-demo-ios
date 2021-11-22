@@ -24,7 +24,7 @@ struct AboutRoktContentView: View {
                     .aspectRatio(contentMode: .fill)
             }
             HeaderView(title: content.title)
-            DetailText(text: content.content)
+            DetailTextView(text: content.content)
         }.padding()
     }
 }
