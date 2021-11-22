@@ -29,7 +29,7 @@ struct FeatureWalkthroughView: View {
                     Text(viewModel.screen.title)
                         .font(.defaultHeadingFont(.header2))
                         .foregroundColor(.titleColor)
-                    DetailText(text: viewModel.screen.description)
+                    DetailTextView(text: viewModel.screen.description)
                     
                     if !viewModel.screen.isOverlay() {
                         Text("Preview")

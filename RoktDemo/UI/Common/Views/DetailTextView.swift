@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-struct DetailText: View {
+struct DetailTextView: View {
     let text: String
     var font: Font = .defaultFont(.text)
     var body: some View {
@@ -25,8 +25,8 @@ struct DetailText: View {
     }
 }
 
-struct DetailedText_Previews: PreviewProvider {
+struct DetailedTextView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailText(text: "text")
+        DetailTextView(text: "text")
     }
 }

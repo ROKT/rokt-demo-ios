@@ -22,7 +22,7 @@ struct DemoLibraryView: View {
             
             switch viewModel.uiState {
             case .loading:
-                ActivityIndicator()
+                ActivityIndicatorView()
                     .frame(width: 100, height: 100, alignment: .center)
                     .background(Color.white)
                     .modifier(NavigationBarGray(title: "")).background(Color.white)
@@ -34,7 +34,7 @@ struct DemoLibraryView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         HeaderView(title: viewModel.demoTitle)
                         
-                        DetailText(text: viewModel.demoDescription)
+                        DetailTextView(text: viewModel.demoDescription)
                         
                         ForEach(viewModel.demoItems, id: \.self) { item in
                             NavigationLink(

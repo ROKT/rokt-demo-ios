@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		058B3C0B9436B5AA8BC7E8A3 /* Pods_RoktDemo_RoktDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1A34F70B73A493FB1AD18B /* Pods_RoktDemo_RoktDemoUITests.framework */; };
+		251E32DA274B0EEB00308A18 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A56258269BE2EC003E64B0 /* ConfirmationView.swift */; };
+		251E32E0274B21B800308A18 /* DemoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */; };
+		251E32E1274B21C900308A18 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */; };
+		251E32E2274B21EC00308A18 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C958126A1455400F0961B /* UIState.swift */; };
+		251E32E3274B21FB00308A18 /* DemoLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB764261C0FD900B959EF /* DemoLibraryModel.swift */; };
+		251E32E4274B220C00308A18 /* DemoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB787261C26FA00B959EF /* DemoLibraryService.swift */; };
+		251E32E5274B223800308A18 /* RoktEmbeddedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */; };
+		251E32E6274B225200308A18 /* NavigationBarBlackWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2570F33B2627B38400B5B52E /* NavigationBarBlackWithButton.swift */; };
+		251E32E7274B22B100308A18 /* FeatureWalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */; };
+		251E32E8274B22C900308A18 /* NavigationBarAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */; };
+		251E32E9274B22FD00308A18 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576572A261D4CBF003F3D26 /* Color+Extensions.swift */; };
+		251E32EA274B230E00308A18 /* PreDefinedScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB778261C206A00B959EF /* PreDefinedScreenModel.swift */; };
+		251E32EB274B231E00308A18 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226F2613F67A00A58DA3 /* ButtonDefault.swift */; };
+		251E32EC274B232600308A18 /* KeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */; };
+		251E32ED274B232D00308A18 /* DescriptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254D4C8A2717EA5A003E27C9 /* DescriptionItem.swift */; };
+		251E32EE274B233F00308A18 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */; };
+		251E32EF274B234D00308A18 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226A2613F63800A58DA3 /* Font+Extensions.swift */; };
+		251E32F0274B235800308A18 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5629B269FBC78003E64B0 /* NetworkService.swift */; };
+		251E32F1274B238200308A18 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7097F26E9D4F30006C18C /* DetailTextView.swift */; };
+		251E32F2274B24D800308A18 /* DetailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842CF263BB82E0010114A /* DetailTextFieldView.swift */; };
 		2524C9B326955CDC0091E01A /* CustomerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9B226955CDC0091E01A /* CustomerDetailsModel.swift */; };
 		2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9E52697C23E0091E01A /* Binding+Extensions.swift */; };
 		2524C9EE2697D4BD0091E01A /* DetailPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */; };
@@ -19,7 +39,7 @@
 		255839092620072700AF7FAE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255839082620072700AF7FAE /* String+Extension.swift */; };
 		255D7AC326290F5F0041D81C /* DemoItemSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */; };
 		255D7ACB262959CE0041D81C /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D7ACA262959CE0041D81C /* ScreenModel.swift */; };
-		25628DE8269FFBCA00B12963 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25628DE7269FFBCA00B12963 /* ActivityIndicator.swift */; };
+		25628DE8269FFBCA00B12963 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25628DE7269FFBCA00B12963 /* ActivityIndicatorView.swift */; };
 		256A2841262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */; };
 		256A288D262D4904000CF3D4 /* FeatureWalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */; };
 		256C958226A1455400F0961B /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C958126A1455400F0961B /* UIState.swift */; };
@@ -48,9 +68,7 @@
 		2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576572A261D4CBF003F3D26 /* Color+Extensions.swift */; };
 		25A0266126A5000D0005CFED /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A0266026A5000D0005CFED /* ErrorView.swift */; };
 		25A0266626A51B860005CFED /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A0266526A51B860005CFED /* ErrorViewModel.swift */; };
-		25A0266726A51B860005CFED /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A0266526A51B860005CFED /* ErrorViewModel.swift */; };
 		25A56246269BB953003E64B0 /* CustomerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9B226955CDC0091E01A /* CustomerDetailsModel.swift */; };
-		25A5624A269BB981003E64B0 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */; };
 		25A5624F269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5624E269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift */; };
 		25A56254269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A56253269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift */; };
 		25A56259269BE2EC003E64B0 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A56258269BE2EC003E64B0 /* ConfirmationView.swift */; };
@@ -61,7 +79,7 @@
 		25BA8D8C260D94B60044EF14 /* SoleilLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D88260D94B60044EF14 /* SoleilLight.otf */; };
 		25BA8D8D260D94B60044EF14 /* SoleilRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D89260D94B60044EF14 /* SoleilRegular.otf */; };
 		25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 25BA8D8A260D94B60044EF14 /* SoleilBold.otf */; };
-		25C7098026E9D4F30006C18C /* DetailText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7097F26E9D4F30006C18C /* DetailText.swift */; };
+		25C7098026E9D4F30006C18C /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7097F26E9D4F30006C18C /* DetailTextView.swift */; };
 		25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2A72627F51A00D8AB79 /* AlertView.swift */; };
 		25CBB2AD2628044800D8AB79 /* DemoItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */; };
 		25D1D72226DF5E7B0045D579 /* KeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */; };
@@ -86,9 +104,7 @@
 		589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B126154BA500A58DA3 /* AboutRoktContentView.swift */; };
 		589922BA2615560800A58DA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922B92615560800A58DA3 /* Constants.swift */; };
 		589922C72615683700A58DA3 /* balto-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 589922C62615683700A58DA3 /* balto-bold.otf */; };
-		589922CC261587A700A58DA3 /* ExtendableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922CB261587A700A58DA3 /* ExtendableHeader.swift */; };
 		58A97A6F2654CF850092B598 /* AccountDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A97A6E2654CF850092B598 /* AccountDetailsViewModelTests.swift */; };
-		58A97A702654D1480092B598 /* FeatureWalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */; };
 		58A97A712654D2F20092B598 /* AccountDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842D1263BB9300010114A /* AccountDetailsViewModel.swift */; };
 		58A97A722654D3F10092B598 /* CustomConfigurationPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB773261C1FFB00B959EF /* CustomConfigurationPageModel.swift */; };
 		58A97A732654D3FC0092B598 /* AccountDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCBC26538AF8005226C5 /* AccountDetailsModel.swift */; };
@@ -131,7 +147,7 @@
 		255839082620072700AF7FAE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		255D7ACA262959CE0041D81C /* ScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenModel.swift; sourceTree = "<group>"; };
-		25628DE7269FFBCA00B12963 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		25628DE7269FFBCA00B12963 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoktEmbeddedSwiftUIView.swift; sourceTree = "<group>"; };
 		256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughView.swift; sourceTree = "<group>"; };
 		256C958126A1455400F0961B /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
@@ -168,7 +184,7 @@
 		25BA8D88260D94B60044EF14 /* SoleilLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilLight.otf; sourceTree = "<group>"; };
 		25BA8D89260D94B60044EF14 /* SoleilRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilRegular.otf; sourceTree = "<group>"; };
 		25BA8D8A260D94B60044EF14 /* SoleilBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SoleilBold.otf; sourceTree = "<group>"; };
-		25C7097F26E9D4F30006C18C /* DetailText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailText.swift; sourceTree = "<group>"; };
+		25C7097F26E9D4F30006C18C /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		25CBB2A72627F51A00D8AB79 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemSummaryView.swift; sourceTree = "<group>"; };
 		25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModifier.swift; sourceTree = "<group>"; };
@@ -198,7 +214,6 @@
 		589922B126154BA500A58DA3 /* AboutRoktContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktContentView.swift; sourceTree = "<group>"; };
 		589922B92615560800A58DA3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		589922C62615683700A58DA3 /* balto-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "balto-bold.otf"; sourceTree = "<group>"; };
-		589922CB261587A700A58DA3 /* ExtendableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendableHeader.swift; sourceTree = "<group>"; };
 		58A97A6E2654CF850092B598 /* AccountDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsView.swift; sourceTree = "<group>"; };
 		58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -252,6 +267,148 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		251E32D0274B0C3700308A18 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				251E32DD274B102200308A18 /* Views */,
+				589922742613F72E00A58DA3 /* Buttons */,
+				589922A72615442C00A58DA3 /* Extensions */,
+				25747162261EB53F00B8C0C7 /* NavigationBar */,
+				25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		251E32D1274B0C7E00308A18 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				25F8476A260C34880067B515 /* HomePageView.swift */,
+				256D417D26FD4D0B008D7879 /* EmailView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		251E32D2274B0C9800308A18 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				5899228326141EF900A58DA3 /* AboutRoktView.swift */,
+				256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */,
+				589922B126154BA500A58DA3 /* AboutRoktContentView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		251E32D3274B0CC800308A18 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				251E32D4274B0CEF00308A18 /* Summary */,
+				251E32D5274B0D2200308A18 /* Walkthrough */,
+				251E32D6274B0E8B00308A18 /* Custom */,
+				251E32DC274B0F6700308A18 /* Error */,
+				256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */,
+				256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */,
+				25583903261FE5D600AF7FAE /* DemoItemView.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		251E32D4274B0CEF00308A18 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */,
+				25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		251E32D5274B0D2200308A18 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */,
+				25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */,
+			);
+			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		251E32D6274B0E8B00308A18 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				251E32D7274B0EC100308A18 /* Account */,
+				251E32D8274B0ECB00308A18 /* Customer */,
+				251E32D9274B0EDC00308A18 /* Confirmation */,
+				251E32DE274B113700308A18 /* Common */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		251E32D7274B0EC100308A18 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				257564B6263A6A9E0096889A /* AccountDetailsView.swift */,
+				252842D1263BB9300010114A /* AccountDetailsViewModel.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		251E32D8274B0ECB00308A18 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */,
+				58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		251E32D9274B0EDC00308A18 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				25A56258269BE2EC003E64B0 /* ConfirmationView.swift */,
+				25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		251E32DC274B0F6700308A18 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				25A0266026A5000D0005CFED /* ErrorView.swift */,
+				25A0266526A51B860005CFED /* ErrorViewModel.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		251E32DD274B102200308A18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				25628DE7269FFBCA00B12963 /* ActivityIndicatorView.swift */,
+				25CBB2A72627F51A00D8AB79 /* AlertView.swift */,
+				25C7097F26E9D4F30006C18C /* DetailTextView.swift */,
+				256EB75A261C0EFE00B959EF /* HeaderView.swift */,
+				256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		251E32DE274B113700308A18 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				252842CF263BB82E0010114A /* DetailTextFieldView.swift */,
+				2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		251E32DF274B1D8100308A18 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */,
+				2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */,
+				25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */,
+				2570F33B2627B38400B5B52E /* NavigationBarBlackWithButton.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 		256C958026A1450F00F0961B /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,28 +417,12 @@
 			path = State;
 			sourceTree = "<group>";
 		};
-		256E3D3C2623DDE600639FE0 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */,
-				256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */,
-				255D7AC226290F5F0041D81C /* DemoItemSummaryViewModel.swift */,
-				25570522262FA34D00635121 /* FeatureWalkthroughViewModel.swift */,
-				252842D1263BB9300010114A /* AccountDetailsViewModel.swift */,
-				58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */,
-				25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */,
-				25A0266526A51B860005CFED /* ErrorViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		25747162261EB53F00B8C0C7 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */,
-				2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */,
-				25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */,
-				2570F33B2627B38400B5B52E /* NavigationBarBlackWithButton.swift */,
+				251E32DF274B1D8100308A18 /* Templates */,
+				2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */,
+				2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -346,8 +487,7 @@
 				5899229B261420B500A58DA3 /* Service */,
 				5899228826141F2100A58DA3 /* Model */,
 				589873FC2612C38F00C904E8 /* Utils */,
-				589873F82612BF1100C904E8 /* Views */,
-				256E3D3C2623DDE600639FE0 /* ViewModels */,
+				589873F82612BF1100C904E8 /* UI */,
 				25BA8D85260D94560044EF14 /* Resources */,
 				25F84774260C348A0067B515 /* Info.plist */,
 				25F8476E260C348A0067B515 /* Preview Content */,
@@ -383,25 +523,16 @@
 			path = RoktDemoUITests;
 			sourceTree = "<group>";
 		};
-		589873F82612BF1100C904E8 /* Views */ = {
+		589873F82612BF1100C904E8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				251E32D1274B0C7E00308A18 /* Home */,
+				251E32D3274B0CC800308A18 /* Demo */,
+				251E32D2274B0C9800308A18 /* About */,
+				251E32D0274B0C3700308A18 /* Common */,
 				256C958026A1450F00F0961B /* State */,
-				25747162261EB53F00B8C0C7 /* NavigationBar */,
-				589922B026154B0A00A58DA3 /* SubViews */,
-				589922A72615442C00A58DA3 /* Utils */,
-				589922742613F72E00A58DA3 /* Buttons */,
-				25F8476A260C34880067B515 /* HomePageView.swift */,
-				256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */,
-				5899228326141EF900A58DA3 /* AboutRoktView.swift */,
-				25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */,
-				256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */,
-				257564B6263A6A9E0096889A /* AccountDetailsView.swift */,
-				58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */,
-				25A56258269BE2EC003E64B0 /* ConfirmationView.swift */,
-				25A0266026A5000D0005CFED /* ErrorView.swift */,
 			);
-			path = Views;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		589873FC2612C38F00C904E8 /* Utils */ = {
@@ -451,36 +582,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		589922A72615442C00A58DA3 /* Utils */ = {
+		589922A72615442C00A58DA3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				5899226A2613F63800A58DA3 /* Font+Extensions.swift */,
-				589922CB261587A700A58DA3 /* ExtendableHeader.swift */,
 				2576572A261D4CBF003F3D26 /* Color+Extensions.swift */,
-				2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */,
-				2574715A261EB40B00B8C0C7 /* NavigationBarAccessor.swift */,
 				2524C9E52697C23E0091E01A /* Binding+Extensions.swift */,
 				25D9F8CF26B904AC008F2BBE /* UIApplication+Extensions.swift */,
-				25D1D72126DF5E7B0045D579 /* KeyboardModifier.swift */,
-				256D417D26FD4D0B008D7879 /* EmailView.swift */,
 			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		589922B026154B0A00A58DA3 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				589922B126154BA500A58DA3 /* AboutRoktContentView.swift */,
-				256EB75A261C0EFE00B959EF /* HeaderView.swift */,
-				25583903261FE5D600AF7FAE /* DemoItemView.swift */,
-				256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */,
-				252842CF263BB82E0010114A /* DetailTextFieldView.swift */,
-				2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */,
-				25CBB2A72627F51A00D8AB79 /* AlertView.swift */,
-				25628DE7269FFBCA00B12963 /* ActivityIndicator.swift */,
-				25C7097F26E9D4F30006C18C /* DetailText.swift */,
-			);
-			path = SubViews;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		58A97A6D2654CF5C0092B598 /* ViewModels */ = {
@@ -812,7 +922,7 @@
 				25F84769260C34880067B515 /* SceneDelegate.swift in Sources */,
 				255D7AC326290F5F0041D81C /* DemoItemSummaryViewModel.swift in Sources */,
 				2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */,
-				25628DE8269FFBCA00B12963 /* ActivityIndicator.swift in Sources */,
+				25628DE8269FFBCA00B12963 /* ActivityIndicatorView.swift in Sources */,
 				5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */,
 				256EB75B261C0EFE00B959EF /* HeaderView.swift in Sources */,
 				5899229D2614214500A58DA3 /* AboutRoktService.swift in Sources */,
@@ -829,7 +939,7 @@
 				252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */,
 				2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */,
 				256D417E26FD4D0B008D7879 /* EmailView.swift in Sources */,
-				25C7098026E9D4F30006C18C /* DetailText.swift in Sources */,
+				25C7098026E9D4F30006C18C /* DetailTextView.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
 				25A5625E269BFF69003E64B0 /* ConfirmationViewModel.swift in Sources */,
 				256A288D262D4904000CF3D4 /* FeatureWalkthroughView.swift in Sources */,
@@ -843,7 +953,6 @@
 				589922BA2615560800A58DA3 /* Constants.swift in Sources */,
 				25A0266126A5000D0005CFED /* ErrorView.swift in Sources */,
 				25570523262FA34D00635121 /* FeatureWalkthroughViewModel.swift in Sources */,
-				589922CC261587A700A58DA3 /* ExtendableHeader.swift in Sources */,
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
 				5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */,
 				25D1D72226DF5E7B0045D579 /* KeyboardModifier.swift in Sources */,
@@ -854,24 +963,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251E32E4274B220C00308A18 /* DemoLibraryService.swift in Sources */,
+				251E32E1274B21C900308A18 /* CustomerDetailsViewModel.swift in Sources */,
+				251E32E9274B22FD00308A18 /* Color+Extensions.swift in Sources */,
+				251E32EB274B231E00308A18 /* ButtonDefault.swift in Sources */,
 				58A97A752654DD4E0092B598 /* DefaultPlacementExamplesModel.swift in Sources */,
+				251E32E6274B225200308A18 /* NavigationBarBlackWithButton.swift in Sources */,
 				58A97A762654DD550092B598 /* ScreenModel.swift in Sources */,
 				58A97A742654DCB00092B598 /* DemoItemModel.swift in Sources */,
-				25A5624A269BB981003E64B0 /* CustomerDetailsViewModel.swift in Sources */,
+				251E32E8274B22C900308A18 /* NavigationBarAccessor.swift in Sources */,
 				25A56254269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift in Sources */,
-				58A97A702654D1480092B598 /* FeatureWalkthroughViewModel.swift in Sources */,
+				251E32EE274B233F00308A18 /* NavigationBarModifier.swift in Sources */,
 				25A5624F269BD5D3003E64B0 /* CustomerDetailsViewModelTests.swift in Sources */,
+				251E32EC274B232600308A18 /* KeyboardModifier.swift in Sources */,
 				58A97A722654D3F10092B598 /* CustomConfigurationPageModel.swift in Sources */,
+				251E32ED274B232D00308A18 /* DescriptionItem.swift in Sources */,
+				251E32E5274B223800308A18 /* RoktEmbeddedSwiftUIView.swift in Sources */,
+				251E32DA274B0EEB00308A18 /* ConfirmationView.swift in Sources */,
 				58A97A6F2654CF850092B598 /* AccountDetailsViewModelTests.swift in Sources */,
-				25A0266726A51B860005CFED /* ErrorViewModel.swift in Sources */,
 				2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */,
 				58A97A712654D2F20092B598 /* AccountDetailsViewModel.swift in Sources */,
 				25A56262269D551F003E64B0 /* ConfirmationViewModel.swift in Sources */,
+				251E32EF274B234D00308A18 /* Font+Extensions.swift in Sources */,
+				251E32F0274B235800308A18 /* NetworkService.swift in Sources */,
+				251E32E7274B22B100308A18 /* FeatureWalkthroughViewModel.swift in Sources */,
+				251E32E3274B21FB00308A18 /* DemoLibraryModel.swift in Sources */,
 				25F8477E260C348A0067B515 /* RoktDemoTests.swift in Sources */,
 				58A97A732654D3FC0092B598 /* AccountDetailsModel.swift in Sources */,
 				25A56246269BB953003E64B0 /* CustomerDetailsModel.swift in Sources */,
+				251E32E2274B21EC00308A18 /* UIState.swift in Sources */,
 				2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */,
+				251E32E0274B21B800308A18 /* DemoLibraryViewModel.swift in Sources */,
+				251E32EA274B230E00308A18 /* PreDefinedScreenModel.swift in Sources */,
+				251E32F1274B238200308A18 /* DetailTextView.swift in Sources */,
 				25D7363F26E0799500495FFF /* Constants.swift in Sources */,
+				251E32F2274B24D800308A18 /* DetailTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

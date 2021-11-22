@@ -104,7 +104,7 @@ struct DemoContentView: View {
         ScrollView{
             VStack(alignment: .leading) {
                 if let longDescription = longDescription, !longDescription.isEmpty {
-                    DetailText(text: longDescription)
+                    DetailTextView(text: longDescription)
                         .padding()
                 }
                 ForEach(descriptions, id: \.self) { description in

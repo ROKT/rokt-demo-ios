@@ -12,7 +12,7 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 import SwiftUI
 
-struct ActivityIndicator: View {
+struct ActivityIndicatorView: View {
 
   @State private var isAnimating: Bool = false
 
@@ -39,8 +39,8 @@ struct ActivityIndicator: View {
   }
 }
 
-struct ActivityIndicator_Previews: PreviewProvider {
+struct ActivityIndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityIndicator()
+        ActivityIndicatorView()
     }
 }

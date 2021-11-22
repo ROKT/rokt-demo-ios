@@ -32,7 +32,7 @@ struct CustomerDetailsView: View {
                         .font(.defaultBoldFont(.header2))
                         .foregroundColor(.textColor)
                     
-                    DetailText(
+                    DetailTextView(
                         text: "The offer selection process changes based on available contextual and demographic data. To personalize offers, enter customer details below.\n\nAdvanced options: Populate any custom attributes that are required for this placement. You can only enter attributes that are already set up by your account manager.",
                         font: .defaultFont(.subtitle1))
                     
@@ -96,7 +96,7 @@ private struct AdvancedDetails: View {
     
     var body: some View {
         VStack {
-            DetailText(
+            DetailTextView(
                 text: "Add in your required custom attributes to show placements for your account. Attributes not already set up by your account manager will not be used.",
                 font: .defaultFont(.subtitle2))
             
