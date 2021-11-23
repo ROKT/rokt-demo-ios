@@ -42,6 +42,14 @@ extension Font {
     static func defaultHeadingFont(size: CGFloat) -> Font {
         return .custom("balto-bold", size: size)
     }
+    
+    static func arialFont(size: CGFloat) -> Font {
+        return .custom("Arial", size: size)
+    }
+    
+    static func latoFont(size: CGFloat, isBold: Bool = false) -> Font {
+        return .custom(isBold ? "Lato-Bold" : "Lato", size: size)
+    }
 }
 
 public enum FontSize: CGFloat {

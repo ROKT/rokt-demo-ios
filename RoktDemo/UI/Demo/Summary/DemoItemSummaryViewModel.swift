@@ -36,6 +36,8 @@ class DemoItemSummaryViewModel: ObservableObject {
     func getTagId() -> String? {
         if let model = model as? DefaultPlacementExamplesModel {
             return model.tagID
+        } else if let model = model as? PreDefinedScreenModel {
+            return model.tagID
         }
         return nil
     }

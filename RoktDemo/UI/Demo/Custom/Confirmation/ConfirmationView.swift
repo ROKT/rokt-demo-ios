@@ -84,15 +84,15 @@ struct ConfirmationView: View {
         Rokt.execute(viewName: viewModel.accountDetail.viewName, attributes: viewModel.attributes,
                      placements: placements,
                      onLoad: {
-                        self.placementDisplayed = true
-                     },
+            self.placementDisplayed = true
+        },
                      onEmbeddedSizeChange: { selectedPlacement, widgetHeight in
-                        if selectedPlacement == viewModel.accountDetail.placementLocation2 {
-                            embeddedSize2 = widgetHeight
-                        } else {
-                            embeddedSize1 = widgetHeight
-                        }
-                     })
+            if selectedPlacement == viewModel.accountDetail.placementLocation2 {
+                embeddedSize2 = widgetHeight
+            } else {
+                embeddedSize1 = widgetHeight
+            }
+        })
     }
 }
 

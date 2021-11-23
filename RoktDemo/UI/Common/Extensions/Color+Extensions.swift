@@ -20,6 +20,23 @@ extension Color {
     static let textColor = Color("Gray9")
     static let borderColor = Color("Border")
     static let errorColor = Color("Volcano")
+    static let preDefinedWhite = Color("PreDefinedWhite")
+    static let preDefined1Black = Color("PreDefined1Black")
+    static let preDefined1Gray1 = Color("PreDefined1Gray1")
+    static let preDefined1Gray2 = Color("PreDefined1Gray2")
+    static let preDefined1Gray3 = Color("PreDefined1Gray3")
+    static let preDefined1Green = Color("PreDefined1Green")
+    static let preDefined2Black = Color("PreDefined2Black")
+    static let preDefined2Gray1 = Color("PreDefined2Gray1")
+    static let preDefined2Gray2 = Color("PreDefined2Gray2")
+    static let preDefined2Purple = Color("PreDefined2Purple")
+    static let preDefined3Black1 = Color("PreDefined3Black1")
+    static let preDefined3Black2 = Color("PreDefined3Black2")
+    static let preDefined3Gray1 = Color("PreDefined3Gray1")
+    static let preDefined3Gray2 = Color("PreDefined3Gray2")
+    static let preDefined3Gray3 = Color("PreDefined3Gray3")
+    static let preDefined3Green = Color("PreDefined3Green")
+    static let preDefined3Bule = Color("PreDefined3Blue")
 }
 
 extension UIColor {

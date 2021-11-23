@@ -34,32 +34,9 @@ struct FeatureWalkthroughViewModel {
     func getAttributes() -> [String: String] {
         var attributes = screen.attributes
         let email = attributes["email"]
-        attributes["email"] = randomiseEmail(email: email)
+        attributes["email"] = Random.randomiseEmail(email: email)
         
         return attributes
-    }
-    
-    func randomiseEmail(email: String?) -> String {
-        var randomEmail = email ?? "john.smith@example.com"
-        
-        if let index = randomEmail.lastIndex(of: "@") {
-            let emailId = randomEmail[..<index]
-            let domain = randomEmail[index...]
-            
-            randomEmail = emailId + getFormattedDate() + getRandomNumber() + domain
-        }
-        return randomEmail
-    }
-    
-    func getFormattedDate(_ date: Date = Date()) -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYYMMDDHHmmSSS"
-        
-        return dateFormatter.string(from: date)
-    }
-    
-    func getRandomNumber() -> String {
-        return "\(Int.random(in: 0..<10000))"
     }
 
 }
