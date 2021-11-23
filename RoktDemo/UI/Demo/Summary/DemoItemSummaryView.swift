@@ -65,6 +65,8 @@ struct DemoItemSummaryView: View {
                                                   ,popToRootView: $pushActive))
         } else if let model = viewModel.model as? CustomConfigurationPageModel {
             return AnyView(AccountDetailsView(viewModel: AccountDetailsViewModel(model), popToRootView: $pushActive))
+        } else if let model = viewModel.model as? PreDefinedScreenModel {
+            return AnyView(PreDefined1View(viewModel: PreDefinedViewModel(model: model), popToRootView: $pushActive))
         }
         return AnyView(EmptyView())
     }
