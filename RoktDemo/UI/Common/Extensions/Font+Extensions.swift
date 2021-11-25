@@ -43,8 +43,8 @@ extension Font {
         return .custom("balto-bold", size: size)
     }
     
-    static func arialFont(size: CGFloat) -> Font {
-        return .custom("Arial", size: size)
+    static func arialFont(size: CGFloat, isBold: Bool = false) -> Font {
+        return .custom(isBold ? "Arial-BoldMT" : "ArialMT", size: size)
     }
     
     static func latoFont(size: CGFloat, isBold: Bool = false) -> Font {

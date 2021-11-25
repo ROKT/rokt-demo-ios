@@ -65,8 +65,11 @@ struct DemoItemSummaryView: View {
                                                   ,popToRootView: $pushActive))
         } else if let model = viewModel.model as? CustomConfigurationPageModel {
             return AnyView(AccountDetailsView(viewModel: AccountDetailsViewModel(model), popToRootView: $pushActive))
-        } else if let model = viewModel.model as? PreDefinedScreenModel {
-            return AnyView(PreDefined1View(viewModel: PreDefinedViewModel(model: model), popToRootView: $pushActive))
+        } else if let model = viewModel.model as? PreDefinedScreen1Model {
+
+                return AnyView(PreDefined1View(viewModel: PreDefinedViewModel(model: model), popToRootView: $pushActive))
+        } else if let model = viewModel.model as? PreDefinedScreen2Model {
+            return AnyView(PreDefined2View(viewModel: PreDefinedViewModel(model: model), popToRootView: $pushActive))
         }
         return AnyView(EmptyView())
     }
