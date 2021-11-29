@@ -25,6 +25,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>lato_regular.ttf</string>
+		<string>lato-boldItalic.ttf</string>
 		<string>lato_bold.ttf</string>
 		<string>SoleilBold.otf</string>
 		<string>SoleilBook.otf</string>

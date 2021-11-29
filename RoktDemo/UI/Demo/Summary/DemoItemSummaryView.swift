@@ -71,6 +71,9 @@ struct DemoItemSummaryView: View {
         } else if let model = viewModel.model as? PreDefinedScreen2Model {
             return AnyView(PreDefined2View(viewModel: PreDefinedViewModel(model: model), popToRootView: $pushActive))
         }
+        else if let model = viewModel.model as? PreDefinedScreen3Model {
+            return AnyView(PreDefined3View(viewModel: PreDefinedViewModel(model: model), popToRootView: $pushActive))
+        }
         return AnyView(EmptyView())
     }
 
