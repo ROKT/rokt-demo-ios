@@ -41,6 +41,8 @@
 		251E330F274F0D5300308A18 /* PreDefinedScreen1Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E3309274F0A8600308A18 /* PreDefinedScreen1Model.swift */; };
 		251E3310274F0D5500308A18 /* PreDefinedScreen2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E330B274F0A9600308A18 /* PreDefinedScreen2Model.swift */; };
 		251E3311274F0D5B00308A18 /* PreDefinedScreen3Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E330D274F0AA400308A18 /* PreDefinedScreen3Model.swift */; };
+		251E3317274F297E00308A18 /* PreDefined3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E3316274F297E00308A18 /* PreDefined3View.swift */; };
+		251E3319274F516C00308A18 /* lato-boldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 251E3318274F516C00308A18 /* lato-boldItalic.ttf */; };
 		2524C9B326955CDC0091E01A /* CustomerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9B226955CDC0091E01A /* CustomerDetailsModel.swift */; };
 		2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9E52697C23E0091E01A /* Binding+Extensions.swift */; };
 		2524C9EE2697D4BD0091E01A /* DetailPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */; };
@@ -158,6 +160,8 @@
 		251E3309274F0A8600308A18 /* PreDefinedScreen1Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreDefinedScreen1Model.swift; sourceTree = "<group>"; };
 		251E330B274F0A9600308A18 /* PreDefinedScreen2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreDefinedScreen2Model.swift; sourceTree = "<group>"; };
 		251E330D274F0AA400308A18 /* PreDefinedScreen3Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreDefinedScreen3Model.swift; sourceTree = "<group>"; };
+		251E3316274F297E00308A18 /* PreDefined3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreDefined3View.swift; sourceTree = "<group>"; };
+		251E3318274F516C00308A18 /* lato-boldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lato-boldItalic.ttf"; sourceTree = "<group>"; };
 		2524C9B226955CDC0091E01A /* CustomerDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsModel.swift; sourceTree = "<group>"; };
 		2524C9E52697C23E0091E01A /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		2524C9ED2697D4BD0091E01A /* DetailPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPickerView.swift; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 			children = (
 				251E32F6274B457800308A18 /* PreDefined1View.swift */,
 				251E3301274DCE2800308A18 /* PreDefined2View.swift */,
+				251E3316274F297E00308A18 /* PreDefined3View.swift */,
 				251E32FE274C9AEE00308A18 /* PreDefinedViewModel.swift */,
 			);
 			path = Predefined;
@@ -543,6 +548,7 @@
 		25BA8D86260D945F0044EF14 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				251E3318274F516C00308A18 /* lato-boldItalic.ttf */,
 				251E32FA274B58D300308A18 /* lato_bold.ttf */,
 				251E32F8274B58C600308A18 /* lato_regular.ttf */,
 				25BA8D8A260D94B60044EF14 /* SoleilBold.otf */,
@@ -814,6 +820,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251E3319274F516C00308A18 /* lato-boldItalic.ttf in Resources */,
 				25BA8D8B260D94B60044EF14 /* SoleilBook.otf in Resources */,
 				25F84773260C348A0067B515 /* LaunchScreen.storyboard in Resources */,
 				25BA8D8E260D94B60044EF14 /* SoleilBold.otf in Resources */,
@@ -987,6 +994,7 @@
 			files = (
 				25A56259269BE2EC003E64B0 /* ConfirmationView.swift in Sources */,
 				2570F33C2627B38400B5B52E /* NavigationBarBlackWithButton.swift in Sources */,
+				251E3317274F297E00308A18 /* PreDefined3View.swift in Sources */,
 				256EB779261C206A00B959EF /* PreDefinedScreenModel.swift in Sources */,
 				25A0266626A51B860005CFED /* ErrorViewModel.swift in Sources */,
 				2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */,
