@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RokLaunchLogo" width="80" height="53"/>
+        <image name="RokLaunchLogo" width="1280" height="841"/>
     </resources>
 </document>
