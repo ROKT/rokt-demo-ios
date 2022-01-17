@@ -29,45 +29,24 @@ struct AboutRoktView: View {
             default:
                 
                 ScrollView {
-                    
                     VStack {
-                        AboutHedearView()
+                        ForEach(viewModel.aboutModel.contents, id: \.self) { content in
+                            AboutRoktContentView(content: content)
+                        }
                     }
-                    
-                    ForEach(viewModel.aboutModel.contents, id: \.self) { content in
-                        AboutRoktContentView(content: content)
-                    }
-                    
-                }.modifier(NavigationBarTransparent(title: ""))
+                }
             }
             
         }.background(Color.white)
         .onAppear {
             viewModel.loadAboutRokt()
         }
-        .edgesIgnoringSafeArea([.top])
-        .modifier(NavigationBarTransparent(title: ""))
+        .modifier(NavigationBarWhite(title: ""))
     }
 }
 
 struct AboutRoktView_Previews: PreviewProvider {
     static var previews: some View {
         AboutRoktView(viewModel: AboutRoktViewModel()).preferredColorScheme(.dark)
-    }
-}
-
-struct AboutHedearView: View {
-    var body: some View {
-        ZStack {
-            Image("AboutBackground")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .clipped()
-            
-            Text("About this app")
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
-                .font(.defaultHeadingFont(.header2))
-        }
     }
 }

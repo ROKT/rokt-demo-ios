@@ -24,13 +24,11 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Archivo-Regular.ttf</string>
+		<string>Archivo-SemiBold.ttf</string>
 		<string>lato_regular.ttf</string>
 		<string>lato-boldItalic.ttf</string>
 		<string>lato_bold.ttf</string>
-		<string>SoleilBold.otf</string>
-		<string>SoleilBook.otf</string>
-		<string>SoleilLight.otf</string>
-		<string>SoleilRegular.otf</string>
 		<string>balto-bold.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

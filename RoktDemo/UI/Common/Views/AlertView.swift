@@ -41,7 +41,9 @@ struct AlertView: View {
                 }
                 .buttonStyle(ButtonDefaultOutlined())
                 .padding()
-            }.background(Color.white)
+            }
+            .background(Color.white)
+            .cornerRadius(10)
             .padding()
             .clipped()
         }
