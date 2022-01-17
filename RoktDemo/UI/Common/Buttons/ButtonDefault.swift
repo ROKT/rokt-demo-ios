@@ -22,6 +22,8 @@ struct ButtonDefault: ButtonStyle {
             .frame(maxWidth: .infinity)
             .foregroundColor(Color.appColor)
             .background(Color.white)
-            .border(Color.appColor, width: 2)
+            .cornerRadius(100)
+            .overlay(RoundedRectangle(cornerRadius: 100)
+                        .stroke(Color.appColor, lineWidth: 2))
     }
 }

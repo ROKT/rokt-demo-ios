@@ -32,11 +32,11 @@ extension Font {
     }
     
     static func defaultFont(size: CGFloat) -> Font {
-        return .custom("Soleil", size: size)
+        return .custom("Archivo-Regular", size: size)
     }
     
     static func defaultBoldFont(size: CGFloat) -> Font {
-        return .custom("Soleil-Bold", size: size)
+        return .custom("Archivo-SemiBold", size: size)
     }
     
     static func defaultHeadingFont(size: CGFloat) -> Font {

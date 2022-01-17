@@ -39,7 +39,9 @@ struct DemoItemView: View {
                 Image(systemName: "arrow.right")
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.appColor)
+                    .background(Circle()
+                                    .fill(Color.appColor))
+                    
             }
             
             Text(demoItemModel.title)
@@ -47,7 +49,7 @@ struct DemoItemView: View {
                 .foregroundColor(.titleColor)
             DetailTextView(text: demoItemModel.shortDescription)
         }
-        .padding([.top, .bottom, .leading], 15)
+        .padding(15)
         .background(Color.white)
         .border(Color.borderColor, width: 1)
     }

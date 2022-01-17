@@ -23,5 +23,6 @@ struct ButtonDefaultOutlined: ButtonStyle {
             .frame(maxWidth: .infinity)
             .foregroundColor(.white)
             .background(Color.appColor)
+            .cornerRadius(100)
     }
 }

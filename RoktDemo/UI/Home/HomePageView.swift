@@ -26,13 +26,13 @@ struct HomePageView: View {
                 Spacer()
                 VStack {
                     HStack {
-                        Image("RokLaunchLogo")
+                        Image("RoktLogo")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 76, height: 64, alignment: .center)
-                        Image("RoktLogo")
+                            .frame(width: 200, alignment: .center)
+                        
                     }
-                    Text("Powering the Transaction Moment™")
+                    Text("Seize the Transaction Moment")
                         .font(.defaultFont(.header3))
                         .foregroundColor(.titleColor)
                         .multilineTextAlignment(.center)
