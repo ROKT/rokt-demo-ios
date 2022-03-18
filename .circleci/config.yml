@@ -37,10 +37,6 @@ commands:
           name: pre-start simulator
           command: xcrun instruments -w "iPhone 12 (14.4) [" || true
       - run: 
-          name: Fetch CocoaPod specs
-          command:
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run: 
           name: Install CocoaPods
           command:
             pod install --verbose
