@@ -70,19 +70,18 @@ workflows:
   building:
     jobs:
       - build-run-unit-test
-      - publish
-#      - hold:
-#          type: approval
-#          requires:
-#            - build-run-unit-test
-#          filters:
-#            branches:
-#              only: 
-#                - /release-(.*)/
-#      - publish:
-#          requires:
-#            - hold
-#          filters:
-#            branches:
-#              only: 
-#                - /release-(.*)/ 
+      - hold:
+          type: approval
+          requires:
+            - build-run-unit-test
+          filters:
+            branches:
+              only: 
+                - /release-(.*)/
+      - publish:
+          requires:
+            - hold
+          filters:
+            branches:
+              only: 
+                - /release-(.*)/ 
