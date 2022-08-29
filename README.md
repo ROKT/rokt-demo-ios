@@ -16,8 +16,8 @@ As it is defined on SceneDelegate, the starting point of the application is Home
 
 ## How to release the app
 - Update `Version` and `Build` in RoktDemo target
-- Commit & push
-- Unblock the release step on **CircleCI**
+- Commit & push and merge it to the release branch
+- Aprove the **hold** on **CircleCI** and wait till it finished
 - Follow the instructions on itunesconnect
 
 ## FAQ
@@ -38,12 +38,6 @@ Tests can be found in `RoktDemoTests` and `RoktDemoUIITests`.
 ### How to run tests on CircleCI?
 
 Just push a change to any of the branches and tests will be run.
-
-### How do I submit a new test build of the example app to TestFlight?
-
-1. Open CircleCI and select the branch
-2. Aprove the hold on *hold* and wait till it finished
-3. Follow the instructions on itunesconnect
 
 ### Something is not working, what do I do?
 
