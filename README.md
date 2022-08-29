@@ -8,7 +8,11 @@ XCode 13 and above. Project is configured to run on iOS 13.0 and above.
 ## Project architecture
 
 This project it is implemented based on MVVM pattern with SwiftUI.
-It contains UI, Model, Services and Utils 
+It contains UI, Model, Services, Utils and Resources
+View and ViewModels are located in the UI Group.
+Services represents the network logics of the application and model represnts the data.
+Utils are shared between Groups of the application
+All the other resources of the application is located in Resources. 
 
 ## Where to start
 
