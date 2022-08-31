@@ -1,20 +1,23 @@
 # rokt-demo-ios
 Rokt Demo application is a sample app built to showcase Rokt SDK functionality.
 
+## Resident Experts
+- Danial Motahari - danial.motahari@rokt.com
+
 ## Requirements
 
 XCode 13 and above. Project is configured to run on iOS 13.0 and above.
 
 ## Project architecture
 
-This project it is implemented based on MVVM pattern with SwiftUI. 
+This project is implemented based on MVVM pattern with SwiftUI. 
 MVVM stands for Model-View-ViewModel, an architecture pattern that is structured to separate program logic and user interface controls. It has Model, View and ViewModel separation. 
 
 This project contains UI, Model, Services, Utils and Resources groups.
 
 UI: View and ViewModels are located in the UI Group.
 
-Services & Model: Services represent the network logics of the application and model represnts the data.
+Services & Model: Services represent the network logics of the application and model represents the data.
 
 Utils: are shared between Groups of the application.
 
@@ -46,7 +49,7 @@ As it is defined on SceneDelegate, the starting point of the application is Home
 
 here are main branches coresponding to each version : **Master**, **Release branches** and **Features branches**
 
-* **master** - Master branch which corrently is not used
+* **master** - Master branch which currently is not used
 * **release branches** - Prod environment. After every push to this branch tests are run to ensure no breaking changes are allowed and after approval. Releasing to TestFlight could be enabled after all the tests passes. 
 * **feature branches** - After every push to this branch swift lint and tests are run to ensure no breaking changes are allowed.
 
