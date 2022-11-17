@@ -78,11 +78,15 @@ struct HomePageView: View {
                         .font(.defaultFont(.subtitle2))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.textColor)
+                        .padding(.bottom)
                 }.padding()
-            }.background(Color.white)
-        }.background(Color.white).navigationViewStyle(StackNavigationViewStyle())
+            }
+            .background(Color.white)
+            .edgesIgnoringSafeArea(.all)
+        }
+        .background(Color.white)
+        .navigationViewStyle(StackNavigationViewStyle())
         .modifier(NavigationBarTransparent(title: ""))
-        .preferredColorScheme(.light)
     }
 }
 
