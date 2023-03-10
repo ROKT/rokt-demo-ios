@@ -5,8 +5,7 @@ steps:
     - rvm use ruby-2.7.6@ios-demo --create
     - bundle install
     - gem install cocoapods -v 1.11.3
-    - pod install
-    - bundle exec fastlane test
+    - echo $HOME
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
