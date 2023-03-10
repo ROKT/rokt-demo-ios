@@ -1,7 +1,7 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - su -c ec2-user '.buildkite/setup.sh'
+    - su ec2-user '.buildkite/setup.sh'
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
