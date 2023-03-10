@@ -1,11 +1,19 @@
+# steps:
+#   - name: ':hammer: Build and Unit Test iOS Demo'
+#     commands:
+#     - rvm use ruby-2.7.6@ios-demo --create
+#     - bundle install
+#     - xcrun simctl boot "iPhone 14"
+#     - pod install --verbose
+#     - bundle exec fastlane test
+#     - xcrun simctl shutdown "iPhone 14"
+
+#     agents:
+#       queue: 'eng-prod-us-west-2-arm-mac-build-default'
 steps:
-  - name: ':hammer: Build and Unit Test iOS Demo'
+  - name "test"
     commands:
-    - rvm use ruby-2.7.6@ios-demo --create
-    - bundle install
-    - xcrun simctl boot "iPhone 14"
-    - pod install --verbose
-    - bundle exec fastlane test
-    
+    - which rvm
+
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
