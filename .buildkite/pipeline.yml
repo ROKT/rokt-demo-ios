@@ -1,6 +1,7 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
+    - whoami
     - pwd
     - HOME=$(pwd)
     - source /Users/ec2-user/.rvm/scripts/rvm
