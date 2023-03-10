@@ -13,7 +13,7 @@
 steps:
   - name: "test"
     commands:
-    - which ruby
+    - ls -la /Users/*
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
