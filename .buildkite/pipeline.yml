@@ -1,7 +1,7 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - su ec2-user
+    - su - ec2-user
     - rvm use ruby-2.7.6@ios-demo --create
     - bundle install
     - pod install --verbose
