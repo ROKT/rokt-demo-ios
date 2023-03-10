@@ -1,6 +1,11 @@
 steps:
-  - name: 'test'
+  - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - echo "hello world"
+    - rvm use ruby-2.7.6@ios-demo --create
+    - bundle install
+    - xcrun simctl boot "iPhone 14"
+    - pod install --verbose
+    - bundle exec fastlane test
+    
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
