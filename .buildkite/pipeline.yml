@@ -13,7 +13,8 @@
 steps:
   - name: "test"
     commands:
-    - ls -la /Users/*
+    - source /Users/ec2-user/.rvm/scripts/rvm
+    - rvm list
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
