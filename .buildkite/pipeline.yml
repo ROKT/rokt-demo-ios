@@ -4,6 +4,7 @@ steps:
     - source /Users/ec2-user/.rvm/scripts/rvm
     - rvm use ruby-2.7.6@ios-demo --create
     - bundle install
+    - gem install cocoapods -v 1.11.3
     - pod install --verbose
     - bundle exec fastlane test
 
