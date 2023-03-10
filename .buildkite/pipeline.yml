@@ -1,8 +1,9 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - whoami
-    - pwd
+    - export LANG=en_US.UTF-8
+    - export LANGUAGE=en_US.UTF-8
+    - export LC_ALL=en_US.UTF-8
     - HOME=$(pwd)
     - source /Users/ec2-user/.rvm/scripts/rvm
     - rvm use ruby-2.7.6
