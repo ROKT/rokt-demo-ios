@@ -1,20 +1,7 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - HOME=$(pwd)
-    - su ec2-user -c "brew uninstall openssl --force"
-    - su ec2-user -c "brew install gnupg"
-    - gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    - curl -sSL https://get.rvm.io | bash -s stable
-    - export LANG=en_US.UTF-8
-    - export LANGUAGE=en_US.UTF-8
-    - export LC_ALL=en_US.UTF-8
-    - source /etc/profile.d/rvm.sh
-    - rvm use ruby-2.7.6
-    # - bundle install --path vendor/bundle
-    # - pod install --verbose --allow-root
-    # - bundle exec fastlane test
-    - curl -Lks 'https://git.io/rg-ssl' | ruby
+    - su -c ec2-user '.buildkite/setup.sh'
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
