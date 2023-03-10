@@ -1,6 +1,6 @@
 steps:
   - name: 'test'
-  commands:
-    - sw_vers
-  agents:
-    queue: 'eng-prod-us-west-2-arm-mac-build-default'
+    commands:
+    - echo "hello world"
+    agents:
+      queue: 'eng-prod-us-west-2-arm-mac-build-default'
