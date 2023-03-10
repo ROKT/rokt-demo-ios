@@ -11,7 +11,7 @@
 #     agents:
 #       queue: 'eng-prod-us-west-2-arm-mac-build-default'
 steps:
-  - name "test"
+  - name: "test"
     commands:
     - which rvm
 
