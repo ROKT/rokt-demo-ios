@@ -9,7 +9,7 @@ steps:
     - export LANG=en_US.UTF-8
     - export LANGUAGE=en_US.UTF-8
     - export LC_ALL=en_US.UTF-8
-    - source .rvm/scripts/rvm
+    - source /etc/profile.d/rvm.sh
     - rvm use ruby-2.7.6
     # - bundle install --path vendor/bundle
     # - pod install --verbose --allow-root
