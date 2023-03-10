@@ -1,10 +1,13 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - su - ec2-user
-    - rvm use ruby-2.7.6@ios-demo --create
-    - bundle install
-    - pod install --verbose
+    - whoami
+    - pwd
+    - HOME=$(pwd)
+    - source /Users/ec2-user/.rvm/scripts/rvm
+    - rvm use ruby-2.7.6
+    - bundle install --path vendor/bundle
+    - pod install --verbose --allow-root
     - bundle exec fastlane test
 
     agents:
