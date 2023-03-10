@@ -2,10 +2,10 @@ steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
     - source /Users/ec2-user/.rvm/scripts/rvm
-    - rvm use ruby-2.7.6@ios-demo --create
-    - which gem
-    - bundle install
-    - gem install cocoapods -v 1.11.3
+    - rvm use ruby-2.7.6
+    - bundle install --path vendor/bundle
+    - pod install --verbose
+    - bundle exec fastlane test
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
