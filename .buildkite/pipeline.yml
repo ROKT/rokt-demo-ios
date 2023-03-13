@@ -1,7 +1,8 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - chown -R ec2-user *
+    - chown -R ec2-user .
+    - ls -la
     - sudo -u ec2-user -s '.buildkite/setup.sh'
 
     agents:
