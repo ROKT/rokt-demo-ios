@@ -13,4 +13,4 @@
 # rvm install ruby-2.7.6
 # rvm use ruby-2.7.6@ios-demo --create
 # curl -Lks 'https://git.io/rg-ssl' | ruby
-brew uninstall openssl --force
+which openssl
