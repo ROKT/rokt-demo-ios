@@ -7,6 +7,6 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 source /Users/ec2-user/.rvm/scripts/rvm
-rvm install ruby-2.7.6
+rvm install ruby-2.7.6 --disable-binary
 rvm use ruby-2.7.6@ios-demo --create
 curl -Lks 'https://git.io/rg-ssl' | ruby
