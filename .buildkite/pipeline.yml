@@ -14,9 +14,7 @@ steps:
 
   - name: 'Publish demo app to TestFlight'
     commands:
-      - chown -R ec2-user .
-      - chmod -R 744 .
-      - sudo -u ec2-user -i sh -c --preserve-env=BUILDKITE_BUILD_NUMBER "cd '$PWD'; .buildkite/publish.sh"
+      - .buildkite/publish.sh"
     plugins:
       - seek-oss/aws-sm#v2.0.0:
           env:
