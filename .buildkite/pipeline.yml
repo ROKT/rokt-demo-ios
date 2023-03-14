@@ -2,6 +2,7 @@ steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
     - whoami
+    - echo $USER
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
