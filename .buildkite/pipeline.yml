@@ -6,7 +6,7 @@ steps:
       - sudo -u ec2-user -i sh -c "cd '$PWD'; .buildkite/test.sh"
 
     agents:
-      queue: 'eng-prod-us-west-2-arm-mac-build-default'
+      queue: 'eng-stage-us-west-2-arm-mac-build-default'
     timeout_in_minutes: 25
 
   - wait
@@ -50,6 +50,6 @@ steps:
               secret-id: 'stage-ios-demoapp-buildkite'
               json-key: '.DEVELOPMENT_TEAM_ID'
     agents:
-      queue: 'eng-prod-us-west-2-arm-mac-build-default'
+      queue: 'eng-stage-us-west-2-arm-mac-build-default'
     timeout_in_minutes: 25
           
