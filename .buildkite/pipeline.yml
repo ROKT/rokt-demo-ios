@@ -1,10 +1,7 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - chown -R ec2-user .
-    - chmod -R 744 .
-    - ls -la .buildkite
-    - sudo -u ec2-user -s '.buildkite/setup.sh'
+    - whoami
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
