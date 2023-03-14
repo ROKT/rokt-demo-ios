@@ -3,7 +3,7 @@ steps:
     commands:
     - chown -R ec2-user .
     - chmod -R 744 .
-    - sudo -u ec2-user -i '.buildkite/setup.sh'
+    - sudo -u ec2-user -i "cd '$PWD'; .buildkite/setup.sh"
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
