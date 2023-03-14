@@ -18,7 +18,7 @@ steps:
     commands:
       - chown -R ec2-user .
       - chmod -R 744 .
-      - sudo -u ec2-user -i sh -c --preserve-env=APPSTORE_KEY_ID,APPSTORE_ISSUER_ID,APPSTORE_KEY_CONTENT_B64,MATCH_GIT_URL,MATCH_GIT_BRANCH,MATCH_USERNAME,MATCH_GIT_USER_EMAIL,MATCH_PASSWORD,DEVELOPMENT_TEAM_ID,BUILDKITE_BUILD_NUMBER "cd '$PWD'; .buildkite/publish.sh"
+      - sudo -u ec2-user -i sh -c --preserve-env=BUILDKITE_BUILD_NUMBER "cd '$PWD'; .buildkite/publish.sh"
     plugins:
       - seek-oss/aws-sm#v2.0.0:
         env:
