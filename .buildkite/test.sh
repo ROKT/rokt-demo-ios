@@ -6,4 +6,4 @@ bundle install
 xcrun simctl boot "iPhone 14"
 pod install --verbose
 bundle exec fastlane test
-xcrun simctl shutdown "iPhone 14"
+xcrun simctl shutdown "iPhone 14" || true
