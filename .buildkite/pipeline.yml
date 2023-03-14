@@ -1,9 +1,55 @@
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
     commands:
-    - chown -R ec2-user .
-    - chmod -R 744 .
-    - sudo -u ec2-user -i sh -c "cd '$PWD'; .buildkite/setup.sh"
+      - chown -R ec2-user .
+      - chmod -R 744 .
+      - sudo -u ec2-user -i sh -c "cd '$PWD'; .buildkite/test.sh"
 
     agents:
       queue: 'eng-prod-us-west-2-arm-mac-build-default'
+    timeout_in_minutes: 25
+
+  - wait
+
+  - block: ':whale: Publish to TestFlight'
+    prompt: 'Confirm publishing to TestFlight?'
+
+  - name: 'Publish demo app to TestFlight'
+    commands:
+      - chown -R ec2-user .
+      - chmod -R 744 .
+      - sudo -u ec2-user -i sh -c --preserve-env=APPSTORE_KEY_ID,APPSTORE_ISSUER_ID,APPSTORE_KEY_CONTENT_B64,MATCH_GIT_URL,MATCH_GIT_BRANCH,MATCH_USERNAME,MATCH_GIT_USER_EMAIL,MATCH_PASSWORD,DEVELOPMENT_TEAM_ID,BUILDKITE_BUILD_NUMBER "cd '$PWD'; .buildkite/publish.sh"
+    plugins:
+      - seek-oss/aws-sm#v2.0.0:
+        env:
+          APPSTORE_KEY_ID:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.APPSTORE_KEY_ID'
+          APPSTORE_ISSUER_ID:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.APPSTORE_ISSUER_ID'
+          APPSTORE_KEY_CONTENT_B64:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.APPSTORE_KEY_CONTENT_B64'
+          MATCH_GIT_URL:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.MATCH_GIT_URL'
+          MATCH_GIT_BRANCH:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.MATCH_GIT_BRANCH'
+          MATCH_USERNAME:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.MATCH_USERNAME'
+          MATCH_GIT_USER_EMAIL:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.MATCH_GIT_USER_EMAIL'
+          MATCH_PASSWORD:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.MATCH_PASSWORD'
+          DEVELOPMENT_TEAM_ID:
+            secret-id: 'stage-ios-demoapp-buildkite'
+            json-key: '.DEVELOPMENT_TEAM_ID'
+    agents:
+      queue: 'eng-prod-us-west-2-arm-mac-build-default'
+    timeout_in_minutes: 25
+          

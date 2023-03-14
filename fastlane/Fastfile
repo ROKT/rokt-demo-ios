@@ -88,7 +88,7 @@ platform :ios do
     )
 
     increment_build_number(
-        build_number: ENV["CIRCLE_BUILD_NUM"]
+        build_number: ENV["BUILDKITE_BUILD_NUMBER"]
     )
 
     settings_to_override = {
