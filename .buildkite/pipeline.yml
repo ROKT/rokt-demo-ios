@@ -9,6 +9,7 @@ steps:
       instance_type: mac
       os: macos
       arch: arm
+      queue: "*"
     timeout_in_minutes: 25
 
   - wait
