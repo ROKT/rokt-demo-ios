@@ -4,7 +4,7 @@ steps:
      - .buildkite/test.sh
 
     agents:      
-      account_alias: eng-stage
+      account_alias: eng-prod
       instance_type: mac
       os: macos
       arch: arm
@@ -50,7 +50,7 @@ steps:
               secret-id: 'stage-ios-demoapp-buildkite'
               json-key: '.DEVELOPMENT_TEAM_ID'
     agents:
-      account_alias: eng-stage
+      account_alias: eng-prod
       queue: build
       instance_type: mac
       os: macos
