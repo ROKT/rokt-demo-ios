@@ -3,13 +3,12 @@ steps:
     commands:
      - .buildkite/test.sh
 
-    agents:
+    agents:      
       account_alias: eng-stage
-      role: build
       instance_type: mac
       os: macos
       arch: arm
-      queue: "*"
+      queue: "build"
     timeout_in_minutes: 25
 
   - wait
@@ -52,7 +51,7 @@ steps:
               json-key: '.DEVELOPMENT_TEAM_ID'
     agents:
       account_alias: eng-stage
-      role: build
+      queue: build
       instance_type: mac
       os: macos
       arch: arm
