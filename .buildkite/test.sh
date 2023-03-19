@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-bash --version
-. /Users/ec2-user/.bashrc
+#!/bin/sh
 rbenv local 2.7.6
 gem install bundler
 bundle install
