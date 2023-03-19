@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 whoami
 rvm osx-ssl-certs update all
