@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 bash --version
-whoami
+. ~/.bashrc
 rvm osx-ssl-certs update all
 rvm use ruby-2.7.6@ios-demo --create
 bundle install
