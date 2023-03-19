@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 bash --version
-rbenv global 2.7.6
+rbenv local 2.7.6
 gem install bundler
 bundle install
 xcrun simctl boot "iPhone 14"
