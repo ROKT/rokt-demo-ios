@@ -1,5 +1,4 @@
 #!/bin/sh
-bash --version
 
 . ~/.zshrc
 rvm osx-ssl-certs update all
