@@ -1,8 +1,9 @@
 #!/bin/sh
 
+set -eUo pipefail
+
 . ~/.zshrc
-rvm osx-ssl-certs update all
-rvm use ruby-2.7.6@ios-demo --create
+rbenv local 2.7.6
 bundle install
 xcrun simctl boot "iPhone 14"
 pod install --verbose
