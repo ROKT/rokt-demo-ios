@@ -4,11 +4,7 @@ steps:
      - .buildkite/test.sh
 
     agents:      
-      account_alias: eng-prod
-      instance_type: mac
-      os: macos
-      arch: arm
-      queue: "build"
+      queue: eng-prod-us-west-2-mac-arm-macos-build-medium
     timeout_in_minutes: 25
 
   - wait
@@ -50,10 +46,6 @@ steps:
               secret-id: 'stage-ios-demoapp-buildkite'
               json-key: '.DEVELOPMENT_TEAM_ID'
     agents:
-      account_alias: eng-prod
-      queue: build
-      instance_type: mac
-      os: macos
-      arch: arm
+      queue: eng-prod-us-west-2-mac-arm-macos-build-medium
     timeout_in_minutes: 25
           
