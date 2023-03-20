@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-. ~/.zshrc
+# . ~/.zshrc
 rbenv local 2.7.6
 bundle install
 xcrun simctl boot "iPhone 14"
