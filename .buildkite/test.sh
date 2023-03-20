@@ -1,5 +1,6 @@
 #!/bin/sh
 . ~/.zshrc
+
 rbenv local 2.7.6
 gem install bundler
 
@@ -7,7 +8,7 @@ echo "Running bundle install..."
 bundle install
 
 echo "Starting iphone simulator..."
-xcrun simctl boot "iPhone 14"
+sudo xcrun simctl boot "iPhone 14"
 
 echo "Running cocoapod install..."
 pod install --verbose
