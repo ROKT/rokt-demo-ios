@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -euo pipefail
+set -uo pipefail
 
 . ~/.zshrc
 rbenv local 2.7.6
