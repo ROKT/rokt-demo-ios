@@ -15,6 +15,12 @@
 
 default_platform(:ios)
 
+BUILD_NUMBER =  if !ENV["CIRCLE_BUILD_NUMBER"].nil?
+                  ENV["CIRCLE_BUILD_NUMBER"]
+                else 
+                  ENV["BUILDKITE_BUILD_NUMBER"]
+                end
+
 platform :ios do
   # before_all do
   #   setup_circle_ci
@@ -88,7 +94,7 @@ platform :ios do
     )
 
     increment_build_number(
-        build_number: ENV["BUILDKITE_BUILD_NUMBER"]
+        build_number: BUILD_NUMBER
     )
 
     settings_to_override = {
