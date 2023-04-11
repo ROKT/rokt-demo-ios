@@ -22,10 +22,6 @@ BUILD_NUMBER =  if !ENV["CIRCLE_BUILD_NUMBER"].nil?
                 end
 
 platform :ios do
-  # before_all do
-  #   setup_circle_ci
-  # end
-
   desc "Runs all the tests"
   lane :test do
     scan(
