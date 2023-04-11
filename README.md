@@ -10,8 +10,9 @@ This app distributed internally via [TestFlight](https://developer.apple.com/tes
 | Environment | Build |
 | ----------- | :----- |
 | release |  [![CircleCI](https://dl.circleci.com/status-badge/img/gh/ROKT/rokt-demo-ios/tree/release-1.1.x.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ROKT/rokt-demo-ios/tree/release-1.1.x)
+| release | [![Build status](https://badge.buildkite.com/afe921fff6fe587a6a59245ca0181c61d5557c78893991f9cc.svg)](https://buildkite.com/rokt/rokt-demo-ios?branch=release-1.1.x)
 ### Developer Note
-Modify the Circleci url whenever default branch is changed.
+Modify the Circleci and Buildkite url whenever default branch is changed.
 
 
 ## Requirements
