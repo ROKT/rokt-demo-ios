@@ -15,15 +15,17 @@
 
 default_platform(:ios)
 
-platform :ios do
-  before_all do
-    setup_circle_ci
-  end
+BUILD_NUMBER =  if !ENV["CIRCLE_BUILD_NUMBER"].nil?
+                  ENV["CIRCLE_BUILD_NUMBER"]
+                else 
+                  ENV["BUILDKITE_BUILD_NUMBER"]
+                end
 
+platform :ios do
   desc "Runs all the tests"
   lane :test do
     scan(
-      devices: ["iPhone 12"]
+      devices: ["iPhone 14"]
       )
   end
 
@@ -88,7 +90,7 @@ platform :ios do
     )
 
     increment_build_number(
-        build_number: ENV["CIRCLE_BUILD_NUM"]
+        build_number: BUILD_NUMBER
     )
 
     settings_to_override = {
