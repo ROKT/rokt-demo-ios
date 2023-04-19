@@ -40,10 +40,14 @@ struct ConfirmationView: View {
                 Spacer(minLength: 20)
                 
                 roktEmbedded1
+                    .background(Color.white)
                     .frame(height: self.embeddedSize1, alignment: .center)
+                    .border(Color.borderColor, width: 1)
                 
                 roktEmbedded2
+                    .background(Color.white)
                     .frame(height: self.embeddedSize2, alignment: .center)
+                    .border(Color.borderColor, width: 1)
                 
                 OrderSummary()
                 
