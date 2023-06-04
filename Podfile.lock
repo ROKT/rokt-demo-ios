@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.4.4)
-  - Rokt-Widget (3.14.1)
+  - Rokt-Widget (3.14.2)
   - SDWebImage (5.15.5):
     - SDWebImage/Core (= 5.15.5)
   - SDWebImage/Core (5.15.5)
@@ -9,7 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.4.4)
-  - Rokt-Widget (~> 3.14.1)
+  - Rokt-Widget (~> 3.14.2)
   - SDWebImageSwiftUI (~> 2.0.2)
 
 SPEC REPOS:
@@ -21,10 +21,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
-  Rokt-Widget: ab7931d2c234ae7ede629781cbcdaaad744dea5f
+  Rokt-Widget: 26a2ef588ecf0268f13ad33f92b0e965d61b8e76
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SDWebImageSwiftUI: 8a3923c95108312b03a599ec1498754af55a6819
 
-PODFILE CHECKSUM: 8390bee1f1f8c443efa1211c2695b1a30cc4d3c1
+PODFILE CHECKSUM: 94c85e2e53b2ca8a375d68f592e2e0f4aaadadde
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1
