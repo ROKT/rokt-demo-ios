@@ -66,6 +66,7 @@ struct AccountDetailsView: View {
                                                    }))
             Button(Constants.Strings.continueDemo) {
                 if viewModel.isValidToContinue() {
+//                    Rokt.setEnvironment(environment: .Stage)
                     Rokt.initWith(roktTagId: viewModel.accountId)
                     moveToNextView = true
                 }

@@ -20,7 +20,7 @@ class DemoLibraryViewModel: ObservableObject {
     @Published private(set) var demoDescription: String = ""
     
     
-    @Published private(set) var uiState = UIState.loading
+    @Published private(set) var uiState = DemoUIState.loading
     private var cancellable: AnyCancellable?
     
     func loadDemoItems() {

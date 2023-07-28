@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		251E32DA274B0EEB00308A18 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A56258269BE2EC003E64B0 /* ConfirmationView.swift */; };
 		251E32E0274B21B800308A18 /* DemoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */; };
 		251E32E1274B21C900308A18 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */; };
-		251E32E2274B21EC00308A18 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C958126A1455400F0961B /* UIState.swift */; };
+		251E32E2274B21EC00308A18 /* DemoUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C958126A1455400F0961B /* DemoUIState.swift */; };
 		251E32E3274B21FB00308A18 /* DemoLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB764261C0FD900B959EF /* DemoLibraryModel.swift */; };
 		251E32E4274B220C00308A18 /* DemoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256EB787261C26FA00B959EF /* DemoLibraryService.swift */; };
 		251E32E5274B223800308A18 /* RoktEmbeddedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */; };
@@ -59,7 +59,7 @@
 		25628DE8269FFBCA00B12963 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25628DE7269FFBCA00B12963 /* ActivityIndicatorView.swift */; };
 		256A2841262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */; };
 		256A288D262D4904000CF3D4 /* FeatureWalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */; };
-		256C958226A1455400F0961B /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C958126A1455400F0961B /* UIState.swift */; };
+		256C958226A1455400F0961B /* DemoUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C958126A1455400F0961B /* DemoUIState.swift */; };
 		256D417E26FD4D0B008D7879 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256D417D26FD4D0B008D7879 /* EmailView.swift */; };
 		256E3D3E2623DFE000639FE0 /* DemoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */; };
 		256E3D502623FB8D00639FE0 /* AboutRoktViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */; };
@@ -77,6 +77,12 @@
 		25747164261EB5B200B8C0C7 /* NavigationBarGray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */; };
 		2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */; };
 		25747171261EB5D200B8C0C7 /* NavigationBarBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */; };
+		25747A032A70D909009C5B69 /* LayoutDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747A022A70D909009C5B69 /* LayoutDemoView.swift */; };
+		25747A062A70DBD5009C5B69 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 25747A052A70DBD5009C5B69 /* CodeScanner */; };
+		25747A092A721EEA009C5B69 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747A082A721EEA009C5B69 /* PreviewData.swift */; };
+		25747A0B2A723AD9009C5B69 /* LayoutDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747A0A2A723AD9009C5B69 /* LayoutDemoViewModel.swift */; };
+		25747A0D2A723EDF009C5B69 /* LayoutDemoUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747A0C2A723EDF009C5B69 /* LayoutDemoUIState.swift */; };
+		25747A0F2A73402C009C5B69 /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25747A0E2A73402C009C5B69 /* Task+Extension.swift */; };
 		257564B7263A6A9E0096889A /* AccountDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257564B6263A6A9E0096889A /* AccountDetailsView.swift */; };
 		2575CCB72653594E005226C5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB62653594E005226C5 /* ValidationService.swift */; };
 		2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2575CCB926536A84005226C5 /* ValidationServiceTests.swift */; };
@@ -180,7 +186,7 @@
 		25628DE7269FFBCA00B12963 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		256A2840262D1D42000CF3D4 /* RoktEmbeddedSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoktEmbeddedSwiftUIView.swift; sourceTree = "<group>"; };
 		256A288C262D4904000CF3D4 /* FeatureWalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughView.swift; sourceTree = "<group>"; };
-		256C958126A1455400F0961B /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
+		256C958126A1455400F0961B /* DemoUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUIState.swift; sourceTree = "<group>"; };
 		256D417D26FD4D0B008D7879 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLibraryViewModel.swift; sourceTree = "<group>"; };
 		256E3D4F2623FB8D00639FE0 /* AboutRoktViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRoktViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +204,11 @@
 		25747163261EB5B200B8C0C7 /* NavigationBarGray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarGray.swift; sourceTree = "<group>"; };
 		2574716B261EB5C300B8C0C7 /* NavigationBarTransparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparent.swift; sourceTree = "<group>"; };
 		25747170261EB5D200B8C0C7 /* NavigationBarBlack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBlack.swift; sourceTree = "<group>"; };
+		25747A022A70D909009C5B69 /* LayoutDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDemoView.swift; sourceTree = "<group>"; };
+		25747A082A721EEA009C5B69 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		25747A0A2A723AD9009C5B69 /* LayoutDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDemoViewModel.swift; sourceTree = "<group>"; };
+		25747A0C2A723EDF009C5B69 /* LayoutDemoUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDemoUIState.swift; sourceTree = "<group>"; };
+		25747A0E2A73402C009C5B69 /* Task+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Extension.swift"; sourceTree = "<group>"; };
 		257564B6263A6A9E0096889A /* AccountDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsView.swift; sourceTree = "<group>"; };
 		2575CCB62653594E005226C5 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		2575CCB926536A84005226C5 /* ValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTests.swift; sourceTree = "<group>"; };
@@ -255,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25747A062A70DBD5009C5B69 /* CodeScanner in Frameworks */,
 				EB7AFEDD6A669A0A2DDA59E6 /* Pods_RoktDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +334,7 @@
 			path = About;
 			sourceTree = "<group>";
 		};
-		251E32D3274B0CC800308A18 /* Demo */ = {
+		251E32D3274B0CC800308A18 /* Placement Demo */ = {
 			isa = PBXGroup;
 			children = (
 				251E32D4274B0CEF00308A18 /* Summary */,
@@ -334,7 +346,7 @@
 				256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */,
 				25583903261FE5D600AF7FAE /* DemoItemView.swift */,
 			);
-			path = Demo;
+			path = "Placement Demo";
 			sourceTree = "<group>";
 		};
 		251E32D4274B0CEF00308A18 /* Summary */ = {
@@ -509,7 +521,8 @@
 		256C958026A1450F00F0961B /* State */ = {
 			isa = PBXGroup;
 			children = (
-				256C958126A1455400F0961B /* UIState.swift */,
+				256C958126A1455400F0961B /* DemoUIState.swift */,
+				25747A0C2A723EDF009C5B69 /* LayoutDemoUIState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -522,6 +535,23 @@
 				2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		25747A012A70D899009C5B69 /* Layout Demo */ = {
+			isa = PBXGroup;
+			children = (
+				25747A022A70D909009C5B69 /* LayoutDemoView.swift */,
+				25747A0A2A723AD9009C5B69 /* LayoutDemoViewModel.swift */,
+			);
+			path = "Layout Demo";
+			sourceTree = "<group>";
+		};
+		25747A072A721EBC009C5B69 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				25747A082A721EEA009C5B69 /* PreviewData.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 		2575CCB826536A61005226C5 /* Service */ = {
@@ -635,7 +665,8 @@
 			isa = PBXGroup;
 			children = (
 				251E32D1274B0C7E00308A18 /* Home */,
-				251E32D3274B0CC800308A18 /* Demo */,
+				251E32D3274B0CC800308A18 /* Placement Demo */,
+				25747A012A70D899009C5B69 /* Layout Demo */,
 				251E32D2274B0C9800308A18 /* About */,
 				251E32D0274B0C3700308A18 /* Common */,
 				256C958026A1450F00F0961B /* State */,
@@ -649,6 +680,7 @@
 				589922B92615560800A58DA3 /* Constants.swift */,
 				255839082620072700AF7FAE /* String+Extension.swift */,
 				251E32FC274C9A3900308A18 /* Random.swift */,
+				25747A0E2A73402C009C5B69 /* Task+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -665,6 +697,7 @@
 		5899228826141F2100A58DA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				25747A072A721EBC009C5B69 /* Layouts */,
 				251E3304274F095A00308A18 /* AboutRokt */,
 				251E3303274F08EE00308A18 /* DemoLibrary */,
 			);
@@ -721,6 +754,9 @@
 			dependencies = (
 			);
 			name = RoktDemo;
+			packageProductDependencies = (
+				25747A052A70DBD5009C5B69 /* CodeScanner */,
+			);
 			productName = RoktDemo;
 			productReference = 25F84763260C34880067B515 /* RoktDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -795,6 +831,9 @@
 				Base,
 			);
 			mainGroup = 25F8475A260C34880067B515;
+			packageReferences = (
+				25747A042A70DBD5009C5B69 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 25F84764260C34880067B515 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -950,6 +989,7 @@
 				25A56259269BE2EC003E64B0 /* ConfirmationView.swift in Sources */,
 				2570F33C2627B38400B5B52E /* NavigationBarBlackWithButton.swift in Sources */,
 				251E3317274F297E00308A18 /* PreDefined3View.swift in Sources */,
+				25747A032A70D909009C5B69 /* LayoutDemoView.swift in Sources */,
 				256EB779261C206A00B959EF /* PreDefinedScreenModel.swift in Sources */,
 				25A0266626A51B860005CFED /* ErrorViewModel.swift in Sources */,
 				2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */,
@@ -976,6 +1016,7 @@
 				251E32F7274B457900308A18 /* PreDefined1View.swift in Sources */,
 				25F84769260C34880067B515 /* SceneDelegate.swift in Sources */,
 				255D7AC326290F5F0041D81C /* DemoItemSummaryViewModel.swift in Sources */,
+				25747A0D2A723EDF009C5B69 /* LayoutDemoUIState.swift in Sources */,
 				2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */,
 				25628DE8269FFBCA00B12963 /* ActivityIndicatorView.swift in Sources */,
 				5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */,
@@ -990,15 +1031,18 @@
 				25A5629C269FBC78003E64B0 /* NetworkService.swift in Sources */,
 				251E330E274F0AA400308A18 /* PreDefinedScreen3Model.swift in Sources */,
 				58CF38102664C0AC00DCE317 /* CustomerDetailsViewModel.swift in Sources */,
-				256C958226A1455400F0961B /* UIState.swift in Sources */,
+				256C958226A1455400F0961B /* DemoUIState.swift in Sources */,
+				25747A092A721EEA009C5B69 /* PreviewData.swift in Sources */,
 				252842D2263BB9300010114A /* AccountDetailsViewModel.swift in Sources */,
 				256EB76F261C1CB700B959EF /* DemoItemModel.swift in Sources */,
 				25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */,
 				252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */,
 				2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */,
+				25747A0B2A723AD9009C5B69 /* LayoutDemoViewModel.swift in Sources */,
 				256D417E26FD4D0B008D7879 /* EmailView.swift in Sources */,
 				25C7098026E9D4F30006C18C /* DetailTextView.swift in Sources */,
 				251E32FF274C9AEE00308A18 /* PreDefinedViewModel.swift in Sources */,
+				25747A0F2A73402C009C5B69 /* Task+Extension.swift in Sources */,
 				589922B226154BA500A58DA3 /* AboutRoktContentView.swift in Sources */,
 				25A5625E269BFF69003E64B0 /* ConfirmationViewModel.swift in Sources */,
 				256A288D262D4904000CF3D4 /* FeatureWalkthroughView.swift in Sources */,
@@ -1055,7 +1099,7 @@
 				58A97A732654D3FC0092B598 /* AccountDetailsModel.swift in Sources */,
 				251E330F274F0D5300308A18 /* PreDefinedScreen1Model.swift in Sources */,
 				25A56246269BB953003E64B0 /* CustomerDetailsModel.swift in Sources */,
-				251E32E2274B21EC00308A18 /* UIState.swift in Sources */,
+				251E32E2274B21EC00308A18 /* DemoUIState.swift in Sources */,
 				2575CCBB26536B34005226C5 /* ValidationService.swift in Sources */,
 				251E32E0274B21B800308A18 /* DemoLibraryViewModel.swift in Sources */,
 				251E32EA274B230E00308A18 /* PreDefinedScreenModel.swift in Sources */,
@@ -1397,6 +1441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		25747A042A70DBD5009C5B69 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		25747A052A70DBD5009C5B69 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25747A042A70DBD5009C5B69 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 25F8475B260C34880067B515 /* Project object */;
 }

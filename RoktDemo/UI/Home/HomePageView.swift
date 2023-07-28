@@ -49,6 +49,14 @@ struct HomePageView: View {
                         .navigationBarTitle(Text(""))
                     
                     NavigationLink(
+                        destination: LayoutDemoView(viewModel: LayoutDemoViewModel()),
+                        label: {
+                            Text("Layout library")
+                        })
+                        .buttonStyle(ButtonDefaultOutlined())
+                        .navigationBarTitle(Text(""))
+                    
+                    NavigationLink(
                         destination: AboutRoktView(viewModel: AboutRoktViewModel()),
                         label: {
                             Text("About this app")
