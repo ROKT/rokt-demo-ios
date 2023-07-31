@@ -46,13 +46,11 @@ struct LayoutDemoView: View {
                     }
                     
                     switch viewModel.uiState {
-                    case .loading:
-                        Text("Loading ...")
                     case .hasData, .done:
                             Button(action: {
                                 viewModel.uiState = .hasData
                             }) {
-                                Text("refresh preview")
+                                Text("Refresh preview")
                             }
                             .padding(.top)
                             .buttonStyle(ButtonDefaultOutlined())
