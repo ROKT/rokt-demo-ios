@@ -28,7 +28,8 @@ struct DemoLibraryView: View {
                     .modifier(NavigationBarGray(title: "")).background(Color.white)
                 
             case .error(let error):
-                ErrorView(viewModel: ErrorViewModel(error: error)).modifier(NavigationBarGray(title: "")).background(Color.white)
+                ErrorView(viewModel: ErrorViewModel(error: error, barcodeErrorMessage: nil))
+                    .modifier(NavigationBarGray(title: "")).background(Color.white)
             default:
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {

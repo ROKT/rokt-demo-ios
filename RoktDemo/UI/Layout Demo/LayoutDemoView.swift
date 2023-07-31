@@ -21,6 +21,7 @@ struct LayoutDemoView: View {
     var roktEmbedded = RoktEmbeddedSwiftUIView()
     
     @State var isShowingBarcodeScanner = false
+
     @State private var embeddedSize: CGFloat = 0
     var body: some View {
         if #available(iOS 14.0, *) {
@@ -44,20 +45,29 @@ struct LayoutDemoView: View {
                         }
                     }
                     
-                    if viewModel.uiState != .initiated {
-                        Button(action: {
-                            viewModel.uiState = .hasData
-                        }) {
-                            Text("refresh preview")
-                        }
-                        .padding(.top)
-                        .buttonStyle(ButtonDefaultOutlined())
+                    switch viewModel.uiState {
+                    case .loading:
+                        Text("Loading ...")
+                    case .hasData, .done:
+                            Button(action: {
+                                viewModel.uiState = .hasData
+                            }) {
+                                Text("refresh preview")
+                            }
+                            .padding(.top)
+                            .buttonStyle(ButtonDefaultOutlined())
+                            
+                        roktEmbedded
+                            .frame(height: self.embeddedSize, alignment: .center)
                         
+                    case .error(error: let error):
+                        ErrorView(viewModel: ErrorViewModel(error: nil, barcodeErrorMessage: error))
+                            .modifier(NavigationBarGray(title: ""))
+                            .background(Color.white)
+                    default:
+                        EmptyView()
                     }
                     
-                    roktEmbedded
-                        .frame(height: self.embeddedSize, alignment: .center)
-                        
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .padding()

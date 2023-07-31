@@ -25,7 +25,9 @@ struct AboutRoktView: View {
                     .frame(width: 100, height: 100, alignment: .center).background(Color.white)
                     .modifier(NavigationBarGray(title: "")).background(Color.white)
             case .error(let error):
-                ErrorView(viewModel: ErrorViewModel(error: error)).modifier(NavigationBarGray(title: "")).background(Color.white)
+                ErrorView(viewModel: ErrorViewModel(error: error, barcodeErrorMessage: nil))
+                    .modifier(NavigationBarGray(title: ""))
+                    .background(Color.white)
             default:
                 
                 ScrollView {
