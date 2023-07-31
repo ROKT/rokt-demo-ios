@@ -17,7 +17,7 @@ import Combine
 class AboutRoktViewModel: ObservableObject {
     @Published private(set) var aboutModel: AboutRoktModel = AboutRoktModel(contents: [])
     
-    @Published private(set) var uiState = UIState.loading
+    @Published private(set) var uiState = DemoUIState.loading
 
     private var cancellable: AnyCancellable?
     func loadAboutRokt() {

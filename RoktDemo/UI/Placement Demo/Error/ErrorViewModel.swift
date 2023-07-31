@@ -15,10 +15,12 @@ import Alamofire
 enum ErrorMessageType {
     case network
     case general
+    case barcode
 }
 
 struct ErrorViewModel {
     let error: AFError?
+    let barcodeErrorMessage: String?
     
     func getErrorMessageType() -> ErrorMessageType {
         if let error = error {
@@ -26,6 +28,9 @@ struct ErrorViewModel {
                 return .general
             }
             return .network
+        }
+        if barcodeErrorMessage != nil {
+            return .barcode
         }
         return .general
     }

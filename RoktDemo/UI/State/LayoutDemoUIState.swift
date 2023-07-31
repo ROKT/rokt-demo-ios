@@ -1,5 +1,5 @@
 //
-//  UIState.swift
+//  LayoutDemoUIState.swift
 //  RoktDemo
 //
 //  Copyright 2020 Rokt Pte Ltd
@@ -11,25 +11,29 @@
 //
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
-
 import Foundation
-import Alamofire
 
-enum UIState: Equatable {
-    static func == (lhs: UIState, rhs: UIState) -> Bool {
+enum LayoutDemoUIState: Equatable {
+    static func == (lhs: LayoutDemoUIState, rhs: LayoutDemoUIState) -> Bool {
         switch (lhs, rhs) {
         case(.loading, .loading):
             return true
         case (.hasData, .hasData):
             return true
         case (.error(let lError), .error(error: let rError)):
-            return lError?.errorDescription == rError?.errorDescription
+            return lError == rError
+        case (.initiated, .initiated):
+            return true
+        case (.done, .done):
+            return true
         default:
             return false
         }
     }
     
+    case initiated
     case loading
-    case error(error: AFError?)
+    case error(error: String)
     case hasData
+    case done
 }

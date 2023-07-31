@@ -22,6 +22,8 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Needed to scan QR codes.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Archivo-Regular.ttf</string>
