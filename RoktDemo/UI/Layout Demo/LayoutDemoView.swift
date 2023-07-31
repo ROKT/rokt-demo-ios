@@ -84,7 +84,6 @@ struct LayoutDemoView: View {
             viewModel.parseQRcodeResult(result.string)
         case .failure(let error):
             viewModel.uiState = .error(error: error.localizedDescription)
-            print(error.localizedDescription)
         }
     }
     func showPlacement() {
