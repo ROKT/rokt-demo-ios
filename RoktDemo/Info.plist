@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Need the permission to scan the QR code.</string>
+	<string>Needed to scan QR codes.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Archivo-Regular.ttf</string>
