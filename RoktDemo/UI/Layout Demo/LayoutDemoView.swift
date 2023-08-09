@@ -24,29 +24,30 @@ struct LayoutDemoView: View {
 
     @State private var embeddedSize: CGFloat = 0
     var body: some View {
-        if #available(iOS 14.0, *) {
-            ScrollView{
-                VStack(alignment: .leading) {
-                    HeaderView(title: "Layout Library")
-                    Button(action: {
-                        viewModel.uiState = .loading
-                        isShowingBarcodeScanner = true
-                    }) {
-                        Text("Scan new Layout")
-                    }
-                    .padding(.top)
-                    .buttonStyle(ButtonDefault())
-                    .sheet(isPresented: $isShowingBarcodeScanner) {
-                        CodeScannerView(codeTypes: [.qr], completion: handleScan)
-                    }
-                    .onChange(of: viewModel.uiState){ newState in
-                        if newState == .hasData {
-                            showPlacement()
+        ZStack {
+            if #available(iOS 14.0, *) {
+                ScrollView{
+                    VStack(alignment: .leading) {
+                        HeaderView(title: "Layout Library")
+                        Button(action: {
+                            viewModel.uiState = .loading
+                            isShowingBarcodeScanner = true
+                        }) {
+                            Text("Scan new Layout")
                         }
-                    }
-                    
-                    switch viewModel.uiState {
-                    case .hasData, .done:
+                        .padding(.top)
+                        .buttonStyle(ButtonDefault())
+                        .sheet(isPresented: $isShowingBarcodeScanner) {
+                            CodeScannerView(codeTypes: [.qr], completion: handleScan)
+                        }
+                        .onChange(of: viewModel.uiState){ newState in
+                            if newState == .hasData {
+                                showPlacement()
+                            }
+                        }
+                        
+                        switch viewModel.uiState {
+                        case .hasData, .done:
                             Button(action: {
                                 viewModel.uiState = .hasData
                             }) {
@@ -55,26 +56,32 @@ struct LayoutDemoView: View {
                             .padding(.top)
                             .buttonStyle(ButtonDefaultOutlined())
                             
-                        roktEmbedded
-                            .frame(height: self.embeddedSize, alignment: .center)
+                            roktEmbedded
+                                .frame(height: self.embeddedSize, alignment: .center)
+                            
+                        case .error(error: let error):
+                            ErrorView(viewModel: ErrorViewModel(error: nil, barcodeErrorMessage: error))
+                                .modifier(NavigationBarGray(title: ""))
+                                .background(Color.white)
+                        default:
+                            EmptyView()
+                        }
                         
-                    case .error(error: let error):
-                        ErrorView(viewModel: ErrorViewModel(error: nil, barcodeErrorMessage: error))
-                            .modifier(NavigationBarGray(title: ""))
-                            .background(Color.white)
-                    default:
-                        EmptyView()
                     }
-                    
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding()
+                }.onAppear {
+                    viewModel.uiState = .initiated
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding()
-                
+            } else {
+                VStack {
+                    HeaderView(title: "Layout Library")
+                    Text("Layouts is supported on iOS 15+ for now")
+                }
             }
-        } else {
-            HeaderView(title: "Layout Library")
-            Text("Layouts is supported on iOS 15+ for now")
-        }
+        }.background(Color.gray3)
+            .edgesIgnoringSafeArea([.bottom])
+            .modifier(NavigationBarGray(title: ""))
     }
     
     func handleScan(result: Result<ScanResult, ScanError>) {
