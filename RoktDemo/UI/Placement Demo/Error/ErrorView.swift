@@ -28,16 +28,21 @@ struct ErrorView: View {
                 case .network:
                     Text("No network connection. Please try again later once connected.")
                         .font(.defaultHeadingFont(.header1))
+                        .foregroundColor(.black)
                 case .barcode:
                     Text("Invalid QR code data.")
                         .font(.defaultHeadingFont(.header1))
+                        .foregroundColor(.black)
                     Text("Please scan the correct QR code from the One Platform layouts preview page. If the issue persists please contact us at www.rokt.com or try again later.")
                         .font(.defaultFont(.text))
                         .padding(.top)
+                        .foregroundColor(.black)
                 case .general:
                     Text("Our systems aren't responding right now.")
                         .font(.defaultHeadingFont(.header1))
+                        .foregroundColor(.black)
                     Text("Please close the app and try again. If the issue persists please contact us at www.rokt.com or try again later.")
+                        .foregroundColor(.black)
                         .font(.defaultFont(.text))
                         .padding(.top)
                 }
