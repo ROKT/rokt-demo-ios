@@ -15,11 +15,7 @@
 
 default_platform(:ios)
 
-BUILD_NUMBER =  if !ENV["CIRCLE_BUILD_NUMBER"].nil?
-                  ENV["CIRCLE_BUILD_NUMBER"]
-                else 
-                  ENV["BUILDKITE_BUILD_NUMBER"]
-                end
+BUILD_NUMBER = ENV["BUILDKITE_BUILD_NUMBER"]              
 
 platform :ios do
   desc "Runs all the tests"
