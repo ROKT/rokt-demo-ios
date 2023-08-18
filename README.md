@@ -9,10 +9,9 @@ This app distributed internally via [TestFlight](https://developer.apple.com/tes
 
 | Environment | Build |
 | ----------- | :----- |
-| release |  [![CircleCI](https://dl.circleci.com/status-badge/img/gh/ROKT/rokt-demo-ios/tree/release-1.1.x.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ROKT/rokt-demo-ios/tree/release-1.1.x)
 | release | [![Build status](https://badge.buildkite.com/afe921fff6fe587a6a59245ca0181c61d5557c78893991f9cc.svg)](https://buildkite.com/rokt/rokt-demo-ios?branch=release-1.1.x)
 ### Developer Note
-Modify the Circleci and Buildkite url whenever default branch is changed.
+Modify the Buildkite url whenever default branch is changed.
 
 
 ## Requirements
@@ -51,9 +50,9 @@ Open RoktDemo.xcworkspace in Xcode and click Run icon on top left of Xcode.
 Select the RoktDemo scheme and press command + U, or Product -> Test menu on Xcode.
 Tests can be found in `RoktDemoTests` and `RoktDemoUIITests`.
 
-## How to run tests on CircleCI?
+## How to run tests on Buildkite?
 
-Just push a change to any of the branches and tests will be run. The result of the test would be visible in the [CircleCi](https://app.circleci.com/pipelines/github/ROKT/rokt-demo-ios).
+Just push a change to any of the branches and tests will be run. The result of the test would be visible in the [Buildkite](https://buildkite.com/rokt/rokt-demo-ios).
 
 ## Where are dependencies defined?
 
@@ -73,12 +72,10 @@ To point to a certain version
 ## How to release the app
 - Update `Version` and `Build` in RoktDemo target
 - Commit & push and merge it to the release branch
-- Aprove the **hold** on **[CircleCI](https://app.circleci.com/pipelines/github/ROKT/rokt-demo-ios)** and wait till it finished
+- Aprove the **hold** on **[Buildkite](https://buildkite.com/rokt/rokt-demo-ios)** and wait till it finished
 - Follow the instructions on **[Appstoreconnect](https://appstoreconnect.apple.com/)**
 
 ### Note
-To get the CircleCI user access, please ask it from Rokt SRE team.
-
 To get Appstoreconnect user access, please ask it from danial.motahari@rokt.com or dj.seo@rokt.com
 
 ## FAQ
