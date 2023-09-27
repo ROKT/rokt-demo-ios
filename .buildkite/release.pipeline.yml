@@ -31,12 +31,8 @@ steps:
       queue: ${MAC_BK_AGENT}
     timeout_in_minutes: 25
 
-  - block: ":whale: Publish to TestFlight"
-    key: "publish-block"
-    prompt: "Confirm publishing to TestFlight?"
-    depends_on: "unit-test"
-
   - name: ":rocket: Publish demo app to TestFlight"
+    depends_on: "unit-test"
     commands:
       - . ~/.zshrc
       - rbenv local 2.7.6
@@ -45,7 +41,6 @@ steps:
       - bundle install --path vendor/bundle
       - pod install --verbose --repo-update
       - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
-    depends_on: "publish-block"
     plugins:
       - seek-oss/aws-sm#v2.0.0:
           env:
