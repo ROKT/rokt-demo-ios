@@ -10,7 +10,7 @@ steps:
       - rbenv local 2.7.6
       - bundle install --path vendor/bundle
       - ./.buildkite/bin/update_versions.sh $(buildkite-agent meta-data get IOS_VERSION) Podfile $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE) RoktDemo.xcodeproj/project.pbxproj
-      - ./.buildkite/bin/create_tag.sh $(buildkite-agent meta-data get VERSION)
+      - ./.buildkite/bin/create_tag.sh $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE)
     agents:      
       queue: ${MAC_BK_AGENT}
 
