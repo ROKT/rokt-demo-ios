@@ -1,0 +1,76 @@
+env:
+  MAC_BK_AGENT: eng-prod-us-west-2-mac-arm-macos-build-medium
+
+steps:
+
+  - label: ":git: Create git tag"
+    key: "tag"
+    commands:
+      - . ~/.zshrc
+      - rbenv local 2.7.6
+      - bundle install --path vendor/bundle
+      - ./.buildkite/bin/update_versions.sh $(buildkite-agent meta-data get IOS_VERSION) Podfile $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE) RoktDemo.xcodeproj/project.pbxproj
+      - ./.buildkite/bin/create_tag.sh $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE)
+    agents:      
+      queue: ${MAC_BK_AGENT}
+
+  - name: ":hammer: Build and Unit Test iOS Demo"
+    key: "unit-test"
+    depends_on: "tag"
+    commands:
+      - . ~/.zshrc
+      - rbenv local 2.7.6
+      - git fetch --all --tags --force
+      - git checkout "v$(buildkite-agent meta-data get VERSION)-$(buildkite-agent meta-data get VERSION_CODE)"
+      - bundle install --path vendor/bundle
+      - xcrun simctl boot "iPhone 14" || true
+      - pod install --verbose --repo-update
+      - bundle exec fastlane test
+      - xcrun simctl shutdown "iPhone 14" || true
+    agents:      
+      queue: ${MAC_BK_AGENT}
+    timeout_in_minutes: 25
+
+  - name: ":rocket: Publish demo app to TestFlight"
+    depends_on: "unit-test"
+    commands:
+      - . ~/.zshrc
+      - rbenv local 2.7.6
+      - git fetch --all --tags --force
+      - git checkout "v$(buildkite-agent meta-data get VERSION)-$(buildkite-agent meta-data get VERSION_CODE)"
+      - bundle install --path vendor/bundle
+      - pod install --verbose --repo-update
+      - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
+    plugins:
+      - seek-oss/aws-sm#v2.0.0:
+          env:
+            APPSTORE_KEY_ID:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".APPSTORE_KEY_ID"
+            APPSTORE_ISSUER_ID:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".APPSTORE_ISSUER_ID"
+            APPSTORE_KEY_CONTENT_B64:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".APPSTORE_KEY_CONTENT_B64"
+            MATCH_GIT_URL:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".MATCH_GIT_URL"
+            MATCH_GIT_BRANCH:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".MATCH_GIT_BRANCH"
+            MATCH_USERNAME:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".MATCH_USERNAME"
+            MATCH_GIT_USER_EMAIL:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".MATCH_GIT_USER_EMAIL"
+            MATCH_PASSWORD:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".MATCH_PASSWORD"
+            DEVELOPMENT_TEAM_ID:
+              secret-id: "stage-ios-demoapp-buildkite"
+              json-key: ".DEVELOPMENT_TEAM_ID"
+    agents:      
+      queue: ${MAC_BK_AGENT}
+    timeout_in_minutes: 25
