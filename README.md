@@ -75,6 +75,9 @@ To point to a certain version
 - Aprove the **hold** on **[Buildkite](https://buildkite.com/rokt/rokt-demo-ios)** and wait till it finished
 - Follow the instructions on **[Appstoreconnect](https://appstoreconnect.apple.com/)**
 
+#### Automated Release Pipeline
+The SDK can be released via the [Mobile Release Pipeline](https://github.com/ROKT/mobile-release-pipeline/tree/master). Follow the instructions in the Mobile Release Pipeline repo to release. You can still release the app manually by following the steps in the previous section.
+
 ### Note
 To get Appstoreconnect user access, please ask it from danial.motahari@rokt.com or dj.seo@rokt.com
 
