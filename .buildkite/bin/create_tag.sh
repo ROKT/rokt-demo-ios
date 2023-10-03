@@ -14,4 +14,4 @@ git add Podfile.lock
 git add RoktDemo.xcodeproj/project.pbxproj
 git commit -m "v$1"
 git tag -a "v$1-$2" -m "Automated release v$1-$2"
-git push origin "v$1"
+git push origin "v$1-$2"
