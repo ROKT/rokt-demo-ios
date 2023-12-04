@@ -31,6 +31,7 @@ steps:
     depends_on: 'publish-block'
     plugins:
       - seek-oss/aws-sm#v2.0.0:
+          region: us-west-2
           env:
             APPSTORE_KEY_ID:
               secret-id: 'stage-ios-demoapp-buildkite'
@@ -73,6 +74,7 @@ steps:
     if: build.source == "schedule"
     plugins:
       - seek-oss/aws-sm#v2.0.0:
+          region: us-west-2
           env:
             APPSTORE_KEY_ID:
               secret-id: 'stage-ios-demoapp-buildkite'
