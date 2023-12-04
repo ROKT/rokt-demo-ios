@@ -30,7 +30,7 @@ steps:
       - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
     depends_on: 'publish-block'
     plugins:
-      - seek-oss/aws-sm#v2.0.0:
+      - seek-oss/aws-sm#v2.3.1:
           region: us-west-2
           env:
             APPSTORE_KEY_ID:
@@ -73,7 +73,7 @@ steps:
     depends_on: "unit-test"
     if: build.source == "schedule"
     plugins:
-      - seek-oss/aws-sm#v2.0.0:
+      - seek-oss/aws-sm#v2.3.1:
           region: us-west-2
           env:
             APPSTORE_KEY_ID:
