@@ -10,7 +10,7 @@ steps:
       - rbenv local 2.7.6
       - bundle install --path vendor/bundle
       - ./.buildkite/bin/update_versions.sh $(buildkite-agent meta-data get IOS_VERSION) Podfile $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE) RoktDemo.xcodeproj/project.pbxproj
-      - ./.buildkite/bin/create_tag.sh $(buildkite-agent meta-data get VERSION)
+      - ./.buildkite/bin/create_tag.sh $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE)
     agents:      
       queue: ${MAC_BK_AGENT}
 
@@ -21,7 +21,7 @@ steps:
       - . ~/.zshrc
       - rbenv local 2.7.6
       - git fetch --all --tags --force
-      - git checkout "v$(buildkite-agent meta-data get VERSION)"
+      - git checkout "v$(buildkite-agent meta-data get VERSION)-$(buildkite-agent meta-data get VERSION_CODE)"
       - bundle install --path vendor/bundle
       - xcrun simctl boot "iPhone 14" || true
       - pod install --verbose --repo-update
@@ -37,12 +37,13 @@ steps:
       - . ~/.zshrc
       - rbenv local 2.7.6
       - git fetch --all --tags --force
-      - git checkout "v$(buildkite-agent meta-data get VERSION)"
+      - git checkout "v$(buildkite-agent meta-data get VERSION)-$(buildkite-agent meta-data get VERSION_CODE)"
       - bundle install --path vendor/bundle
       - pod install --verbose --repo-update
       - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
     plugins:
-      - seek-oss/aws-sm#v2.0.0:
+      - seek-oss/aws-sm#v2.3.1:
+          region: us-west-2
           env:
             APPSTORE_KEY_ID:
               secret-id: "stage-ios-demoapp-buildkite"
