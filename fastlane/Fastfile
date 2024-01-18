@@ -85,6 +85,7 @@ platform :ios do
 
   desc "Push a new beta build to TestFlight"
   lane :beta do |options|
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
     certificates(
       use_temporary_keychain: options[:use_temporary_keychain],
       refresh_certificates: options[:refresh_certificates]
