@@ -24,6 +24,7 @@ BUILD_NUMBER =  if !ENV["CIRCLE_BUILD_NUMBER"].nil?
 platform :ios do
   desc "Runs all the tests"
   lane :test do
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
     scan(
       devices: ["iPhone 14"]
       )
