@@ -1,5 +1,5 @@
 env:
-  MAC_BK_AGENT: eng-stage-us-west-2-mac-arm-macos-build-medium
+  MAC_BK_AGENT: eng-prod-us-west-2-mac-arm-macos-build-medium
 
 steps:
   - name: ':hammer: Build and Unit Test iOS Demo'
