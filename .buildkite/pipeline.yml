@@ -9,7 +9,7 @@ steps:
       - rbenv local 3.2.2
       - bundle install --path vendor/bundle
       - xcrun simctl boot "iPhone 15" || true
-      - pod install --verbose --repo-update
+      - bundle exec pod install --verbose --repo-update
       - bundle exec fastlane test
       - xcrun simctl shutdown "iPhone 15" || true
     agents:      
