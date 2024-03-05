@@ -17,7 +17,7 @@ Modify the Circleci and Buildkite url whenever default branch is changed.
 
 ## Requirements
 
-XCode 13 and above. Project is configured to run on iOS 13.0 and above.
+XCode 15 and above. Project is configured to run on iOS 13.0 and above.
 
 ## Project architecture
 

@@ -6,12 +6,12 @@ steps:
     key: 'unit-test'
     commands:
       - . ~/.zshrc
-      - rbenv local 2.7.6
+      - rbenv local 3.2.2
       - bundle install --path vendor/bundle
-      - xcrun simctl boot "iPhone 14" || true
-      - pod install --verbose --repo-update
+      - xcrun simctl boot "iPhone 15" || true
+      - bundle exec pod install --verbose --repo-update
       - bundle exec fastlane test
-      - xcrun simctl shutdown "iPhone 14" || true
+      - xcrun simctl shutdown "iPhone 15" || true
     agents:      
       queue: ${MAC_BK_AGENT}
     timeout_in_minutes: 25
@@ -24,7 +24,7 @@ steps:
   - name: ':rocket: Publish demo app to TestFlight'
     commands:
       - . ~/.zshrc
-      - rbenv local 2.7.6
+      - rbenv local 3.2.2
       - bundle install --path vendor/bundle
       - pod install --verbose --repo-update
       - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true

@@ -7,7 +7,7 @@ steps:
     key: "tag"
     commands:
       - . ~/.zshrc
-      - rbenv local 2.7.6
+      - rbenv local 3.2.2
       - bundle install --path vendor/bundle
       - ./.buildkite/bin/update_versions.sh $(buildkite-agent meta-data get IOS_VERSION) Podfile $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE) RoktDemo.xcodeproj/project.pbxproj
       - ./.buildkite/bin/create_tag.sh $(buildkite-agent meta-data get VERSION) $(buildkite-agent meta-data get VERSION_CODE)
@@ -19,14 +19,14 @@ steps:
     depends_on: "tag"
     commands:
       - . ~/.zshrc
-      - rbenv local 2.7.6
+      - rbenv local 3.2.2
       - git fetch --all --tags --force
       - git checkout "v$(buildkite-agent meta-data get VERSION)-$(buildkite-agent meta-data get VERSION_CODE)"
       - bundle install --path vendor/bundle
-      - xcrun simctl boot "iPhone 14" || true
-      - pod install --verbose --repo-update
+      - xcrun simctl boot "iPhone 15" || true
+      - bundle exec pod install --verbose --repo-update
       - bundle exec fastlane test
-      - xcrun simctl shutdown "iPhone 14" || true
+      - xcrun simctl shutdown "iPhone 15" || true
     agents:      
       queue: ${MAC_BK_AGENT}
     timeout_in_minutes: 25
@@ -35,11 +35,11 @@ steps:
     depends_on: "unit-test"
     commands:
       - . ~/.zshrc
-      - rbenv local 2.7.6
+      - rbenv local 3.2.2
       - git fetch --all --tags --force
       - git checkout "v$(buildkite-agent meta-data get VERSION)-$(buildkite-agent meta-data get VERSION_CODE)"
       - bundle install --path vendor/bundle
-      - pod install --verbose --repo-update
+      - bundle exec pod install --verbose --repo-update
       - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
     plugins:
       - seek-oss/aws-sm#v2.3.1:
