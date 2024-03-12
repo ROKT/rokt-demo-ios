@@ -11,4 +11,4 @@ set -eu
 perl -pi -e "s/(?<='Rokt-Widget', ')(.*)(?=')/$1/g" $2
 perl -pi -e "s/(?<=MARKETING_VERSION = )(.*)(?=;)/$3/g" $5
 perl -pi -e "s/(?<=CURRENT_PROJECT_VERSION = )(.*)(?=;)/$4/g" $5
-pod install --repo-update
+bundle exec pod install --repo-update
