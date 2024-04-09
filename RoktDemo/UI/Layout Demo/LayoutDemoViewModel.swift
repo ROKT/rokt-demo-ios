@@ -53,6 +53,7 @@ class LayoutDemoViewModel: ObservableObject {
         var attributes = [String: String]()
         attributes["isDemo"] = "true"
         attributes["layoutId"] = preview.previewId
+        attributes["versionId"] = preview.versionId
         attributes["creativeId"] = preview.creativeIds.joined(separator: ",")
         return attributes
     }
