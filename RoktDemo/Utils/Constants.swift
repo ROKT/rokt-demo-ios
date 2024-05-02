@@ -29,4 +29,8 @@ struct Constants {
     }
     
     static let lineHeight: CGFloat = 5.0
+    
+    struct UserDefaults {
+        static let useStageEnvironment = "useStageEnvironment"
+    }
 }

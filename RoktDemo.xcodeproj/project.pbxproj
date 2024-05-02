@@ -113,6 +113,7 @@
 		25F84773260C348A0067B515 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F84771260C348A0067B515 /* LaunchScreen.storyboard */; };
 		25F8477E260C348A0067B515 /* RoktDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8477D260C348A0067B515 /* RoktDemoTests.swift */; };
 		25F84789260C348A0067B515 /* RoktDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84788260C348A0067B515 /* RoktDemoUITests.swift */; };
+		25FA8C672BE1D5CB00E750A6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FA8C662BE1D5CB00E750A6 /* SettingView.swift */; };
 		5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226A2613F63800A58DA3 /* Font+Extensions.swift */; };
 		589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226F2613F67A00A58DA3 /* ButtonDefault.swift */; };
 		589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */; };
@@ -240,6 +241,7 @@
 		25F84784260C348A0067B515 /* RoktDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoktDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F84788260C348A0067B515 /* RoktDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoktDemoUITests.swift; sourceTree = "<group>"; };
 		25F8478A260C348A0067B515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25FA8C662BE1D5CB00E750A6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		5899226A2613F63800A58DA3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		5899226F2613F67A00A58DA3 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultOutlined.swift; sourceTree = "<group>"; };
@@ -651,6 +653,14 @@
 			path = RoktDemoUITests;
 			sourceTree = "<group>";
 		};
+		25FA8C652BE1D42B00E750A6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				25FA8C662BE1D5CB00E750A6 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		3AE505AC05A5E8066E00B908 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +678,7 @@
 				251E32D3274B0CC800308A18 /* Placement Demo */,
 				25747A012A70D899009C5B69 /* Layout Demo */,
 				251E32D2274B0C9800308A18 /* About */,
+				25FA8C652BE1D42B00E750A6 /* Setting */,
 				251E32D0274B0C3700308A18 /* Common */,
 				256C958026A1450F00F0961B /* State */,
 			);
@@ -992,6 +1003,7 @@
 				25747A032A70D909009C5B69 /* LayoutDemoView.swift in Sources */,
 				256EB779261C206A00B959EF /* PreDefinedScreenModel.swift in Sources */,
 				25A0266626A51B860005CFED /* ErrorViewModel.swift in Sources */,
+				25FA8C672BE1D5CB00E750A6 /* SettingView.swift in Sources */,
 				2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */,
 				256EB76A261C1ABD00B959EF /* DefaultPlacementExamplesModel.swift in Sources */,
 				589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */,
