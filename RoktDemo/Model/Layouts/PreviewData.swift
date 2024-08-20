@@ -17,5 +17,14 @@ struct PreviewData: Decodable {
     let tagId: String
     let previewId: String
     let versionId: String
-    let creativeIds: [String]
+    let roktLanguage: String
+    let demoConfig: String
+
+    enum CodingKeys: String, CodingKey {
+        case tagId
+        case previewId
+        case versionId
+        case roktLanguage = "rokt.language"
+        case demoConfig
+    }
 }

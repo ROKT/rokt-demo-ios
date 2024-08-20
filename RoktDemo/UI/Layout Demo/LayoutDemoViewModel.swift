@@ -54,7 +54,8 @@ class LayoutDemoViewModel: ObservableObject {
         attributes["isDemo"] = "true"
         attributes["layoutId"] = preview.previewId
         attributes["versionId"] = preview.versionId
-        attributes["creativeId"] = preview.creativeIds.joined(separator: ",")
+        attributes["rokt.language"] = preview.roktLanguage
+        attributes["demoConfig"] = preview.demoConfig
         return attributes
     }
 }
