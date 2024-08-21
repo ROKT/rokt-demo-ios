@@ -47,17 +47,18 @@ struct LayoutDemoView: View {
                         }
                         
                         switch viewModel.uiState {
-                        case .hasData, .done:
-                            Button(action: {
-                                viewModel.uiState = .hasData
-                            }) {
-                                Text("Refresh preview")
-                            }
-                            .padding(.top)
-                            .buttonStyle(ButtonDefaultOutlined())
+                        // TODO: Re-enable the refresh button once layoutVariantIds are stablised
+                        // case .hasData, .done:
+                        //     Button(action: {
+                        //         viewModel.uiState = .hasData
+                        //     }) {
+                        //         Text("Refresh preview")
+                        //     }
+                        //     .padding(.top)
+                        //     .buttonStyle(ButtonDefaultOutlined())
                             
-                            roktEmbedded
-                                .frame(height: self.embeddedSize, alignment: .center)
+                        //     roktEmbedded
+                        //         .frame(height: self.embeddedSize, alignment: .center)
                             
                         case .error(error: let error):
                             ErrorView(viewModel: ErrorViewModel(error: nil, barcodeErrorMessage: error))

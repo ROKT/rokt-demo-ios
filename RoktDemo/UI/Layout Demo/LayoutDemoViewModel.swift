@@ -52,10 +52,32 @@ class LayoutDemoViewModel: ObservableObject {
         guard let preview else { return [:] }
         var attributes = [String: String]()
         attributes["isDemo"] = "true"
-        attributes["layoutId"] = preview.previewId
-        attributes["versionId"] = preview.versionId
-        attributes["rokt.language"] = preview.roktLanguage
-        attributes["demoConfig"] = preview.demoConfig
+        attributes["rokt.language"] = preview.language
+        
+        var slots: [[String: String]] = [];
+        for (creativeId, layoutVariantId) in zip(preview.creativeIds, preview.layoutVariantIds) {
+            let slot: [String: String] = [
+                "layoutVariantId": layoutVariantId,
+                "creativeId": creativeId
+            ]
+            slots.append(slot)
+        }
+        
+        let demoConfig = [
+            "layouts": [
+                [
+                    "layoutId": preview.previewId,
+                    "versionId": preview.versionId,
+                    "slots": slots
+                ]
+            ]
+        ]
+        
+        if let demoConfigJson = try? JSONSerialization.data(withJSONObject: demoConfig, options: []),
+           let demoConfigJsonString = String(data: demoConfigJson, encoding: .utf8) {
+            attributes["demoConfig"] = demoConfigJsonString
+        }
+        
         return attributes
     }
 }
