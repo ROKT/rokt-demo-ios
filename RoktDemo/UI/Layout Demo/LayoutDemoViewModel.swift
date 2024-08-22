@@ -54,8 +54,11 @@ class LayoutDemoViewModel: ObservableObject {
         attributes["isDemo"] = "true"
         attributes["rokt.language"] = preview.language
         
-        var slots: [[String: String]] = [];
-        for (creativeId, layoutVariantId) in zip(preview.creativeIds, preview.layoutVariantIds) {
+        var slots: [[String: String]] = []
+        let layoutVariantCount = preview.layoutVariantIds.count
+        
+        for (index, creativeId) in preview.creativeIds.enumerated() {
+            let layoutVariantId = preview.layoutVariantIds[index % layoutVariantCount]
             let slot: [String: String] = [
                 "layoutVariantId": layoutVariantId,
                 "creativeId": creativeId
