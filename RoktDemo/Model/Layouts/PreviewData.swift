@@ -18,4 +18,6 @@ struct PreviewData: Decodable {
     let previewId: String
     let versionId: String
     let creativeIds: [String]
+    let layoutVariantIds: [String]
+    let language: String
 }
