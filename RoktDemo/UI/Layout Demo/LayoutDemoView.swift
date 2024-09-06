@@ -48,13 +48,14 @@ struct LayoutDemoView: View {
                         
                         switch viewModel.uiState {
                         case .hasData, .done:
-                            Button(action: {
-                                viewModel.uiState = .hasData
-                            }) {
-                                Text("Refresh preview")
-                            }
-                            .padding(.top)
-                            .buttonStyle(ButtonDefaultOutlined())
+                            // TODO: Re-enable the refresh button once layoutVariantIds are stablised
+                            //     Button(action: {
+                            //         viewModel.uiState = .hasData
+                            //     }) {
+                            //         Text("Refresh preview")
+                            //     }
+                            //     .padding(.top)
+                            //     .buttonStyle(ButtonDefaultOutlined())
                             
                             roktEmbedded
                                 .frame(height: self.embeddedSize, alignment: .center)

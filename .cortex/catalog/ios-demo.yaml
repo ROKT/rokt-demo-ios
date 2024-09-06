@@ -1,0 +1,33 @@
+#checkov:skip=CKV_OPENAPI_4:Not required to have auth schema defs
+openapi: 3.0.0
+info:
+  title: Rokt iOS Demo app
+  x-cortex-tag: native-demo-ios
+  x-cortex-type: service
+  description: |
+    iOS native app to demonstrate and test Rokt SDK capabilities.
+  x-cortex-git:
+    github:
+      repository: ROKT/rokt-demo-ios
+
+  x-cortex-owners:
+    - type: group
+      name: "new-integrations"
+      provider: CORTEX
+  x-cortex-groups:
+    - lang-swift
+
+  x-cortex-oncall:
+    opsgenie:
+      type: SCHEDULE
+      id: Mobile Integrations_schedule
+
+  x-cortex-ci-cd:
+    buildkite:
+      pipelines:
+        - slug: rokt-demo-ios
+
+  x-cortex-link:
+    - name: Mobile SDK Detailed Error View
+      type: dashboard
+      url: https://rokt.datadoghq.com/dashboard/nsi-c8c-gtd

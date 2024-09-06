@@ -9,7 +9,6 @@ This app distributed internally via [TestFlight](https://developer.apple.com/tes
 
 | Environment | Build |
 | ----------- | :----- |
-| release |  [![CircleCI](https://dl.circleci.com/status-badge/img/gh/ROKT/rokt-demo-ios/tree/release-1.1.x.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ROKT/rokt-demo-ios/tree/release-1.1.x)
 | release | [![Build status](https://badge.buildkite.com/afe921fff6fe587a6a59245ca0181c61d5557c78893991f9cc.svg)](https://buildkite.com/rokt/rokt-demo-ios?branch=release-1.1.x)
 ### Developer Note
 Modify the Circleci and Buildkite url whenever default branch is changed.
@@ -17,7 +16,7 @@ Modify the Circleci and Buildkite url whenever default branch is changed.
 
 ## Requirements
 
-XCode 13 and above. Project is configured to run on iOS 13.0 and above.
+XCode 15 and above. Project is configured to run on iOS 13.0 and above.
 
 ## Project architecture
 
@@ -51,10 +50,6 @@ Open RoktDemo.xcworkspace in Xcode and click Run icon on top left of Xcode.
 Select the RoktDemo scheme and press command + U, or Product -> Test menu on Xcode.
 Tests can be found in `RoktDemoTests` and `RoktDemoUIITests`.
 
-## How to run tests on CircleCI?
-
-Just push a change to any of the branches and tests will be run. The result of the test would be visible in the [CircleCi](https://app.circleci.com/pipelines/github/ROKT/rokt-demo-ios).
-
 ## Where are dependencies defined?
 
 [CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C projects. CocoaPods recursively resolves dependencies between libraries, fetches source code for all dependencies, and creates and maintains an Xcode workspace to build your project. All dependencies of this project are defined in the Podfile located in the root directory of this project. 
@@ -63,7 +58,8 @@ Just push a change to any of the branches and tests will be run. The result of t
 In this application, following dependencies are used: 
 -  Rokt-Widget: [Rokt-Widget](https://docs.rokt.com/docs/developers/integration-guides/ios/overview) is Rokt iOS SDK. This app is built to showcase the functionality that this Rokt SDK provides in-app.  
 -  Alamofire: [Alamofire] (https://github.com/Alamofire/Alamofire) is an HTTP networking library written in Swift. This is used for networking part of the application.
--  SDWebImageSwiftUI: [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) is a SwiftUI image loading framework. This is used for loading images in SwiftUI. 
+-  SDWebImageSwiftUI: [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) is a SwiftUI image loading framework. This is used for loading images in SwiftUI.
+-  CodeScanner: [CodeScanner](https://github.com/twostraws/CodeScanner) CodeScanner is a SwiftUI framework that makes it easy to scan codes such as QR codes and barcodes.
 
 ## How to test point to a version of iOS SDK
 To point to a certain version
@@ -100,6 +96,7 @@ Currently we have following release branches.
 
 * **release-1.x** - The first version of Demo application
 * **release-1.1.x** - The PreDefined brand demos added
+* **release-1.2.x** - Layouts preview and QR code scan support added
 
 ### Something is not working, what do I do?
 

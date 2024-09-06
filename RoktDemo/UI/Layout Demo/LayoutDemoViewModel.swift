@@ -52,8 +52,35 @@ class LayoutDemoViewModel: ObservableObject {
         guard let preview else { return [:] }
         var attributes = [String: String]()
         attributes["isDemo"] = "true"
-        attributes["layoutId"] = preview.previewId
-        attributes["creativeId"] = preview.creativeIds.joined(separator: ",")
+        attributes["rokt.language"] = preview.language
+        
+        var slots: [[String: String]] = []
+        let layoutVariantCount = preview.layoutVariantIds.count
+        
+        for (index, creativeId) in preview.creativeIds.enumerated() {
+            let layoutVariantId = preview.layoutVariantIds[index % layoutVariantCount]
+            let slot: [String: String] = [
+                "layoutVariantId": layoutVariantId,
+                "creativeId": creativeId
+            ]
+            slots.append(slot)
+        }
+        
+        let demoConfig = [
+            "layouts": [
+                [
+                    "layoutId": preview.previewId,
+                    "versionId": preview.versionId,
+                    "slots": slots
+                ]
+            ]
+        ]
+        
+        if let demoConfigJson = try? JSONSerialization.data(withJSONObject: demoConfig, options: []),
+           let demoConfigJsonString = String(data: demoConfigJson, encoding: .utf8) {
+            attributes["demoConfig"] = demoConfigJsonString
+        }
+        
         return attributes
     }
 }

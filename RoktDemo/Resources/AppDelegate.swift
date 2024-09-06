@@ -12,6 +12,7 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import UIKit
+import Rokt_Widget
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let useStage = UserDefaults.standard.bool(forKey: Constants.UserDefaults.useStageEnvironment)
+        Rokt.setEnvironment(environment: useStage ? .Stage : .Prod)
         return true
     }
 
