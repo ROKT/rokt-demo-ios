@@ -17,6 +17,7 @@ import Rokt_Widget
 
 struct LayoutDemoView: View {
     @ObservedObject var viewModel: LayoutDemoViewModel
+    @EnvironmentObject var appState: AppState
     
     var roktEmbedded = RoktEmbeddedSwiftUIView()
     
@@ -43,6 +44,7 @@ struct LayoutDemoView: View {
                         .onChange(of: viewModel.uiState){ newState in
                             if newState == .hasData {
                                 showPlacement()
+                                appState.previewParameterString = nil
                             }
                         }
                         
@@ -73,6 +75,9 @@ struct LayoutDemoView: View {
                     .padding()
                 }.onAppear {
                     viewModel.uiState = .initiated
+                    if let previewJsonString = appState.previewParameterString {
+                        viewModel.parseQRcodeResult(previewJsonString)
+                    }
                 }
             } else {
                 VStack {

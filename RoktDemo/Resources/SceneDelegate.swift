@@ -14,9 +14,15 @@
 import UIKit
 import SwiftUI
 
+class AppState: ObservableObject {
+    @Published var previewParameterString: String? = nil
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    lazy var appState = AppState()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -26,6 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = HomePageView()
+            .environmentObject(appState)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -34,6 +41,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+        
+        handleURLContexts(connectionOptions.urlContexts)
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        handleURLContexts(URLContexts)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -64,6 +77,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    private func handleURLContexts(_ urlContexts: Set<UIOpenURLContext>) {
+        if let urlContext = urlContexts.first {
+            let url = urlContext.url
+            let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
+            let config = queryItems?.first(where: { $0.name == "config" })?.value
+            appState.previewParameterString = config
+        }
+    }
 
 }
 

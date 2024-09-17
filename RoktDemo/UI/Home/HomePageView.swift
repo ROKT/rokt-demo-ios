@@ -19,6 +19,9 @@ struct HomePageView: View {
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isEmailShown = false
     @State var isEmailAlertShown = false
+    @State private var previewParameter: String?
+    @EnvironmentObject var appState: AppState
+    @State private var navigateToLayoutDemo = false
     
     var body: some View {
         NavigationView {
@@ -94,6 +97,14 @@ struct HomePageView: View {
                             .foregroundColor(.textColor)
                             .padding(.bottom)
                     }.padding()
+                    
+                    NavigationLink(
+                        destination: LayoutDemoView(viewModel: LayoutDemoViewModel()),
+                        isActive: $navigateToLayoutDemo,
+                        label: {
+                            EmptyView()
+                        }
+                    )
                 }
             }
             
@@ -101,6 +112,20 @@ struct HomePageView: View {
         .background(Color.white)
         .navigationViewStyle(StackNavigationViewStyle())
         .modifier(NavigationBarTransparent(title: ""))
+        .onAppear {
+            if !navigateToLayoutDemo && appState.previewParameterString != nil {
+                navigateToLayoutDemo = true
+            }
+        }
+        .ifAvailableIOS14OrLater {
+            if #available(iOS 14.0, *) {
+                $0.onChange(of: appState.previewParameterString) { newValue in
+                    if (newValue != nil) {
+                        navigateToLayoutDemo = true
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -126,3 +151,13 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+extension View {
+    @ViewBuilder
+    func ifAvailableIOS14OrLater<Content: View>(@ViewBuilder content: (Self) -> Content) -> some View {
+        if #available(iOS 14.0, *) {
+            content(self)
+        } else {
+            self
+        }
+    }
+}
