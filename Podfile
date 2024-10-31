@@ -6,7 +6,7 @@ target 'RoktDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   # Pods for RoktDemo
-  pod 'Rokt-Widget', '4.6.0'
+  pod 'Rokt-Widget', '4.6.1'
   pod 'Alamofire', '~> 5.4.4'
   pod 'SDWebImageSwiftUI', '~> 2.0.2'
 
