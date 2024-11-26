@@ -44,6 +44,8 @@ struct LayoutDemoView: View {
                         .onChange(of: viewModel.uiState){ newState in
                             if newState == .hasData {
                                 showPlacement()
+                            }
+                            if newState == .loading {
                                 appState.previewParameterString = nil
                             }
                         }
