@@ -108,10 +108,8 @@ platform :ios do
     )  
 
     build_app(workspace: "RoktDemo.xcworkspace", scheme: "RoktSDKDemo")
-    testflight(
-      skip_submission: true,
-      skip_waiting_for_build_processing: true
-    )
+    #ipa_path = Actions.lane_context[SharedValues::IPA_OUTPUT_PATH]
+    #puts "IPA Path: #{ipa_path}"
   end
 
 end
