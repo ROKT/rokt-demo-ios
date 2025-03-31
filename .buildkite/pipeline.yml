@@ -12,7 +12,7 @@ steps:
       - bundle exec pod install --verbose --repo-update
       - bundle exec fastlane test
       - xcrun simctl shutdown "iPhone 15" || true
-    agents:      
+    agents:
       queue: ${MAC_BK_AGENT}
     timeout_in_minutes: 25
 
@@ -26,7 +26,7 @@ steps:
       - . ~/.zshrc
       - rbenv local 3.2.2
       - bundle install --path vendor/bundle
-      - pod install --verbose --repo-update
+      - bundle exec pod install --verbose --repo-update
       - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
     depends_on: 'publish-block'
     plugins:
@@ -60,7 +60,7 @@ steps:
             DEVELOPMENT_TEAM_ID:
               secret-id: 'stage-ios-demoapp-buildkite'
               json-key: '.DEVELOPMENT_TEAM_ID'
-    agents:      
+    agents:
       queue: ${MAC_BK_AGENT}
     timeout_in_minutes: 25
 
@@ -68,7 +68,7 @@ steps:
     commands:
       - . ~/.zshrc
       - bundle install --path vendor/bundle
-      - pod install --verbose --repo-update
+      - bundle exec pod install --verbose --repo-update
       - bundle exec fastlane beta refresh_certificates:false use_temporary_keychain:true
     depends_on: "unit-test"
     if: build.source == "schedule"
@@ -103,6 +103,6 @@ steps:
             DEVELOPMENT_TEAM_ID:
               secret-id: 'stage-ios-demoapp-buildkite'
               json-key: '.DEVELOPMENT_TEAM_ID'
-    agents:      
+    agents:
       queue: ${MAC_BK_AGENT}
     timeout_in_minutes: 25
