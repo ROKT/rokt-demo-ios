@@ -77,9 +77,8 @@ To point to a certain version
 The SDK can be released via the **Mobile Release Pipeline**. Follow the instructions in the Mobile Release Pipeline repo to release. You can still release the app manually by following the steps in the previous section.
 
 ### Note
-To get the CircleCI user access, please ask it from Rokt SRE team.
 
-To get Appstoreconnect user access, please ask it from danial.motahari@rokt.com or dj.seo@rokt.com
+To get Appstoreconnect user access, please ask it from <dj.seo@rokt.com>, <danial.motahari@rokt.com> or <thomson.thomas@rokt.com>
 
 ## FAQ
 
