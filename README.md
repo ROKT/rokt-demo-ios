@@ -4,7 +4,8 @@ This app distributed internally via [TestFlight](https://developer.apple.com/tes
 
 
 ## Resident Experts
-- Danial Motahari - danial.motahari@rokt.com
+- Danial Motahari - <danial.motahari@rokt.com>
+- Thomson Thomas - <thomson.thomas@rokt.com>
 
 
 | Environment | Build |
@@ -57,28 +58,27 @@ Tests can be found in `RoktDemoTests` and `RoktDemoUIITests`.
 ## What are project dependencies
 In this application, following dependencies are used: 
 -  Rokt-Widget: [Rokt-Widget](https://docs.rokt.com/docs/developers/integration-guides/ios/overview) is Rokt iOS SDK. This app is built to showcase the functionality that this Rokt SDK provides in-app.  
--  Alamofire: [Alamofire] (https://github.com/Alamofire/Alamofire) is an HTTP networking library written in Swift. This is used for networking part of the application.
+-  Alamofire: [Alamofire](https://github.com/Alamofire/Alamofire) is an HTTP networking library written in Swift. This is used for networking part of the application.
 -  SDWebImageSwiftUI: [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) is a SwiftUI image loading framework. This is used for loading images in SwiftUI.
 -  CodeScanner: [CodeScanner](https://github.com/twostraws/CodeScanner) CodeScanner is a SwiftUI framework that makes it easy to scan codes such as QR codes and barcodes.
 
 ## How to test point to a version of iOS SDK
 To point to a certain version
-- Change the version in front of the `Rokt-Widget`on `podfile` c. You could point to a stable version like `3.8.0` or you could point to alpha/beta version like `3.8.0-alpha1`. 
+- Change the version in front of the `Rokt-Widget` on `podfile` c. You could point to a stable version like `4.8.0` or you could point to alpha/beta version like `4.8.0-alpha1`.
 - run `pod install` in terminal on the main folder where podfile exists.
 
 ## How to release the app
 - Update `Version` and `Build` in RoktDemo target
 - Commit & push and merge it to the release branch
-- Aprove the **hold** on **[CircleCI](https://app.circleci.com/pipelines/github/ROKT/rokt-demo-ios)** and wait till it finished
+- Unblock the **hold** on **Publish to TestFlight** in Buildkite and wait till it finished
 - Follow the instructions on **[Appstoreconnect](https://appstoreconnect.apple.com/)**
 
-#### Automated Release Pipeline
-The SDK can be released via the [Mobile Release Pipeline](https://github.com/ROKT/mobile-release-pipeline/tree/master). Follow the instructions in the Mobile Release Pipeline repo to release. You can still release the app manually by following the steps in the previous section.
+### Automated Release Pipeline
+The SDK can be released via the **Mobile Release Pipeline**. Follow the instructions in the Mobile Release Pipeline repo to release. You can still release the app manually by following the steps in the previous section.
 
 ### Note
-To get the CircleCI user access, please ask it from Rokt SRE team.
 
-To get Appstoreconnect user access, please ask it from danial.motahari@rokt.com or dj.seo@rokt.com
+To get Appstoreconnect user access, please ask it from <dj.seo@rokt.com>, <danial.motahari@rokt.com> or <thomson.thomas@rokt.com>
 
 ## FAQ
 
