@@ -64,7 +64,7 @@ In this application, following dependencies are used:
 
 ## How to test point to a version of iOS SDK
 To point to a certain version
-- Change the version in front of the `Rokt-Widget`on `podfile` c. You could point to a stable version like `4.8.0` or you could point to alpha/beta version like `4.8.0-alpha1`.
+- Change the version in front of the `Rokt-Widget` on `podfile` c. You could point to a stable version like `4.8.0` or you could point to alpha/beta version like `4.8.0-alpha1`.
 - run `pod install` in terminal on the main folder where podfile exists.
 
 ## How to release the app
