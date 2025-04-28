@@ -41,6 +41,9 @@ Resources: All the other resources of the application is located in Resources.
 ## How to setup the environment?
 
 - run `pod install` in terminal on the main folder where podfile exists.
+- open RoktDemo.xcworkspace
+- click File -> Packages -> Reset Package Caches in Xcode
+- click File -> Packages -> Resolve Package Versions in Xcode
 
 ## How to run locally?
 
