@@ -60,7 +60,15 @@ struct HomePageView: View {
                         NavigationLink(
                             destination: LayoutDemoView(viewModel: LayoutDemoViewModel()),
                             label: {
-                                Text("Layout library")
+                                Text("Layout library in SwiftUI")
+                            })
+                        .buttonStyle(ButtonDefaultOutlined())
+                        .navigationBarTitle(Text(""))
+                        
+                        NavigationLink(
+                            destination: LayoutDemoUiViewControllerWrapper(localAppState: appState),
+                            label: {
+                                Text("Layout library in UIKit")
                             })
                         .buttonStyle(ButtonDefaultOutlined())
                         .navigationBarTitle(Text(""))
@@ -126,6 +134,19 @@ struct HomePageView: View {
                 }
             }
         }
+    }
+}
+
+// This is the SwiftUI wrapper that makes the UIKit view controller available to SwiftUI
+struct LayoutDemoUiViewControllerWrapper: UIViewControllerRepresentable {
+    let localAppState: AppState
+    
+    func makeUIViewController(context: Context) -> LayoutDemoUIView {
+        return LayoutDemoUIView(viewModel: LayoutDemoViewModel(), appState: localAppState)
+    }
+    
+    func updateUIViewController(_ uiViewController: LayoutDemoUIView, context: Context) {
+        // Update the view controller if needed
     }
 }
 
