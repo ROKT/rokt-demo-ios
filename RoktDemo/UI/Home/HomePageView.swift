@@ -107,7 +107,7 @@ struct HomePageView: View {
                     }.padding()
                     
                     NavigationLink(
-                        destination: LayoutDemoView(viewModel: LayoutDemoViewModel()),
+                        destination: LayoutDemoUiViewControllerWrapper(localAppState: appState),
                         isActive: $navigateToLayoutDemo,
                         label: {
                             EmptyView()

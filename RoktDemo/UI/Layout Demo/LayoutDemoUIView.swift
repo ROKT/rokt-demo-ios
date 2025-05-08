@@ -16,6 +16,7 @@ import SwiftUI
 import CodeScanner
 import Rokt_Widget
 import AVFoundation
+import Combine
 
 struct CodeScannerSwiftUIView: View {
     let codeTypes: [AVMetadataObject.ObjectType]
@@ -49,7 +50,8 @@ class CodeScannerWrapper: UIHostingController<CodeScannerSwiftUIView> {
 }
 
 class LayoutDemoUIView: UIViewController {
-    public let viewModel: LayoutDemoViewModel
+    private var viewModel: LayoutDemoViewModel
+    private var cancellables = Set<AnyCancellable>()
     private let appState: AppState
     
     private let scrollView: UIScrollView = {
@@ -108,9 +110,13 @@ class LayoutDemoUIView: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupConstraints()
-        //setupObservers()
+        setupObservers()
         
         scanButton.addTarget(self, action: #selector(scanButtonTapped), for: .touchUpInside)
+
+        if (appState.previewParameterString != nil) {
+            self.viewModel.parseQRcodeResult(appState.previewParameterString!)
+        }
     }
     
     private func setupUI() {
@@ -151,6 +157,14 @@ class LayoutDemoUIView: UIViewController {
             roktEmbeddedView.heightAnchor.constraint(equalToConstant: 0),
             roktEmbeddedView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
+    }
+    
+    private func setupObservers() {
+        viewModel.$uiState
+            .sink { [weak self] state in
+                self?.handleUIStateChange(state)
+            }
+            .store(in: &cancellables)
     }
     
     @objc private func scanButtonTapped() {
