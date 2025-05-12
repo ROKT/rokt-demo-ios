@@ -4,7 +4,7 @@ This app distributed internally via [TestFlight](https://developer.apple.com/tes
 
 
 ## Resident Experts
-- Danial Motahari - <danial.motahari@rokt.com>
+- James Newman - <james.newman@rokt.com>
 - Thomson Thomas - <thomson.thomas@rokt.com>
 
 
