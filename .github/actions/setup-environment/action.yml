@@ -1,0 +1,26 @@
+name: Setup Environment
+description: Setup environment for the iOS project
+
+inputs:
+  xcode-version:
+    description: Xcode version to use
+    required: false
+    default: "16.2"
+  ruby-version:
+    description: Ruby version to use
+    required: false
+    default: 3.2.2
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Xcode ${{ inputs.xcode-version }}
+      uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd #1.6.0
+      with:
+        xcode-version: ${{ inputs.xcode-version }}
+
+    - name: Setup ruby ${{ inputs.ruby-version }}
+      uses: ruby/setup-ruby@13e7a03dc3ac6c3798f4570bfead2aed4d96abfb #v1.244.0
+      with:
+        ruby-version: ${{ inputs.ruby-version }}
+        bundler-cache: true

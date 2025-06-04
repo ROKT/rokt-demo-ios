@@ -1,1 +1,14 @@
 Pods/
+
+.build/
+RoktDemo.xcodeproj/project.xcworkspace/xcshareddata/
+RoktDemo.xcodeproj/project.xcworkspace/xcuserdata/
+RoktDemo.xcworkspace/xcshareddata/
+RoktDemo.xcworkspace/xcuserdata/
+
+.DS_Store
+
+vendor/
+.bundle/
+fastlane/*.xml
+fastlane/test_output/

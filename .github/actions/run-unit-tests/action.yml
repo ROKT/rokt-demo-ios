@@ -1,0 +1,12 @@
+name: Run Unit Tests
+description: Runs unit tests for iOS Demo App
+
+runs:
+  using: composite
+  steps:
+    - name: Run unit tests
+      shell: bash
+      run: |
+        bundle install --path vendor/bundle
+        bundle exec pod install --verbose --repo-update
+        bundle exec fastlane test

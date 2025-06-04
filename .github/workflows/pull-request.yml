@@ -1,0 +1,41 @@
+name: Pull Request
+
+on:
+  push:
+    branches:
+      - main
+      - release/*
+      - feature/SQDSDKS-7368-publish-demo-app # TODO:Remove this after testing
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: read
+  checks: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest-xlarge
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #4.2.2
+
+      - uses: ./.github/actions/setup-environment
+
+      - uses: ./.github/actions/run-unit-tests
+
+  pr-notifiy:
+    if: >
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.draft == false
+    needs: build
+    name: Notify GChat
+    uses: ROKT/rokt-workflows/.github/workflows/oss_pr_opened_notification.yml@main
+    secrets:
+      gchat_webhook: ${{ secrets.GCHAT_PRS_WEBHOOK }}
