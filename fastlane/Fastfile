@@ -114,4 +114,29 @@ platform :ios do
     )
   end
 
+  desc "Build IPA"
+  lane :build_ipa do
+    certificates(
+      use_temporary_keychain: options[:use_temporary_keychain],
+      refresh_certificates: options[:refresh_certificates]
+    )
+
+    puts "********* BUILD_NUMBER: #{BUILD_NUMBER}"
+
+    increment_build_number(
+        build_number: BUILD_NUMBER
+    )
+
+    gym(
+      workspace: "RoktDemo.xcworkspace",
+      scheme: "RoktSDKDemo",
+      configuration: "Release",
+      clean: true,
+      export_method: "app-store",
+      export_team_id: ENV["DEVELOPMENT_TEAM_ID"]
+    )
+
+    build_app(workspace: "RoktDemo.xcworkspace", scheme: "RoktSDKDemo")
+  end
+
 end
