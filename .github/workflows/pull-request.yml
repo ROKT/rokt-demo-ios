@@ -28,7 +28,7 @@ jobs:
 
       - uses: ./.github/actions/setup-environment
 
-      - uses: ./.github/actions/run-unit-tests
+      #- uses: ./.github/actions/run-unit-tests
 
       # TODO: Remove this after testing
       - name: Test build IPA

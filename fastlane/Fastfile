@@ -115,7 +115,7 @@ platform :ios do
   end
 
   desc "Build IPA"
-  lane :build_ipa do
+  lane :build_ipa do |options|
     certificates(
       use_temporary_keychain: options[:use_temporary_keychain],
       refresh_certificates: options[:refresh_certificates]
