@@ -127,13 +127,20 @@ platform :ios do
         build_number: BUILD_NUMBER
     )
 
+    puts "********* New build number: #{BUILD_NUMBER}"
+
+    settings_to_override = {
+    }
+
     gym(
-      workspace: "RoktDemo.xcworkspace",
-      scheme: "RoktSDKDemo",
-      configuration: "Release",
-      clean: true,
-      export_method: "app-store",
-      export_team_id: ENV["DEVELOPMENT_TEAM_ID"]
+        verbose: true,
+        workspace: "RoktDemo.xcworkspace",
+        configuration: "Release",
+        scheme: "RoktDemo",
+        xcargs: settings_to_override,
+        clean: true,
+        export_method: "app-store",
+        export_team_id: ENV["DEVELOPMENT_TEAM_ID"]
     )
 
     build_app(workspace: "RoktDemo.xcworkspace", scheme: "RoktSDKDemo")

@@ -31,21 +31,26 @@ jobs:
       #- uses: ./.github/actions/run-unit-tests
 
       # TODO: Remove this after testing
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
+        with:
+            app-id: ${{ secrets.SDK_RELEASE_GITHUB_APP_ID }}
+            private-key: ${{ secrets.SDK_RELEASE_GITHUB_APP_PRIVATE_KEY }}
+            owner: ${{ github.repository_owner }}
+            repositories: |
+                ios-match-certificates
       - name: Test build IPA
         env:
           DEVELOPMENT_TEAM_ID: ${{ secrets.DEVELOPMENT_TEAM_ID }}
-          KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-          BUILD_NUMBER: ${{ github.event.pull_request.number }}
+          BUILD_NUMBER: ${{ github.run_number }}
           APPSTORE_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
           APPSTORE_ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
           APPSTORE_KEY_CONTENT_B64: ${{ secrets.APPSTORE_KEY_CONTENT_B64 }}
-          MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
-          MATCH_GIT_BRANCH: ${{ secrets.MATCH_GIT_BRANCH }}
-          MATCH_USERNAME: ${{ secrets.MATCH_USERNAME }}
+          MATCH_GIT_URL: https://x-access-token:${{ steps.generate-token.outputs.token }}@github.com/ROKT/ios-match-certificates.git
         shell: bash
         run: |
-          bundle exec fastlane build_ipa refresh_certificates:false use_temporary_keychain:true
+          bundle exec fastlane build_ipa use_temporary_keychain:true refresh_certificates:true
           ls -al
           find . -name "*.ipa"
 
