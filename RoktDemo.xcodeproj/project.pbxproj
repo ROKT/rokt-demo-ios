@@ -133,6 +133,11 @@
 		58A97A762654DD550092B598 /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D7ACA262959CE0041D81C /* ScreenModel.swift */; };
 		58CF380E2664A72C00DCE317 /* CustomerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380D2664A72C00DCE317 /* CustomerDetailsView.swift */; };
 		58CF38102664C0AC00DCE317 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */; };
+		7EAD606E2DCA5470009EC6DB /* LayoutDemoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD606D2DCA5470009EC6DB /* LayoutDemoUIView.swift */; };
+		7EAD60702DCA5932009EC6DB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD606F2DCA5932009EC6DB /* UIFont+Extensions.swift */; };
+		7EAD60712DCA5932009EC6DB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD606F2DCA5932009EC6DB /* UIFont+Extensions.swift */; };
+		7EAD60732DCA59FD009EC6DB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */; };
+		7EAD60742DCA59FD009EC6DB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */; };
 		B6CD0B1AE172CBDDC00EACAC /* Pods_RoktDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D125FB14E3308801F7740E8B /* Pods_RoktDemoTests.framework */; };
 		E538D348A2687F4EA1D50E23 /* Pods_RoktDemo_RoktDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22038E3F906EE5EF048CEA59 /* Pods_RoktDemo_RoktDemoUITests.framework */; };
 		EB7AFEDD6A669A0A2DDA59E6 /* Pods_RoktDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60C53FAF630798F3014ACC /* Pods_RoktDemo.framework */; };
@@ -257,6 +262,9 @@
 		58CF380F2664C0AC00DCE317 /* CustomerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewModel.swift; sourceTree = "<group>"; };
 		5B56AE41CA89F4AAB7E8E9AC /* Pods-RoktDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		75B3C6172D0A96F5FF963B24 /* Pods-RoktDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RoktDemoTests/Pods-RoktDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		7EAD606D2DCA5470009EC6DB /* LayoutDemoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDemoUIView.swift; sourceTree = "<group>"; };
+		7EAD606F2DCA5932009EC6DB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		93924EF1D0D56B2CC74E1907 /* Pods-RoktDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.debug.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0D2A894609333F7F084377 /* Pods-RoktDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoktDemo.release.xcconfig"; path = "Target Support Files/Pods-RoktDemo/Pods-RoktDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D125FB14E3308801F7740E8B /* Pods_RoktDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoktDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -542,6 +550,7 @@
 		25747A012A70D899009C5B69 /* Layout Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7EAD606D2DCA5470009EC6DB /* LayoutDemoUIView.swift */,
 				25747A022A70D909009C5B69 /* LayoutDemoView.swift */,
 				25747A0A2A723AD9009C5B69 /* LayoutDemoViewModel.swift */,
 			);
@@ -729,6 +738,8 @@
 		589922A72615442C00A58DA3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */,
+				7EAD606F2DCA5932009EC6DB /* UIFont+Extensions.swift */,
 				5899226A2613F63800A58DA3 /* Font+Extensions.swift */,
 				2576572A261D4CBF003F3D26 /* Color+Extensions.swift */,
 				2524C9E52697C23E0091E01A /* Binding+Extensions.swift */,
@@ -1002,6 +1013,7 @@
 				251E3317274F297E00308A18 /* PreDefined3View.swift in Sources */,
 				25747A032A70D909009C5B69 /* LayoutDemoView.swift in Sources */,
 				256EB779261C206A00B959EF /* PreDefinedScreenModel.swift in Sources */,
+				7EAD606E2DCA5470009EC6DB /* LayoutDemoUIView.swift in Sources */,
 				25A0266626A51B860005CFED /* ErrorViewModel.swift in Sources */,
 				25FA8C672BE1D5CB00E750A6 /* SettingView.swift in Sources */,
 				2576572B261D4CBF003F3D26 /* Color+Extensions.swift in Sources */,
@@ -1030,6 +1042,7 @@
 				255D7AC326290F5F0041D81C /* DemoItemSummaryViewModel.swift in Sources */,
 				25747A0D2A723EDF009C5B69 /* LayoutDemoUIState.swift in Sources */,
 				2574716C261EB5C300B8C0C7 /* NavigationBarTransparent.swift in Sources */,
+				7EAD60712DCA5932009EC6DB /* UIFont+Extensions.swift in Sources */,
 				25628DE8269FFBCA00B12963 /* ActivityIndicatorView.swift in Sources */,
 				5899229226141F9100A58DA3 /* AboutRoktContentModel.swift in Sources */,
 				251E330C274F0A9600308A18 /* PreDefinedScreen2Model.swift in Sources */,
@@ -1050,6 +1063,7 @@
 				25583904261FE5D600AF7FAE /* DemoItemView.swift in Sources */,
 				252842D0263BB82E0010114A /* DetailTextFieldView.swift in Sources */,
 				2524C9E62697C23F0091E01A /* Binding+Extensions.swift in Sources */,
+				7EAD60732DCA59FD009EC6DB /* UIColor+Extensions.swift in Sources */,
 				25747A0B2A723AD9009C5B69 /* LayoutDemoViewModel.swift in Sources */,
 				256D417E26FD4D0B008D7879 /* EmailView.swift in Sources */,
 				25C7098026E9D4F30006C18C /* DetailTextView.swift in Sources */,
@@ -1097,6 +1111,7 @@
 				251E32ED274B232D00308A18 /* DescriptionItem.swift in Sources */,
 				251E32E5274B223800308A18 /* RoktEmbeddedSwiftUIView.swift in Sources */,
 				251E32DA274B0EEB00308A18 /* ConfirmationView.swift in Sources */,
+				7EAD60702DCA5932009EC6DB /* UIFont+Extensions.swift in Sources */,
 				58A97A6F2654CF850092B598 /* AccountDetailsViewModelTests.swift in Sources */,
 				251E3311274F0D5B00308A18 /* PreDefinedScreen3Model.swift in Sources */,
 				2575CCBA26536A84005226C5 /* ValidationServiceTests.swift in Sources */,
@@ -1116,6 +1131,7 @@
 				251E32E0274B21B800308A18 /* DemoLibraryViewModel.swift in Sources */,
 				251E32EA274B230E00308A18 /* PreDefinedScreenModel.swift in Sources */,
 				251E32F1274B238200308A18 /* DetailTextView.swift in Sources */,
+				7EAD60742DCA59FD009EC6DB /* UIColor+Extensions.swift in Sources */,
 				25D7363F26E0799500495FFF /* Constants.swift in Sources */,
 				251E32F2274B24D800308A18 /* DetailTextFieldView.swift in Sources */,
 			);

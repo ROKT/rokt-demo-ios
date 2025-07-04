@@ -20,7 +20,7 @@ class LayoutDemoViewModel: ObservableObject {
     @Published var uiState = LayoutDemoUIState.initiated
     var preview: PreviewData? = nil
     
-    private var cancellable: AnyCancellable?
+    public var cancellable: AnyCancellable?
     
     func parseQRcodeResult(_ result: String) {
         let decoder = JSONDecoder()
