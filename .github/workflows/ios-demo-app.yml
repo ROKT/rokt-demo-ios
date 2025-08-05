@@ -1,0 +1,46 @@
+name: Demo App Publishing
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish-example-app:
+    runs-on: macos-latest-xlarge
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #4.2.2
+      - uses: ./.github/actions/setup-environment
+
+      - name: Set SKIP_INSTALL to YES
+        run: |
+          .github/scripts/set_skip_install_to_yes.sh
+
+      - name: Generate token for enterprise certs
+        id: generate-token
+        uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
+        with:
+          app-id: ${{ secrets.ENTERPRISE_MATCH_GITHUB_APP_ID }}
+          private-key: ${{ secrets.ENTERPRISE_MATCH_GITHUB_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            ios-match-certificates
+
+      - name: Publish Example App via Apple Enterprise + Firebase
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_URL: https://x-access-token:${{ steps.generate-token.outputs.token }}@github.com/ROKT/ios-match-certificates.git
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }} # TODO: Add Firebase token
+          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+        run: |
+          bundle install --path vendor/bundle
+          bundle exec fastlane ios enterprise_firebase use_temporary_keychain:true
+
+      - name: Upload IPA artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rokt_demo_ios_app.ipa
+          path: RoktDemo/rokt_demo_ios_app.ipa
