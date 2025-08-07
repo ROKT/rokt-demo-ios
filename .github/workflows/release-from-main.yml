@@ -3,6 +3,10 @@ name: Release iOS Demo App
 on:
   push:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -29,7 +33,7 @@ jobs:
       - name: Install provisioning profile
         run: |
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          echo "${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+          echo "${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
 
       - name: setup-cocoapods
         uses: maxim-lobanov/setup-cocoapods@v1
@@ -43,16 +47,16 @@ jobs:
           xcodebuild -workspace RoktDemo.xcworkspace \
             -scheme RoktDemo \
             -configuration Release \
-            -archivePath /build/RoktDemo.xcarchive \
+            -archivePath build/RoktDemo.xcarchive \
             archive
 
           xcodebuild -exportArchive \
-            -archivePath /build/RoktDemo.xcarchive \
+            -archivePath build/RoktDemo.xcarchive \
             -exportOptionsPlist ExportOptions.plist \
-            -exportPath /build
+            -exportPath build
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
           name: RoktDemo.ipa
-          path: /build/RoktDemo.ipa
+          path: build/RoktDemo.ipa
