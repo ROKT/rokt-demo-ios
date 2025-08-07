@@ -1,0 +1,58 @@
+name: Release iOS Demo App
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode 15
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "15.4"
+
+      - name: Setup keychain and import certificate
+        run: |
+          security create-keychain -p "" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "" build.keychain
+          echo "${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_P12_BASE64 }}" | base64 --decode > certificate.p12
+          security import certificate.p12 -k build.keychain -P "${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_PASSPHRASE }}" -T /usr/bin/codesign
+
+      - name: Install provisioning profile
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+
+      - name: setup-cocoapods
+        uses: maxim-lobanov/setup-cocoapods@v1
+        with:
+          podfile-path: Podfile.lock
+
+      - run: pod install
+
+      - name: Build the app
+        run: |
+          xcodebuild -workspace RoktDemo.xcworkspace \
+            -scheme RoktDemo \
+            -configuration Release \
+            -archivePath /build/RoktDemo.xcarchive \
+            archive
+
+          xcodebuild -exportArchive \
+            -archivePath /build/RoktDemo.xcarchive \
+            -exportOptionsPlist ExportOptions.plist \
+            -exportPath /build
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: RoktDemo.ipa
+          path: /build/RoktDemo.ipa
