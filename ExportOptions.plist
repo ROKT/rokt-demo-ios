@@ -17,7 +17,5 @@
     <string>export</string>
     <key>compileBitcode</key>
     <false/>
-    <key>thinning</key>
-    <string>none</string>
 </dict>
 </plist>
