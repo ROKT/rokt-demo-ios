@@ -33,8 +33,39 @@ jobs:
         with:
           changelog_file: CHANGELOG.md
 
-      - name: Create Release
-        uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2.3.2
+      - name: Setup keychain and import certificate
+        run: |
+          security create-keychain -p "" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "" build.keychain
+          echo "${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_P12_BASE64 }}" | base64 --decode > certificate.p12
+          security import certificate.p12 -k build.keychain -P "${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_PASSPHRASE }}" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" build.keychain
+
+      - name: Install provisioning profile
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+
+      - run: pod install
+
+      - name: Archive the app
+        run: |
+          xcodebuild -workspace RoktDemo.xcworkspace \
+            -scheme RoktDemo \
+            -configuration Release \
+            -archivePath build/RoktDemo.xcarchive \
+            archive | xcpretty
+
+      - name: Export the app
+        run: |
+          xcodebuild -exportArchive \
+            -archivePath build/RoktDemo.xcarchive \
+            -exportOptionsPlist ExportOptions.plist \
+            -exportPath build | xcpretty
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
         with:
           tag_name: ${{ steps.version-file.outputs.release-version }}
           name: Release ${{ steps.version-file.outputs.release-version }}
