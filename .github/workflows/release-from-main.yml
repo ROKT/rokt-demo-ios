@@ -37,10 +37,6 @@ jobs:
 
       - run: pod install
 
-      - name: Debug Pod Script Path
-        run: |
-          ls -la "${PODS_ROOT}/Target Support Files/Pods-RoktDemo"
-
       - name: Archive the app
         run: |
           xcodebuild -workspace RoktDemo.xcworkspace \
