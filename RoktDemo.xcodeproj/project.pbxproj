@@ -931,9 +931,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo-RoktDemoUITests/Pods-RoktDemo-RoktDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -992,9 +996,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RoktDemo/Pods-RoktDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1300,6 +1308,7 @@
 				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"RoktDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = EX8W57PJ9C;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9RE44VD454;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RoktDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1311,6 +1320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Rokt demo apps";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1327,6 +1337,7 @@
 				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"RoktDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = EX8W57PJ9C;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9RE44VD454;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RoktDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1338,6 +1349,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Rokt demo apps";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
