@@ -20,6 +20,9 @@ inputs:
   release_notes:
     description: The release notes to use for the upload
     required: false
+  firebase_token:
+    description: Firebase CI token (pass from workflow secrets)
+    required: false
 
 runs:
   using: composite
@@ -56,7 +59,7 @@ runs:
     - name: Upload IPA
       shell: bash
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_TOKEN: ${{ inputs.firebase_token }}
       run: |
         firebase appdistribution:distribute \
           "${{ inputs.ipa_path }}" \
