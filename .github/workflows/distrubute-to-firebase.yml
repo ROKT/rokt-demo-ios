@@ -2,6 +2,9 @@ name: Distribute to Firebase
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - feat/SQDSDKS-7521-*
 
 permissions:
   id-token: write
