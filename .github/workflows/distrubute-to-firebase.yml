@@ -1,0 +1,36 @@
+
+name: Distribute to Firebase
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build:
+    uses: ./.github/workflows/release-from-main.yml
+    secrets: inherit
+
+  publish-build-to-firebase:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download IPA artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.ipa_artifact_name }}
+          path: .
+
+      - name: Upload .ipa to Firebase App Distribution
+        uses: ./.github/actions/upload-ipa
+        with:
+          ipa_path: "*.ipa"
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          firebase_app_id: ${{ secrets.FIREBASE_APP_ID }}
+          testing_groups: ${{ secrets.TESTING_GROUPS }}

@@ -1,6 +1,11 @@
 name: Release iOS Demo App
 
 on:
+  workflow_call:
+    outputs:
+      ipa_artifact_name:
+        description: "The artifact name of the generated IPA"
+        value: ${{ jobs.build.outputs.ipa_artifact_name }}
   push:
 
 concurrency:
@@ -52,6 +57,9 @@ jobs:
             -archivePath build/RoktDemo.xcarchive \
             -exportOptionsPlist ExportOptions.plist \
             -exportPath build | xcpretty
+
+      - id: set-artifact
+        run: echo "name=RoktDemo.ipa" >> "$GITHUB_OUTPUT"
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
