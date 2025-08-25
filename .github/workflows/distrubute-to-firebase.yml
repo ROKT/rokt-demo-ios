@@ -34,7 +34,7 @@ jobs:
             path: build/RoktDemo.ipa
 
   publish-build-to-firebase:
-    runs-on: ubuntu-latest
+    runs-on: macos-15
     needs: build-ipa
 
     steps:
