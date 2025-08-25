@@ -1,0 +1,16 @@
+name: Setup Xcode
+description: Sets up the Xcode environment for the project
+
+inputs:
+  xcode-version:
+    description: "Version of Xcode to install"
+    required: false
+    default: "16.4"
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ inputs.xcode-version }}
