@@ -1,0 +1,110 @@
+name: Build IPA
+description: Builds the IPA for the project
+
+inputs:
+  certificate_p12_base64:
+    description: Base64-encoded .p12 signing certificate
+    required: true
+  certificate_password:
+    description: Password for the .p12 certificate
+    required: true
+  provisioning_profile_base64:
+    description: Base64-encoded .mobileprovision file
+    required: true
+  xcode_version:
+    description: Xcode version to use
+    required: false
+    default: "16.4"
+  workspace:
+    description: Path to the .xcworkspace
+    required: false
+    default: "RoktDemo.xcworkspace"
+  scheme:
+    description: Xcode scheme to build
+    required: false
+    default: "RoktDemo"
+  configuration:
+    description: Build configuration
+    required: false
+    default: "Release"
+  archive_path:
+    description: Output path for the .xcarchive
+    required: false
+    default: "build/RoktDemo.xcarchive"
+  export_options_plist:
+    description: Path to ExportOptions.plist (should use method=enterprise)
+    required: false
+    default: "ExportOptions.plist"
+  export_path:
+    description: Directory to export the IPA into
+    required: false
+    default: "build"
+  use_cocoapods:
+    description: Run `pod install` before building
+    required: false
+    default: "true"
+
+outputs:
+  ipa_path:
+    description: The path to the generated IPA
+    value: ${{ steps.set-outputs.outputs.ipa_path }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ inputs.xcode_version }}
+
+    - name: Configure keychain & import certificate
+      shell: bash
+      run: |
+        security create-keychain -p "" build.keychain
+        security default-keychain -s build.keychain
+        security unlock-keychain -p "" build.keychain
+        echo "${{ inputs.certificate_p12_base64 }}" | base64 --decode > certificate.p12
+        security import certificate.p12 -k build.keychain -P "${{ inputs.certificate_password }}" -T /usr/bin/codesign
+        security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" build.keychain
+
+    - name: Install provisioning profile
+      shell: bash
+      run: |
+        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+        echo "${{ inputs.provisioning_profile_base64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+
+    - name: Install CocoaPods
+      if: ${{ inputs.use_cocoapods == 'true' }}
+      shell: bash
+      run: |
+        gem install cocoapods --no-document
+        pod install
+
+    - name: Archive
+      shell: bash
+      run: |
+        xcodebuild -workspace "${{ inputs.workspace }}" \
+          -scheme "${{ inputs.scheme }}" \
+          -configuration "${{ inputs.configuration }}" \
+          -archivePath "${{ inputs.archive_path }}" \
+          archive
+
+    - name: Export IPA
+      shell: bash
+      run: |
+        xcodebuild -exportArchive \
+          -archivePath "${{ inputs.archive_path }}" \
+          -exportOptionsPlist "${{ inputs.export_options_plist }}" \
+          -exportPath "${{ inputs.export_path }}"
+
+    - name: Set outputs
+      id: set-outputs
+      shell: bash
+      run: |
+        set -e
+        IPA="$(ls -1 "${{ inputs.export_path }}"/*.ipa | head -n 1)"
+        if [ -z "$IPA" ]; then
+          echo "No IPA found in ${{ inputs.export_path }}" >&2
+          exit 1
+        fi
+        echo "ipa_path=$IPA" >> "$GITHUB_OUTPUT"
