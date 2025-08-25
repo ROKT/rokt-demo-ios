@@ -48,7 +48,6 @@ runs:
         if [ -n "${{ inputs.release_notes }}" ]; then
           echo "release_text=${{ inputs.release_notes }}" >> $GITHUB_OUTPUT
         else
-          # default: use the marketing version + build number from Info.plist
           version=$( /usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" RoktDemo/Info.plist )
           build=$( /usr/libexec/PlistBuddy -c "Print :CFBundleVersion" RoktDemo/Info.plist )
           echo "release_text=Version $version ($build)" >> $GITHUB_OUTPUT
