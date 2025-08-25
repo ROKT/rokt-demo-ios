@@ -71,10 +71,12 @@ To point to a certain version
 - run `pod install` in terminal on the main folder where podfile exists.
 
 ## How to release the app
+> [!NOTE]
+> Testers in `TESTING_GROUPS` repo secret will get the new build.
+
 - Update `Version` and `Build` in RoktDemo target
-- Commit & push and merge it to the release branch
-- Unblock the **hold** on **Publish to TestFlight** in Buildkite and wait till it finished
-- Follow the instructions on **[Appstoreconnect](https://appstoreconnect.apple.com/)**
+- Commit & push
+- Dispatch the workflow `Distribute to Firebase` from the Actions tab on GitHub
 
 ### Automated Release Pipeline
 The SDK can be released via the **Mobile Release Pipeline**. Follow the instructions in the Mobile Release Pipeline repo to release. You can still release the app manually by following the steps in the previous section.
