@@ -15,7 +15,7 @@ jobs:
     runs-on: macos-15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Set up Xcode
         uses: ./.github/actions/setup-xcode
@@ -28,9 +28,9 @@ jobs:
           provisioning_profile_base64: ${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE_BASE64 }}
 
       - name: Upload IPA
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-            name: RoktDemo.ipa
+            name: release-ipa
             path: build/RoktDemo.ipa
 
   publish-build-to-firebase:
@@ -47,10 +47,10 @@ jobs:
           name: release-ipa
           path: .
 
-      - name: Upload APK
+      - name: Upload IPA
         uses: ./.github/actions/upload-ipa
         with:
-          ipa_path: RoktDemo.ipa
+          ipa_path: build/RoktDemo.ipa
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           firebase_app_id: ${{ secrets.FIREBASE_APP_ID }}
