@@ -11,6 +11,10 @@ inputs:
   provisioning_profile_base64:
     description: Base64-encoded provisioning profile
     required: true
+  export_options_plist:
+    description: Path to ExportOptions.plist
+    required: false
+    default: ExportOptions.plist
 
 runs:
   using: composite
