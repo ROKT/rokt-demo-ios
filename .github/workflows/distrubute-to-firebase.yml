@@ -50,7 +50,7 @@ jobs:
       - name: Upload IPA
         uses: ./.github/actions/upload-ipa
         with:
-          ipa_path: build/RoktDemo.ipa
+          ipa_path: RoktDemo.ipa
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           firebase_app_id: ${{ secrets.FIREBASE_APP_ID }}
