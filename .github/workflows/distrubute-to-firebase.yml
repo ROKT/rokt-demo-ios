@@ -2,10 +2,7 @@ name: Distribute to Firebase
 
 on:
   workflow_dispatch:
-
-  #remove this after testing
-  pull_request:
-
+    
 permissions:
   id-token: write
   contents: read
