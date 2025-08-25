@@ -55,6 +55,8 @@ runs:
 
     - name: Upload IPA
       shell: bash
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       run: |
         firebase appdistribution:distribute \
           "${{ inputs.ipa_path }}" \
