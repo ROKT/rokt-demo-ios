@@ -1,65 +1,34 @@
 name: Release iOS Demo App
 
 on:
-  workflow_call:
-    outputs:
-      ipa_artifact_name:
-        description: "The artifact name of the generated IPA"
-        value: ${{ jobs.build.outputs.ipa_artifact_name }}
   push:
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 permissions:
+  id-token: write
   contents: write
 
 jobs:
-  build:
+  build-ipa:
     runs-on: macos-15
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Xcode
-        uses: maxim-lobanov/setup-xcode@v1
+        uses: ./.github/actions/setup-xcode
+
+      - name: Build IPA
+        uses: ./.github/actions/build-ipa
         with:
-          xcode-version: 16.4
-
-      - name: Setup keychain and import certificate
-        run: |
-          security create-keychain -p "" build.keychain
-          security default-keychain -s build.keychain
-          security unlock-keychain -p "" build.keychain
-          echo "${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_P12_BASE64 }}" | base64 --decode > certificate.p12
-          security import certificate.p12 -k build.keychain -P "${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_PASSPHRASE }}" -T /usr/bin/codesign
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" build.keychain
-
-      - name: Install provisioning profile
-        run: |
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          echo "${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
-
-      - run: pod install
-
-      - name: Archive the app
-        run: |
-          xcodebuild -workspace RoktDemo.xcworkspace \
-            -scheme RoktDemo \
-            -configuration Release \
-            -archivePath build/RoktDemo.xcarchive \
-            archive | xcpretty
-
-      - name: Export the app
-        run: |
-          xcodebuild -exportArchive \
-            -archivePath build/RoktDemo.xcarchive \
-            -exportOptionsPlist ExportOptions.plist \
-            -exportPath build | xcpretty
-
-      - id: set-artifact
-        run: echo "name=RoktDemo.ipa" >> "$GITHUB_OUTPUT"
+          certificate_p12_base64: ${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_P12_BASE64 }}
+          certificate_password: ${{ secrets.MPARTICLE_ENTERPRISE_CERTIFICATE_PASSPHRASE }}
+          provisioning_profile_base64: ${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE_BASE64 }}
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
