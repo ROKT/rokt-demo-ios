@@ -20,9 +20,6 @@ inputs:
   release_notes:
     description: The release notes to use for the upload
     required: false
-  firebase_token:
-    description: Firebase CI token (pass from workflow secrets)
-    required: false
 
 runs:
   using: composite
@@ -39,10 +36,7 @@ runs:
     - name: Authenticate with Google Cloud
       uses: google-github-actions/auth@71f986410dfbc7added4569d411d040a91dc6935 # v2.1.8
       with:
-        create_credentials_file: true
-        export_environment_variables: true
-        service_account: ${{ inputs.service_account }}
-        workload_identity_provider: ${{ inputs.workload_identity_provider }}
+        credentials_json: ${{ inputs.service_account }}
 
     - name: Set release notes
       id: release-notes
@@ -58,8 +52,6 @@ runs:
 
     - name: Upload IPA
       shell: bash
-      env:
-        FIREBASE_TOKEN: ${{ inputs.firebase_token }}
       run: |
         firebase appdistribution:distribute \
           "${{ inputs.ipa_path }}" \

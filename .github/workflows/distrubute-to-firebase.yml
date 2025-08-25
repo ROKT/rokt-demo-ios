@@ -55,4 +55,3 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           firebase_app_id: ${{ secrets.FIREBASE_APP_ID }}
           testing_groups: ${{ secrets.TESTING_GROUPS }}
-          firebase_token: ${{ secrets.FIREBASE_TOKEN }}
