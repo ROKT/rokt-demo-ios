@@ -1,63 +1,24 @@
 name: Build IPA
-description: Builds the IPA for the project
+description: Builds the IPA for the iOS Demo App
 
 inputs:
   certificate_p12_base64:
-    description: Base64-encoded .p12 signing certificate
+    description: Base64-encoded p12 signing certificate
     required: true
   certificate_password:
-    description: Password for the .p12 certificate
+    description: Password for the signing certificate
     required: true
   provisioning_profile_base64:
-    description: Base64-encoded .mobileprovision file
+    description: Base64-encoded provisioning profile
     required: true
-  xcode_version:
-    description: Xcode version to use
-    required: false
-    default: "16.4"
-  workspace:
-    description: Path to the .xcworkspace
-    required: false
-    default: "RoktDemo.xcworkspace"
-  scheme:
-    description: Xcode scheme to build
-    required: false
-    default: "RoktDemo"
-  configuration:
-    description: Build configuration
-    required: false
-    default: "Release"
-  archive_path:
-    description: Output path for the .xcarchive
-    required: false
-    default: "build/RoktDemo.xcarchive"
-  export_options_plist:
-    description: Path to ExportOptions.plist (should use method=enterprise)
-    required: false
-    default: "ExportOptions.plist"
-  export_path:
-    description: Directory to export the IPA into
-    required: false
-    default: "build"
-  use_cocoapods:
-    description: Run `pod install` before building
-    required: false
-    default: "true"
-
-outputs:
-  ipa_path:
-    description: The path to the generated IPA
-    value: ${{ steps.set-outputs.outputs.ipa_path }}
 
 runs:
   using: composite
   steps:
-    - name: Set up Xcode
-      uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: ${{ inputs.xcode_version }}
+    - name: Setup Xcode
+      uses: ./.github/actions/setup-xcode
 
-    - name: Configure keychain & import certificate
+    - name: Setup keychain and import certificate
       shell: bash
       run: |
         security create-keychain -p "" build.keychain
@@ -73,38 +34,23 @@ runs:
         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
         echo "${{ inputs.provisioning_profile_base64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
 
-    - name: Install CocoaPods
-      if: ${{ inputs.use_cocoapods == 'true' }}
+    - name: Install CocoaPods dependencies
+      shell: bash
+      run: pod install
+
+    - name: Archive the app
       shell: bash
       run: |
-        gem install cocoapods --no-document
-        pod install
+        xcodebuild -workspace RoktDemo.xcworkspace \
+          -scheme RoktDemo \
+          -configuration Release \
+          -archivePath build/RoktDemo.xcarchive \
+          archive | xcpretty
 
-    - name: Archive
-      shell: bash
-      run: |
-        xcodebuild -workspace "${{ inputs.workspace }}" \
-          -scheme "${{ inputs.scheme }}" \
-          -configuration "${{ inputs.configuration }}" \
-          -archivePath "${{ inputs.archive_path }}" \
-          archive
-
-    - name: Export IPA
+    - name: Export the app
       shell: bash
       run: |
         xcodebuild -exportArchive \
-          -archivePath "${{ inputs.archive_path }}" \
-          -exportOptionsPlist "${{ inputs.export_options_plist }}" \
-          -exportPath "${{ inputs.export_path }}"
-
-    - name: Set outputs
-      id: set-outputs
-      shell: bash
-      run: |
-        set -e
-        IPA="$(ls -1 "${{ inputs.export_path }}"/*.ipa | head -n 1)"
-        if [ -z "$IPA" ]; then
-          echo "No IPA found in ${{ inputs.export_path }}" >&2
-          exit 1
-        fi
-        echo "ipa_path=$IPA" >> "$GITHUB_OUTPUT"
+          -archivePath build/RoktDemo.xcarchive \
+          -exportOptionsPlist ${{ inputs.export_options_plist }} \
+          -exportPath build | xcpretty
