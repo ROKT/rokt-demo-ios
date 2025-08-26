@@ -1,0 +1,62 @@
+name: Trigger release build to Firebase
+
+on:
+  repository_dispatch:
+    types:
+      - release-build
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  VERSION_NAME: ${{ github.event.client_payload.version_name }}
+  RELEASE_NOTES: ${{ github.event.client_payload.release_notes }}
+
+jobs:
+  update-version:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Update Podfile with new version
+        run: |
+          echo "Updating Podfile with new version $VERSION_NAME"
+          sed -i "s/pod 'Rokt-Widget', '~> .*'/pod 'Rokt-Widget', '~> $VERSION_NAME'/" Podfile
+          cat Podfile
+
+      - name: Install CocoaPods dependencies
+        run: pod install
+
+      - name: Update Xcode version
+        run: |
+          set -euo pipefail
+          : "${VERSION_NAME:?Missing VERSION_NAME}"
+          BUILD_NUMBER="${GITHUB_RUN_NUMBER:?Missing GITHUB_RUN_NUMBER}"
+      
+          PBXPROJ="$(find . -name 'project.pbxproj' -path '*/*.xcodeproj/*' | head -n1)"
+          /usr/bin/sed -i "" -E "s/(MARKETING_VERSION *= *)[^;]+/\\1${VERSION_NAME}/g" "$PBXPROJ"
+          /usr/bin/sed -i "" -E "s/(CURRENT_PROJECT_VERSION *= *)[^;]+/\\1${BUILD_NUMBER}/g" "$PBXPROJ"
+
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@3ff1caaa28b64c9cc276ce0a02e2ff584f3900c5 # v2.0.2
+        with:
+          app-id: ${{ secrets.SDK_RELEASE_GITHUB_APP_ID }}
+          private-key: ${{ secrets.SDK_RELEASE_GITHUB_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            rokt-demo-ios
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        with:
+            token: ${{ steps.generate-token.outputs.token }}
+            branch: release/${{ env.VERSION_NAME }}
+            commit-message: Update ROKT SDK version to ${{ env.VERSION_NAME }}
+            title: Update ROKT SDK version to ${{ env.VERSION_NAME }}
+            body: |
+                ${{ env.RELEASE_NOTES }}
+            base: main
