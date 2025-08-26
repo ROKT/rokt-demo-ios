@@ -77,6 +77,7 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           firebase_app_id: ${{ secrets.FIREBASE_APP_ID }}
           testing_groups: ${{ secrets.TESTING_GROUPS }}
+          release_notes: ${{ steps.release-notes.outputs.release_notes }}
 
       - name: Create GitHub release
         uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
