@@ -33,5 +33,58 @@ jobs:
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: RoktDemo.ipa
+          name: release-ipa
           path: build/RoktDemo.ipa
+
+  release-to-firebase-and-tag:
+    runs-on: macos-15
+    needs: build-ipa
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Download IPA artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: release-ipa
+          path: .
+
+      - name: Get version info
+        id: version-info
+        run: |
+          # Extract version name (CFBundleShortVersionString) and build number (CFBundleVersion) from Info.plist
+          VERSION_NAME=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" RoktDemo/Info.plist)
+          BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" RoktDemo/Info.plist)
+
+          echo "version_name=$VERSION_NAME" >> $GITHUB_OUTPUT
+          echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Get release notes
+        id: release-notes
+        run: |
+          # Get the commit message of the last merge
+          RELEASE_NOTES=$(git log -1 --pretty=%B)
+          # Escape newlines and quotes for JSON
+          RELEASE_NOTES=$(echo "$RELEASE_NOTES" | sed ':a;N;$!ba;s/\n/\\n/g' | sed 's/"/\\"/g')
+          echo "release_notes=$RELEASE_NOTES" >> $GITHUB_OUTPUT
+
+      - name: Upload IPA
+        uses: ./.github/actions/upload-ipa
+        with:
+          ipa_path: RoktDemo.ipa
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          firebase_app_id: ${{ secrets.FIREBASE_APP_ID }}
+          testing_groups: ${{ secrets.TESTING_GROUPS }}
+
+      - name: Create GitHub release
+        uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
+        with:
+          artifacts: RoktDemo.ipa
+          makeLatest: true
+          tag: ${{ steps.version-info.outputs.version_info }}
+          body: |
+            ## Release notes:
+            ${{ steps.release-notes.outputs.release_notes }}
+    
