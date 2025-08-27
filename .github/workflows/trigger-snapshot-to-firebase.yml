@@ -24,7 +24,7 @@ jobs:
       - name: Update Podfile with new version
         run: |
           echo "Updating Podfile with new version $VERSION_NAME"
-          sed -i "s/pod 'Rokt-Widget', '~> .*'/pod 'Rokt-Widget', '~> $VERSION_NAME'/" Podfile
+          sed -i "s/pod 'Rokt-Widget', '.*'/pod 'Rokt-Widget', '$VERSION_NAME'/" Podfile
           cat Podfile
 
       - name: Install CocoaPods dependencies
