@@ -1,0 +1,56 @@
+name: Upload IPA
+description: Uploads the IPA to Firebase App Distribution
+
+inputs:
+  ipa_path:
+    description: The path to the IPA file
+    required: true
+  service_account:
+    description: The service account to use for the upload
+    required: true
+  workload_identity_provider:
+    description: The workload identity provider to use for the upload
+    required: true
+  firebase_app_id:
+    description: The Firebase app ID to use for the upload
+    required: true
+  testing_groups:
+    description: The testing groups to use for the upload
+    required: true
+  release_notes:
+    description: The release notes to use for the upload
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node
+      uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+      with:
+        node-version: 18
+
+    - name: Install Firebase CLI
+      shell: bash
+      run: npm install -g firebase-tools
+
+    - name: Authenticate with Google Cloud
+      uses: google-github-actions/auth@71f986410dfbc7added4569d411d040a91dc6935 # v2.1.8
+      with:
+        credentials_json: ${{ inputs.service_account }}
+
+    - name: Set release notes
+      id: release-notes
+      shell: bash
+      run: |
+        if [ -n "${{ inputs.release_notes }}" ]; then
+          echo "release_text=${{ inputs.release_notes }}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Upload IPA
+      shell: bash
+      run: |
+        firebase appdistribution:distribute \
+          "${{ inputs.ipa_path }}" \
+          --app "${{ inputs.firebase_app_id }}" \
+          --groups "${{ inputs.testing_groups }}" \
+          --release-notes "${{ steps.release-notes.outputs.release_text }}"

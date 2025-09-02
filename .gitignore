@@ -1,6 +1,27 @@
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
+
+aws/
+Example/aws/
+Example/vendor/
+vendor/
+
 # Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xccheckout
+profile
+*.moved-aside
+DerivedData
+*.xcresult
 
 ## User settings
 xcuserdata/
@@ -17,6 +38,7 @@ playground.xcworkspace
 
 # Swift Package Manager
 .build/
+build/
 
 # CocoaPods
 Pods/
@@ -28,6 +50,7 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 fastlane/README.md
+fastlane/test_output/report.junit
 
 # Code Signing
 *.cer
@@ -38,6 +61,7 @@ certs/
 profiles/
 
 # Bundle
+.bundle
 .bundle/
 vendor/
 
