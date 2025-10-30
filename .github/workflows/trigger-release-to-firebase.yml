@@ -22,13 +22,9 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Update SPM package version
-        run: |
-          echo "Updating Rokt-Widget package version to $VERSION_NAME"
-          # Update the version requirement in project.pbxproj
-          PBXPROJ="$(find . -name 'project.pbxproj' -path '*/*.xcodeproj/*' | head -n1)"
-          # Update minimumVersion for Rokt-Widget package
-          /usr/bin/sed -i "" -E "s/(minimumVersion = )([0-9.]+)(.*Rokt-Widget)/\\1${VERSION_NAME}\\3/g" "$PBXPROJ" || \
-          /usr/bin/sed -i "" -E "s/(Rokt-Widget.*minimumVersion = )([0-9.]+)/\\1${VERSION_NAME}/g" "$PBXPROJ"
+        uses: ./.github/actions/update-spm-package
+        with:
+          version: ${{ env.VERSION_NAME }}
 
       - name: Update Xcode version
         run: |
