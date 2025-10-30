@@ -98,7 +98,7 @@ platform :ios do
 
     gym(
         verbose: true,
-        workspace: "RoktDemo.xcworkspace",
+        project: "RoktDemo.xcodeproj",
         configuration: "Release",
         scheme: "RoktDemo",
         xcargs: settings_to_override,
@@ -107,7 +107,7 @@ platform :ios do
         export_team_id: ENV["DEVELOPMENT_TEAM_ID"]
     )  
 
-    build_app(workspace: "RoktDemo.xcworkspace", scheme: "RoktSDKDemo")
+    build_app(project: "RoktDemo.xcodeproj", scheme: "RoktSDKDemo")
     testflight(
       skip_submission: true,
       skip_waiting_for_build_processing: true

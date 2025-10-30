@@ -7,6 +7,7 @@
 
 import Combine
 import Alamofire
+import Foundation
 
 struct NetworkService {
     static func request<T: Decodable, E: Error>(
