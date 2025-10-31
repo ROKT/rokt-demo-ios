@@ -20,7 +20,7 @@ runs:
         
         echo "Updating Rokt-Widget package version to $VERSION"
         
-        sed -i '' -E '/repositoryURL = "https:\/\/github\.com\/ROKT\/rokt-sdk-ios\.git"/,/^[[:space:]]*\};/ s/minimumVersion = [0-9]+\.[0-9]+\.[0-9]+/minimumVersion = '"$VERSION"'/' "$PBXPROJ"
+        sed -i '' -E '/repositoryURL = "https:\/\/github\.com\/ROKT\/rokt-sdk-ios\.git"/,/^[[:space:]]*\};/ s/minimumVersion = [0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?(\+[0-9A-Za-z.-]+)?/minimumVersion = '"$VERSION"'/' "$PBXPROJ"
         
         echo "✓ Updated package version to $VERSION"
 
