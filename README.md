@@ -1,18 +1,12 @@
 # rokt-demo-ios
 Rokt Demo application is a sample app built to showcase Rokt SDK functionality. The purpose of this app is to showcase the functionality that Rokt provides in-app. This is demonstrated with examples of how Rokt’s partners are generating stronger revenue outcomes by providing a more personalized experience for each customer at scale. 
-This app distributed internally via [TestFlight](https://developer.apple.com/testflight/). To have access to this app please contact danial.motahari@rokt.com
+
 
 
 ## Resident Experts
 - James Newman - <james.newman@rokt.com>
 - Thomson Thomas - <thomson.thomas@rokt.com>
 
-
-| Environment | Build |
-| ----------- | :----- |
-| release | [![Build status](https://badge.buildkite.com/afe921fff6fe587a6a59245ca0181c61d5557c78893991f9cc.svg)](https://buildkite.com/rokt/rokt-demo-ios?branch=release-1.1.x)
-### Developer Note
-Modify the Circleci and Buildkite url whenever default branch is changed.
 
 
 ## Requirements
@@ -40,14 +34,13 @@ Resources: All the other resources of the application is located in Resources.
 
 ## How to setup the environment?
 
-- run `pod install` in terminal on the main folder where podfile exists.
-- open RoktDemo.xcworkspace
+- open RoktDemo.xcodeproj in Xcode
 - click File -> Packages -> Reset Package Caches in Xcode
 - click File -> Packages -> Resolve Package Versions in Xcode
 
 ## How to run locally?
 
-Open RoktDemo.xcworkspace in Xcode and click Run icon on top left of Xcode.
+Open RoktDemo.xcodeproj in Xcode and click Run icon on top left of Xcode.
 
 ## How to run tests locally?
 
@@ -56,7 +49,7 @@ Tests can be found in `RoktDemoTests` and `RoktDemoUIITests`.
 
 ## Where are dependencies defined?
 
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C projects. CocoaPods recursively resolves dependencies between libraries, fetches source code for all dependencies, and creates and maintains an Xcode workspace to build your project. All dependencies of this project are defined in the Podfile located in the root directory of this project. 
+[Swift Package Manager](https://www.swift.org/package-manager/) (SPM) is Apple's official dependency manager for Swift projects. SPM integrates directly with Xcode and automatically resolves dependencies, fetches source code, and manages package versions. All dependencies of this project are defined in the Xcode project file and managed through SPM. 
 
 ## What are project dependencies
 In this application, following dependencies are used: 
@@ -66,9 +59,13 @@ In this application, following dependencies are used:
 -  CodeScanner: [CodeScanner](https://github.com/twostraws/CodeScanner) CodeScanner is a SwiftUI framework that makes it easy to scan codes such as QR codes and barcodes.
 
 ## How to test point to a version of iOS SDK
-To point to a certain version
-- Change the version in front of the `Rokt-Widget` on `podfile` c. You could point to a stable version like `4.8.0` or you could point to alpha/beta version like `4.8.0-alpha1`.
-- run `pod install` in terminal on the main folder where podfile exists.
+To point to a certain version:
+- Open RoktDemo.xcodeproj in Xcode
+- Select the project in the navigator, then select the RoktDemo target
+- Go to the "Package Dependencies" tab
+- Find "rokt-sdk-ios" and click the version dropdown
+- Select "Up to Next Major Version" and specify the minimum version (e.g., `4.14.1`) or choose a specific version
+- Alternatively, you can update the version requirement in the project.pbxproj file by changing the `minimumVersion` value for the Rokt-Widget package reference
 
 ## How to release the app
 > [!NOTE]

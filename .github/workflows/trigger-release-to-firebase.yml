@@ -21,14 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Update Podfile with new version
-        run: |
-          echo "Updating Podfile with new version $VERSION_NAME"
-          sed -i "s/pod 'Rokt-Widget', '.*'/pod 'Rokt-Widget', '$VERSION_NAME'/" Podfile
-          cat Podfile
-
-      - name: Install CocoaPods dependencies
-        run: pod install
+      - name: Update SPM package version
+        uses: ./.github/actions/update-spm-package
+        with:
+          version: ${{ env.VERSION_NAME }}
 
       - name: Update Xcode version
         run: |

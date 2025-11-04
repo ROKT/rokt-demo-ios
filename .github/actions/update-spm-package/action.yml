@@ -1,0 +1,25 @@
+name: Update SPM Package Version
+description: Updates the minimumVersion for a Swift Package Manager dependency in an Xcode project
+
+inputs:
+  version:
+    description: New minimum version to set
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Update SPM package version
+      shell: bash
+      run: |
+        set -euo pipefail
+        
+        PBXPROJ="./RoktDemo.xcodeproj/project.pbxproj"
+        VERSION="${{ inputs.version }}"
+        
+        echo "Updating Rokt-Widget package version to $VERSION"
+        
+        sed -i '' -E '/repositoryURL = "https:\/\/github\.com\/ROKT\/rokt-sdk-ios\.git"/,/^[[:space:]]*\};/ s/minimumVersion = [0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?(\+[0-9A-Za-z.-]+)?/minimumVersion = '"$VERSION"'/' "$PBXPROJ"
+        
+        echo "✓ Updated package version to $VERSION"
+

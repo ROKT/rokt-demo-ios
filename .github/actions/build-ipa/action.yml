@@ -41,14 +41,10 @@ runs:
         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
         echo "${{ inputs.provisioning_profile_base64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
 
-    - name: Install CocoaPods dependencies
-      shell: bash
-      run: pod install
-
     - name: Archive the app
       shell: bash
       run: |
-        xcodebuild -workspace RoktDemo.xcworkspace \
+        xcodebuild -project RoktDemo.xcodeproj \
           -scheme RoktDemo \
           -configuration Release \
           -archivePath build/RoktDemo.xcarchive \
