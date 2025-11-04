@@ -15,7 +15,6 @@ runs:
         set -euo pipefail
         
         PBXPROJ="./RoktDemo.xcodeproj/project.pbxproj"
-        PACKAGE_URL="https://github.com/ROKT/rokt-sdk-ios.git"
         VERSION="${{ inputs.version }}"
         
         echo "Updating Rokt-Widget package version to $VERSION"
