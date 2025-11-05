@@ -35,10 +35,17 @@ class CustomerDetailsViewModel: ObservableObject {
         for (key, value) in advancedDetails {
             advancedDetailsKV.append(KeyValue(key: key, value: value))
         }
-        // add empty key value at the end to allow additional key value input for user
+    }
+
+    func addAttribute() {
+        guard advancedDetailsKV.count < 20 else { return }
         advancedDetailsKV.append(KeyValue(key: "", value: ""))
     }
     
+    var canAddMoreAttributes: Bool {
+        return advancedDetailsKV.count < 20
+    }
+
     private func getAttributes() -> [String: String] {
         var attributes : [String: String] = [:]
         if !state.isEmpty {

@@ -60,7 +60,7 @@ struct CustomerDetailsView: View {
                     })
                     
                     if isAdvancedDetailsShown {
-                        AdvancedDetails(advancedDetails: $viewModel.advancedDetailsKV)
+                        AdvancedDetails(viewModel: viewModel)
                     }
                     
                     NavigationLink(destination:
@@ -92,7 +92,7 @@ struct CustomerDetailsView: View {
 }
 
 private struct AdvancedDetails: View {
-    @Binding var advancedDetails: [KeyValue]
+    @ObservedObject var viewModel: CustomerDetailsViewModel
     
     var body: some View {
         VStack {
@@ -100,16 +100,32 @@ private struct AdvancedDetails: View {
                 text: "Add in your required custom attributes to show placements for your account. Attributes not already set up by your account manager will not be used.",
                 font: .defaultFont(.subtitle2))
             
-            ForEach(advancedDetails.indices, id: \.self) { index in
+            ForEach(viewModel.advancedDetailsKV.indices, id: \.self) { index in
                 KeyValueView(model: Binding(
                                 get: {
-                                    return advancedDetails[index]
+                                    return viewModel.advancedDetailsKV[index]
                                 },
                                 set: { (newValue) in
-                                    advancedDetails[index] = newValue
+                                    viewModel.advancedDetailsKV[index] = newValue
                                 }))
             }
             
+            Button(action: {
+                viewModel.addAttribute()
+            }, label: {
+                HStack {
+                    Spacer()
+                    Text("Add Attribute")
+                        .foregroundColor(viewModel.canAddMoreAttributes ? .black : .gray)
+                    Spacer()
+                }
+                .padding()
+                .background(viewModel.canAddMoreAttributes ? Color.white : Color.gray.opacity(0.3))
+                .cornerRadius(8)
+            })
+            .disabled(!viewModel.canAddMoreAttributes)
+            .padding(.top, 10)
+
         }
     }
 }
