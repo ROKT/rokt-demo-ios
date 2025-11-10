@@ -11,6 +11,8 @@
 
 import Foundation
 class CustomerDetailsViewModel: ObservableObject {
+    private static let maxAttributesCount = 20
+
     let customerDetails: CustomerDetailsModel
     let accountDetail: AccountDetailViewData
     
@@ -38,12 +40,12 @@ class CustomerDetailsViewModel: ObservableObject {
     }
 
     func addAttribute() {
-        guard advancedDetailsKV.count < 20 else { return }
+        guard advancedDetailsKV.count < Self.maxAttributesCount else { return }
         advancedDetailsKV.append(KeyValue(key: "", value: ""))
     }
     
     var canAddMoreAttributes: Bool {
-        return advancedDetailsKV.count < 20
+        return advancedDetailsKV.count < Self.maxAttributesCount
     }
 
     private func getAttributes() -> [String: String] {
