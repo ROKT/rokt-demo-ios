@@ -141,6 +141,7 @@
 		7EAD60712DCA5932009EC6DB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD606F2DCA5932009EC6DB /* UIFont+Extensions.swift */; };
 		7EAD60732DCA59FD009EC6DB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */; };
 		7EAD60742DCA59FD009EC6DB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */; };
+		B39B3A3E2EB40E46003AC5D8 /* Rokt-Stripe-Payment-Kit in Frameworks */ = {isa = PBXBuildFile; productRef = B39B3A3D2EB40E46003AC5D8 /* Rokt-Stripe-Payment-Kit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +261,7 @@
 		7EAD606D2DCA5470009EC6DB /* LayoutDemoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDemoUIView.swift; sourceTree = "<group>"; };
 		7EAD606F2DCA5932009EC6DB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		B314B46A2EBEE5EA00447793 /* RoktDemoRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoktDemoRelease.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				25747A062A70DBD5009C5B69 /* CodeScanner in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E1F /* Alamofire in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E3F /* SDWebImageSwiftUI in Frameworks */,
+				B39B3A3E2EB40E46003AC5D8 /* Rokt-Stripe-Payment-Kit in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E5F /* Rokt-Widget in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +585,7 @@
 				25F84765260C34880067B515 /* RoktDemo */,
 				25F8477C260C348A0067B515 /* RoktDemoTests */,
 				25F84787260C348A0067B515 /* RoktDemoUITests */,
+				B39B3A3C2EB40E46003AC5D8 /* Frameworks */,
 				25F84764260C34880067B515 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -599,6 +603,7 @@
 		25F84765260C34880067B515 /* RoktDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B314B46A2EBEE5EA00447793 /* RoktDemoRelease.entitlements */,
 				5899229B261420B500A58DA3 /* Service */,
 				5899228826141F2100A58DA3 /* Model */,
 				589873FC2612C38F00C904E8 /* Utils */,
@@ -724,6 +729,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		B39B3A3C2EB40E46003AC5D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -745,6 +757,7 @@
 				2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */,
 				2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */,
 				2A1B2C3D4E5F6A7B8C9D0E6F /* Rokt-Widget */,
+				B39B3A3D2EB40E46003AC5D8 /* Rokt-Stripe-Payment-Kit */,
 			);
 			productName = RoktDemo;
 			productReference = 25F84763260C34880067B515 /* RoktDemo.app */;
@@ -1158,6 +1171,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoktDemo/RoktDemoRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 359;
@@ -1171,7 +1185,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.14.1;
+				MARKETING_VERSION = "4.14.1-ppu-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
@@ -1186,6 +1200,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoktDemo/RoktDemoRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 359;
@@ -1199,7 +1214,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.14.1;
+				MARKETING_VERSION = "4.14.1-ppu-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
@@ -1361,8 +1376,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ROKT/rokt-sdk-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.14.1;
+				branch = "UTYP-589-Post-Purchase-Upsells";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1387,6 +1402,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A1B2C3D4E5F6A7B8C9D0E5E /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */;
 			productName = "Rokt-Widget";
+		};
+		B39B3A3D2EB40E46003AC5D8 /* Rokt-Stripe-Payment-Kit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A1B2C3D4E5F6A7B8C9D0E5E /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */;
+			productName = "Rokt-Stripe-Payment-Kit";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
