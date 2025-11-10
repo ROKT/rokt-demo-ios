@@ -13,6 +13,7 @@
 
 import Foundation
 import Rokt_Widget
+import Rokt_Stripe_Payment_Kit
 
 class DemoItemSummaryViewModel: ObservableObject {
     @Published var summaryModel: DemoItemSummaryModel
@@ -29,7 +30,18 @@ class DemoItemSummaryViewModel: ObservableObject {
     
     func initializeRokt() {
         if let tagID = getTagId() {
-            Rokt.initWith(roktTagId: tagID)
+            Rokt.initWith(roktTagId: tagID) { status in
+                if (status) {
+                    if let kit = RoktStripePaymentKit(
+                        applePayMerchantId: "merchant.rokt.demoapp"
+                    ) {
+                        print("Rokt Stripe Payment Kit registered")
+                        Rokt.registerPaymentKit(kit)
+                    } else {
+                        print("Rokt Stripe Payment Kit not registered")
+                    }
+                }
+            }
         }
     }
     

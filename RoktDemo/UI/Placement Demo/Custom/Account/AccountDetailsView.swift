@@ -11,6 +11,7 @@
 
 import SwiftUI
 import Rokt_Widget
+import Rokt_Stripe_Payment_Kit
 
 struct AccountDetailsView: View {
     @ObservedObject var viewModel: AccountDetailsViewModel
@@ -66,7 +67,18 @@ struct AccountDetailsView: View {
                                                    }))
             Button(Constants.Strings.continueDemo) {
                 if viewModel.isValidToContinue() {
-                    Rokt.initWith(roktTagId: viewModel.accountId)
+                    Rokt.initWith(roktTagId: viewModel.accountId){ status in
+                        if (status) {
+                            if let kit = RoktStripePaymentKit(
+                                applePayMerchantId: "merchant.rokt.demoapp"
+                            ) {
+                                print("Rokt Stripe Payment Kit registered")
+                                Rokt.registerPaymentKit(kit)
+                            } else {
+                                print("Rokt Stripe Payment Kit not registered")
+                            }
+                        }
+                    }
                     moveToNextView = true
                 }
             }.buttonStyle(ButtonDefault())
