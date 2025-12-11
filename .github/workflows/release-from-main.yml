@@ -77,7 +77,7 @@ jobs:
         with:
           artifacts: RoktDemo.ipa
           makeLatest: true
-          tag: ${{ steps.version-info.outputs.version_info }}
+          tag: ${{ steps.version-info.outputs.version_name }}
           body: |
             ## Release notes:
             ${{ steps.release-notes.outputs.release_notes }}
