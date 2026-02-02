@@ -30,9 +30,14 @@ jobs:
         run: |
           set -euo pipefail
           : "${VERSION_NAME:?Missing VERSION_NAME}"
-          BUILD_NUMBER="${GITHUB_RUN_NUMBER:?Missing GITHUB_RUN_NUMBER}"
-      
+
           PBXPROJ="$(find . -name 'project.pbxproj' -path '*/*.xcodeproj/*' | head -n1)"
+          CURRENT_BUILD="$(/usr/bin/awk -F' = ' '/CURRENT_PROJECT_VERSION/ { gsub(/;/, "", $2); print $2; exit }' "$PBXPROJ")"
+          if [[ -z "$CURRENT_BUILD" ]]; then
+            echo "Failed to read CURRENT_PROJECT_VERSION from $PBXPROJ" >&2
+            exit 1
+          fi
+          BUILD_NUMBER="$((CURRENT_BUILD + 1))"
           /usr/bin/sed -i "" -E "s/(MARKETING_VERSION *= *)[^;]+/\\1${VERSION_NAME}/g" "$PBXPROJ"
           /usr/bin/sed -i "" -E "s/(CURRENT_PROJECT_VERSION *= *)[^;]+/\\1${BUILD_NUMBER}/g" "$PBXPROJ"
     
