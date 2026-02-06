@@ -42,6 +42,12 @@ jobs:
           /usr/bin/sed -i "" -E "s/(MARKETING_VERSION *= *)[^;]+/\\1${VERSION_NAME}/g" "$PBXPROJ"
           /usr/bin/sed -i "" -E "s/(CURRENT_PROJECT_VERSION *= *)[^;]+/\\1${BUILD_NUMBER}/g" "$PBXPROJ"
 
+      - name: Update VERSION file
+        run: |
+          set -euo pipefail
+          : "${VERSION_NAME:?Missing VERSION_NAME}"
+          echo "${VERSION_NAME}" > VERSION
+
       - name: Generate a token
         id: generate-token
         uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1

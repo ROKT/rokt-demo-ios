@@ -41,6 +41,12 @@ jobs:
           /usr/bin/sed -i "" -E "s/(MARKETING_VERSION *= *)[^;]+/\\1${VERSION_NAME}/g" "$PBXPROJ"
           /usr/bin/sed -i "" -E "s/(CURRENT_PROJECT_VERSION *= *)[^;]+/\\1${BUILD_NUMBER}/g" "$PBXPROJ"
     
+      - name: Update VERSION file
+        run: |
+          set -euo pipefail
+          : "${VERSION_NAME:?Missing VERSION_NAME}"
+          echo "${VERSION_NAME}" > VERSION
+
       - name: Build IPA
         uses: ./.github/actions/build-ipa
         with:
