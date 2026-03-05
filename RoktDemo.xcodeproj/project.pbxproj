@@ -1171,7 +1171,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.14.6;
+				MARKETING_VERSION = 4.16.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
@@ -1199,7 +1199,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.14.6;
+				MARKETING_VERSION = 4.16.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
@@ -1361,8 +1361,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ROKT/rokt-sdk-ios.git";
 			requirement = {
-				kind = exactVersion;
-				version = 4.14.6;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.16.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
