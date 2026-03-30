@@ -11,6 +11,6 @@ permissions:
 jobs:
   pr-notifiy:
     name: "Notify GChat"
-    uses: ROKT/rokt-workflows/.github/workflows/oss_pr_opened_notification.yml@main
+    uses: ROKT/rokt-workflows/.github/workflows/oss_pr_opened_notification.yml@1859338d7c2c2b873233505c751acbf09fb218d5 # main
     secrets:
       gchat_webhook: ${{ secrets.GCHAT_PRS_WEBHOOK }}
