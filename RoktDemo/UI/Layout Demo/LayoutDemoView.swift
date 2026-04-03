@@ -102,16 +102,26 @@ struct LayoutDemoView: View {
         }
     }
     func showPlacement() {
-        Rokt.execute(viewName: "",
-                     attributes: viewModel.getAttributes(),
-                     placements: ["#rokt-placeholder": roktEmbedded.embedded],
-                     onLoad: {
-            viewModel.uiState = .done
-        }, onUnLoad: {
-            viewModel.uiState = .done
-        }, onEmbeddedSizeChange: { selectedPlacement, widgetHeight in
-            embeddedSize = widgetHeight
-        })
+        Rokt.selectPlacements(
+            identifier: "",
+            attributes: viewModel.getAttributes(),
+            placements: ["#rokt-placeholder": roktEmbedded.embedded]
+        ) { event in
+            switch event {
+            case let sizeChanged as RoktEvent.EmbeddedSizeChanged:
+                embeddedSize = sizeChanged.updatedHeight
+                viewModel.uiState = .done
+            case is RoktEvent.PlacementReady,
+                 is RoktEvent.PlacementInteractive,
+                 is RoktEvent.PlacementClosed:
+                viewModel.uiState = .done
+            case is RoktEvent.PlacementCompleted:
+                embeddedSize = 0
+                viewModel.uiState = .done
+            default:
+                break
+            }
+        }
     }
 }
 

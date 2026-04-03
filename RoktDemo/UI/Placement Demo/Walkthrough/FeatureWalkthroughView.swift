@@ -81,21 +81,22 @@ struct FeatureWalkthroughView: View {
     }
     
     func showPlacement() {
-        Rokt.execute(viewName: viewModel.screen.viewName,
-                     attributes: viewModel.getAttributes(),
-                     placements: [viewModel.screen.placeholderName: roktEmbedded.embedded], onLoad: {
-                        self.placementDisplayed = true
-                        // Optional callback for when the Rokt placement loads
-                     }, onUnLoad: {
-                        // Optional callback for when the Rokt placement unloads
-                     }, onShouldShowLoadingIndicator: {
-                        // Optional callback to show a loading indicator
-                     }, onShouldHideLoadingIndicator: {
-                        // Optional callback to hide a loading indicator
-                     },
-                     onEmbeddedSizeChange: { selectedPlacement, widgetHeight in
-                        embeddedSize = widgetHeight
-                     })
+        Rokt.selectPlacements(
+            identifier: viewModel.screen.viewName,
+            attributes: viewModel.getAttributes(),
+            placements: [viewModel.screen.placeholderName: roktEmbedded.embedded]
+        ) { event in
+            switch event {
+            case let sizeChanged as RoktEvent.EmbeddedSizeChanged:
+                embeddedSize = sizeChanged.updatedHeight
+            case is RoktEvent.PlacementReady:
+                placementDisplayed = true
+            case is RoktEvent.PlacementCompleted:
+                embeddedSize = 0
+            default:
+                break
+            }
+        }
     }
     
 }

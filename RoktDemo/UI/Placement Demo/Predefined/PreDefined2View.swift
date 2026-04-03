@@ -50,23 +50,28 @@ struct PreDefined2View: View {
     }
     
     private func showPlacement() {
-        
         var placements = [String: RoktEmbeddedView]()
         let placementLocation1 = viewModel.model.placeholderName
         if !placementLocation1.isEmpty {
             placements[placementLocation1] = roktEmbedded1.embedded
         }
-        
-        Rokt.execute(viewName: viewModel.model.viewName, attributes: viewModel.getAttributes(),
-                     placements: placements,
-                     onLoad: {
-            self.placementDisplayed = true
-        },
-                     onEmbeddedSizeChange: { selectedPlacement, widgetHeight in
-            
-            embeddedSize = widgetHeight
-            
-        })
+
+        Rokt.selectPlacements(
+            identifier: viewModel.model.viewName,
+            attributes: viewModel.getAttributes(),
+            placements: placements
+        ) { event in
+            switch event {
+            case let sizeChanged as RoktEvent.EmbeddedSizeChanged:
+                embeddedSize = sizeChanged.updatedHeight
+            case is RoktEvent.PlacementReady:
+                placementDisplayed = true
+            case is RoktEvent.PlacementCompleted:
+                embeddedSize = 0
+            default:
+                break
+            }
+        }
     }
 }
 

@@ -11,7 +11,7 @@ Rokt Demo application is a sample app built to showcase Rokt SDK functionality. 
 
 ## Requirements
 
-XCode 15 and above. Project is configured to run on iOS 13.0 and above.
+XCode 15 and above. Project is configured to run on iOS 15.0 and above.
 
 ## Project architecture
 

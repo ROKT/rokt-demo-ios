@@ -201,16 +201,26 @@ class LayoutDemoUIView: UIViewController {
     }
     
     private func showPlacement() {
-        Rokt.execute(viewName: "",
-                    attributes: viewModel.getAttributes(),
-                    placements: ["#rokt-placeholder": roktEmbeddedView],
-                    onLoad: { [weak self] in
-            self?.viewModel.uiState = .done
-        }, onUnLoad: { [weak self] in
-            self?.viewModel.uiState = .done
-        }, onEmbeddedSizeChange: { [weak self] selectedPlacement, widgetHeight in
-            self?.updateEmbeddedViewHeight(widgetHeight)
-        })
+        Rokt.selectPlacements(
+            identifier: "",
+            attributes: viewModel.getAttributes(),
+            placements: ["#rokt-placeholder": roktEmbeddedView]
+        ) { [weak self] event in
+            switch event {
+            case let sizeChanged as RoktEvent.EmbeddedSizeChanged:
+                self?.updateEmbeddedViewHeight(sizeChanged.updatedHeight)
+                self?.viewModel.uiState = .done
+            case is RoktEvent.PlacementReady,
+                 is RoktEvent.PlacementInteractive,
+                 is RoktEvent.PlacementClosed:
+                self?.viewModel.uiState = .done
+            case is RoktEvent.PlacementCompleted:
+                self?.updateEmbeddedViewHeight(0)
+                self?.viewModel.uiState = .done
+            default:
+                break
+            }
+        }
     }
     
     private func updateEmbeddedViewHeight(_ height: CGFloat) {
