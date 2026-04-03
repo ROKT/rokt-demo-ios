@@ -76,19 +76,31 @@ struct ConfirmationView: View {
         if !placementLocation2.isEmpty {
             placements[placementLocation2] = roktEmbedded2.embedded
         }
-        
-        Rokt.execute(viewName: viewModel.accountDetail.viewName, attributes: viewModel.attributes,
-                     placements: placements,
-                     onLoad: {
-            self.placementDisplayed = true
-        },
-                     onEmbeddedSizeChange: { selectedPlacement, widgetHeight in
-            if selectedPlacement == viewModel.accountDetail.placementLocation2 {
-                embeddedSize2 = widgetHeight
-            } else {
-                embeddedSize1 = widgetHeight
+
+        Rokt.selectPlacements(
+            identifier: viewModel.accountDetail.viewName,
+            attributes: viewModel.attributes,
+            placements: placements
+        ) { event in
+            switch event {
+            case let sizeChanged as RoktEvent.EmbeddedSizeChanged:
+                if sizeChanged.identifier == viewModel.accountDetail.placementLocation2 {
+                    embeddedSize2 = sizeChanged.updatedHeight
+                } else {
+                    embeddedSize1 = sizeChanged.updatedHeight
+                }
+            case let placementCompleted as RoktEvent.PlacementCompleted:
+                if placementCompleted.identifier == viewModel.accountDetail.placementLocation2 {
+                    embeddedSize2 = 0
+                } else {
+                    embeddedSize1 = 0
+                }
+            case is RoktEvent.PlacementReady:
+                placementDisplayed = true
+            default:
+                break
             }
-        })
+        }
     }
 }
 
