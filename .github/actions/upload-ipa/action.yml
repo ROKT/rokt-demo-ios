@@ -43,7 +43,12 @@ runs:
       shell: bash
       run: |
         if [ -n "${{ inputs.release_notes }}" ]; then
-          echo "release_text=${{ inputs.release_notes }}" >> $GITHUB_OUTPUT
+          RELEASE_NOTES_DELIMITER="RELEASE_NOTES_$(uuidgen)"
+          {
+            echo "release_text<<$RELEASE_NOTES_DELIMITER"
+            printf '%s\n' "${{ inputs.release_notes }}"
+            echo "$RELEASE_NOTES_DELIMITER"
+          } >> "$GITHUB_OUTPUT"
         fi
 
     - name: Upload IPA

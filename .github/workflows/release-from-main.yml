@@ -57,10 +57,12 @@ jobs:
         id: release-notes
         run: |
           # Get the commit message of the last merge
-          RELEASE_NOTES=$(git log -1 --pretty=%B)
-          # Escape newlines and quotes for JSON
-          RELEASE_NOTES=$(echo "$RELEASE_NOTES" | sed ':a;N;$!ba;s/\n/\\n/g' | sed 's/"/\\"/g')
-          echo "release_notes=$RELEASE_NOTES" >> $GITHUB_OUTPUT
+          RELEASE_NOTES_DELIMITER="RELEASE_NOTES_$(uuidgen)"
+          {
+            echo "release_notes<<$RELEASE_NOTES_DELIMITER"
+            git log -1 --pretty=%B
+            echo "$RELEASE_NOTES_DELIMITER"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Upload IPA to Firebase
         uses: ./.github/actions/upload-ipa
