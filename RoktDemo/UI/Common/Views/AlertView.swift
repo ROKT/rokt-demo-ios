@@ -60,6 +60,10 @@ As you progress, try interacting with the Rokt placements by tapping "Yes please
 As you progress, try interacting with the Rokt placements by tapping "Yes please" or "No thanks". To progress to the next placement type, tap "NEXT" at the top right hand corner of the screen.
 \n\nNo personal and device data will be captured or stored.
 """
+    static let shoppableAdsTemplate = """
+You are about to see a Shoppable Ads experience. Browse products, select options, and interact with the purchase flow.
+\n\nNo personal, account, or device data will be captured or stored.
+"""
 }
 
 

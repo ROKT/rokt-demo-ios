@@ -1,110 +1,92 @@
 # rokt-demo-ios
-Rokt Demo application is a sample app built to showcase Rokt SDK functionality. The purpose of this app is to showcase the functionality that Rokt provides in-app. This is demonstrated with examples of how Rokt’s partners are generating stronger revenue outcomes by providing a more personalized experience for each customer at scale. 
 
+Rokt Demo is a sample iOS app built to showcase Rokt SDK functionality. It demonstrates how Rokt's partners generate stronger revenue outcomes by providing personalized experiences for each customer at scale.
 
+## Features
 
-## Resident Experts
-- James Newman - <james.newman@rokt.com>
-- Thomson Thomas - <thomson.thomas@rokt.com>
-
-
+- **In-app Placements** — View examples of embedded and overlay placement experiences with live offers
+- **Custom Placement Builder** — Enter your Rokt account details to preview custom placements on a sample confirmation page
+- **Pre-defined Demos** — Branded partner confirmation pages (Heated, Stylus Commerce, Waveroom Supply Co)
+- **Shoppable Ads** — Test the Shoppable Ads experience with Stripe payment integration, configurable attributes, and SDK event logging
 
 ## Requirements
 
-XCode 15 and above. Project is configured to run on iOS 15.0 and above.
+Xcode 15 and above. The project is configured to run on iOS 15.0 and above.
 
-## Project architecture
+## Project Architecture
 
-This project is implemented based on MVVM pattern with SwiftUI. 
+This project is implemented using the MVVM pattern with SwiftUI.
 
-[SwiftUI](https://developer.apple.com/xcode/swiftui/) is a framework made by Apple to build user interfaces across all Apple platforms with the power of Swift. SwiftUI is a user interface toolkit that lets us design apps in a declarative way.
-MVVM stands for Model-View-ViewModel, an architecture pattern that is structured to separate program logic and user interface controls. It has Model, View and ViewModel separation. 
+[SwiftUI](https://developer.apple.com/xcode/swiftui/) is Apple's declarative UI framework. MVVM (Model-View-ViewModel) separates program logic from user interface controls.
 
-This project contains UI, Model, Services, Utils and Resources groups.
+The project is organized into the following groups:
 
-UI: View and ViewModels are located in the UI Group.
-
-Services & Model: Services represent the network logics of the application and model represents the data.
-
-Utils: are shared between Groups of the application.
-
-Resources: All the other resources of the application is located in Resources. 
+- **UI** — Views and ViewModels
+- **Model** — Data models for the placement library and demo items
+- **Service** — Network and business logic
+- **Utils** — Shared utilities and constants
+- **Resources** — App lifecycle, assets, and fonts
 
 ![UI diagram](diagram.png)
 
-## How to setup the environment?
+## How to Set Up the Environment
 
-- open RoktDemo.xcodeproj in Xcode
-- click File -> Packages -> Reset Package Caches in Xcode
-- click File -> Packages -> Resolve Package Versions in Xcode
+1. Open `RoktDemo.xcodeproj` in Xcode
+2. Go to File > Packages > Reset Package Caches
+3. Go to File > Packages > Resolve Package Versions
 
-## How to run locally?
+## How to Run Locally
 
-Open RoktDemo.xcodeproj in Xcode and click Run icon on top left of Xcode.
+Open `RoktDemo.xcodeproj` in Xcode and click the Run button (or press Cmd+R).
 
-## How to run tests locally?
+## How to Run Tests
 
-Select the RoktDemo scheme and press command + U, or Product -> Test menu on Xcode.
-Tests can be found in `RoktDemoTests` and `RoktDemoUIITests`.
+Select the `RoktDemo` scheme and press Cmd+U, or go to Product > Test in Xcode.
+Tests are located in `RoktDemoTests` and `RoktDemoUITests`.
 
-## Where are dependencies defined?
+## Dependencies
 
-[Swift Package Manager](https://www.swift.org/package-manager/) (SPM) is Apple's official dependency manager for Swift projects. SPM integrates directly with Xcode and automatically resolves dependencies, fetches source code, and manages package versions. All dependencies of this project are defined in the Xcode project file and managed through SPM. 
+All dependencies are managed via [Swift Package Manager](https://www.swift.org/package-manager/) (SPM), which integrates directly with Xcode.
 
-## What are project dependencies
-In this application, following dependencies are used: 
--  Rokt-Widget: [Rokt-Widget](https://docs.rokt.com/docs/developers/integration-guides/ios/overview) is Rokt iOS SDK. This app is built to showcase the functionality that this Rokt SDK provides in-app.  
--  Alamofire: [Alamofire](https://github.com/Alamofire/Alamofire) is an HTTP networking library written in Swift. This is used for networking part of the application.
--  SDWebImageSwiftUI: [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) is a SwiftUI image loading framework. This is used for loading images in SwiftUI.
--  CodeScanner: [CodeScanner](https://github.com/twostraws/CodeScanner) CodeScanner is a SwiftUI framework that makes it easy to scan codes such as QR codes and barcodes.
+| Dependency | Description |
+|------------|-------------|
+| [Rokt-Widget](https://docs.rokt.com/developers/integration-guides/ios/overview) | Rokt iOS SDK — the core SDK this app demonstrates |
+| [RoktStripePaymentExtension](https://github.com/ROKT/rokt-stripe-payment-extension-ios) | Stripe payment integration for Shoppable Ads |
+| [Alamofire](https://github.com/Alamofire/Alamofire) | HTTP networking library |
+| [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) | SwiftUI image loading framework |
+| [CodeScanner](https://github.com/twostraws/CodeScanner) | QR code and barcode scanner |
 
-## How to test point to a version of iOS SDK
-To point to a certain version:
-- Open RoktDemo.xcodeproj in Xcode
-- Select the project in the navigator, then select the RoktDemo target
-- Go to the "Package Dependencies" tab
-- Find "rokt-sdk-ios" and click the version dropdown
-- Select "Up to Next Major Version" and specify the minimum version (e.g., `4.14.1`) or choose a specific version
-- Alternatively, you can update the version requirement in the project.pbxproj file by changing the `minimumVersion` value for the Rokt-Widget package reference
+## How to Point to a Specific SDK Version
 
-## How to release the app
+1. Open `RoktDemo.xcodeproj` in Xcode
+2. Select the project in the navigator, then select the RoktDemo target
+3. Go to the "Package Dependencies" tab
+4. Find "rokt-sdk-ios" and click the version dropdown
+5. Select "Up to Next Major Version" and specify the minimum version, or choose a specific version
+
+## How to Release
+
 > [!NOTE]
-> Testers in `TESTING_GROUPS` repo secret will get the new build.
+> Testers in the `TESTING_GROUPS` repo secret will receive the new build.
 
-- Update `Version` and `Build` in RoktDemo target
-- Commit & push
-- Dispatch the workflow `Distribute to Firebase` from the Actions tab on GitHub
+1. Update `Version` and `Build` in the RoktDemo target
+2. Commit and push
+3. Dispatch the `Distribute to Firebase` workflow from the Actions tab on GitHub
 
-### Automated Release Pipeline
-The SDK can be released via the **Mobile Release Pipeline**. Follow the instructions in the Mobile Release Pipeline repo to release. You can still release the app manually by following the steps in the previous section.
+The app can also be released via the **Mobile Release Pipeline** — follow the instructions in the Mobile Release Pipeline repo.
 
-### Note
+## Branches
 
-To get Appstoreconnect user access, please ask it from <dj.seo@rokt.com>, <danial.motahari@rokt.com> or <thomson.thomas@rokt.com>
+- **main** — Primary branch for development
+- **release-\*** — Production release branches
+- **feat/\*** — Feature branches
 
-## FAQ
+## Troubleshooting
 
-### What are the branches?
+If something is not working, try:
 
-The main branches of these repository includes: **main**, **Release-** and **Features branches**
-
-* **main** - Master branch which currently is not used
-* **release branches** - Branches with **release-** prefix are considered production branches. After every push to this branch tests are run to ensure no breaking changes are allowed and after approval. Releasing to TestFlight could be enabled after all the tests passes. 
-* **feature branches** - All other branches are considered feature branches. After every push to this branch tests are run to ensure no breaking changes are allowed.
-
-### What are the versions?
-We are using semantic versioning starting with version 1.0.0. Each new feature requires incrementing minor version and bracking changes require incrementing major version. 
-Currently we have following release branches.
-
-* **release-1.x** - The first version of Demo application
-* **release-1.1.x** - The PreDefined brand demos added
-* **release-1.2.x** - Layouts preview and QR code scan support added
-
-### Something is not working, what do I do?
-
-In case you run into any problems you can try:
-
-* Clean the build folder of the project. Select menu: Product -> Clean Build Folder on Xcode
+- Clean the build folder: Product > Clean Build Folder in Xcode
+- Reset package caches: File > Packages > Reset Package Caches
 
 ## License
 

@@ -73,6 +73,10 @@ struct DemoItemSummaryView: View {
         }
         else if let model = viewModel.model as? PreDefinedScreen3Model {
             return AnyView(PreDefined3View(viewModel: PreDefinedViewModel(model: model), popToRootView: $pushActive))
+        } else if viewModel.model is ShoppableAdsModel {
+            return AnyView(ShoppableAdsAccountView(
+                viewModel: ShoppableAdsAccountViewModel(),
+                popToRootView: $pushActive))
         }
         return AnyView(EmptyView())
     }

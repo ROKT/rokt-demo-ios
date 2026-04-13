@@ -117,6 +117,15 @@
 		2A1B2C3D4E5F6A7B8C9D0E1F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */; };
 		2A1B2C3D4E5F6A7B8C9D0E3F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */; };
 		2A1B2C3D4E5F6A7B8C9D0E5F /* Rokt-Widget in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E6F /* Rokt-Widget */; };
+		3B0A1C2D3E4F5A6B7C8D9E0F /* RoktStripePaymentExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0A1C2D3E4F5A6B7C8D9E1F /* RoktStripePaymentExtension */; };
+		4C0A00110000000100000001 /* ShoppableAdsDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00010000000100000001 /* ShoppableAdsDefaults.swift */; };
+		4C0A00120000000100000001 /* ShoppableAdsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00020000000100000001 /* ShoppableAdsModel.swift */; };
+		4C0A00130000000100000001 /* ShoppableAdsAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00030000000100000001 /* ShoppableAdsAccountViewModel.swift */; };
+		4C0A00140000000100000001 /* ShoppableAdsAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00040000000100000001 /* ShoppableAdsAccountView.swift */; };
+		4C0A00150000000100000001 /* ShoppableAdsAttributesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00050000000100000001 /* ShoppableAdsAttributesViewModel.swift */; };
+		4C0A00160000000100000001 /* ShoppableAdsAttributesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00060000000100000001 /* ShoppableAdsAttributesView.swift */; };
+		4C0A00170000000100000001 /* ShoppableAdsExecutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00070000000100000001 /* ShoppableAdsExecutionViewModel.swift */; };
+		4C0A00180000000100000001 /* ShoppableAdsExecutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00080000000100000001 /* ShoppableAdsExecutionView.swift */; };
 		5899226B2613F63800A58DA3 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226A2613F63800A58DA3 /* Font+Extensions.swift */; };
 		589922702613F67A00A58DA3 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226F2613F67A00A58DA3 /* ButtonDefault.swift */; };
 		589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */; };
@@ -244,6 +253,14 @@
 		25F84788260C348A0067B515 /* RoktDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoktDemoUITests.swift; sourceTree = "<group>"; };
 		25F8478A260C348A0067B515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25FA8C662BE1D5CB00E750A6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4C0A00010000000100000001 /* ShoppableAdsDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsDefaults.swift; sourceTree = "<group>"; };
+		4C0A00020000000100000001 /* ShoppableAdsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsModel.swift; sourceTree = "<group>"; };
+		4C0A00030000000100000001 /* ShoppableAdsAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsAccountViewModel.swift; sourceTree = "<group>"; };
+		4C0A00040000000100000001 /* ShoppableAdsAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsAccountView.swift; sourceTree = "<group>"; };
+		4C0A00050000000100000001 /* ShoppableAdsAttributesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsAttributesViewModel.swift; sourceTree = "<group>"; };
+		4C0A00060000000100000001 /* ShoppableAdsAttributesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsAttributesView.swift; sourceTree = "<group>"; };
+		4C0A00070000000100000001 /* ShoppableAdsExecutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsExecutionViewModel.swift; sourceTree = "<group>"; };
+		4C0A00080000000100000001 /* ShoppableAdsExecutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppableAdsExecutionView.swift; sourceTree = "<group>"; };
 		5899226A2613F63800A58DA3 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		5899226F2613F67A00A58DA3 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		589922782613F75800A58DA3 /* ButtonDefaultOutlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultOutlined.swift; sourceTree = "<group>"; };
@@ -260,6 +277,7 @@
 		7EAD606D2DCA5470009EC6DB /* LayoutDemoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDemoUIView.swift; sourceTree = "<group>"; };
 		7EAD606F2DCA5932009EC6DB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		7EAD60722DCA59FD009EC6DB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		B35D9F9B2F8D3FBB00209B98 /* RoktDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoktDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +289,7 @@
 				2A1B2C3D4E5F6A7B8C9D0E1F /* Alamofire in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E3F /* SDWebImageSwiftUI in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E5F /* Rokt-Widget in Frameworks */,
+				3B0A1C2D3E4F5A6B7C8D9E0F /* RoktStripePaymentExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +348,7 @@
 				251E32D5274B0D2200308A18 /* Walkthrough */,
 				251E32D6274B0E8B00308A18 /* Custom */,
 				251E32F5274B452500308A18 /* Predefined */,
+				4C0A00200000000100000001 /* ShoppableAds */,
 				251E32DC274B0F6700308A18 /* Error */,
 				256EB75F261C0F7F00B959EF /* DemoLibraryView.swift */,
 				256E3D3D2623DFE000639FE0 /* DemoLibraryViewModel.swift */,
@@ -470,6 +490,7 @@
 				251E3308274F09FA00308A18 /* CustomConfiguration */,
 				251E3307274F09E200308A18 /* DefaultPlacement */,
 				251E3306274F09B800308A18 /* PreDefinedScreen */,
+				4C0A00210000000100000001 /* ShoppableAds */,
 				256EB76E261C1CB700B959EF /* DemoItemModel.swift */,
 			);
 			path = DemoItems;
@@ -599,6 +620,7 @@
 		25F84765260C34880067B515 /* RoktDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B35D9F9B2F8D3FBB00209B98 /* RoktDemo.entitlements */,
 				5899229B261420B500A58DA3 /* Service */,
 				5899228826141F2100A58DA3 /* Model */,
 				589873FC2612C38F00C904E8 /* Utils */,
@@ -644,6 +666,28 @@
 				25FA8C662BE1D5CB00E750A6 /* SettingView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		4C0A00200000000100000001 /* ShoppableAds */ = {
+			isa = PBXGroup;
+			children = (
+				4C0A00030000000100000001 /* ShoppableAdsAccountViewModel.swift */,
+				4C0A00040000000100000001 /* ShoppableAdsAccountView.swift */,
+				4C0A00050000000100000001 /* ShoppableAdsAttributesViewModel.swift */,
+				4C0A00060000000100000001 /* ShoppableAdsAttributesView.swift */,
+				4C0A00070000000100000001 /* ShoppableAdsExecutionViewModel.swift */,
+				4C0A00080000000100000001 /* ShoppableAdsExecutionView.swift */,
+			);
+			path = ShoppableAds;
+			sourceTree = "<group>";
+		};
+		4C0A00210000000100000001 /* ShoppableAds */ = {
+			isa = PBXGroup;
+			children = (
+				4C0A00010000000100000001 /* ShoppableAdsDefaults.swift */,
+				4C0A00020000000100000001 /* ShoppableAdsModel.swift */,
+			);
+			path = ShoppableAds;
 			sourceTree = "<group>";
 		};
 		589873F82612BF1100C904E8 /* UI */ = {
@@ -745,6 +789,7 @@
 				2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */,
 				2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */,
 				2A1B2C3D4E5F6A7B8C9D0E6F /* Rokt-Widget */,
+				3B0A1C2D3E4F5A6B7C8D9E1F /* RoktStripePaymentExtension */,
 			);
 			productName = RoktDemo;
 			productReference = 25F84763260C34880067B515 /* RoktDemo.app */;
@@ -822,6 +867,7 @@
 				2A1B2C3D4E5F6A7B8C9D0E1E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2A1B2C3D4E5F6A7B8C9D0E3E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				2A1B2C3D4E5F6A7B8C9D0E5E /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */,
+				3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-stripe-payment-extension-ios" */,
 			);
 			productRefGroup = 25F84764260C34880067B515 /* Products */;
 			projectDirPath = "";
@@ -950,6 +996,14 @@
 				589922792613F75800A58DA3 /* ButtonDefaultOutlined.swift in Sources */,
 				5899228426141EF900A58DA3 /* AboutRoktView.swift in Sources */,
 				25D1D72226DF5E7B0045D579 /* KeyboardModifier.swift in Sources */,
+				4C0A00110000000100000001 /* ShoppableAdsDefaults.swift in Sources */,
+				4C0A00120000000100000001 /* ShoppableAdsModel.swift in Sources */,
+				4C0A00130000000100000001 /* ShoppableAdsAccountViewModel.swift in Sources */,
+				4C0A00140000000100000001 /* ShoppableAdsAccountView.swift in Sources */,
+				4C0A00150000000100000001 /* ShoppableAdsAttributesViewModel.swift in Sources */,
+				4C0A00160000000100000001 /* ShoppableAdsAttributesView.swift in Sources */,
+				4C0A00170000000100000001 /* ShoppableAdsExecutionViewModel.swift in Sources */,
+				4C0A00180000000100000001 /* ShoppableAdsExecutionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,6 +1212,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoktDemo/RoktDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 367;
@@ -1186,6 +1241,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoktDemo/RoktDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 367;
@@ -1365,6 +1421,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-stripe-payment-extension-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ROKT/rokt-stripe-payment-extension-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1387,6 +1451,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A1B2C3D4E5F6A7B8C9D0E5E /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */;
 			productName = "Rokt-Widget";
+		};
+		3B0A1C2D3E4F5A6B7C8D9E1F /* RoktStripePaymentExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-stripe-payment-extension-ios" */;
+			productName = RoktStripePaymentExtension;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

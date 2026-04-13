@@ -48,5 +48,7 @@ class DemoLibraryViewModel: ObservableObject {
         demoItems.append(demo.preDefinedScreen1)
         demoItems.append(demo.preDefinedScreen2)
         demoItems.append(demo.preDefinedScreen3)
+        // Add hardcoded Shoppable Ads demo item (iOS-only, not from backend)
+        demoItems.append(ShoppableAdsModel.defaultItem())
     }
 }
