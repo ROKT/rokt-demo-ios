@@ -46,6 +46,9 @@ class DemoItemSummaryViewModel: ObservableObject {
         if model as? DefaultPlacementExamplesModel != nil {
             return AlertView.template2
         }
+        if model is ShoppableAdsModel {
+            return AlertView.shoppableAdsTemplate
+        }
         return AlertView.template1
     }
     
