@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build-ipa:
-    runs-on: macos-15
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -24,7 +24,7 @@ jobs:
           provisioning_profile_base64: ${{ secrets.MPARTICLE_ENTERPRISE_PROVISIONING_PROFILE_BASE64 }}
 
   publish-build-to-firebase:
-    runs-on: macos-15
+    runs-on: macos-latest
     needs: build-ipa
 
     steps:
