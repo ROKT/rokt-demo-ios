@@ -1,6 +1,12 @@
 import SwiftUI
 import Rokt_Widget
-import RoktStripePaymentExtension
+import RoktPaymentExtension
+
+/// Holds the registered Rokt payment extension so the SceneDelegate can forward
+/// Afterpay redirect URLs back to it via `handleURLCallback(with:)`.
+enum PaymentExtensionURLForwarder {
+    static var handler: ((URL) -> Bool)?
+}
 
 struct ShoppableAdsAccountView: View {
     @ObservedObject var viewModel: ShoppableAdsAccountViewModel
@@ -59,12 +65,21 @@ struct ShoppableAdsAccountView: View {
 
             Button(Constants.Strings.continueDemo) {
                 if viewModel.isValidToContinue() {
-                    // Initialize Rokt SDK and register Stripe payment extension early
+                    // Initialize Rokt SDK and register Rokt payment extension early.
+                    // urlScheme enables Afterpay; the scheme is registered under
+                    // CFBundleURLSchemes in Info.plist and Stripe redirects return to
+                    // <scheme>://rokt-payment-return, forwarded by SceneDelegate.
                     Rokt.initWith(roktTagId: viewModel.tagID)
-                    if let stripeExt = RoktStripePaymentExtension(applePayMerchantId: ShoppableAdsDefaults.applePayMerchantId) {
-                        Rokt.registerPaymentExtension(stripeExt, config: [
+                    if let paymentExt = RoktPaymentExtension(
+                        applePayMerchantId: ShoppableAdsDefaults.applePayMerchantId,
+                        urlScheme: ShoppableAdsDefaults.paymentURLScheme
+                    ) {
+                        Rokt.registerPaymentExtension(paymentExt, config: [
                             "stripeKey": viewModel.stripePublishableKey
                         ])
+                        PaymentExtensionURLForwarder.handler = { [weak paymentExt] url in
+                            paymentExt?.handleURLCallback(with: url) ?? false
+                        }
                     }
                     moveToNextView = true
                 }

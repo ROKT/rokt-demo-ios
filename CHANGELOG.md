@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Shoppable Ads demo with Stripe payment integration
 - Custom placement builder for Shoppable Ads (account setup, attributes, execution)
-- RoktStripePaymentExtension SPM dependency
+- RoktPaymentExtension SPM dependency
 - Pre-populated default attributes for easy Shoppable Ads testing
 - SDK event logging in Shoppable Ads execution view
 - Shoppable Ads-specific disclaimer in placement summary

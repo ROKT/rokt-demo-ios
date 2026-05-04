@@ -117,7 +117,7 @@
 		2A1B2C3D4E5F6A7B8C9D0E1F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */; };
 		2A1B2C3D4E5F6A7B8C9D0E3F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */; };
 		2A1B2C3D4E5F6A7B8C9D0E5F /* Rokt-Widget in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E6F /* Rokt-Widget */; };
-		3B0A1C2D3E4F5A6B7C8D9E0F /* RoktStripePaymentExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0A1C2D3E4F5A6B7C8D9E1F /* RoktStripePaymentExtension */; };
+		3B0A1C2D3E4F5A6B7C8D9E0F /* RoktPaymentExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0A1C2D3E4F5A6B7C8D9E1F /* RoktPaymentExtension */; };
 		4C0A00110000000100000001 /* ShoppableAdsDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00010000000100000001 /* ShoppableAdsDefaults.swift */; };
 		4C0A00120000000100000001 /* ShoppableAdsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00020000000100000001 /* ShoppableAdsModel.swift */; };
 		4C0A00130000000100000001 /* ShoppableAdsAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A00030000000100000001 /* ShoppableAdsAccountViewModel.swift */; };
@@ -289,7 +289,7 @@
 				2A1B2C3D4E5F6A7B8C9D0E1F /* Alamofire in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E3F /* SDWebImageSwiftUI in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E5F /* Rokt-Widget in Frameworks */,
-				3B0A1C2D3E4F5A6B7C8D9E0F /* RoktStripePaymentExtension in Frameworks */,
+				3B0A1C2D3E4F5A6B7C8D9E0F /* RoktPaymentExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,7 +789,7 @@
 				2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */,
 				2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */,
 				2A1B2C3D4E5F6A7B8C9D0E6F /* Rokt-Widget */,
-				3B0A1C2D3E4F5A6B7C8D9E1F /* RoktStripePaymentExtension */,
+				3B0A1C2D3E4F5A6B7C8D9E1F /* RoktPaymentExtension */,
 			);
 			productName = RoktDemo;
 			productReference = 25F84763260C34880067B515 /* RoktDemo.app */;
@@ -867,7 +867,7 @@
 				2A1B2C3D4E5F6A7B8C9D0E1E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2A1B2C3D4E5F6A7B8C9D0E3E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				2A1B2C3D4E5F6A7B8C9D0E5E /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */,
-				3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-stripe-payment-extension-ios" */,
+				3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-payment-extension-ios" */,
 			);
 			productRefGroup = 25F84764260C34880067B515 /* Products */;
 			projectDirPath = "";
@@ -1215,7 +1215,7 @@
 				CODE_SIGN_ENTITLEMENTS = RoktDemo/RoktDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 367;
+				CURRENT_PROJECT_VERSION = 368;
 				DEVELOPMENT_ASSET_PATHS = "\"RoktDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = EX8W57PJ9C;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9RE44VD454;
@@ -1226,7 +1226,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.0;
+				MARKETING_VERSION = 5.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
@@ -1244,7 +1244,7 @@
 				CODE_SIGN_ENTITLEMENTS = RoktDemo/RoktDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 367;
+				CURRENT_PROJECT_VERSION = 368;
 				DEVELOPMENT_ASSET_PATHS = "\"RoktDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = EX8W57PJ9C;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9RE44VD454;
@@ -1255,7 +1255,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.0;
+				MARKETING_VERSION = 5.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rokt.RoktDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.rokt.RoktDemo";
@@ -1418,15 +1418,15 @@
 			repositoryURL = "https://github.com/ROKT/rokt-sdk-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 5.1.0;
 			};
 		};
-		3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-stripe-payment-extension-ios" */ = {
+		3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-payment-extension-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ROKT/rokt-stripe-payment-extension-ios.git";
+			repositoryURL = "https://github.com/ROKT/rokt-payment-extension-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1452,10 +1452,10 @@
 			package = 2A1B2C3D4E5F6A7B8C9D0E5E /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */;
 			productName = "Rokt-Widget";
 		};
-		3B0A1C2D3E4F5A6B7C8D9E1F /* RoktStripePaymentExtension */ = {
+		3B0A1C2D3E4F5A6B7C8D9E1F /* RoktPaymentExtension */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-stripe-payment-extension-ios" */;
-			productName = RoktStripePaymentExtension;
+			package = 3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-payment-extension-ios" */;
+			productName = RoktPaymentExtension;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

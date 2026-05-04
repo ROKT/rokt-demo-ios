@@ -5,6 +5,9 @@ struct ShoppableAdsDefaults {
     static let viewName = "StgRoktShoppableAds"
     static let stripePublishableKey = "" // User must provide
     static let applePayMerchantId = "merchant.rokt.demoapp"
+    /// Bare URL scheme used for Afterpay redirects. Must be registered under
+    /// CFBundleURLSchemes in Info.plist; Stripe returns to "<scheme>://rokt-payment-return".
+    static let paymentURLScheme = "rokt"
 
     static let attributes: [String: String] = [
         "email": "jenny.smith@example.com",
