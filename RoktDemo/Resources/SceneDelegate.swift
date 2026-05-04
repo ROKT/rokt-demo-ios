@@ -80,6 +80,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func handleURLContexts(_ urlContexts: Set<UIOpenURLContext>) {
         if let urlContext = urlContexts.first {
             let url = urlContext.url
+            // Forward payment redirect URLs (e.g. Afterpay return) to the Rokt
+            // payment extension first; if it claims the URL, do not interpret it
+            // as a preview-config link.
+            if PaymentExtensionURLForwarder.handler?(url) == true {
+                return
+            }
             let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
             let config = queryItems?.first(where: { $0.name == "config" })?.value
             appState.previewParameterString = config
