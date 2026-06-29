@@ -58,7 +58,7 @@ struct HomePageView: View {
                         .navigationBarTitle(Text(""))
                         
                         NavigationLink(
-                            destination: LayoutDemoView(viewModel: LayoutDemoViewModel()),
+                            destination: LayoutDemoView(),
                             label: {
                                 Text("Layout library in SwiftUI")
                             })
