@@ -13,11 +13,12 @@
 
 import Foundation
 
-struct PreviewData: Decodable {
+struct PreviewData: Codable {
     let tagId: String
     let previewId: String
     let versionId: String
     let creativeIds: [String]
     let layoutVariantIds: [String]
     let language: String
+    let catalogItemId: String?
 }

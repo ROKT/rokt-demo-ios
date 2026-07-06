@@ -16,12 +16,13 @@ import CodeScanner
 import Rokt_Widget
 
 struct LayoutDemoView: View {
-    @ObservedObject var viewModel: LayoutDemoViewModel
+    @StateObject var viewModel: LayoutDemoViewModel = LayoutDemoViewModel()
     @EnvironmentObject var appState: AppState
     
     var roktEmbedded = RoktEmbeddedSwiftUIView()
     
     @State var isShowingBarcodeScanner = false
+    @State private var isShowingManualEntry = false
 
     @State private var embeddedSize: CGFloat = 0
     var body: some View {
@@ -41,15 +42,18 @@ struct LayoutDemoView: View {
                         .sheet(isPresented: $isShowingBarcodeScanner) {
                             CodeScannerView(codeTypes: [.qr], completion: handleScan)
                         }
-                        .onChange(of: viewModel.uiState){ newState in
-                            if newState == .hasData {
-                                showPlacement()
-                            }
-                            if newState == .loading {
-                                appState.previewParameterString = nil
-                            }
+
+                        Button(action: {
+                            isShowingManualEntry = true
+                        }) {
+                            Text("Enter Manually")
                         }
-                        
+                        .padding(.top, 8)
+                        .buttonStyle(ButtonDefaultOutlined())
+                        .sheet(isPresented: $isShowingManualEntry) {
+                            ManualEntryView(viewModel: viewModel, isPresented: $isShowingManualEntry)
+                        }
+
                         switch viewModel.uiState {
                         case .hasData, .done:
                             // TODO: Re-enable the refresh button once layoutVariantIds are stablised
@@ -81,6 +85,15 @@ struct LayoutDemoView: View {
                         viewModel.parseQRcodeResult(previewJsonString)
                     }
                 }
+                .onChange(of: viewModel.uiState){ newState in
+                    print("[LayoutDemoView] uiState changed → \(newState)")
+                    if newState == .hasData {
+                        showPlacement()
+                    }
+                    if newState == .loading {
+                        appState.previewParameterString = nil
+                    }
+                }
             } else {
                 VStack {
                     HeaderView(title: "Layout Library")
@@ -102,11 +115,14 @@ struct LayoutDemoView: View {
         }
     }
     func showPlacement() {
+        let attrs = viewModel.getAttributes()
+        print("[LayoutDemoView] showPlacement called. attributes=\(attrs)")
         Rokt.selectPlacements(
             identifier: "",
-            attributes: viewModel.getAttributes(),
+            attributes: attrs,
             placements: ["#rokt-placeholder": roktEmbedded.embedded]
         ) { event in
+            print("[LayoutDemoView] Rokt event: \(event)")
             switch event {
             case let sizeChanged as RoktEvent.EmbeddedSizeChanged:
                 embeddedSize = sizeChanged.updatedHeight
@@ -127,6 +143,6 @@ struct LayoutDemoView: View {
 
 struct LayoutDemoView_Previews: PreviewProvider {
     static var previews: some View {
-        LayoutDemoView(viewModel: LayoutDemoViewModel())
+        LayoutDemoView()
     }
 }
