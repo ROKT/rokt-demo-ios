@@ -15,7 +15,7 @@ struct ManualEntryView: View {
     @ObservedObject var viewModel: LayoutDemoViewModel
     @Binding var isPresented: Bool
 
-    @AppStorage("manualEntry.tagId") private var tagId: String = "2992045596330978209"
+    @AppStorage("manualEntry.tagId") private var tagId: String = "343"
     @AppStorage("manualEntry.previewId") private var previewId: String = "3570823419066187777"
     @AppStorage("manualEntry.versionId") private var versionId: String = "1779204183552"
     @AppStorage("manualEntry.creativeIdsText") private var creativeIdsText: String = "3490020616040873984"
