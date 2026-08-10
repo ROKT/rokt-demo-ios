@@ -1422,7 +1422,7 @@
 			repositoryURL = "https://github.com/ROKT/rokt-sdk-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.5;
+				minimumVersion = 5.3.1;
 			};
 		};
 		3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-payment-extension-ios" */ = {
