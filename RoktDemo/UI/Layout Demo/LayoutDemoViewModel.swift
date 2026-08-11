@@ -68,6 +68,11 @@ class LayoutDemoViewModel: ObservableObject {
         var attributes = [String: String]()
         // Demo signal for the demo_config layout-preview path.
         attributes["isDemo"] = "true"
+        // Required: layouts carrying LANG placeholders are excluded from the
+        // render when no language attribute is present (verified on prod —
+        // omitting it returns a 200 with zero plugins). PreviewData has
+        // carried this value all along.
+        attributes["language"] = preview.language
         attributes["firstname"] = "ops"
         attributes["lastname"] = "test"
         attributes["email"] = "jenny.smith@example.com"
