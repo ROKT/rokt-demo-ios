@@ -66,33 +66,61 @@ class LayoutDemoViewModel: ObservableObject {
     func getAttributes() -> [String: String] {
         guard let preview else { return [:] }
         var attributes = [String: String]()
+        // Demo signal for the demo_config layout-preview path.
         attributes["isDemo"] = "true"
-        attributes["upsellsProviderName"] = "canal"
+        // Required: layouts carrying LANG placeholders are excluded from the
+        // render when no language attribute is present (verified on prod —
+        // omitting it returns a 200 with zero plugins). PreviewData has
+        // carried this value all along.
+        attributes["language"] = preview.language
         attributes["firstname"] = "ops"
         attributes["lastname"] = "test"
         attributes["email"] = "jenny.smith@example.com"
         attributes["confirmationref"] = "ORD-12345"
         attributes["billingzipcode"] = "07762"
-        if let catalogItemId = preview.catalogItemId, !catalogItemId.isEmpty {
-            attributes["catalogItemId"] = catalogItemId
-        }
 
-        var slots: [[String: String]] = []
+        // On the demo path, catalog creatives render from items supplied inline
+        // on the slot. The preview payload carries item-group ids only, so
+        // synthesize deterministic placeholder items for a stable preview.
+        let catalogItems: [[String: Any]] = (preview.catalogItemId ?? "")
+            .split(separator: ",")
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }
+            .enumerated()
+            .map { index, itemId in
+                [
+                    "item_id": itemId,
+                    "price": 19.99,
+                    "original_price": 24.99,
+                    "currency": "USD",
+                    "copy": ["title": "Demo item \(index + 1)"],
+                    "group_id": itemId
+                ]
+            }
+
+        var slots: [[String: Any]] = []
         let layoutVariantCount = preview.layoutVariantIds.count
 
         for (index, creativeId) in preview.creativeIds.enumerated() {
             let layoutVariantId = preview.layoutVariantIds[index % layoutVariantCount]
-            let slot: [String: String] = [
-                "layoutVariantId": layoutVariantId,
-                "creativeId": creativeId
+            var slot: [String: Any] = [
+                "layout_variant_id": layoutVariantId,
+                "creative_id": creativeId
             ]
+            if !catalogItems.isEmpty {
+                slot["catalog_items"] = catalogItems
+            }
             slots.append(slot)
         }
 
-        let demoConfig = [
+        // demo_config payload: the attribute key and its fields are snake_case
+        // (the camelCase form is rejected), and version_id is required so the
+        // saved draft the QR code points at can be resolved.
+        let demoConfig: [String: Any] = [
             "layouts": [
                 [
-                    "layoutId": preview.previewId,
+                    "layout_id": preview.previewId,
+                    "version_id": preview.versionId,
                     "slots": slots
                 ]
             ]
@@ -100,7 +128,7 @@ class LayoutDemoViewModel: ObservableObject {
 
         if let demoConfigJson = try? JSONSerialization.data(withJSONObject: demoConfig, options: []),
            let demoConfigJsonString = String(data: demoConfigJson, encoding: .utf8) {
-            attributes["demoConfig"] = demoConfigJsonString
+            attributes["demo_config"] = demoConfigJsonString
         }
 
         return attributes
