@@ -15,6 +15,13 @@ inputs:
     description: Path to ExportOptions.plist
     required: false
     default: ExportOptions.plist
+  entitlements_plist:
+    description: >
+      Entitlements to archive with, checked against the provisioning profile. Defaults to
+      the enterprise variant, which omits the Apple Pay entitlement the mParticle team
+      cannot provision. See RoktDemoEnterprise.entitlements for why.
+    required: false
+    default: RoktDemo/RoktDemoEnterprise.entitlements
 
 runs:
   using: composite
@@ -31,12 +38,51 @@ runs:
         echo "${{ inputs.certificate_p12_base64 }}" | base64 --decode > certificate.p12
         security import certificate.p12 -k build.keychain -P "${{ inputs.certificate_password }}" -T /usr/bin/codesign
         security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" build.keychain
+        # The key now lives in the keychain; don't leave it lying in the checkout.
+        rm -f certificate.p12
 
     - name: Install provisioning profile
       shell: bash
       run: |
         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
         echo "${{ inputs.provisioning_profile_base64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+
+    - name: Verify signing assets
+      shell: bash
+      run: |
+        PROFILE="$HOME/Library/MobileDevice/Provisioning Profiles/profile.mobileprovision"
+        security find-identity -v -p codesigning build.keychain
+
+        # find-identity only lists unexpired, usable identities, so a count of 0 means
+        # the distribution certificate is missing or expired.
+        if security find-identity -v -p codesigning build.keychain | grep -q "^ *0 valid identities found"; then
+          echo "::error::No valid codesigning identity in the keychain. The distribution certificate is missing or expired."
+          exit 1
+        fi
+
+        security cms -D -i "$PROFILE" > "$RUNNER_TEMP/profile.plist"
+        NAME=$(plutil -extract Name raw "$RUNNER_TEMP/profile.plist")
+        EXPIRY=$(plutil -extract ExpirationDate raw "$RUNNER_TEMP/profile.plist")
+        echo "Provisioning profile '$NAME' expires $EXPIRY"
+
+        if [ "$(date -j -f '%Y-%m-%dT%H:%M:%SZ' "$EXPIRY" +%s)" -lt "$(date +%s)" ]; then
+          echo "::error::Provisioning profile '$NAME' expired on $EXPIRY. Regenerate it in the Apple Developer portal and update the repository secret."
+          exit 1
+        fi
+
+        # The profile must grant every entitlement the app declares, or codesigning fails.
+        # Match on the raw XML rather than `plutil -extract`, which reads the dots in
+        # reverse-DNS entitlement keys as keypath separators and never finds them.
+        plutil -extract Entitlements xml1 -o "$RUNNER_TEMP/profile-entitlements.plist" "$RUNNER_TEMP/profile.plist"
+        MISSING=""
+        while read -r KEY; do
+          grep -qF "<key>$KEY</key>" "$RUNNER_TEMP/profile-entitlements.plist" || MISSING="$MISSING $KEY"
+        done < <(plutil -convert xml1 -o - "${{ inputs.entitlements_plist }}" | grep -o '<key>[^<]*</key>' | sed 's/<\/*key>//g')
+
+        if [ -n "$MISSING" ]; then
+          echo "::error::Provisioning profile '$NAME' is missing entitlements required by ${{ inputs.entitlements_plist }}:$MISSING. Add the matching capabilities to the App ID and regenerate the profile."
+          exit 1
+        fi
 
     - name: Archive the app
       shell: bash
@@ -45,7 +91,8 @@ runs:
           -scheme RoktDemo \
           -configuration Release \
           -archivePath build/RoktDemo.xcarchive \
-          archive | xcpretty
+          CODE_SIGN_ENTITLEMENTS="${{ inputs.entitlements_plist }}" \
+          archive 2>&1 | tee "$RUNNER_TEMP/archive.log" | xcbeautify --renderer github-actions
 
     - name: Export the app
       shell: bash
@@ -53,7 +100,22 @@ runs:
         xcodebuild -exportArchive \
           -archivePath build/RoktDemo.xcarchive \
           -exportOptionsPlist ${{ inputs.export_options_plist }} \
-          -exportPath build | xcpretty
+          -exportPath build 2>&1 | tee "$RUNNER_TEMP/export.log" | xcbeautify --renderer github-actions
+
+    # Runs after both xcodebuild steps so it reports whichever one failed.
+    - name: Report xcodebuild errors
+      if: failure()
+      shell: bash
+      run: |
+        # Belt and braces: xcbeautify surfaces errors inline, but it is still a parser.
+        # This reports the raw logs so a diagnostic can never be lost to a formatter again.
+        # A log is absent when its step never ran, so skip those.
+        for LOG in "$RUNNER_TEMP/archive.log" "$RUNNER_TEMP/export.log"; do
+          [ -f "$LOG" ] || continue
+          echo "::group::$(basename "$LOG")"
+          grep -E "error:|^\*\* [A-Z]+ FAILED" "$LOG" || tail -n 50 "$LOG"
+          echo "::endgroup::"
+        done
 
     - name: Upload IPA artifact
       uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

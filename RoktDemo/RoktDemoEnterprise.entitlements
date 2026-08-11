@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Entitlements for the mParticle Inc enterprise build (team 9RE44VD454, Universal
+  Distribution) produced by distribute-to-firebase.yml and release-from-main.yml.
+
+  Deliberately omits com.apple.developer.in-app-payments. Apple Pay requires an explicit
+  App ID, and Apple scopes both explicit App IDs and merchant IDs globally rather than
+  per team. `com.rokt.RoktDemo` and `merchant.rokt.demoapp` are registered to the Rokt
+  team (EX8W57PJ9C), so the mParticle team cannot claim either and its profile covers
+  only the wildcard `com.rokt.*`. Requesting the entitlement here fails codesigning with
+  "doesn't include the Apple Pay capability".
+
+  Apple Pay therefore works only in App Store / TestFlight builds, which sign under
+  EX8W57PJ9C via the fastlane `beta` lane and use RoktDemo.entitlements.
+-->
+<plist version="1.0">
+<dict/>
+</plist>
