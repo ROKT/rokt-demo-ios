@@ -34,6 +34,10 @@ runs:
       run: |
         security create-keychain -p "" build.keychain
         security default-keychain -s build.keychain
+        # A new keychain defaults to `lock-on-sleep timeout=300s`. This build takes longer
+        # than 300s, and codesign blocks indefinitely on a relocked keychain rather than
+        # failing, so disable auto-locking. Passing no -l/-u/-t yields `no-timeout`.
+        security set-keychain-settings build.keychain
         security unlock-keychain -p "" build.keychain
         echo "${{ inputs.certificate_p12_base64 }}" | base64 --decode > certificate.p12
         security import certificate.p12 -k build.keychain -P "${{ inputs.certificate_password }}" -T /usr/bin/codesign
