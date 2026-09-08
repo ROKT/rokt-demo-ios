@@ -20,5 +20,4 @@ struct PreviewData: Codable {
     let creativeIds: [String]
     let layoutVariantIds: [String]
     let language: String
-    let catalogItemId: String?
 }

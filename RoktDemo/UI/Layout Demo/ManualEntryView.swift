@@ -21,7 +21,6 @@ struct ManualEntryView: View {
     @AppStorage("manualEntry.creativeIdsText") private var creativeIdsText: String = "3490020616040873984"
     @AppStorage("manualEntry.layoutVariantIdsText") private var layoutVariantIdsText: String = "3588707418073595917"
     @AppStorage("manualEntry.language") private var language: String = "en"
-    @AppStorage("manualEntry.catalogItemId") private var catalogItemId: String = "02b4225b-f1b2-470f-8fe6-0fcf980e500c"
 
     var body: some View {
         NavigationView {
@@ -41,7 +40,6 @@ struct ManualEntryView: View {
                     DetailTextFieldView(title: "Creative IDs (comma-separated)", textHolder: $creativeIdsText)
                     DetailTextFieldView(title: "Layout Variant IDs (comma-separated)", textHolder: $layoutVariantIdsText)
                     DetailTextFieldView(title: "Language", textHolder: $language)
-                    DetailTextFieldView(title: "Catalog Item ID (optional)", textHolder: $catalogItemId)
 
                     Button(action: render) {
                         Text("Render Layout")
@@ -72,15 +70,13 @@ struct ManualEntryView: View {
     }
 
     private func buildPreview() -> PreviewData {
-        let trimmedCatalogId = catalogItemId.trimmingCharacters(in: .whitespaces)
         return PreviewData(
             tagId: tagId.trimmingCharacters(in: .whitespaces),
             previewId: previewId.trimmingCharacters(in: .whitespaces),
             versionId: versionId.trimmingCharacters(in: .whitespaces),
             creativeIds: splitCSV(creativeIdsText),
             layoutVariantIds: splitCSV(layoutVariantIdsText),
-            language: language.trimmingCharacters(in: .whitespaces),
-            catalogItemId: trimmedCatalogId.isEmpty ? nil : trimmedCatalogId
+            language: language.trimmingCharacters(in: .whitespaces)
         )
     }
 

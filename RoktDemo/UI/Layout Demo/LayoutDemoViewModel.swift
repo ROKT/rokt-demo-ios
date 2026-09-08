@@ -79,37 +79,15 @@ class LayoutDemoViewModel: ObservableObject {
         attributes["confirmationref"] = "ORD-12345"
         attributes["billingzipcode"] = "07762"
 
-        // On the demo path, catalog creatives render from items supplied inline
-        // on the slot. The preview payload carries item-group ids only, so
-        // synthesize deterministic placeholder items for a stable preview.
-        let catalogItems: [[String: Any]] = (preview.catalogItemId ?? "")
-            .split(separator: ",")
-            .map { $0.trimmingCharacters(in: .whitespaces) }
-            .filter { !$0.isEmpty }
-            .enumerated()
-            .map { index, itemId in
-                [
-                    "item_id": itemId,
-                    "price": 19.99,
-                    "original_price": 24.99,
-                    "currency": "USD",
-                    "copy": ["title": "Demo item \(index + 1)"],
-                    "group_id": itemId
-                ]
-            }
-
         var slots: [[String: Any]] = []
         let layoutVariantCount = preview.layoutVariantIds.count
 
         for (index, creativeId) in preview.creativeIds.enumerated() {
             let layoutVariantId = preview.layoutVariantIds[index % layoutVariantCount]
-            var slot: [String: Any] = [
+            let slot: [String: Any] = [
                 "layout_variant_id": layoutVariantId,
                 "creative_id": creativeId
             ]
-            if !catalogItems.isEmpty {
-                slot["catalog_items"] = catalogItems
-            }
             slots.append(slot)
         }
 
