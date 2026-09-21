@@ -1,9 +1,21 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    directory: /
+    directories:
+      - /
+      - /.github/actions/*
     schedule:
       interval: weekly
     open-pull-requests-limit: 2
     labels:
       - dependabot
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    labels:
+      - dependabot
+  # No swift entry — no Package.swift or Podfile anywhere in this repo.
+  # It's an Xcode project consuming SPM packages natively via project.pbxproj,
+  # which Dependabot's swift ecosystem cannot read without a Package.swift.
