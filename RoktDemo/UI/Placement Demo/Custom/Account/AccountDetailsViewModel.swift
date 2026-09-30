@@ -19,9 +19,6 @@ class AccountDetailsViewModel: ObservableObject {
     @Published var viewName: String = ""
     @Published var placementLocation1: String = ""
     @Published var placementLocation2: String = ""
-    @Published var password: String = ""
-    @Published var passwordHasError: Bool = false
-    @Published var passwordError: String = ""
     
     init(_ model: CustomConfigurationPageModel) {
         self.model = model
@@ -34,25 +31,7 @@ class AccountDetailsViewModel: ObservableObject {
     func isValidToContinue() -> Bool {
         accountIdHasError = ValidationService.isEmpty(accountId)
         
-        return !accountIdHasError && isPasswordValid()
-    }
-    
-    internal func isPasswordValid() -> Bool {
-        if ValidationService.isEmpty(password) {
-            passwordError = "Password can't be empty!"
-            passwordHasError = true
-            return false
-        }
-        
-        if !ValidationService.isPasswordMatched(input: password,
-                                                password: model.accountDetails.password) {
-            passwordError = "Incorrect password!"
-            passwordHasError = true
-            return false
-        }
-        
-        passwordHasError = false
-        return true
+        return !accountIdHasError
     }
     
     func getCustomerDetailsViewModel() -> CustomerDetailsViewModel {

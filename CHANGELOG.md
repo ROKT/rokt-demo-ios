@@ -17,3 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pre-populated default attributes for easy Shoppable Ads testing
 - SDK event logging in Shoppable Ads execution view
 - Shoppable Ads-specific disclaimer in placement summary
+
+### Changed
+
+- The About and Placement Library screens show content bundled in the app; the demo app server is no longer called, and its address leaves the constants
+- The Custom placement builder no longer asks for a password; it initializes the SDK with the entered account ID
