@@ -103,7 +103,7 @@ struct Congratulation: View {
 struct PostConfirmation: View {
     var body: some View {
         
-        TextLato(text: "Post your ad on eBay for FREE",
+        TextLato(text: "Post your ad for FREE",
                  size: 16,
                  isBold: true
         ).padding([.top, .bottom])
@@ -113,7 +113,14 @@ struct PostConfirmation: View {
                  color: .preDefined3Gray2)
             .padding(.bottom)
         
-        Image("EbayLogo")
+        TextLato(text: "Post now",
+                 size: 16,
+                 color: .preDefined3Bule,
+                 isBold: true
+        )
+            .padding(.horizontal, 32)
+            .padding(.vertical, 10)
+            .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.preDefined3Bule, lineWidth: 2))
             .padding(.bottom)
         
         TextLato(text: "*Limited to 2 items per month. T&C’s Apply.",
