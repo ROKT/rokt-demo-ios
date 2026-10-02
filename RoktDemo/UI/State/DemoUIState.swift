@@ -13,7 +13,6 @@
 
 
 import Foundation
-import Alamofire
 
 enum DemoUIState: Equatable {
     static func == (lhs: DemoUIState, rhs: DemoUIState) -> Bool {
@@ -23,13 +22,13 @@ enum DemoUIState: Equatable {
         case (.hasData, .hasData):
             return true
         case (.error(let lError), .error(error: let rError)):
-            return lError?.errorDescription == rError?.errorDescription
+            return lError?.localizedDescription == rError?.localizedDescription
         default:
             return false
         }
     }
     
     case loading
-    case error(error: AFError?)
+    case error(error: Error?)
     case hasData
 }

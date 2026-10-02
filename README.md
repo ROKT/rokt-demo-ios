@@ -52,7 +52,6 @@ All dependencies are managed via [Swift Package Manager](https://www.swift.org/p
 |------------|-------------|
 | [Rokt-Widget](https://docs.rokt.com/developers/integration-guides/ios/overview) | Rokt iOS SDK — the core SDK this app demonstrates |
 | [RoktPaymentExtension](https://github.com/ROKT/rokt-payment-extension-ios) | Payment integration (Apple Pay, card, Afterpay) for Shoppable Ads |
-| [Alamofire](https://github.com/Alamofire/Alamofire) | HTTP networking library (still provides the error type the screens use; the About and Placement Library content no longer needs a request) |
 | [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) | SwiftUI image loading framework |
 | [CodeScanner](https://github.com/twostraws/CodeScanner) | QR code and barcode scanner |
 

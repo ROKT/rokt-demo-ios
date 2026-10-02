@@ -12,18 +12,17 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
-import Alamofire
 import Combine
 
 struct DemoLibraryService {
-    static func getData() -> Future<DemoLibraryModel, AFError> {
+    static func getData() -> Future<DemoLibraryModel, Error> {
         return Future({ promise in
             do {
                 let data = Data(payload.utf8)
                 let value = try JSONDecoder().decode(DemoLibraryModel.self, from: data)
                 promise(.success(value))
             } catch {
-                promise(.failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: error))))
+                promise(.failure(error))
             }
         })
     }

@@ -24,7 +24,6 @@
 		251E32ED274B232D00308A18 /* DescriptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254D4C8A2717EA5A003E27C9 /* DescriptionItem.swift */; };
 		251E32EE274B233F00308A18 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574714F261E7EB100B8C0C7 /* NavigationBarModifier.swift */; };
 		251E32EF274B234D00308A18 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899226A2613F63800A58DA3 /* Font+Extensions.swift */; };
-		251E32F0274B235800308A18 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5629B269FBC78003E64B0 /* NetworkService.swift */; };
 		251E32F1274B238200308A18 /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7097F26E9D4F30006C18C /* DetailTextView.swift */; };
 		251E32F2274B24D800308A18 /* DetailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252842CF263BB82E0010114A /* DetailTextFieldView.swift */; };
 		251E32F7274B457900308A18 /* PreDefined1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E32F6274B457800308A18 /* PreDefined1View.swift */; };
@@ -98,7 +97,6 @@
 		25A56259269BE2EC003E64B0 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A56258269BE2EC003E64B0 /* ConfirmationView.swift */; };
 		25A5625E269BFF69003E64B0 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */; };
 		25A56262269D551F003E64B0 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */; };
-		25A5629C269FBC78003E64B0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A5629B269FBC78003E64B0 /* NetworkService.swift */; };
 		25C7098026E9D4F30006C18C /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7097F26E9D4F30006C18C /* DetailTextView.swift */; };
 		25CBB2A82627F51A00D8AB79 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2A72627F51A00D8AB79 /* AlertView.swift */; };
 		25CBB2AD2628044800D8AB79 /* DemoItemSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */; };
@@ -115,7 +113,6 @@
 		25F8477E260C348A0067B515 /* RoktDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8477D260C348A0067B515 /* RoktDemoTests.swift */; };
 		25F84789260C348A0067B515 /* RoktDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F84788260C348A0067B515 /* RoktDemoUITests.swift */; };
 		25FA8C672BE1D5CB00E750A6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FA8C662BE1D5CB00E750A6 /* SettingView.swift */; };
-		2A1B2C3D4E5F6A7B8C9D0E1F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */; };
 		2A1B2C3D4E5F6A7B8C9D0E3F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */; };
 		2A1B2C3D4E5F6A7B8C9D0E5F /* Rokt-Widget in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1B2C3D4E5F6A7B8C9D0E6F /* Rokt-Widget */; };
 		3B0A1C2D3E4F5A6B7C8D9E0F /* RoktPaymentExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0A1C2D3E4F5A6B7C8D9E1F /* RoktPaymentExtension */; };
@@ -234,7 +231,6 @@
 		25A56253269BD867003E64B0 /* FeatureWalkthroughViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWalkthroughViewModelTests.swift; sourceTree = "<group>"; };
 		25A56258269BE2EC003E64B0 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		25A5625D269BFF69003E64B0 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
-		25A5629B269FBC78003E64B0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		25C7097F26E9D4F30006C18C /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		25CBB2A72627F51A00D8AB79 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		25CBB2AC2628044800D8AB79 /* DemoItemSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoItemSummaryView.swift; sourceTree = "<group>"; };
@@ -288,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25747A062A70DBD5009C5B69 /* CodeScanner in Frameworks */,
-				2A1B2C3D4E5F6A7B8C9D0E1F /* Alamofire in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E3F /* SDWebImageSwiftUI in Frameworks */,
 				2A1B2C3D4E5F6A7B8C9D0E5F /* Rokt-Widget in Frameworks */,
 				3B0A1C2D3E4F5A6B7C8D9E0F /* RoktPaymentExtension in Frameworks */,
@@ -743,7 +738,6 @@
 				5899229C2614214500A58DA3 /* AboutRoktService.swift */,
 				256EB787261C26FA00B959EF /* DemoLibraryService.swift */,
 				2575CCB62653594E005226C5 /* ValidationService.swift */,
-				25A5629B269FBC78003E64B0 /* NetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -789,7 +783,6 @@
 			name = RoktDemo;
 			packageProductDependencies = (
 				25747A052A70DBD5009C5B69 /* CodeScanner */,
-				2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */,
 				2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */,
 				2A1B2C3D4E5F6A7B8C9D0E6F /* Rokt-Widget */,
 				3B0A1C2D3E4F5A6B7C8D9E1F /* RoktPaymentExtension */,
@@ -867,7 +860,6 @@
 			mainGroup = 25F8475A260C34880067B515;
 			packageReferences = (
 				25747A042A70DBD5009C5B69 /* XCRemoteSwiftPackageReference "CodeScanner" */,
-				2A1B2C3D4E5F6A7B8C9D0E1E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2A1B2C3D4E5F6A7B8C9D0E3E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				2A1B2C3D4E5F6A7B8C9D0E5E /* XCRemoteSwiftPackageReference "rokt-sdk-ios" */,
 				3B0A1C2D3E4F5A6B7C8D9E2E /* XCRemoteSwiftPackageReference "rokt-payment-extension-ios" */,
@@ -967,7 +959,6 @@
 				25F8476B260C34880067B515 /* HomePageView.swift in Sources */,
 				25747171261EB5D200B8C0C7 /* NavigationBarBlack.swift in Sources */,
 				251E330A274F0A8600308A18 /* PreDefinedScreen1Model.swift in Sources */,
-				25A5629C269FBC78003E64B0 /* NetworkService.swift in Sources */,
 				251E330E274F0AA400308A18 /* PreDefinedScreen3Model.swift in Sources */,
 				58CF38102664C0AC00DCE317 /* CustomerDetailsViewModel.swift in Sources */,
 				256C958226A1455400F0961B /* DemoUIState.swift in Sources */,
@@ -1040,7 +1031,6 @@
 				58A97A712654D2F20092B598 /* AccountDetailsViewModel.swift in Sources */,
 				25A56262269D551F003E64B0 /* ConfirmationViewModel.swift in Sources */,
 				251E32EF274B234D00308A18 /* Font+Extensions.swift in Sources */,
-				251E32F0274B235800308A18 /* NetworkService.swift in Sources */,
 				251E32E7274B22B100308A18 /* FeatureWalkthroughViewModel.swift in Sources */,
 				251E32E3274B21FB00308A18 /* DemoLibraryModel.swift in Sources */,
 				251E3310274F0D5500308A18 /* PreDefinedScreen2Model.swift in Sources */,
@@ -1401,14 +1391,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		2A1B2C3D4E5F6A7B8C9D0E1E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.4.4;
-			};
-		};
 		2A1B2C3D4E5F6A7B8C9D0E3E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -1440,11 +1422,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 25747A042A70DBD5009C5B69 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
-		};
-		2A1B2C3D4E5F6A7B8C9D0E2F /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A1B2C3D4E5F6A7B8C9D0E1E /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		2A1B2C3D4E5F6A7B8C9D0E4F /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

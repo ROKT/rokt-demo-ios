@@ -13,17 +13,16 @@
 
 import Foundation
 import Combine
-import Alamofire
 
 struct AboutRoktService {
-    static func getData() -> Future<AboutRoktModel, AFError> {
+    static func getData() -> Future<AboutRoktModel, Error> {
         return Future({ promise in
             do {
                 let data = Data(payload.utf8)
                 let value = try JSONDecoder().decode(AboutRoktModel.self, from: data)
                 promise(.success(value))
             } catch {
-                promise(.failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: error))))
+                promise(.failure(error))
             }
         })
     }
