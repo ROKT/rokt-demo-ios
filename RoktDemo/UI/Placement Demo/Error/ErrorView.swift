@@ -12,7 +12,6 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import SwiftUI
-import Alamofire
 
 struct ErrorView: View {
     let viewModel: ErrorViewModel

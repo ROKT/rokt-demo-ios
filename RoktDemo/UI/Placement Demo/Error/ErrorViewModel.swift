@@ -10,7 +10,6 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import Foundation
-import Alamofire
 
 enum ErrorMessageType {
     case network
@@ -19,12 +18,12 @@ enum ErrorMessageType {
 }
 
 struct ErrorViewModel {
-    let error: AFError?
+    let error: Error?
     let barcodeErrorMessage: String?
     
     func getErrorMessageType() -> ErrorMessageType {
         if let error = error {
-            if error.isResponseSerializationError {
+            if error is DecodingError {
                 return .general
             }
             return .network
