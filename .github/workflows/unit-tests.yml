@@ -1,0 +1,62 @@
+name: Unit Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    name: Run unit tests
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Xcode
+        uses: ./.github/actions/setup-xcode
+
+      # Simulator names differ between runner images, so pick whichever iPhone is installed.
+      - name: Pick a simulator
+        id: simulator
+        shell: bash
+        run: |
+          UDID=$(xcrun simctl list devices available -j \
+            | jq -r '[.devices | to_entries[] | select(.key | contains("iOS")) | .value[] | select(.name | startswith("iPhone"))][0].udid')
+          if [ -z "$UDID" ] || [ "$UDID" = "null" ]; then
+            echo "::error::No available iPhone simulator on this runner."
+            exit 1
+          fi
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Run unit tests
+        shell: bash
+        env:
+          SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
+        run: |
+          xcodebuild -project RoktDemo.xcodeproj \
+            -scheme RoktDemo \
+            -destination "id=$SIMULATOR_UDID" \
+            -only-testing:RoktDemoTests \
+            CODE_SIGNING_ALLOWED=NO \
+            test 2>&1 | tee "$RUNNER_TEMP/test.log" | xcbeautify --renderer github-actions
+
+      - name: Report xcodebuild errors
+        if: failure()
+        shell: bash
+        run: |
+          # xcbeautify is a parser; print the raw diagnostics so a failure is never hidden by it.
+          [ -f "$RUNNER_TEMP/test.log" ] || exit 0
+          grep -E "error:|failed \(|^\*\* [A-Z]+ FAILED" "$RUNNER_TEMP/test.log" || tail -n 50 "$RUNNER_TEMP/test.log"

@@ -12,6 +12,7 @@
 //  You may obtain a copy of the License at https://rokt.com/sdk-license-2-0/
 
 import XCTest
+@testable import RoktDemo
 
 class FeatureWalkthroughViewModelTests: XCTestCase {
     
