@@ -72,6 +72,10 @@ struct LayoutDemoView: View {
                             ErrorView(viewModel: ErrorViewModel(error: nil, barcodeErrorMessage: error))
                                 .modifier(NavigationBarGray(title: ""))
                                 .background(Color.white)
+                        case .placementFailed:
+                            ErrorView(viewModel: ErrorViewModel(error: nil, barcodeErrorMessage: nil))
+                                .modifier(NavigationBarGray(title: ""))
+                                .background(Color.white)
                         default:
                             EmptyView()
                         }
@@ -134,6 +138,9 @@ struct LayoutDemoView: View {
             case is RoktEvent.PlacementCompleted:
                 embeddedSize = 0
                 viewModel.uiState = .done
+            case is RoktEvent.PlacementFailure:
+                embeddedSize = 0
+                viewModel.uiState = .placementFailed
             default:
                 break
             }
