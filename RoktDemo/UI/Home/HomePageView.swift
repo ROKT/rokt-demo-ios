@@ -99,9 +99,10 @@ struct HomePageView: View {
                                   dismissButton: .default(Text("OK")))
                         }
                         
-                        Text("® Rokt 2021 — All rights reserved App Version \(UIApplication.appVersion ?? "")")
+                        Text("® Rokt 2021 — All rights reserved\nApp Version \(UIApplication.appVersion ?? "")")
                             .font(.defaultFont(.subtitle2))
                             .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
                             .foregroundColor(.textColor)
                             .padding(.bottom)
                     }.padding()
