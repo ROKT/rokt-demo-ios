@@ -195,6 +195,8 @@ class LayoutDemoUIView: UIViewController {
             appState.previewParameterString = nil
         case .error(let error):
             showError(error)
+        case .placementFailed:
+            showError(LayoutDemoUIState.placementFailedMessage)
         default:
             break
         }
@@ -217,6 +219,9 @@ class LayoutDemoUIView: UIViewController {
             case is RoktEvent.PlacementCompleted:
                 self?.updateEmbeddedViewHeight(0)
                 self?.viewModel.uiState = .done
+            case is RoktEvent.PlacementFailure:
+                self?.updateEmbeddedViewHeight(0)
+                self?.viewModel.uiState = .placementFailed
             default:
                 break
             }

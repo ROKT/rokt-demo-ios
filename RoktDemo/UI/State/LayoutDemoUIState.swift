@@ -26,6 +26,8 @@ enum LayoutDemoUIState: Equatable {
             return true
         case (.done, .done):
             return true
+        case (.placementFailed, .placementFailed):
+            return true
         default:
             return false
         }
@@ -36,4 +38,7 @@ enum LayoutDemoUIState: Equatable {
     case error(error: String)
     case hasData
     case done
+    case placementFailed
+
+    static let placementFailedMessage = "Our systems aren't responding right now. Please try again later."
 }
