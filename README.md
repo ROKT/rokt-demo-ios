@@ -72,13 +72,11 @@ All dependencies are managed via [Swift Package Manager](https://www.swift.org/p
 2. Merge the change into `main`
 3. The `Release iOS Demo App` workflow builds the app, publishes its version tag and IPA on GitHub, then distributes that same IPA to testers
 
-The release reads the resolved version from the built IPA and checks it against `VERSION` before publishing. Tags use the app version (for example, `5.5.5`) and point to the commit that built the app. An existing tag must point to that same commit, and an existing release must contain an identical IPA; conflicting releases fail without replacing published assets. An unfinished draft must be inspected before retrying.
+The release tag comes directly from `VERSION` (for example, `5.5.5`) and points to the commit that built the app. Keep `VERSION` aligned with the app version in Xcode; the workflow does not compare it with the built IPA.
 
-If a job fails, rerun only that failed job from the Actions tab. GitHub publication and tester distribution are separate jobs, so retrying publication does not repeat a successful distribution. Re-running a whole workflow rebuilds the app and can produce a different IPA; reuse the original artifact when recovering an existing release. Workflow changes alone do not trigger a release, and rerunning an older run uses its original workflow revision.
+If a job fails, rerun only that failed job from the Actions tab. GitHub publication and tester distribution are separate jobs, so retrying publication does not repeat a successful distribution. Workflow changes alone do not trigger a release, and rerunning an older run uses its original workflow revision.
 
 To distribute a build without creating a GitHub release, dispatch the `Distribute to Firebase` workflow from the Actions tab.
-
-Run release validation tests locally with `python3 -m unittest discover -s scripts -p 'test_*.py' -v`.
 
 ## Branches
 

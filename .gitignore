@@ -70,6 +70,3 @@ vendor/
 *.swp
 *.lock
 !Podfile.lock
-
-# Python release checks
-__pycache__/

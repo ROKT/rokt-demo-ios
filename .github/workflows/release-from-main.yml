@@ -50,12 +50,16 @@ jobs:
           name: release-ipa
           path: .
 
-      - name: Validate release metadata and existing publication
+      - name: Read release version
         id: version-info
-        env:
-          GH_TOKEN: ${{ github.token }}
+        shell: bash
         run: |
-          python3 scripts/release_metadata.py RoktDemo.ipa VERSION --check-release
+          VERSION_NAME=$(cat VERSION)
+          if [[ ! "$VERSION_NAME" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::VERSION must contain an app version such as 5.5.5."
+            exit 1
+          fi
+          printf 'version_name=%s\n' "$VERSION_NAME" >> "$GITHUB_OUTPUT"
 
       - name: Get release notes
         id: release-notes
@@ -69,7 +73,6 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub release
-        if: steps.version-info.outputs.release_exists != 'true'
         uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         with:
           artifacts: RoktDemo.ipa
