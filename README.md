@@ -68,11 +68,15 @@ All dependencies are managed via [Swift Package Manager](https://www.swift.org/p
 > [!NOTE]
 > Testers in the `TESTING_GROUPS` repo secret will receive the new build.
 
-1. Update `Version` and `Build` in the RoktDemo target
-2. Commit and push
-3. Dispatch the `Distribute to Firebase` workflow from the Actions tab on GitHub
+1. Update `Version` and `Build` in the RoktDemo target, and set `VERSION` to the same app version
+2. Merge the change into `main`
+3. The `Release iOS Demo App` workflow builds the app, publishes its version tag and IPA on GitHub, then distributes that same IPA to testers
 
-The app can also be released via the **Mobile Release Pipeline** — follow the instructions in the Mobile Release Pipeline repo.
+The release tag comes directly from `VERSION` (for example, `5.5.5`) and points to the commit that built the app. Keep `VERSION` aligned with the app version in Xcode; the workflow does not compare it with the built IPA.
+
+If a job fails, rerun only that failed job from the Actions tab. GitHub publication and tester distribution are separate jobs, so retrying publication does not repeat a successful distribution. Workflow changes alone do not trigger a release, and rerunning an older run uses its original workflow revision.
+
+To distribute a build without creating a GitHub release, dispatch the `Distribute to Firebase` workflow from the Actions tab.
 
 ## Branches
 
