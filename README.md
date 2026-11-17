@@ -66,7 +66,7 @@ All dependencies are managed via [Swift Package Manager](https://www.swift.org/p
 ## How to Release
 
 > [!NOTE]
-> Testers in the `TESTING_GROUPS` repo secret will receive the new build.
+> Testers in the `TESTING_GROUPS` secret of the `release` environment will receive the new build.
 
 1. Update `Version` and `Build` in the RoktDemo target, and set `VERSION` to the same app version
 2. Merge the change into `main`
