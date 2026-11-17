@@ -16,6 +16,7 @@ env:
 jobs:
   update-version:
     runs-on: macos-latest
+    environment: release
 
     steps:
       - name: Validate version
