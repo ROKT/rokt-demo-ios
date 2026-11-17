@@ -70,7 +70,7 @@ runs:
         echo "Provisioning profile '$NAME' expires $EXPIRY"
 
         if [ "$(date -j -f '%Y-%m-%dT%H:%M:%SZ' "$EXPIRY" +%s)" -lt "$(date +%s)" ]; then
-          echo "::error::Provisioning profile '$NAME' expired on $EXPIRY. Regenerate it in the Apple Developer portal and update the repository secret."
+          echo "::error::Provisioning profile '$NAME' expired on $EXPIRY. Regenerate it in the Apple Developer portal and update the secret in the release environment."
           exit 1
         fi
 
